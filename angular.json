@@ -89,6 +89,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/sequence-viewer-typescript/dist/assets/sqv.scss",
               "src/styles.css"
             ],
             "scripts": []
@@ -118,8 +119,13 @@
               "devServerTarget": "sequence-viewer-documentation:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "sequence-viewer-documentation"
 }
