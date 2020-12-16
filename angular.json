@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/sequence-viewer-typescript/dist/assets/sqv.scss",
               "src/styles.css"
             ],
             "scripts": []
