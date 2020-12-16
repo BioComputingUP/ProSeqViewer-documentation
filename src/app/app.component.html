@@ -9,26 +9,55 @@
 <!------------------------------------- DEMO ---------------------------------------->
 
 <div id="Demos" class="tabcontent">
-
-  <h2 class="snippet-title" id="simple-slider">Simple example<a fragment="simple-slider"><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h2>
+  <!------------------------------------- Simple example ---------------------------------------->
+  <h2 class="snippet-title">Simple example<a fragment="simple-slider"><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h2>
 
   <div class="card">
     <div class="sqvContainer"><div id="sqv0"></div></div>
 
-    <div class="tab2">
-      <button class="tablinks2" (click)="openPage2( 'app.component.ts')" id="defaultOpen2">app.component.ts</button>
-      <button class="tablinks2" (click)="openPage2( 'app.component.html')">app.component.html</button>
+    <div class="tab">
+      <button class="tablinks1" (click)="openPage1( 'app.component.ts1')" id="defaultOpen1">app.component.ts</button>
+      <button class="tablinks1" (click)="openPage1( 'app.component.html1')">app.component.html</button>
     </div>
 
     <!-- Tab content -->
-    <div id="app.component.ts" class="tabcontent2">
+    <div id="app.component.ts1" class="tabcontent1">
       <p><span class="hljs-js">const</span> sequence = [
         <p>&#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------RR', id: 1, label: 'Human'},</p>
       <p>&#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------RR', id: 2, label: 'Mice'}];</p>
       sequenceviewer.<span class="hljs-js">draw</span>(sequence);
     </div>
 
-    <div id="app.component.html" class="tabcontent2">
+    <div id="app.component.html1" class="tabcontent1">
+      <span class="hljs-html">&lt;div</span> id<span class="hljs-id">="sqv"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
+    </div>
+
+
+
+  </div>
+
+
+  <!-------------------------------------  REGIONS  EXAMPLE ---------------------------------------->
+
+  <h2 class="snippet-title" id="simple-slider">Regions example<a fragment="simple-slider"><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h2>
+
+  <div class="card">
+    <div class="sqvContainer"><div id="sqv1"></div></div>
+
+    <div class="tab">
+      <button class="tablinks2" (click)="openPage2( 'app.component.ts2')" id="defaultOpen2">app.component.ts</button>
+      <button class="tablinks2" (click)="openPage2( 'app.component.html2')">app.component.html</button>
+    </div>
+
+    <!-- Tab content -->
+    <div id="app.component.ts2" class="tabcontent2">
+      <p><span class="hljs-js">const</span> sequence = [
+      <p>&#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------RR', id: 1, label: 'Human'},</p>
+      <p>&#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------RR', id: 2, label: 'Mice'}];</p>
+      sequenceviewer.<span class="hljs-js">draw</span>(sequence);
+    </div>
+
+    <div id="app.component.html2" class="tabcontent2">
       <span class="hljs-html">&lt;div</span> id<span class="hljs-id">="sqv"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
     </div>
 

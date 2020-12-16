@@ -121,13 +121,13 @@ h3 {
   border-radius: .25rem;
 }
 
-.tab2 {
+ .tab {
   overflow: hidden;
   background-color: #f1f1f1;
 }
 
 /* Style the buttons that are used to open the tab content */
-.tab2 button {
+.tab button {
   background-color: inherit;
   float: left;
   border: none;
@@ -148,13 +148,13 @@ h3 {
 }
 
 /* Style the tab content */
-.tabcontent2 {
+.tabcontent1, .tabcontent2 {
   display: none;
   padding: 6px 12px;
   border: 1px solid #cccc;
   border-top: none;
 }
- .tablinks2 {
+ .tablinks1, .tablinks2 {
    border: 1px solid #ccc;
  }
 
