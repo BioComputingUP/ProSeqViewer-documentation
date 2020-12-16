@@ -123,7 +123,6 @@ h3 {
 
 .tab2 {
   overflow: hidden;
-  border: 1px solid #ccc;
   background-color: #f1f1f1;
 }
 
@@ -152,12 +151,16 @@ h3 {
 .tabcontent2 {
   display: none;
   padding: 6px 12px;
-  border: 1px solid;
+  border: 1px solid #cccc;
   border-top: none;
 }
+ .tablinks2 {
+   border: 1px solid #ccc;
+ }
 
 .sqvContainer {
   background-color: white;
+  margin-bottom: 20px;
 }
 
 
@@ -168,7 +171,9 @@ pre  {
   font-size: 14px;
   background-color: rgba(0,0,0,.04);
   display: block;
+  overflow-x: auto;
 }
+
 code {
   margin: 0;
   font-size: 14px;
@@ -176,16 +181,7 @@ code {
   font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
   text-align: left;
   white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
   line-height: 1.5;
-  -moz-tab-size: 4;
-  tab-size: 4;
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
-  hyphens: none;
 }
 
 .hljs-keyword {
@@ -205,4 +201,25 @@ code {
 }
 .hljs-ang {
   color: purple;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.first {
+  border: 1px solid #dddddd;
+}
+
+td, th {
+  text-align: left;
+  padding: 8px;
+}
+
+.field0 {
+  background-color: #dddddd;
+}
+
+.field1 {
+
 }

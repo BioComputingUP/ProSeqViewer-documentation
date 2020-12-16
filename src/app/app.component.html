@@ -3,17 +3,17 @@
     <div><h1 class="display-4">Sequence Viewer Typescript</h1>
       <p _ngcontent-c1="" class="lead">Self-contained Typescript library for the visualization of (not only) biological sequence features: <a _ngcontent-c1="" href="https://github.com/mb925/sequence-viewer-typescript">sequence-viewer-typescript</a></p><a href="https://www.npmjs.com/package/sequence-viewer-typescript"><span id="npm">npm package </span><span id="version">1.0.15</span></a></div></div></div></div></div>
 
-<button class="tablink" (click)="openPage('Demos')" >Demos</button>
-<button class="tablink" (click)="openPage('API')" id="defaultOpen">API  Documentation</button>
+<button class="tablink" (click)="openPage('Demos')" id="defaultOpen" >Demos</button>
+<button class="tablink" (click)="openPage('API')" >API  Documentation</button>
+
+<!------------------------------------- DEMO ---------------------------------------->
 
 <div id="Demos" class="tabcontent">
-  <h2 class="snippet-title" id="simple-slider">Simple <a fragment="simple-slider" routerlink="./" href="/ngx-slider/demos#simple-slider"><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h2>
 
-  <div class="snippet-card card">
-    <div class="sqvContainer">
-      <div id="sqv0"></div>
+  <h2 class="snippet-title" id="simple-slider">Simple example<a fragment="simple-slider"><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h2>
 
-    </div>
+  <div class="card">
+    <div class="sqvContainer"><div id="sqv0"></div></div>
 
     <div class="tab2">
       <button class="tablinks2" (click)="openPage2( 'app.component.ts')" id="defaultOpen2">app.component.ts</button>
@@ -22,13 +22,14 @@
 
     <!-- Tab content -->
     <div id="app.component.ts" class="tabcontent2">
-      <h3>option settings</h3>
-      <p>here are the settings.</p>
+      <p><span class="hljs-js">const</span> sequence = [
+        <p>&#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------RR', id: 1, label: 'Human'},</p>
+      <p>&#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------RR', id: 2, label: 'Mice'}];</p>
+      sequenceviewer.<span class="hljs-js">draw</span>(sequence);
     </div>
 
     <div id="app.component.html" class="tabcontent2">
-      <h3>html content</h3>
-      <p>here is html content</p>
+      <span class="hljs-html">&lt;div</span> id<span class="hljs-id">="sqv"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
     </div>
 
 
@@ -44,15 +45,16 @@
   <h2>API Documentation</h2>
   <div class="snippet-card card">
     <div>
-      <h2>Installation</h2>
+      <h2>Installation Guide</h2>
 
+      <p>The sequence-viewer-typescript package is written in pure typescript and does not have any dependencies. This guide focus on how to install the package in an Angular app.</p>
       <h3><strong>1. Install the library using npm</strong></h3>
       <pre><code>npm i sequence-viewer-typescript</code></pre>
 
-      <h3><strong>2. Import the sequence viewer in javascript or your angular component </strong></h3>
+      <h3><strong>2. Import the sequence viewer in your angular component </strong></h3>
       <pre><code><span class="hljs-keyword">import</span> &#123; SequenceViewer &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'sequence-viewer-typescript/dist'</span>;</code></pre>
 
-      <h3><strong>3. Only for Angular projects: load the sequence viewer stylesheet in your angular.json "styles" </strong></h3>
+      <h3><strong>3. Load the sequence viewer stylesheet in your angular.json "styles" </strong></h3>
       <pre><code><span class="hljs-ang">styles:</span> ["./node_modules/sequence-viewer-typescript/dist/assets/sqv.scss"]</code></pre>
 
 
@@ -70,6 +72,100 @@
       <h3><strong> 7. Execute the function to draw the sequence viewer on the page </strong></h3>
       <pre><code>sequenceviewer.<span class="hljs-js">draw</span>(sequence);</code></pre>
       <h2>Available parameters</h2>
+
+      <table>
+        <tr class="first">
+          <th>Field 0</th>
+          <th>Field 1</th>
+          <th>Type</th>
+          <th>Example</th>
+          <th>Description</th>
+        </tr>
+        <tr class="field0">
+          <th>Sequences</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr class="field1">
+          <td></td>
+          <td>sequence</td>
+          <td>string</td>
+          <td>LYRLELERECAMT</td>
+          <td>Sequence of characters</td>
+        </tr>
+        <tr class="field1">
+          <td></td>
+          <td>id</td>
+          <td>integer</td>
+          <td>1</td>
+          <td>Identifier of the sequence</td>
+        </tr>
+        <tr class="field1">
+          <td></td>
+          <td>label</td>
+          <td>string</td>
+          <td>1xvz_1_30.pdb</td>
+          <td>Lateral label</td>
+        </tr>
+        <tr class="field1">
+          <td></td>
+          <td>colorScheme</td>
+          <td>string</td>
+          <td>clustal, gradient, binary, blosum62</td>
+          <td>Predefined color palette</td>
+        </tr>
+        <tr class="field1">
+          <td></td>
+          <td>labelTooltip</td>
+          <td>string</td>
+          <td>&lt;span class="tooltipText" style="background-color: blue;"&gt;Tooltip text&lt;/span&gt;</td>
+          <td>Stylable tooltip</td>
+        </tr>
+        <tr class="field1">
+          <td></td>
+          <td>startIndex</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr class="field0">
+          <th>Regions</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr class="field0">
+          <th>Patterns</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr class="field0">
+          <th>Icons</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr class="field0">
+          <th>Options</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr class="field0">
+          <th>iconsHtml</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </table>
     </div>
   </div>
 </div>

@@ -45,8 +45,8 @@ export class AppComponent implements OnInit {
 
     const s0 = new SequenceViewer('sqv0');
     const seqs = [
-      {sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------RR', id: 11, label: 'pip5human', startIndex: 30},
-      {sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------RR', id: 11, label: 'pip5human', startIndex: 30}];
+      {sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------RR', id: 1, label: 'Human'},
+      {sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------RR', id: 2, label: 'Mice'}];
     s0.draw(seqs);
   }
 
