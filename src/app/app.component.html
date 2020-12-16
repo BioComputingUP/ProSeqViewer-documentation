@@ -3,8 +3,8 @@
     <div><h1 class="display-4">Sequence Viewer Typescript</h1>
       <p _ngcontent-c1="" class="lead">Self-contained Typescript library for the visualization of (not only) biological sequence features: <a _ngcontent-c1="" href="https://github.com/mb925/sequence-viewer-typescript">sequence-viewer-typescript</a></p><a href="https://www.npmjs.com/package/sequence-viewer-typescript"><span id="npm">npm package </span><span id="version">1.0.15</span></a></div></div></div></div></div>
 
-<button class="tablink" (click)="openPage('Demos')" id="defaultOpen">Demos</button>
-<button class="tablink" (click)="openPage('API')">API  Documentation</button>
+<button class="tablink" (click)="openPage('Demos')" >Demos</button>
+<button class="tablink" (click)="openPage('API')" id="defaultOpen">API  Documentation</button>
 
 <div id="Demos" class="tabcontent">
   <h2 class="snippet-title" id="simple-slider">Simple <a fragment="simple-slider" routerlink="./" href="/ngx-slider/demos#simple-slider"><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h2>
@@ -44,41 +44,32 @@
   <h2>API Documentation</h2>
   <div class="snippet-card card">
     <div>
-      <h2>Getting started</h2>
+      <h2>Installation</h2>
 
-      <strong> 1 Install the library using npm </strong>
-      <p> npm install sequence-viewer-typescript<p></p>
+      <h3><strong>1. Install the library using npm</strong></h3>
+      <pre><code>npm i sequence-viewer-typescript</code></pre>
 
-<p>
-      2 Import the sequence viewer in javascript or your angular component
-      ```typescript
-      import ---SequenceViewer---- from 'sequence-viewer-typescript/dist';
-      ```
+      <h3><strong>2. Import the sequence viewer in javascript or your angular component </strong></h3>
+      <pre><code><span class="hljs-keyword">import</span> &#123; SequenceViewer &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'sequence-viewer-typescript/dist'</span>;</code></pre>
 
-      3 Optional: if you are installing the feature viewer in an Angular 2+ based App, you may
-      need to load the feature viewer stylesheet in your angular.json "styles" to
-      ensure the correct prioritization of stylesheets.
-      ```json
-      styles: [
-      "./node_modules/sequence-viewer-typescript/dist/assets/sqv.scss"
-      ]
-      ```
+      <h3><strong>3. Only for Angular projects: load the sequence viewer stylesheet in your angular.json "styles" </strong></h3>
+      <pre><code><span class="hljs-ang">styles:</span> ["./node_modules/sequence-viewer-typescript/dist/assets/sqv.scss"]</code></pre>
 
-      4 Place the sequence viewer in your html
-      ```html
-<!--      <div id="sqv"></div>-->
-      ```
 
-      5 Create an instance of the sequence viewer in javascript and style it
-      ```typescript
-      this.sequenceviewer = new SequenceViewer('sqv');
-      ```
+      <h3><strong> 4. Place the sequence viewer in your html </strong></h3>
+      <pre><code><span class="hljs-html">&lt;div</span> id<span class="hljs-id">="sqv"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></code></pre>
 
-      6 Add inputs -- here an example with minimum required input, for the full list of input settings options check github documentation --.
-      this.sequences = [-----sequence: 'DFRLE--F----------------]
-      7 Execute the function to draw the sequence viewer on the page
-      this.sequenceviewer.draw(this.sequences);
-      </p>
+
+      <h3><strong> 5. Create an instance of the sequence viewer in javascript and style it</strong></h3>
+      <pre><code><p><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span> SequenceViewer(<span class="hljs-id">'sqv'</span>);</p></code></pre>
+
+      <h3><strong> 6. Add inputs</strong></h3>
+      <p>Here an example with minimum required input, for the full list of input settings options check github documentation</p>
+      <pre><code><p><span class="hljs-js">const</span> sequence = [&#123;sequence: 'DFRLE--F-DFRLEDFRLE----&#125;]</p></code></pre>
+
+      <h3><strong> 7. Execute the function to draw the sequence viewer on the page </strong></h3>
+      <pre><code>sequenceviewer.<span class="hljs-js">draw</span>(sequence);</code></pre>
+      <h2>Available parameters</h2>
     </div>
   </div>
 </div>

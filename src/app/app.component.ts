@@ -9,9 +9,6 @@ import {SequenceViewer} from 'sequence-viewer-typescript/dist';
 export class AppComponent implements OnInit {
   title = 'sequence-viewer-documentation';
 
-  public s0;
-  public seqs;
-
   public openPage(pageName) {
     let i;
     let tabcontent;
@@ -46,11 +43,11 @@ export class AppComponent implements OnInit {
     document.getElementById('defaultOpen').click();
     document.getElementById('defaultOpen2').click();
 
-    this.s0 = new SequenceViewer('sqv0');
-    this.seqs = [
+    const s0 = new SequenceViewer('sqv0');
+    const seqs = [
       {sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------RR', id: 11, label: 'pip5human', startIndex: 30},
       {sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------RR', id: 11, label: 'pip5human', startIndex: 30}];
-    this.s0.draw(this.seqs);
+    s0.draw(seqs);
   }
 
 
