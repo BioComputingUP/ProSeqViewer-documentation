@@ -86,8 +86,14 @@ p {
 /* Style the tab content (and add height:100% for full page content) */
 .tabcontent {
   display: none;
-  padding: 100px  100px 100px 100px;
+  padding: 50px  100px 100px 100px;
   height: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .tabcontent {
+    padding: 30px  30px 30px 30px;
+  }
 }
 
 
@@ -107,54 +113,45 @@ h3 {
   color: inherit;
 }
 
-.card {
-  position: relative;
-  padding: 20px;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-width: 0;
-  word-wrap: break-word;
-  background-clip: border-box;
-  border: 1px solid rgba(0,0,0,.125);
-  border-radius: .25rem;
-}
-
  .tab {
   overflow: hidden;
-  background-color: #f1f1f1;
+  background-color: #F5F5F5;
 }
 
 /* Style the buttons that are used to open the tab content */
 .tab button {
-  background-color: inherit;
   float: left;
   border: none;
   outline: none;
   cursor: pointer;
   padding: 14px 16px;
   transition: 0.3s;
+  border-left: 1px solid #cccc;
+  border-right: 1px solid #cccc;
+  border-top: 1px solid #cccc;
+  background-color: #f1f1f1;
 }
 
 /* Change background color of buttons on hover */
-.tab2 button:hover {
-  background-color: #ddd;
+.tab button:hover {
+  background-color: #E0E0E0;
 }
 
 /* Create an active/current tablink class */
-.tab2 button.active {
+.tab button.active {
   background-color: #ccc;
 }
 
 /* Style the tab content */
-.tabcontent1, .tabcontent2 {
+.tabcontent1, .tabcontent2, .tabcontent3 {
+  font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
   display: none;
   padding: 6px 12px;
   border: 1px solid #cccc;
   border-top: none;
+  background-color: #f1f1f1;
 }
- .tablinks1, .tablinks2 {
+ .tablinks1, .tablinks2, .tablinks3 {
    border: 1px solid #ccc;
  }
 
@@ -162,7 +159,6 @@ h3 {
   background-color: white;
   margin-bottom: 20px;
 }
-
 
 pre  {
   padding: 10px;
