@@ -65,6 +65,18 @@ p {
   padding: 5px;
   border-radius: 5px;
 }
+.txt {
+  color: #E36397;
+}
+
+li {
+  border-top: 0.5px solid #eee;
+  border-bottom: 0.5px solid #eee;
+}
+
+ul {
+  list-style-type: none;
+}
 
 /* Style tab links */
 .tablink {
@@ -155,9 +167,21 @@ h3 {
    border: 1px solid #ccc;
  }
 
-.sqvContainer {
-  background-color: white;
+.sqvDemo {
+ text-align: center;
+  margin-top: 20px;
   margin-bottom: 20px;
+  border: 1px solid #dddddd;
+  padding: 20px;
+  box-shadow: 2.5px 5px #dddddd;
+}
+
+.sqvDemoGeneral {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #dddddd;
+  padding: 20px;
 }
 
 pre  {

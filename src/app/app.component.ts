@@ -31,13 +31,38 @@ export class AppComponent implements OnInit {
     document.getElementById('defaultOpen3').click();
     document.getElementById('defaultOpen4').click();
 
+    // GENERAL EXAMPLE
+    const s0 = new SequenceViewer('sqv0');
+    const seqs0 = [
+      {sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 1, label: 'Homo Sapiens'},
+      {sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 2, label: 'Bos Taurus', colorScheme: 'clustal'},
+      {sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 3, label: 'Mus musculus'},
+      {sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 4, label: 'Danio Rerio'},
+      {sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 5, label: 'Gallus gallus'}
+    ];
+    const ico3 = [
+      {sequenceId: 1, start: 11, end: 21, icon: 'turn'},
+      {sequenceId: 1, start: 21, end: 30, icon: 'helix'},
+      {sequenceId: 1, start: 31, end: 40, icon: 'lollipop'},
+      {sequenceId: 1, start: 41, end: 41, icon: 'arrowLeft'},
+      {sequenceId: 1, start: 42, end: 50, icon: 'strand'},
+      {sequenceId: 1, start: 48, end: 50, icon: 'noSecondary'}
+    ];
+
+    const opt = { topIndexes: true};
+    const reg = [
+      {sequenceId: 2, start: 1, end: 10, backgroundColor: '#D72638', color: '#FFFFFF'}
+    ];
+    s0.draw(seqs0, reg, ico3, opt);
+
+
     // SIMPLE EXAMPLE
     const s1 = new SequenceViewer('sqv1');
     const seqs = [
       {sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 1, label: 'Homo Sapiens'},
       {sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 2, label: 'Bos Taurus'},
       {sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 3, label: 'Mus musculus'}
-      ];
+    ];
     s1.draw(seqs);
 
     // REGIONS EXAMPLE
@@ -55,14 +80,6 @@ export class AppComponent implements OnInit {
 
     // icons EXAMPLE
     const s3 = new SequenceViewer('sqv3');
-    const ico3 = [
-      {sequenceId: 1, start: 11, end: 21, icon: 'turn'},
-      {sequenceId: 1, start: 21, end: 30, icon: 'helix'},
-      {sequenceId: 1, start: 31, end: 40, icon: 'lollipop'},
-      {sequenceId: 1, start: 41, end: 41, icon: 'arrowLeft'},
-      {sequenceId: 1, start: 42, end: 50, icon: 'strand'},
-      {sequenceId: 1, start: 48, end: 50, icon: 'noSecondary'}
-    ];
     s3.draw(seqs, ico3);
 
     // patterns EXAMPLE

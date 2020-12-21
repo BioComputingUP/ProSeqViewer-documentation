@@ -2,21 +2,33 @@
   <div class="container"><div class="d-flex flex-row"><div class="mr-3">
     <div><h1 class="display-4">Sequence Viewer Typescript</h1>
       <p _ngcontent-c1="" class="lead">Self-contained Typescript library for the visualization of (not only) biological sequence features: <a _ngcontent-c1="" href="https://github.com/mb925/sequence-viewer-typescript">sequence-viewer-typescript</a></p><a href="https://www.npmjs.com/package/sequence-viewer-typescript"><span id="npm">npm package </span><span id="version">1.0.15</span></a></div></div></div></div></div>
-
+<div class="sqvDemoGeneral">
+  <div id="sqv0"></div>
+</div>
 <button class="tablink" (click)="openPage('Demos', '')" id="defaultOpen" >Demos</button>
 <button class="tablink" (click)="openPage('API', '')" >API  Documentation</button>
 
 <!------------------------------------- DEMO ---------------------------------------->
 
-<!-------------------------------------  TODO:  EXAMPLE WITH ALL FEATURES ---------------------------------------->
-
-
 <div id="Demos" class="tabcontent">
   <!------------------------------------- Simple example ---------------------------------------->
-  <h2 class="snippet-title">Simple example<a fragment="simple-slider"><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h2>
 
 
-    <div class="sqvContainer"><div id="sqv1"></div></div>
+  <div>
+    <ul style="width: 50%">
+      <li><h2 class="txt">Tutorial</h2><li>
+      <li><a href="#simple" target="_self">Simple example</a></li>
+      <li><a href="#regions" target="_self">Regions example</a></li>
+      <li><a href="#icons" target="_self">Icons example</a></li>
+      <li><a href="#patterns" target="_self">Patterns example</a></li>
+    </ul>
+  </div>
+
+
+  <h2 id="simple" class="snippet-title">Simple example<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h2>
+
+
+    <div class="sqvDemo"><div id="sqv1"></div></div>
 
     <div class="tab">
       <button class="tl tablinks1" (click)="openPage( 'app.component.ts', 1)" id="defaultOpen1">app.component.ts</button>
@@ -43,8 +55,8 @@
 
   <!-------------------------------------  REGIONS  EXAMPLE ---------------------------------------->
 
-  <h2 class="snippet-title">Regions example<a fragment="simple-slider"><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h2>
-    <div class="sqvContainer"><div id="sqv2"></div></div>
+  <h2 id="regions" class="snippet-title">Regions example<a fragment="simple-slider"><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h2>
+    <div class="sqvDemo"><div id="sqv2"></div></div>
 
     <div class="tab">
       <button class="tl tablinks2" (click)="openPage( 'app.component.ts', 2)" id="defaultOpen2">app.component.ts</button>
@@ -80,9 +92,9 @@
 
   <!-------------------------------------  ICONS  EXAMPLE ---------------------------------------->
 
-  <h2 class="snippet-title">Icons example<a fragment="simple-slider"><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h2>
+  <h2 id="icons" class="snippet-title">Icons example<a fragment="simple-slider"><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h2>
 
-  <div class="sqvContainer"><div id="sqv3"></div></div>
+  <div class="sqvDemo"><div id="sqv3"></div></div>
 
   <div class="tab">
     <button class="tl tablinks3" (click)="openPage( 'app.component.ts', 3)" id="defaultOpen3">app.component.ts</button>
@@ -117,9 +129,9 @@
 
   <!-------------------------------------  PATTERNS  EXAMPLE ---------------------------------------->
 
-  <h2 class="snippet-title">Patterns example<a fragment="simple-slider"><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h2>
+  <h2 id="patterns" class="snippet-title">Patterns example<a fragment="simple-slider"><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h2>
 
-  <div class="sqvContainer"><div id="sqv4"></div></div>
+  <div class="sqvDemo"><div id="sqv4"></div></div>
 
   <div class="tab">
     <button class="tl tablinks4" (click)="openPage( 'app.component.ts', 4)" id="defaultOpen4">app.component.ts</button>
@@ -162,7 +174,6 @@
 <!------------------------------------- API ---------------------------------------->
 
 <div id="API" class="tabcontent">
-  <h2>API Documentation</h2>
   <div class="snippet-card card">
     <div>
       <h2>Installation Guide</h2>
