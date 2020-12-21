@@ -8,6 +8,9 @@
 
 <!------------------------------------- DEMO ---------------------------------------->
 
+<!-------------------------------------  TODO:  EXAMPLE WITH ALL FEATURES ---------------------------------------->
+
+
 <div id="Demos" class="tabcontent">
   <!------------------------------------- Simple example ---------------------------------------->
   <h2 class="snippet-title">Simple example<a fragment="simple-slider"><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h2>
@@ -16,43 +19,63 @@
     <div class="sqvContainer"><div id="sqv1"></div></div>
 
     <div class="tab">
-      <button class="tablinks1" (click)="openPage( 'app.component.ts', 1)" id="defaultOpen1">app.component.ts</button>
-      <button class="tablinks1" (click)="openPage( 'app.component.html', 1)">app.component.html</button>
+      <button class="tl tablinks1" (click)="openPage( 'app.component.ts', 1)" id="defaultOpen1">app.component.ts</button>
+      <button class="tl tablinks1" (click)="openPage( 'app.component.html', 1)">app.component.html</button>
     </div>
 
     <!-- Tab content -->
     <div id="app.component.ts1" class="tabcontent1">
-      <p><span class="hljs-js">const</span> sequence = [
-        <p>&#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------RR', id: 1, label: 'Human'},</p>
-      <p>&#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------RR', id: 2, label: 'Mice'}];</p>
-      sequenceviewer.<span class="hljs-js">draw</span>(sequence);
+      <pre class="prettyprint prettyprinted" style=""><code class="language-java">
+        <span><span class="hljs-js">const</span> sequences = [ </span>
+        <span>      &#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 1, label: 'Homo Sapiens'},</span>
+        <span>      &#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 2, label: 'Bos Taurus'},</span>
+        <span>      &#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 2, label: 'Mus musculus'}</span>
+        <span>      ];</span>
+        <span>sequenceviewer.<span class="hljs-js">draw</span>(sequences);</span>
+      </code></pre>
     </div>
 
-    <div id="app.component.html1" class="tabcontent1">
+    <div id="app.component.html1" class="tb tabcontent1">
+       <pre class="prettyprint prettyprinted" style=""><code class="language-html">
       <span class="hljs-html">&lt;div</span> id<span class="hljs-id">="sqv"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
+       </code></pre>
     </div>
 
   <!-------------------------------------  REGIONS  EXAMPLE ---------------------------------------->
 
   <h2 class="snippet-title">Regions example<a fragment="simple-slider"><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h2>
-
     <div class="sqvContainer"><div id="sqv2"></div></div>
 
     <div class="tab">
-      <button class="tablinks2" (click)="openPage( 'app.component.ts', 2)" id="defaultOpen2">app.component.ts</button>
-      <button class="tablinks2" (click)="openPage( 'app.component.html', 2)">app.component.html</button>
+      <button class="tl tablinks2" (click)="openPage( 'app.component.ts', 2)" id="defaultOpen2">app.component.ts</button>
+      <button class="tl tablinks2" (click)="openPage( 'app.component.html', 2)">app.component.html</button>
     </div>
 
     <!-- Tab content -->
     <div id="app.component.ts2" class="tabcontent2">
-      <p><span class="hljs-js">const</span> sequence = [
-      <p>&#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------RR', id: 1, label: 'Human'},</p>
-      <p>&#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------RR', id: 2, label: 'Mice'}];</p>
-      sequenceviewer.<span class="hljs-js">draw</span>(sequence);
+        <pre class="prettyprint prettyprinted" style=""><code class="language-java">
+      <span><span class="hljs-js">const</span> sequences = [ </span>
+      <span>      &#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 1, label: 'Homo Sapiens'},</span>
+      <span>      &#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 2, label: 'Bos Taurus'},</span>
+      <span>      &#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 2, label: 'Mus musculus'}</span>
+      <span>      ];</span>
+      <span><span class="hljs-js">const</span> regions = [ </span>
+      <span>      &#123;sequenceId: 2, start: 1, end: 10, backgroundColor: '#D72638', color: '#FFFFFF'},</span>
+      <span>      &#123;sequenceId: 2, start: 11, end: 20, backgroundColor: '#FF570A', color: '#FFFFFF'},</span>
+      <span>      &#123;sequenceId: 2, start: 21, end: 30, backgroundColor: '#FFBC42', color: '#FFFFFF'},</span>
+      <span>      &#123;sequenceId: 2, start: 31, end: 40, backgroundColor: '#44885B', color: '#FFFFFF'},</span>
+      <span>      &#123;sequenceId: 2, start: 41, end: 50, backgroundColor: '#393C93', color: '#FFFFFF'},</span>
+      <span>      &#123;sequenceId: 2, start: 51, end: 60, backgroundColor: '#7E1173', color: '#FFFFFF'}</span>
+      <span>      ];</span>
+      sequenceviewer.<span class="hljs-js">draw</span>(sequences, regions);
+       </code></pre>
     </div>
 
-    <div id="app.component.html2" class="tabcontent2">
-      <span class="hljs-html">&lt;div</span> id<span class="hljs-id">="sqv"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
+
+    <div id="app.component.html2" class="tb tabcontent2">
+       <pre class="prettyprint prettyprinted" style=""><code class="language-html">
+         <span class="hljs-html">&lt;div</span> id<span class="hljs-id">="sqv"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
+       </code></pre>
     </div>
 
   <!-------------------------------------  ICONS  EXAMPLE ---------------------------------------->
@@ -62,21 +85,72 @@
   <div class="sqvContainer"><div id="sqv3"></div></div>
 
   <div class="tab">
-    <button class="tablinks3" (click)="openPage( 'app.component.ts', 3)" id="defaultOpen3">app.component.ts</button>
-    <button class="tablinks3" (click)="openPage( 'app.component.html', 3)">app.component.html</button>
+    <button class="tl tablinks3" (click)="openPage( 'app.component.ts', 3)" id="defaultOpen3">app.component.ts</button>
+    <button class="tl tablinks3" (click)="openPage( 'app.component.html', 3)">app.component.html</button>
   </div>
 
   <!-- Tab content -->
   <div id="app.component.ts3" class="tabcontent3">
-    <p><span class="hljs-js">const</span> sequence = [
-    <p>&#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------RR', id: 1, label: 'Human'},</p>
-    <p>&#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------RR', id: 2, label: 'Mice'}];</p>
-    sequenceviewer.<span class="hljs-js">draw</span>(sequence);
+       <pre class="prettyprint prettyprinted" style=""><code class="language-java">
+    <span><span class="hljs-js">const</span> sequences = [ </span>
+    <span>      &#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 1, label: 'Homo Sapiens'},</span>
+    <span>      &#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 2, label: 'Bos Taurus'},</span>
+    <span>      &#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 2, label: 'Mus musculus'}</span>
+    <span>      ];</span>
+    <span><span class="hljs-js">const</span> icons = [ </span>
+    <span>      &#123;sequenceId: 1, start: 11, end: 21, icon: 'turn'},</span>
+    <span>      &#123;sequenceId: 1, start: 21, end: 30, icon: 'helix'},</span>
+    <span>      &#123;sequenceId: 1, start: 31, end: 40, icon: 'lollipop'},</span>
+    <span>      &#123;sequenceId: 1, start: 41, end: 41, icon: 'arrowLeft'},</span>
+    <span>      &#123;sequenceId: 1, start: 42, end: 50, icon: 'strand'},</span>
+    <span>      &#123;sequenceId: 1, start: 48, end: 50, icon: 'noSecondary'},</span>
+    <span>      ];</span>
+    sequenceviewer.<span class="hljs-js">draw</span>(sequences, icons);
+          </code></pre>
   </div>
 
-  <div id="app.component.html3" class="tabcontent3">
+  <div id="app.component.html3" class="tb tabcontent3">
+           <pre class="prettyprint prettyprinted" style=""><code class="language-html">
     <span class="hljs-html">&lt;div</span> id<span class="hljs-id">="sqv"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
+          </code></pre>
   </div>
+
+  <!-------------------------------------  PATTERNS  EXAMPLE ---------------------------------------->
+
+  <h2 class="snippet-title">Patterns example<a fragment="simple-slider"><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h2>
+
+  <div class="sqvContainer"><div id="sqv4"></div></div>
+
+  <div class="tab">
+    <button class="tl tablinks4" (click)="openPage( 'app.component.ts', 4)" id="defaultOpen4">app.component.ts</button>
+    <button class="tl tablinks4" (click)="openPage( 'app.component.html', 4)">app.component.html</button>
+  </div>
+
+  <!-- Tab content -->
+  <div id="app.component.ts4" class="tabcontent4">
+       <pre class="prettyprint prettyprinted" style=""><code class="language-java">
+    <span><span class="hljs-js">const</span> sequences = [ </span>
+    <span>      &#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 1, label: 'Homo Sapiens'},</span>
+    <span>      &#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 2, label: 'Bos Taurus'},</span>
+    <span>      &#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 2, label: 'Mus musculus'}</span>
+    <span>      ];</span>
+    <span><span class="hljs-js">const</span> patterns = [ </span>
+    <span>      &#123;sequenceId: 1, pattern: /LYR/g, backgroundColor: '#D72638'},</span>
+    <span>      &#123;sequenceId: 2, pattern: /LE/g, backgroundColor: '#FF570A'},</span>
+    <span>      &#123;sequenceId: 3, pattern: /AA/g, backgroundColor: '#FFBC42'}</span>
+    <span>      ];</span>
+    sequenceviewer.<span class="hljs-js">draw</span>(sequences, patterns);
+          </code></pre>
+  </div>
+
+  <div id="app.component.html4" class="tb tabcontent4">
+           <pre class="prettyprint prettyprinted" style=""><code class="language-html">
+    <span class="hljs-html">&lt;div</span> id<span class="hljs-id">="sqv"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
+            </code></pre>
+  </div>
+
+  <!-------------------------------------  INDEXES  EXAMPLE ---------------------------------------->
+  <!-------------------------------------  COLORSCHEME  EXAMPLE ---------------------------------------->
 
 
 

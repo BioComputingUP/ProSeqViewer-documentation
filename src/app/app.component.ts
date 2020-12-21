@@ -21,7 +21,6 @@ export class AppComponent implements OnInit {
     for (i = 0; i < tablinks.length; i++) {
       tablinks[i].style.backgroundColor = '';
     }
-    console.log(pageName)
     document.getElementById(pageName + n).style.display = 'block';
   }
 
@@ -30,26 +29,33 @@ export class AppComponent implements OnInit {
     document.getElementById('defaultOpen1').click();
     document.getElementById('defaultOpen2').click();
     document.getElementById('defaultOpen3').click();
+    document.getElementById('defaultOpen4').click();
 
     // SIMPLE EXAMPLE
     const s1 = new SequenceViewer('sqv1');
     const seqs = [
-      {sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------RR', id: 1, label: 'Human'},
-      {sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------RR', id: 2, label: 'Mice'}];
+      {sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 1, label: 'Homo Sapiens'},
+      {sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 2, label: 'Bos Taurus'},
+      {sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 3, label: 'Mus musculus'}
+      ];
     s1.draw(seqs);
 
     // REGIONS EXAMPLE
     const s2 = new SequenceViewer('sqv2');
-    const reg1 = [{sequenceId: 1, start: 1, end: 10, backgroundImage: 'linear-gradient(red, yellow)'},
-      {sequenceId: 1, start: 31, end: 40, backgroundColor: '#FF715B', color: '#F7F06D'},
-      {sequenceId: 1, start: 41, end: 50, backgroundColor: '(255, 173, 10)'}
+    const reg1 = [
+      {sequenceId: 2, start: 1, end: 10, backgroundColor: '#D72638', color: '#FFFFFF'},
+      {sequenceId: 2, start: 11, end: 20, backgroundColor: '#FF570A', color: '#FFFFFF'},
+      {sequenceId: 2, start: 21, end: 30, backgroundColor: '#FFBC42', color: '#FFFFFF'},
+      {sequenceId: 2, start: 31, end: 40, backgroundColor: '#44885B', color: '#FFFFFF'},
+      {sequenceId: 2, start: 41, end: 50, backgroundColor: '#393C93', color: '#FFFFFF'},
+      {sequenceId: 2, start: 51, end: 60, backgroundColor: '#7E1173', color: '#FFFFFF'},
     ];
     s2.draw(seqs, reg1);
 
 
     // icons EXAMPLE
     const s3 = new SequenceViewer('sqv3');
-    const ico2 = [{sequenceId: 1, start: 1, end: 10 },
+    const ico3 = [
       {sequenceId: 1, start: 11, end: 21, icon: 'turn'},
       {sequenceId: 1, start: 21, end: 30, icon: 'helix'},
       {sequenceId: 1, start: 31, end: 40, icon: 'lollipop'},
@@ -57,7 +63,16 @@ export class AppComponent implements OnInit {
       {sequenceId: 1, start: 42, end: 50, icon: 'strand'},
       {sequenceId: 1, start: 48, end: 50, icon: 'noSecondary'}
     ];
-    s3.draw(seqs, ico2);
+    s3.draw(seqs, ico3);
+
+    // patterns EXAMPLE
+    const s4 = new SequenceViewer('sqv4');
+    const pat4 = [
+      {sequenceId: 1, pattern: /LYR/g, backgroundColor: '#D72638'},
+      {sequenceId: 2, pattern: /LE/g, backgroundColor: '#FF570A'},
+      {sequenceId: 3, pattern: /AA/g, backgroundColor: '#FFBC42'}
+    ];
+    s4.draw(seqs, pat4);
 
   }
 
