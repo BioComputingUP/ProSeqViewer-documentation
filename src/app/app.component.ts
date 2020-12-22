@@ -30,12 +30,14 @@ export class AppComponent implements OnInit {
     document.getElementById('defaultOpen2').click();
     document.getElementById('defaultOpen3').click();
     document.getElementById('defaultOpen4').click();
+    document.getElementById('defaultOpen5').click();
+    document.getElementById('defaultOpen6').click();
 
     // GENERAL EXAMPLE
     const s0 = new SequenceViewer('sqv0');
     const seqs0 = [
       {sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 1, label: 'Homo Sapiens'},
-      {sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 2, label: 'Bos Taurus', colorScheme: 'clustal'},
+      {sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 2, label: 'Bos Taurus'},
       {sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 3, label: 'Mus musculus'},
       {sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 4, label: 'Danio Rerio'},
       {sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 5, label: 'Gallus gallus'}
@@ -49,7 +51,7 @@ export class AppComponent implements OnInit {
       {sequenceId: 1, start: 48, end: 50, icon: 'noSecondary'}
     ];
 
-    const opt = { topIndexes: true};
+    const opt = { topIndexes: true, colorScheme: 'clustal'};
     const reg = [
       {sequenceId: 2, start: 1, end: 10, backgroundColor: '#D72638', color: '#FFFFFF'}
     ];
@@ -58,15 +60,21 @@ export class AppComponent implements OnInit {
 
     // SIMPLE EXAMPLE
     const s1 = new SequenceViewer('sqv1');
+
+    const seqs1 = [
+      {sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 1, label: 'Homo Sapiens'},
+      {sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 2, label: 'Bos Taurus', colorScheme: 'clustal'},
+      {sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 3, label: 'Mus musculus'}
+    ];
+    s1.draw(seqs1);
+
+    // REGIONS EXAMPLE
+    const s2 = new SequenceViewer('sqv2');
     const seqs = [
       {sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 1, label: 'Homo Sapiens'},
       {sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 2, label: 'Bos Taurus'},
       {sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 3, label: 'Mus musculus'}
     ];
-    s1.draw(seqs);
-
-    // REGIONS EXAMPLE
-    const s2 = new SequenceViewer('sqv2');
     const reg1 = [
       {sequenceId: 2, start: 1, end: 10, backgroundColor: '#D72638', color: '#FFFFFF'},
       {sequenceId: 2, start: 11, end: 20, backgroundColor: '#FF570A', color: '#FFFFFF'},
@@ -90,6 +98,19 @@ export class AppComponent implements OnInit {
       {sequenceId: 3, pattern: /AA/g, backgroundColor: '#FFBC42'}
     ];
     s4.draw(seqs, pat4);
+
+    // indexes EXAMPLE
+    const s5 = new SequenceViewer('sqv5');
+    const seqs5 = [
+      {sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 1, label: 'Homo Sapiens', startIndex: 2}
+    ];
+    const opt5 = { lateralIndexesGap: true};
+    s5.draw(seqs5, opt5);
+
+    // colorscheme EXAMPLE
+    const s6 = new SequenceViewer('sqv6');
+    const opt6 = { colorScheme: 'clustal'};
+    s6.draw(seqs, opt6);
 
   }
 

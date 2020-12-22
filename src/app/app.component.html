@@ -15,17 +15,22 @@
 
 
   <div>
-    <ul style="width: 50%">
-      <li><h2 class="txt">Tutorial</h2><li>
+    <ul>
+      <li><h2 class="txt">Tutorial</h2>
+        <p>The following are example demo, for a complete list of the available features please check the API Documentation.</p>
+      <li>
       <li><a href="#simple" target="_self">Simple example</a></li>
       <li><a href="#regions" target="_self">Regions example</a></li>
       <li><a href="#icons" target="_self">Icons example</a></li>
       <li><a href="#patterns" target="_self">Patterns example</a></li>
+      <li><a href="#lateralindexes" target="_self">Lateral indexes example</a></li>
+      <li><a href="#colorscheme" target="_self">Colorscheme example</a></li>
     </ul>
   </div>
 
 
   <h2 id="simple" class="snippet-title">Simple example<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h2>
+  <p>Set the sequences and their colorScheme.</p>
 
 
     <div class="sqvDemo"><div id="sqv1"></div></div>
@@ -40,7 +45,7 @@
       <pre class="prettyprint prettyprinted" style=""><code class="language-java">
         <span><span class="hljs-js">const</span> sequences = [ </span>
         <span>      &#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 1, label: 'Homo Sapiens'},</span>
-        <span>      &#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 2, label: 'Bos Taurus'},</span>
+        <span>      &#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 2, label: 'Bos Taurus',  colorScheme: 'clustal'},</span>
         <span>      &#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 2, label: 'Mus musculus'}</span>
         <span>      ];</span>
         <span>sequenceviewer.<span class="hljs-js">draw</span>(sequences);</span>
@@ -56,6 +61,7 @@
   <!-------------------------------------  REGIONS  EXAMPLE ---------------------------------------->
 
   <h2 id="regions" class="snippet-title">Regions example<a fragment="simple-slider"><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h2>
+    <p>Set the sequences and highlight them with customizable colors.</p>
     <div class="sqvDemo"><div id="sqv2"></div></div>
 
     <div class="tab">
@@ -93,6 +99,8 @@
   <!-------------------------------------  ICONS  EXAMPLE ---------------------------------------->
 
   <h2 id="icons" class="snippet-title">Icons example<a fragment="simple-slider"><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h2>
+  <p>Add icons on the top of the sequences.</p>
+  <p> You can use the icons already available or input customizable icons, for more information check the instructions in the API Documentation.</p>
 
   <div class="sqvDemo"><div id="sqv3"></div></div>
 
@@ -130,7 +138,7 @@
   <!-------------------------------------  PATTERNS  EXAMPLE ---------------------------------------->
 
   <h2 id="patterns" class="snippet-title">Patterns example<a fragment="simple-slider"><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h2>
-
+  <p>Match the sequences against a regular expression. </p>
   <div class="sqvDemo"><div id="sqv4"></div></div>
 
   <div class="tab">
@@ -161,10 +169,69 @@
             </code></pre>
   </div>
 
-  <!-------------------------------------  INDEXES  EXAMPLE ---------------------------------------->
+  <!-------------------------------------  Lateral INDEXES  EXAMPLE ---------------------------------------->
+
+  <h2 id="lateralindexes" class="snippet-title">Lateral indexes example<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h2>
+  <p>Set a starting index for the sequence/s. You can count gaps or not. (See API Documentation)</p>
+  <p>Here the start index is set at 2 and gaps are not counted.</p>
+  <p> The sequence-viewer width is set to 450px to show the indexes behaviour when the sequence is split in several lines.</p>
+  <div class="sqvDemo"><div id="sqv5" style="width: 450px"></div></div>
+
+  <div class="tab">
+    <button class="tl tablinks5" (click)="openPage( 'app.component.ts', 5)" id="defaultOpen5">app.component.ts</button>
+    <button class="tl tablinks5" (click)="openPage( 'app.component.html', 5)">app.component.html</button>
+  </div>
+
+  <!-- Tab content -->
+  <div id="app.component.ts5" class="tabcontent5">
+       <pre class="prettyprint prettyprinted" style=""><code class="language-java">
+    <span><span class="hljs-js">const</span> sequences = [ </span>
+    <span>      &#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 1, label: 'Homo Sapiens', startIndex: 2}</span>
+    <span>      ];</span>
+    <span><span class="hljs-js">const</span> options =  &#123;</span>
+    <span>      lateralIndexesGap: true</span>
+    <span>      };</span>
+    sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);
+          </code></pre>
+  </div>
+
+  <div id="app.component.html5" class="tb tabcontent5">
+           <pre class="prettyprint prettyprinted" style=""><code class="language-html">
+    <span class="hljs-html">&lt;div</span> id<span class="hljs-id">="sqv"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
+            </code></pre>
+  </div>
+
   <!-------------------------------------  COLORSCHEME  EXAMPLE ---------------------------------------->
 
+  <h2 id="colorscheme" class="snippet-title">Colorscheme example<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h2>
+  <p>Set a global colorScheme. Available global colorschemes are: clustal, blosum62.</p>
+  <div class="sqvDemo"><div id="sqv6" style="width: 450px"></div></div>
 
+  <div class="tab">
+    <button class="tl tablinks6" (click)="openPage( 'app.component.ts', 6)" id="defaultOpen6">app.component.ts</button>
+    <button class="tl tablinks6" (click)="openPage( 'app.component.html', 6)">app.component.html</button>
+  </div>
+
+  <!-- Tab content -->
+  <div id="app.component.ts6" class="tabcontent6">
+       <pre class="prettyprint prettyprinted" style=""><code class="language-java">
+    <span><span class="hljs-js">const</span> sequences = [ </span>
+    <span>      &#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 1, label: 'Homo Sapiens', startIndex: 2},</span>
+    <span>      &#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 2, label: 'Bos Taurus'},</span>
+    <span>      &#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 2, label: 'Mus musculus'}</span>
+    <span>      ];</span>
+    <span><span class="hljs-js">const</span> options =  &#123;</span>
+    <span>      colorScheme: 'clustal'</span>
+    <span>      };</span>
+    sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);
+          </code></pre>
+  </div>
+
+  <div id="app.component.html6" class="tb tabcontent6">
+           <pre class="prettyprint prettyprinted" style=""><code class="language-html">
+    <span class="hljs-html">&lt;div</span> id<span class="hljs-id">="sqv"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
+            </code></pre>
+  </div>
 
 </div>
 
