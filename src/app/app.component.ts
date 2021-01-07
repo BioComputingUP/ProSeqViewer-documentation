@@ -32,6 +32,8 @@ export class AppComponent implements OnInit {
     document.getElementById('defaultOpen4').click();
     document.getElementById('defaultOpen5').click();
     document.getElementById('defaultOpen6').click();
+    document.getElementById('defaultOpen7').click();
+    // document.getElementById('defaultOpen8').click();
 
     // GENERAL EXAMPLE
     const s0 = new SequenceViewer('sqv0');
@@ -60,18 +62,18 @@ export class AppComponent implements OnInit {
     const s1 = new SequenceViewer('sqv1');
 
     const seqs1 = [
-      {sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 1, label: 'Homo Sapiens'},
-      {sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 2, label: 'Bos Taurus', colorScheme: 'clustal'},
-      {sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 3, label: 'Mus musculus'}
+      {sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'Homo Sapiens'},
+      {sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'Bos Taurus', colorScheme: 'clustal'},
+      {sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 3, label: 'Mus musculus'}
     ];
     s1.draw(seqs1);
 
     // REGIONS EXAMPLE
     const s2 = new SequenceViewer('sqv2');
     const seqs = [
-      {sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 1, label: 'Homo Sapiens'},
-      {sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 2, label: 'Bos Taurus'},
-      {sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 3, label: 'Mus musculus'}
+      {sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'Homo Sapiens'},
+      {sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'Bos Taurus'},
+      {sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 3, label: 'Mus musculus'}
     ];
     const reg1 = [
       {sequenceId: 2, start: 1, end: 10, backgroundColor: '#D72638', color: '#FFFFFF'},
@@ -91,16 +93,18 @@ export class AppComponent implements OnInit {
     // patterns EXAMPLE
     const s4 = new SequenceViewer('sqv4');
     const pat4 = [
-      {sequenceId: 1, pattern: /LYR/g, backgroundColor: '#D72638'},
+      {sequenceId: 1, pattern: /MVL/g, backgroundColor: '#D72638'},
+      {sequenceId: 1, pattern: /GA/g, backgroundColor: '#D72638'},
       {sequenceId: 2, pattern: /LE/g, backgroundColor: '#FF570A'},
-      {sequenceId: 3, pattern: /AA/g, backgroundColor: '#FFBC42'}
+      {sequenceId: 2, pattern: /TT/g, backgroundColor: '#FF570A'},
+      {sequenceId: 3, pattern: /QA/g, backgroundColor: '#FFBC42'}
     ];
     s4.draw(seqs, pat4);
 
     // indexes EXAMPLE
     const s5 = new SequenceViewer('sqv5');
     const seqs5 = [
-      {sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 1, label: 'Homo Sapiens', startIndex: 2}
+      {sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'Homo Sapiens', startIndex: 2}
     ];
     const opt5 = { lateralIndexesGap: true};
     s5.draw(seqs5, opt5);
@@ -110,6 +114,25 @@ export class AppComponent implements OnInit {
     const opt6 = { colorScheme: 'clustal'};
     s6.draw(seqs, opt6);
 
+    // consensus EXAMPLE
+    const s7 = new SequenceViewer('sqv7');
+    const seqs7 = [
+      {sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN'},
+      {sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'sp|P01942|HBA_MOUSE'},
+      {sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 3, label: 'sp|P13786|HBAZ_CAPHI'}
+    ];
+    const opt7 = { consensusType: 'identity', consensusThreshold: 80};
+    s7.draw(seqs7, opt7);
+
+    // oneLineSetting EXAMPLE
+    const s8 = new SequenceViewer('sqv8');
+    const seqs8 = [
+      {sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN'},
+      {sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'sp|P01942|HBA_MOUSE'},
+      {sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 3, label: 'sp|P13786|HBAZ_CAPHI'}
+    ];
+    const opt8 = { oneLineSetting: true, oneLineWidth: '350px'};
+    s8.draw(seqs8, opt8);
   }
 
 

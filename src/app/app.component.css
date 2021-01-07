@@ -175,8 +175,8 @@ h3 {
   border: 1px solid #dddddd;
   padding: 20px;
   box-shadow: 2.5px 5px #dddddd;
+  overflow-x: auto;
 }
-
 .sqvDemoGeneral {
   display: flex;
   justify-content: center;

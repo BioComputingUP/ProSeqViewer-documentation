@@ -27,6 +27,9 @@
       <li><a href="#patterns" target="_self">Patterns example</a></li>
       <li><a href="#lateralindexes" target="_self">Lateral indexes example</a></li>
       <li><a href="#colorscheme" target="_self">Colorscheme example</a></li>
+      <li><a href="#consensus" target="_self">Consensus example</a></li>
+      <li><a href="#oneLineSetting" target="_self">OneLineSetting example</a></li>
+      <li><a href="#selection" target="_self">Selection example</a></li>
     </ul>
   </div>
 
@@ -46,9 +49,9 @@
     <div id="app.component.ts1" class="tabcontent1">
       <pre class="prettyprint prettyprinted" style=""><code class="language-java">
         <span><span class="hljs-js">const</span> sequences = [ </span>
-        <span>      &#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 1, label: 'Homo Sapiens'},</span>
-        <span>      &#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 2, label: 'Bos Taurus',  colorScheme: 'clustal'},</span>
-        <span>      &#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 2, label: 'Mus musculus'}</span>
+        <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'Homo Sapiens'},</span>
+        <span>      &#123;sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'Bos Taurus',  colorScheme: 'clustal'},</span>
+        <span>      &#123;sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 2, label: 'Mus musculus'}</span>
         <span>      ];</span>
         <span>sequenceviewer.<span class="hljs-js">draw</span>(sequences);</span>
       </code></pre>
@@ -75,9 +78,9 @@
     <div id="app.component.ts2" class="tabcontent2">
         <pre class="prettyprint prettyprinted" style=""><code class="language-java">
       <span><span class="hljs-js">const</span> sequences = [ </span>
-      <span>      &#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 1, label: 'Homo Sapiens'},</span>
-      <span>      &#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 2, label: 'Bos Taurus'},</span>
-      <span>      &#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 2, label: 'Mus musculus'}</span>
+      <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'Homo Sapiens'},</span>
+      <span>      &#123;sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'Bos Taurus'},</span>
+      <span>      &#123;sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 2, label: 'Mus musculus'}</span>
       <span>      ];</span>
       <span><span class="hljs-js">const</span> regions = [ </span>
       <span>      &#123;sequenceId: 2, start: 1, end: 10, backgroundColor: '#D72638', color: '#FFFFFF'},</span>
@@ -115,9 +118,9 @@
   <div id="app.component.ts3" class="tabcontent3">
        <pre class="prettyprint prettyprinted" style=""><code class="language-java">
     <span><span class="hljs-js">const</span> sequences = [ </span>
-    <span>      &#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 1, label: 'Homo Sapiens'},</span>
-    <span>      &#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 2, label: 'Bos Taurus'},</span>
-    <span>      &#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 2, label: 'Mus musculus'}</span>
+    <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'Homo Sapiens'},</span>
+    <span>      &#123;sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'Bos Taurus'},</span>
+    <span>      &#123;sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 2, label: 'Mus musculus'}</span>
     <span>      ];</span>
     <span><span class="hljs-js">const</span> icons = [ </span>
     <span>      &#123;sequenceId: 1, start: 11, end: 21, icon: 'turn'},</span>
@@ -152,13 +155,15 @@
   <div id="app.component.ts4" class="tabcontent4">
        <pre class="prettyprint prettyprinted" style=""><code class="language-java">
     <span><span class="hljs-js">const</span> sequences = [ </span>
-    <span>      &#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 1, label: 'Homo Sapiens'},</span>
-    <span>      &#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 2, label: 'Bos Taurus'},</span>
-    <span>      &#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 2, label: 'Mus musculus'}</span>
+    <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'Homo Sapiens'},</span>
+    <span>      &#123;sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'Bos Taurus'},</span>
+    <span>      &#123;sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 2, label: 'Mus musculus'}</span>
     <span>      ];</span>
     <span><span class="hljs-js">const</span> patterns = [ </span>
-    <span>      &#123;sequenceId: 1, pattern: /LYR/g, backgroundColor: '#D72638'},</span>
+    <span>      &#123;sequenceId: 1, pattern: /MVL/g, backgroundColor: '#D72638'},</span>
+    <span>      &#123;sequenceId: 1, pattern: /GA/g, backgroundColor: '#D72638'},</span>
     <span>      &#123;sequenceId: 2, pattern: /LE/g, backgroundColor: '#FF570A'},</span>
+    <span>      &#123;sequenceId: 2, pattern: /TT/g, backgroundColor: '#FF570A'},</span>
     <span>      &#123;sequenceId: 3, pattern: /AA/g, backgroundColor: '#FFBC42'}</span>
     <span>      ];</span>
     sequenceviewer.<span class="hljs-js">draw</span>(sequences, patterns);
@@ -174,8 +179,8 @@
   <!-------------------------------------  Lateral INDEXES  EXAMPLE ---------------------------------------->
 
   <h2 id="lateralindexes" class="snippet-title">Lateral indexes example<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h2>
-  <p>Set a starting index for the sequence/s. You can count gaps or not. (See API Documentation)</p>
-  <p>Here the start index is set at 2 and gaps are not counted.</p>
+  <p>Set a lateral starting index for the sequence/s. You can count gaps or not. (See API Documentation)</p>
+  <p>Here the start index is set at 2 and gaps are counted.</p>
   <p> The sequence-viewer width is set to 450px to show the indexes behaviour when the sequence is split in several lines.</p>
   <div class="sqvDemo"><div id="sqv5" style="width: 450px"></div></div>
 
@@ -188,7 +193,7 @@
   <div id="app.component.ts5" class="tabcontent5">
        <pre class="prettyprint prettyprinted" style=""><code class="language-java">
     <span><span class="hljs-js">const</span> sequences = [ </span>
-    <span>      &#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 1, label: 'Homo Sapiens', startIndex: 2}</span>
+    <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'Homo Sapiens', startIndex: 2}</span>
     <span>      ];</span>
     <span><span class="hljs-js">const</span> options =  &#123;</span>
     <span>      lateralIndexesGap: true</span>
@@ -218,9 +223,9 @@
   <div id="app.component.ts6" class="tabcontent6">
        <pre class="prettyprint prettyprinted" style=""><code class="language-java">
     <span><span class="hljs-js">const</span> sequences = [ </span>
-    <span>      &#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 1, label: 'Homo Sapiens', startIndex: 2},</span>
-    <span>      &#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 2, label: 'Bos Taurus'},</span>
-    <span>      &#123;sequence: 'DFRLELERELYRLELEAA------------AAARAAAAAELYRLELER---F-------R', id: 2, label: 'Mus musculus'}</span>
+    <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'Homo Sapiens', startIndex: 2},</span>
+    <span>      &#123;sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'Bos Taurus'},</span>
+    <span>      &#123;sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 2, label: 'Mus musculus'}</span>
     <span>      ];</span>
     <span><span class="hljs-js">const</span> options =  &#123;</span>
     <span>      colorScheme: 'clustal'</span>
@@ -230,6 +235,70 @@
   </div>
 
   <div id="app.component.html6" class="tb tabcontent6">
+           <pre class="prettyprint prettyprinted" style=""><code class="language-html">
+    <span class="hljs-html">&lt;div</span> id<span class="hljs-id">="sqv"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
+            </code></pre>
+  </div>
+
+  <!-------------------------------------  CONSENSUS  EXAMPLE ---------------------------------------->
+
+  <h2 id="consensus" class="snippet-title">Consensus example<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h2>
+  <p>Set consensus and consensus threshold. Available consensus types are: identity, physical.</p>
+  <div class="sqvDemo"><div id="sqv7"></div></div>
+
+  <div class="tab">
+    <button class="tl tablinks7" (click)="openPage( 'app.component.ts', 7)" id="defaultOpen7">app.component.ts</button>
+    <button class="tl tablinks7" (click)="openPage( 'app.component.html', 7)">app.component.html</button>
+  </div>
+
+  <!-- Tab content -->
+  <div id="app.component.ts7" class="tabcontent7">
+       <pre class="prettyprint prettyprinted" style=""><code class="language-java">
+    <span><span class="hljs-js">const</span> sequences = [ </span>
+    <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'Homo Sapiens', startIndex: 2},</span>
+    <span>      &#123;sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'Bos Taurus'},</span>
+    <span>      &#123;sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 2, label: 'Mus musculus'}</span>
+    <span>      ];</span>
+    <span><span class="hljs-js">const</span> options =  &#123;</span>
+    <span>      colorScheme: 'clustal'</span>
+    <span>      };</span>
+    sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);
+          </code></pre>
+  </div>
+
+  <div id="app.component.html7" class="tb tabcontent7">
+           <pre class="prettyprint prettyprinted" style=""><code class="language-html">
+    <span class="hljs-html">&lt;div</span> id<span class="hljs-id">="sqv"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
+            </code></pre>
+  </div>
+
+  <!-------------------------------------  ONELINESETTING  EXAMPLE ---------------------------------------->
+
+  <h2 id="oneLineSetting" class="snippet-title">OneLineSetting example<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h2>
+  <p>Set a non-responsive version of the sequence viewer. The width is fixed and a scrollbar helps the visualization of the sequences.</p>
+  <div class="sqvDemo"><div id="sqv8"></div></div>
+
+  <div class="tab">
+    <button class="tl tablinks8" (click)="openPage( 'app.component.ts', 8)" id="defaultOpen8">app.component.ts</button>
+    <button class="tl tablinks8" (click)="openPage( 'app.component.html', 8)">app.component.html</button>
+  </div>
+
+  <!-- Tab content -->
+  <div id="app.component.ts8" class="tabcontent8">
+       <pre class="prettyprint prettyprinted" style=""><code class="language-java">
+    <span><span class="hljs-js">const</span> sequences = [ </span>
+    <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'Homo Sapiens', startIndex: 2},</span>
+    <span>      &#123;sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'Bos Taurus'},</span>
+    <span>      &#123;sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 2, label: 'Mus musculus'}</span>
+    <span>      ];</span>
+    <span><span class="hljs-js">const</span> options =  &#123;</span>
+    <span>      colorScheme: 'clustal'</span>
+    <span>      };</span>
+    sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);
+          </code></pre>
+  </div>
+
+  <div id="app.component.html8" class="tb tabcontent8">
            <pre class="prettyprint prettyprinted" style=""><code class="language-html">
     <span class="hljs-html">&lt;div</span> id<span class="hljs-id">="sqv"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
             </code></pre>
@@ -528,17 +597,10 @@
       </tr>
       <tr class="field1">
         <td></td>
-        <td>lateralIndexes</td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr class="field1">
-        <td></td>
         <td>lateralIndexesGap</td>
+        <td>true</td>
         <td></td>
-        <td></td>
-        <td></td>
+        <td>Shows lateral indexes including gaps in the count (true) or excluding them (false).</td>
       </tr>
       <tr class="field1">
         <td></td>
@@ -550,16 +612,16 @@
       <tr class="field1">
         <td></td>
         <td>consensusType</td>
-        <td>integer</td>
+        <td>string</td>
         <td>identity, physical</td>
-        <td>Width of sequenceViewer - sidebar.</td>
+        <td>Add a line with consensus information.</td>
       </tr>
       <tr class="field1">
         <td></td>
         <td>consensusThreshold</td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>integer</td>
+        <td>90</td>
+        <td>Threeshold for consensus information.</td>
       </tr>
         <tr class="field0">
           <th>iconsHtml</th>
