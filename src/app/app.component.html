@@ -2,13 +2,22 @@
   <div class="container"><div class="d-flex flex-row"><div class="mr-3">
     <div><h1 class="display-4">Sequence Viewer Typescript</h1>
       <p _ngcontent-c1="" class="lead">Self-contained Typescript library for the visualization of (not only) biological sequence features: <a _ngcontent-c1="" href="https://github.com/mb925/sequence-viewer-typescript">sequence-viewer-typescript</a></p><a href="https://www.npmjs.com/package/sequence-viewer-typescript"><span id="npm">npm package </span><span id="version">1.0.15</span></a></div></div></div></div></div>
-<div class="sqvDemoGeneral">
-  <div class="row">
-    <div id="sqv0"></div>
+<div id="preview">
+  <h3>Multisequence alignment</h3>
+  <div class="sqvDemoGeneral">
+    <div class="row">
+      <div id="sqv0"></div>
+    </div>
+  </div>
+  <h3>Single sequence</h3>
+  <div class="sqvDemoGeneral">
+    <div class="row">
+      <div id="sqvSingle"></div>
+    </div>
   </div>
 </div>
-<button class="tablink" (click)="openPage('Demos', '')" id="defaultOpen" >Demos</button>
-<button class="tablink" (click)="openPage('API', '')" >API  Documentation</button>
+<button class="tablink" (click)="openPage('Demos')" id="defaultOpen" >Demos</button>
+<button class="tablink" (click)="openPage('API')" >API  Documentation</button>
 
 <!------------------------------------- DEMO ---------------------------------------->
 
@@ -25,8 +34,8 @@
       <li><a href="#regions" target="_self">Regions example</a></li>
       <li><a href="#icons" target="_self">Icons example</a></li>
       <li><a href="#patterns" target="_self">Patterns example</a></li>
-      <li><a href="#lateralindexes" target="_self">Lateral indexes example</a></li>
       <li><a href="#colorscheme" target="_self">Colorscheme example</a></li>
+      <li><a href="#lateralindexes" target="_self">Lateral indexes example</a></li>
       <li><a href="#consensus" target="_self">Consensus example</a></li>
       <li><a href="#oneLineSetting" target="_self">OneLineSetting example</a></li>
       <li><a href="#selection" target="_self">Selection example</a></li>
@@ -41,28 +50,26 @@
     <div class="sqvDemo"><div id="sqv1"></div></div>
 
     <div class="tab">
-      <button class="tl tablinks1" (click)="openPage( 'app.component.ts', 1)" id="defaultOpen1">app.component.ts</button>
-      <button class="tl tablinks1" (click)="openPage( 'app.component.html', 1)">app.component.html</button>
+      <button>index.html</button>
     </div>
 
     <!-- Tab content -->
-    <div id="app.component.ts1" class="tabcontent1">
-      <pre class="prettyprint prettyprinted" style=""><code class="language-java">
-        <span><span class="hljs-js">const</span> sequences = [ </span>
-        <span><span class="hljs-js">const</span> sequenceviewer = new SequenceViewer('sqvSimple'); </span>
-        <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN'},</span>
-        <span>      &#123;sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'sp|P01942|HBA_MOUSE',  colorScheme: 'clustal'},</span>
-        <span>      &#123;sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 2, label: 'sp|P13786|HBAZ_CAPHI'}</span>
-        <span>      ];</span>
-        <span>sequenceviewer.<span class="hljs-js">draw</span>(sequences);</span>
+    <div>
+      <pre class="prettyprint prettyprinted"><code class="language-java">
+        <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvSimple"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
+        <span class="hljs-js">&lt;script></span>
+          <span><span class="hljs-js">const</span> sequences = [ </span>
+          <span><span class="hljs-js">const</span> sequenceviewer = new SequenceViewer('sqvSimple'); </span>
+          <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN'},</span>
+          <span>      &#123;sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'sp|P01942|HBA_MOUSE',  colorScheme: 'clustal'},</span>
+          <span>      &#123;sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 2, label: 'sp|P13786|HBAZ_CAPHI'}</span>
+          <span>      ];</span>
+          <span>sequenceviewer.<span class="hljs-js">draw</span>(sequences);</span>
+        <span class="hljs-js">&lt;/script></span>
       </code></pre>
     </div>
 
-    <div id="app.component.html1" class="tb tabcontent1">
-       <pre class="prettyprint prettyprinted" style=""><code class="language-html">
-      <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvSimple"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
-       </code></pre>
-    </div>
+
 
 
   <!-------------------------------------  REGIONS  EXAMPLE ---------------------------------------->
@@ -71,36 +78,32 @@
     <p>Set the sequences and highlight them with customizable colors.</p>
     <div class="sqvDemo"><div id="sqv2"></div></div>
 
-    <div class="tab">
-      <button class="tl tablinks2" (click)="openPage( 'app.component.ts', 2)" id="defaultOpen2">app.component.ts</button>
-      <button class="tl tablinks2" (click)="openPage( 'app.component.html', 2)">app.component.html</button>
-    </div>
+  <div class="tab">
+    <button>index.html</button>
+  </div>
 
     <!-- Tab content -->
-    <div id="app.component.ts2" class="tabcontent2">
-        <pre class="prettyprint prettyprinted" style=""><code class="language-java">
-          <span><span class="hljs-js">const</span> sequenceviewer = new SequenceViewer('sqvRegions'); </span>
-          <span><span class="hljs-js">const</span> sequences = [ </span>
-          <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN'},</span>
-          <span>      &#123;sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'sp|P01942|HBA_MOUSE'},</span>
-          <span>      &#123;sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 2, label: 'sp|P13786|HBAZ_CAPHI'}</span>
-          <span>      ];</span>
-          <span><span class="hljs-js">const</span> regions = [ </span>
-          <span>      &#123;sequenceId: 2, start: 1, end: 10, backgroundColor: '#D72638', color: '#FFFFFF'},</span>
-          <span>      &#123;sequenceId: 2, start: 11, end: 20, backgroundColor: '#FF570A', color: '#FFFFFF'},</span>
-          <span>      &#123;sequenceId: 2, start: 21, end: 30, backgroundColor: '#FFBC42', color: '#FFFFFF'},</span>
-          <span>      &#123;sequenceId: 2, start: 31, end: 40, backgroundColor: '#44885B', color: '#FFFFFF'},</span>
-          <span>      &#123;sequenceId: 2, start: 41, end: 50, backgroundColor: '#393C93', color: '#FFFFFF'},</span>
-          <span>      &#123;sequenceId: 2, start: 51, end: 60, backgroundColor: '#7E1173', color: '#FFFFFF'}</span>
-          <span>      ];</span>
-          sequenceviewer.<span class="hljs-js">draw</span>(sequences, regions);
-       </code></pre>
-    </div>
+  <div>
+        <pre class="prettyprint prettyprinted"><code class="language-java">
+          <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvRegions"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
+          <span class="hljs-js">&lt;script></span>
+            <span><span class="hljs-js">const</span> sequenceviewer = new SequenceViewer('sqvRegions'); </span>
+            <span><span class="hljs-js">const</span> sequences = [ </span>
+            <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN'},</span>
+            <span>      &#123;sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'sp|P01942|HBA_MOUSE'},</span>
+            <span>      &#123;sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 2, label: 'sp|P13786|HBAZ_CAPHI'}</span>
+            <span>      ];</span>
+            <span><span class="hljs-js">const</span> regions = [ </span>
+            <span>      &#123;sequenceId: 2, start: 1, end: 10, backgroundColor: '#D72638', color: '#FFFFFF'},</span>
+            <span>      &#123;sequenceId: 2, start: 11, end: 20, backgroundColor: '#FF570A', color: '#FFFFFF'},</span>
+            <span>      &#123;sequenceId: 2, start: 21, end: 30, backgroundColor: '#FFBC42', color: '#FFFFFF'},</span>
+            <span>      &#123;sequenceId: 2, start: 31, end: 40, backgroundColor: '#44885B', color: '#FFFFFF'},</span>
+            <span>      &#123;sequenceId: 2, start: 41, end: 50, backgroundColor: '#393C93', color: '#FFFFFF'},</span>
+            <span>      &#123;sequenceId: 2, start: 51, end: 60, backgroundColor: '#7E1173', color: '#FFFFFF'}</span>
+            <span>      ];</span>
+            sequenceviewer.<span class="hljs-js">draw</span>(sequences, regions);
+          <span class="hljs-js">&lt;/script></span>
 
-
-    <div id="app.component.html2" class="tb tabcontent2">
-       <pre class="prettyprint prettyprinted" style=""><code class="language-html">
-         <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvRegions"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
        </code></pre>
     </div>
 
@@ -113,34 +116,31 @@
   <div class="sqvDemo"><div id="sqv3"></div></div>
 
   <div class="tab">
-    <button class="tl tablinks3" (click)="openPage( 'app.component.ts', 3)" id="defaultOpen3">app.component.ts</button>
-    <button class="tl tablinks3" (click)="openPage( 'app.component.html', 3)">app.component.html</button>
+    <button>index.html</button>
   </div>
 
   <!-- Tab content -->
-  <div id="app.component.ts3" class="tabcontent3">
-       <pre class="prettyprint prettyprinted" style=""><code class="language-java">
-        <span><span class="hljs-js">const</span> sequenceviewer = new SequenceViewer('sqvIcons'); </span>
-        <span><span class="hljs-js">const</span> sequences = [ </span>
-        <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN'},</span>
-        <span>      &#123;sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'sp|P01942|HBA_MOUSE'},</span>
-        <span>      &#123;sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 2, label: 'sp|P13786|HBAZ_CAPHI'}</span>
-        <span>      ];</span>
-        <span><span class="hljs-js">const</span> icons = [ </span>
-        <span>      &#123;sequenceId: 1, start: 11, end: 21, icon: 'turn'},</span>
-        <span>      &#123;sequenceId: 1, start: 21, end: 30, icon: 'helix'},</span>
-        <span>      &#123;sequenceId: 1, start: 31, end: 40, icon: 'lollipop'},</span>
-        <span>      &#123;sequenceId: 1, start: 41, end: 41, icon: 'arrowLeft'},</span>
-        <span>      &#123;sequenceId: 1, start: 42, end: 50, icon: 'strand'},</span>
-        <span>      &#123;sequenceId: 1, start: 48, end: 50, icon: 'noSecondary'},</span>
-        <span>      ];</span>
-        sequenceviewer.<span class="hljs-js">draw</span>(sequences, icons);
-          </code></pre>
-  </div>
+  <div>
+       <pre class="prettyprint prettyprinted"><code class="language-java">
+          <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvIcons"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
+          <span class="hljs-js">&lt;script></span>
+            <span><span class="hljs-js">const</span> sequenceviewer = new SequenceViewer('sqvIcons'); </span>
+            <span><span class="hljs-js">const</span> sequences = [ </span>
+            <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN'},</span>
+            <span>      &#123;sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'sp|P01942|HBA_MOUSE'},</span>
+            <span>      &#123;sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 2, label: 'sp|P13786|HBAZ_CAPHI'}</span>
+            <span>      ];</span>
+            <span><span class="hljs-js">const</span> icons = [ </span>
+            <span>      &#123;sequenceId: 1, start: 11, end: 21, icon: 'turn'},</span>
+            <span>      &#123;sequenceId: 1, start: 21, end: 30, icon: 'helix'},</span>
+            <span>      &#123;sequenceId: 1, start: 31, end: 40, icon: 'lollipop'},</span>
+            <span>      &#123;sequenceId: 1, start: 41, end: 41, icon: 'arrowLeft'},</span>
+            <span>      &#123;sequenceId: 1, start: 42, end: 50, icon: 'strand'},</span>
+            <span>      &#123;sequenceId: 1, start: 48, end: 50, icon: 'noSecondary'},</span>
+            <span>      ];</span>
+            sequenceviewer.<span class="hljs-js">draw</span>(sequences, icons);
+          <span class="hljs-js">&lt;/script></span>
 
-  <div id="app.component.html3" class="tb tabcontent3">
-           <pre class="prettyprint prettyprinted" style=""><code class="language-html">
-    <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvIcons"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
           </code></pre>
   </div>
 
@@ -151,67 +151,30 @@
   <div class="sqvDemo"><div id="sqv4"></div></div>
 
   <div class="tab">
-    <button class="tl tablinks4" (click)="openPage( 'app.component.ts', 4)" id="defaultOpen4">app.component.ts</button>
-    <button class="tl tablinks4" (click)="openPage( 'app.component.html', 4)">app.component.html</button>
+    <button>index.html</button>
   </div>
 
   <!-- Tab content -->
-  <div id="app.component.ts4" class="tabcontent4">
-       <pre class="prettyprint prettyprinted" style=""><code class="language-java">
-        <span><span class="hljs-js">const</span> sequenceviewer = new SequenceViewer('sqvPatterns'); </span>
-        <span><span class="hljs-js">const</span> sequences = [ </span>
-        <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN'},</span>
-        <span>      &#123;sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'sp|P01942|HBA_MOUSE'},</span>
-        <span>      &#123;sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 2, label: 'sp|P13786|HBAZ_CAPHI'}</span>
-        <span>      ];</span>
-        <span><span class="hljs-js">const</span> patterns = [ </span>
-        <span>      &#123;sequenceId: 1, pattern: /MVL/g, backgroundColor: '#D72638'},</span>
-        <span>      &#123;sequenceId: 1, pattern: /GA/g, backgroundColor: '#D72638'},</span>
-        <span>      &#123;sequenceId: 2, pattern: /LE/g, backgroundColor: '#FF570A'},</span>
-        <span>      &#123;sequenceId: 2, pattern: /TT/g, backgroundColor: '#FF570A'},</span>
-        <span>      &#123;sequenceId: 3, pattern: /AA/g, backgroundColor: '#FFBC42'}</span>
-        <span>      ];</span>
-        sequenceviewer.<span class="hljs-js">draw</span>(sequences, patterns);
+  <div>
+       <pre class="prettyprint prettyprinted"><code class="language-java">
+         <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvPatterns"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
+         <span class="hljs-js">&lt;script></span>
+            <span><span class="hljs-js">const</span> sequenceviewer = new SequenceViewer('sqvPatterns'); </span>
+            <span><span class="hljs-js">const</span> sequences = [ </span>
+            <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN'},</span>
+            <span>      &#123;sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'sp|P01942|HBA_MOUSE'},</span>
+            <span>      &#123;sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 2, label: 'sp|P13786|HBAZ_CAPHI'}</span>
+            <span>      ];</span>
+            <span><span class="hljs-js">const</span> patterns = [ </span>
+            <span>      &#123;sequenceId: 1, pattern: /MVL/g, backgroundColor: '#D72638'},</span>
+            <span>      &#123;sequenceId: 1, pattern: /GA/g, backgroundColor: '#D72638'},</span>
+            <span>      &#123;sequenceId: 2, pattern: /LE/g, backgroundColor: '#FF570A'},</span>
+            <span>      &#123;sequenceId: 2, pattern: /TT/g, backgroundColor: '#FF570A'},</span>
+            <span>      &#123;sequenceId: 3, pattern: /AA/g, backgroundColor: '#FFBC42'}</span>
+            <span>      ];</span>
+            sequenceviewer.<span class="hljs-js">draw</span>(sequences, patterns);
+         <span class="hljs-js">&lt;/script></span>
           </code></pre>
-  </div>
-
-  <div id="app.component.html4" class="tb tabcontent4">
-           <pre class="prettyprint prettyprinted" style=""><code class="language-html">
-    <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvPatterns"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
-            </code></pre>
-  </div>
-
-  <!-------------------------------------  Lateral INDEXES  EXAMPLE ---------------------------------------->
-
-  <h2 id="lateralindexes" class="snippet-title">LateralIndexes example<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h2>
-  <p>Set a lateral starting index for the sequence/s. You can count gaps or not. (See API Documentation)</p>
-  <p>Here the start index is set at 2 and gaps are counted.</p>
-  <p> The sequence-viewer width is set to 450px to show the indexes behaviour when the sequence is split in several lines.</p>
-  <div class="sqvDemo"><div id="sqv5" style="width: 450px"></div></div>
-
-  <div class="tab">
-    <button class="tl tablinks5" (click)="openPage( 'app.component.ts', 5)" id="defaultOpen5">app.component.ts</button>
-    <button class="tl tablinks5" (click)="openPage( 'app.component.html', 5)">app.component.html</button>
-  </div>
-
-  <!-- Tab content -->
-  <div id="app.component.ts5" class="tabcontent5">
-       <pre class="prettyprint prettyprinted" style=""><code class="language-java">
-        <span><span class="hljs-js">const</span> sequenceviewer = new SequenceViewer('sqvLateralIndexes'); </span>
-        <span><span class="hljs-js">const</span> sequences = [ </span>
-        <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN', startIndex: 2}</span>
-        <span>      ];</span>
-        <span><span class="hljs-js">const</span> options =  &#123;</span>
-        <span>      lateralIndexesGap: true</span>
-        <span>      };</span>
-        sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);
-          </code></pre>
-  </div>
-
-  <div id="app.component.html5" class="tb tabcontent5">
-           <pre class="prettyprint prettyprinted" style=""><code class="language-html">
-    <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvLateralIndexes"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
-            </code></pre>
   </div>
 
   <!-------------------------------------  COLORSCHEME  EXAMPLE ---------------------------------------->
@@ -221,31 +184,56 @@
   <div class="sqvDemo"><div id="sqv6"></div></div>
 
   <div class="tab">
-    <button class="tl tablinks6" (click)="openPage( 'app.component.ts', 6)" id="defaultOpen6">app.component.ts</button>
-    <button class="tl tablinks6" (click)="openPage( 'app.component.html', 6)">app.component.html</button>
+    <button>index.html</button>
   </div>
 
   <!-- Tab content -->
-  <div id="app.component.ts6" class="tabcontent6">
-       <pre class="prettyprint prettyprinted" style=""><code class="language-java">
-        <span><span class="hljs-js">const</span> sequenceviewer = new SequenceViewer('sqvColorscheme'); </span>
-        <span><span class="hljs-js">const</span> sequences = [ </span>
-        <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN', startIndex: 2},</span>
-        <span>      &#123;sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'sp|P01942|HBA_MOUSE'},</span>
-        <span>      &#123;sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 2, label: 'sp|P13786|HBAZ_CAPHI'}</span>
-        <span>      ];</span>
-        <span><span class="hljs-js">const</span> options =  &#123;</span>
-        <span>      colorScheme: 'clustal'</span>
-        <span>      };</span>
-        sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);
+  <div>
+       <pre class="prettyprint prettyprinted"><code class="language-java">
+         <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvColorscheme"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
+          <span class="hljs-js">&lt;script></span>
+            <span><span class="hljs-js">const</span> sequenceviewer = new SequenceViewer('sqvColorscheme'); </span>
+            <span><span class="hljs-js">const</span> sequences = [ </span>
+            <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN', startIndex: 2},</span>
+            <span>      &#123;sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'sp|P01942|HBA_MOUSE'},</span>
+            <span>      &#123;sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 2, label: 'sp|P13786|HBAZ_CAPHI'}</span>
+            <span>      ];</span>
+            <span><span class="hljs-js">const</span> options =  &#123;</span>
+            <span>      colorScheme: 'clustal'</span>
+            <span>      };</span>
+            sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);
+         <span class="hljs-js">&lt;/script></span>
+          </code></pre>
+  </div>
+  <!-------------------------------------  Lateral INDEXES  EXAMPLE ---------------------------------------->
+
+  <h2 id="lateralindexes" class="snippet-title">LateralIndexes example<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h2>
+  <p>Set a lateral starting index for the sequence/s. You can count gaps or not. (See API Documentation)</p>
+  <p>Here the start index is set at 2 and gaps are counted.</p>
+  <p> The sequence-viewer width is set to 450px to show the indexes behaviour when the sequence is split in several lines.</p>
+  <div class="sqvDemo"><div id="sqv5" style="width: 450px"></div></div>
+
+  <div class="tab">
+    <button>index.html</button>
+  </div>
+
+  <!-- Tab content -->
+  <div>
+       <pre class="prettyprint prettyprinted"><code class="language-java">
+        <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvLateralIndexes"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
+        <span class="hljs-js">&lt;script></span>
+          <span><span class="hljs-js">const</span> sequenceviewer = new SequenceViewer('sqvLateralIndexes'); </span>
+          <span><span class="hljs-js">const</span> sequences = [ </span>
+          <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN', startIndex: 2}</span>
+          <span>      ];</span>
+          <span><span class="hljs-js">const</span> options =  &#123;</span>
+          <span>      lateralIndexesGap: true</span>
+          <span>      };</span>
+          sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);
+        <span class="hljs-js">&lt;/script></span>
           </code></pre>
   </div>
 
-  <div id="app.component.html6" class="tb tabcontent6">
-           <pre class="prettyprint prettyprinted" style=""><code class="language-html">
-    <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvColorscheme"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
-            </code></pre>
-  </div>
 
   <!-------------------------------------  CONSENSUS  EXAMPLE ---------------------------------------->
 
@@ -254,30 +242,26 @@
   <div class="sqvDemo"><div id="sqv7"></div></div>
 
   <div class="tab">
-    <button class="tl tablinks7" (click)="openPage( 'app.component.ts', 7)" id="defaultOpen7">app.component.ts</button>
-    <button class="tl tablinks7" (click)="openPage( 'app.component.html', 7)">app.component.html</button>
+    <button>index.html</button>
   </div>
 
   <!-- Tab content -->
-  <div id="app.component.ts7" class="tabcontent7">
-       <pre class="prettyprint prettyprinted" style=""><code class="language-java">
-        <span><span class="hljs-js">const</span> sequenceviewer = new SequenceViewer('sqvConsensus'); </span>
-        <span><span class="hljs-js">const</span> sequences = [ </span>
-        <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN', startIndex: 2},</span>
-        <span>      &#123;sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'sp|P01942|HBA_MOUSE'},</span>
-        <span>      &#123;sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 2, label: 'sp|P13786|HBAZ_CAPHI'}</span>
-        <span>      ];</span>
-        <span><span class="hljs-js">const</span> options =  &#123;</span>
-        <span>      consensusType: 'identity', consensusThreshold: 80</span>
-        <span>      };</span>
-        sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);
+  <div>
+       <pre class="prettyprint prettyprinted"><code class="language-java">
+         <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvConsensus"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
+         <span class="hljs-js">&lt;script></span>
+          <span><span class="hljs-js">const</span> sequenceviewer = new SequenceViewer('sqvConsensus'); </span>
+          <span><span class="hljs-js">const</span> sequences = [ </span>
+          <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN', startIndex: 2},</span>
+          <span>      &#123;sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'sp|P01942|HBA_MOUSE'},</span>
+          <span>      &#123;sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 2, label: 'sp|P13786|HBAZ_CAPHI'}</span>
+          <span>      ];</span>
+          <span><span class="hljs-js">const</span> options =  &#123;</span>
+          <span>      consensusType: 'identity', consensusThreshold: 80</span>
+          <span>      };</span>
+          sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);
+         <span class="hljs-js">&lt;/script></span>
           </code></pre>
-  </div>
-
-  <div id="app.component.html7" class="tb tabcontent7">
-           <pre class="prettyprint prettyprinted" style=""><code class="language-html">
-    <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvConsensus"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
-            </code></pre>
   </div>
 
   <!-------------------------------------  ONELINESETTING  EXAMPLE ---------------------------------------->
@@ -290,32 +274,51 @@
     </div>
   </div>
   <div class="tab">
-    <button class="tl tablinks8" (click)="openPage( 'app.component.ts', 8)" id="defaultOpen8">app.component.ts</button>
-    <button class="tl tablinks8" (click)="openPage( 'app.component.html', 8)">app.component.html</button>
+    <button>index.html</button>
   </div>
 
   <!-- Tab content -->
-  <div id="app.component.ts8" class="tabcontent8">
-       <pre class="prettyprint prettyprinted" style=""><code class="language-java">
-         <span><span class="hljs-js">const</span> sequenceviewer = new SequenceViewer('sqvOneLineSetting'); </span>
-        <span><span class="hljs-js">const</span> sequences = [ </span>
-        <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN', startIndex: 2},</span>
-        <span>      &#123;sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'sp|P01942|HBA_MOUSE'},</span>
-        <span>      &#123;sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 2, label: 'sp|P13786|HBAZ_CAPHI'}</span>
-        <span>      ];</span>
-        <span><span class="hljs-js">const</span> options =  &#123;</span>
-        <span>      oneLineSetting: true, oneLineWidth: '350px'</span>
-        <span>      };</span>
-        sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);
+  <div>
+       <pre class="prettyprint prettyprinted"><code class="language-java">
+          <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvOneLineSetting"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
+          <span class="hljs-js">&lt;script></span>
+             <span><span class="hljs-js">const</span> sequenceviewer = new SequenceViewer('sqvOneLineSetting'); </span>
+             <span><span class="hljs-js">const</span> sequences = [ </span>
+             <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN', startIndex: 2},</span>
+             <span>      &#123;sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'sp|P01942|HBA_MOUSE'},</span>
+             <span>      &#123;sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 2, label: 'sp|P13786|HBAZ_CAPHI'}</span>
+             <span>      ];</span>
+             <span><span class="hljs-js">const</span> options =  &#123;</span>
+             <span>      oneLineSetting: true, oneLineWidth: '350px'</span>
+             <span>      };</span>
+            sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);
+         <span class="hljs-js">&lt;/script></span>
           </code></pre>
   </div>
 
-  <div id="app.component.html8" class="tb tabcontent8">
-           <pre class="prettyprint prettyprinted" style=""><code class="language-html">
-    <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvOneLineSetting"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
-            </code></pre>
-  </div>
+  <!-------------------------------------  SELECTIONS  EXAMPLE ---------------------------------------->
 
+  <h2 id="selection" class="snippet-title">Selection example<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h2>
+  <p><b>1. Copy-paste event</b></p>
+  <p>Click and drag the mouse to select a region, the region will be highlighted in yellow. Use the
+    shortcut Ctrl+C to copy and Ctrl+V to paste. The selected region will disappear after using a
+    shortcut or clicking on another area.</p>
+  <div class="sqvDemo">
+    <div class="row">
+      <div id="sqv9"></div>
+    </div>
+  </div>
+<!--  <input id="paste" placeholder="Try to paste something here!" >-->
+
+
+  <p><b>1. On character selected event </b></p>
+  <p>The double click event will return information about the clicked character, like the x, y positions and the character itself.</p>
+  <pre class="prettyprint prettyprinted"><code class="language-java">
+    <span> window.<span class="hljs-js">addEventListener</span>('onRegionSelected', (e) =>   &#123;
+             console.<span class="hljs-js">log</span>('character selected', e);
+           });
+    </span>
+  </code></pre>
 </div>
 
 
@@ -326,24 +329,39 @@
 <div id="API" class="tabcontent">
   <div class="snippet-card card">
     <div>
-      <h2>Installation Guide</h2>
+      <h2>Installation Guide - Javascript</h2>
+      <h3><strong>1. Download the library</strong></h3>
+      <h3><strong>2. Import the library</strong></h3>
+      <h3><strong>3. Place the sequence viewer in your index.html </strong></h3>
+      <pre><code><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqv"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></code></pre>
+
+      <h3><strong> 4. Create an instance of the sequence viewer in javascript inside the &lt;scripts>&lt;/scripts> tag</strong></h3>
+      <pre><code><p><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span> SequenceViewer(<span class="hljs-id">'sqv'</span>);</p></code></pre>
+
+      <h3><strong> 6. Add inputs</strong></h3>
+      <p>Here an example with minimum required input, for the full list of input settings options check github documentation</p>
+      <pre><code><p><span class="hljs-js">const</span> sequence = [&#123;sequence: 'DFRLE--F-DFRLEDFRLE----&#125;]</p></code></pre>
+
+      <h3><strong> 7. Execute the function to draw the sequence viewer on the page </strong></h3>
+      <pre><code>sequenceviewer.<span class="hljs-js">draw</span>(sequence);</code></pre>
+
+      <h2>Installation Guide - Angular</h2>
 
       <p>The sequence-viewer-typescript package is written in pure typescript and does not have any dependencies. This guide focus on how to install the package in an Angular app.</p>
       <h3><strong>1. Install the library using npm</strong></h3>
       <pre><code>npm i sequence-viewer-typescript</code></pre>
 
-      <h3><strong>2. Import the sequence viewer in your angular component </strong></h3>
-      <pre><code><span class="hljs-keyword">import</span> &#123; SequenceViewer &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'sequence-viewer-typescript/dist'</span>;</code></pre>
-
-      <h3><strong>3. Load the sequence viewer stylesheet in your angular.json "styles" </strong></h3>
+      <h3><strong>2. Load the sequence viewer stylesheet in your angular.json "styles" </strong></h3>
       <pre><code><span class="hljs-ang">styles:</span> ["./node_modules/sequence-viewer-typescript/dist/assets/sqv.scss"]</code></pre>
 
+      <h3><strong>3. Import the sequence viewer in your angular component </strong></h3>
+      <pre><code><span class="hljs-keyword">import</span> &#123; SequenceViewer &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'sequence-viewer-typescript/dist'</span>;</code></pre>
 
       <h3><strong> 4. Place the sequence viewer in your html </strong></h3>
       <pre><code><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqv"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></code></pre>
 
 
-      <h3><strong> 5. Create an instance of the sequence viewer in javascript and style it</strong></h3>
+      <h3><strong> 5. Create an instance of the sequence viewer in your app.component.ts</strong></h3>
       <pre><code><p><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span> SequenceViewer(<span class="hljs-id">'sqv'</span>);</p></code></pre>
 
       <h3><strong> 6. Add inputs</strong></h3>
@@ -610,8 +628,8 @@
       <tr class="field1">
         <td></td>
         <td>lateralIndexesGap</td>
+        <td>boolean</td>
         <td>true</td>
-        <td></td>
         <td>Shows lateral indexes including gaps in the count (true) or excluding them (false).</td>
       </tr>
       <tr class="field1">

@@ -18,6 +18,10 @@
   margin-left: auto;
 }
 
+#preview{
+  padding: 50px 100px 100px 100px;
+}
+
 .display-4 {
   font-size: 3.5rem;
   font-weight: 300;
@@ -184,6 +188,13 @@ h3 {
   border: 1px solid #dddddd;
   padding: 20px;
 }
+
+/*#paste{*/
+/*  width: 450px;*/
+/*  height: 100px;*/
+/*  margin-bottom: 10px;*/
+/*  overflow-x: scroll;*/
+/*}*/
 
 pre  {
   padding: 10px;

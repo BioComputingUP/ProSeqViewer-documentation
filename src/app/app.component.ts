@@ -9,38 +9,34 @@ import {SequenceViewer} from 'sequence-viewer-typescript/dist';
 export class AppComponent implements OnInit {
   title = 'sequence-viewer-documentation';
 
-  public openPage(pageName, n) {
+  public openPage(pageName) {
     let i;
     let tabcontent;
     let tablinks;
-    tabcontent = document.getElementsByClassName('tabcontent' + n);
+    tabcontent = document.getElementsByClassName('tabcontent');
     for (i = 0; i < tabcontent.length; i++) {
       tabcontent[i].style.display = 'none';
     }
-    tablinks = document.getElementsByClassName('tablink' + n);
+    tablinks = document.getElementsByClassName('tablink');
     for (i = 0; i < tablinks.length; i++) {
       tablinks[i].style.backgroundColor = '';
     }
-    document.getElementById(pageName + n).style.display = 'block';
+    document.getElementById(pageName).style.display = 'block';
   }
 
   ngOnInit(): void {
     document.getElementById('defaultOpen').click();
-    document.getElementById('defaultOpen1').click();
-    document.getElementById('defaultOpen2').click();
-    document.getElementById('defaultOpen3').click();
-    document.getElementById('defaultOpen4').click();
-    document.getElementById('defaultOpen5').click();
-    document.getElementById('defaultOpen6').click();
-    document.getElementById('defaultOpen7').click();
-    // document.getElementById('defaultOpen8').click();
 
-    // GENERAL EXAMPLE
+    // GENERAL EXAMPLE: multisequence
     const s0 = new SequenceViewer('sqv0');
     const seqs0 = [
-      {sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHGKKVADALTNAVAHVDDMPNALSALSDLHAHKLRVDPVNFKLLSHCLLVTLAAHLPAEFTPAVHASLDKFLASVSTVLTSKYR', id: 1, label: 'sp|P69905|HBA_HUMAN'},
-      {sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHGKKVADALASAAGHLDDLPGALSALSDLHAHKLRVDPVNFKLLSHCLLVTLASHHPADFTPAVHASLDKFLASVSTVLTSKYR', id: 2, label: 'sp|P01942|HBA_MOUSE'},
-      {sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHGSKVVAAVGDAVKSIDNVTSALSKLSELHAYVLRVDPVNFKFLSHCLLVTLASHFPADFTADAHAAWDKFLSIVSGVLTEKYR', id: 3, label: 'sp|P13786|HBAZ_CAPHI'}
+      {sequence: '---------DFEYLQLVLTWPASFCYANH---CE------------RIAPNNFTIHGLWPDNVKT-RLHN----------CKPKPTYSY-FT----------GKMLNDLDKHWMQLKFEQDY--GRTEQPSWKYQYIKHGSCCQKR--Y-NQNTYFGLALRLKD--KFDLLRTLQTHRIIP-GS-SYTFQDIFDAIKT-VSQEN----PDIKCAEVTKG--TPELYEIGICFTP------ -NADSMFRCPQS-D----------------------TCDKTAKV-L-F-----RR----', id: 1, label: '1iooA'},
+      {sequence: '----------YDYFQFTQQYQLAVCNSNRT-LCK------------DPPDKLFTVHGLWPSNMVGPDPSK----------CP-IKNIRK-RE----------KLLEHQLEIIWPNVFDRT-K-----NNLFWDKEWMKHGSCGYPT--IDNENHYFETVIKMYISKKQNVSRILSKAKIEPDGK-KRALLDIENAIRNGADNKK----PKLKCQKKGT---TTELVEITLCSDK-------SGEHFIDCPHP-FEPISP----------------HYCPTNNI--KY------------', id: 2, label: '1iqqA'},
+      {sequence: 'YVE---FAQDFDFFYFVQQWPGSYCDTKQS-CCYPK---------TGKPASDFGIHGLWPNNNDGSYPSN----------CDSNSPYDQSQV----------SDLISRMQQNWPTLACPSGT-----GSAFWSHEWEKHGTCAENV--F-DQHGYFKKALDLKN--QINLLEILQGAGIHPDGG-FYSLNSIKNAIRS-AIGYA----PGIECNVDESG--NSQLYQIYICVDG------ -SGSNLIECPIFPR---------------------GKCGSSIEF-P-T-----F-----', id: 3, label: '1iybA'},
+      {sequence: '------GHKEFDYFTLALTWSGTECLSVKD-SCPTN--ACS----RSEVETGFTIKGLWPDYDDGTWPSC----------CE-GAKYDQNEI----------SILSNDLSKYWPSYSCPSSSACGSFDASDLAYEWAKHGTCSSPV--LGNQYEYFSTTLMLYF--KYNISEILSESGYLPSNTAEYKVEGIMSAIQS-ALRVT----PVVKCKSD-------AVEQVQICFDK------ -T-LQLQECPST-A---------------------STCPSLVSL-P-IKNTIKP-----', id: 4, label: '1jy5A'},
+      {sequence: '----------FDSFWFVQQWPPAVCSFQKSGSCP------------GSGLRTFTIHGLWPQQS-GTSLTN----------CP-GSPFDITKI----------SHLQSQLNTLWPNVLRAN-------NQQFWSHEWTKHGTCSEST--F-NQAAYFKLAVDMRN--NYDIIGALRPHAAGPNGR-TKSRQAIKGFLKA-KFGKF----PGLRCRTDPQT-KVSYLVQVVACFAQ------ -DGSTLIDCTR------------------------DTCGANFI----------F-----', id: 5, label: '1ucdA'},
+      {sequence: 'LALQAKQYGDFDRYVLALSWQTGFCQSQHD-RNRNERDECRLQTETTNKADFLTVHGLWPGLPKSVAARGVDERRWMRFGCATRPIPNLPEARASRMCSSPETGLSLETAAKLSEVMPGAGG-----RSCLERYEYAKHGACFG----F-DPDAYFGTMVRLNQ--EIKESEAGKF-LADNYGK-TVSRRDFDAAFAK-SWGKENVKAVKLTCQGNP-----AYLTEIQISIKADAINAPLSANSFLPQPHP-----------------------GNCGKTFVI-D-K-----AGY---', id: 6, label: '2pqxA'},
+      {sequence: 'DKR-LRDNHEWKKLIMVQHWPETVCEKIQN-DCR------------D-PPDYWTIHGLWPDKSEG---------------CNRSWPFNLEEI----------KDLLPEMRAYWPDVIHSFPN-----RSRFWKHEWEKHGTCAAQVDALNSQKKYFGRSLELYR--ELDLNSVLLKLGIKPSIN-YYQVADFKDALAR-VYGVI----PKIQCLPPSQDEEVQTIGQIELCLTK-------QDQQLQNCTEP-GEQPSPKQEVWLANGAAESRGLRVCEDGPVFYPPPKKTKHHHHHHH', id: 7, label: '3t0oA'}
     ];
     const ico3 = [
       {sequenceId: 1, start: 11, end: 20, icon: 'turn'},
@@ -56,6 +52,14 @@ export class AppComponent implements OnInit {
       {sequenceId: 2, start: 1, end: 10, backgroundColor: '#D72638', color: '#FFFFFF'}
     ];
     s0.draw(seqs0, reg, opt);
+
+    // GENERAL EXAMPLE: multisequence
+    const seqSingle = new SequenceViewer('sqvSingle');
+    const seq = [
+      {sequence: '---------DFEYLQLVLTWPASFCYANH---CE------------RIAPNNFTIHGLWPDNVKT-RLHN----------CKPKPTYSY-FT----------GKMLNDLDKHWMQLKFEQDY--GRTEQPSWKYQYIKHGSCCQKR--Y-NQNTYFGLALRLKD--KFDLLRTLQTHRIIP-GS-SYTFQDIFDAIKT-VSQEN----PDIKCAEVTKG--TPELYEIGICFTP------ -NADSMFRCPQS-D----------------------TCDKTAKV-L-F-----RR----', id: 1, label: '1iooA'}
+    ];
+
+    seqSingle.draw(seq);
 
 
     // SIMPLE EXAMPLE
@@ -85,7 +89,6 @@ export class AppComponent implements OnInit {
     ];
     s2.draw(seqs, reg1);
 
-
     // icons EXAMPLE
     const s3 = new SequenceViewer('sqv3');
     s3.draw(seqs, ico3);
@@ -101,6 +104,16 @@ export class AppComponent implements OnInit {
     ];
     s4.draw(seqs, pat4);
 
+    // colorscheme EXAMPLE
+    const s6 = new SequenceViewer('sqv6');
+    const opt6 = { colorScheme: 'clustal'};
+    const seqs6 = [
+      {sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN'},
+      {sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'sp|P01942|HBA_MOUSE'},
+      {sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 3, label: 'sp|P13786|HBAZ_CAPHI'}
+    ];
+    s6.draw(seqs6, opt6);
+
     // indexes EXAMPLE
     const s5 = new SequenceViewer('sqv5');
     const seqs5 = [
@@ -109,10 +122,7 @@ export class AppComponent implements OnInit {
     const opt5 = { lateralIndexesGap: true};
     s5.draw(seqs5, opt5);
 
-    // colorscheme EXAMPLE
-    const s6 = new SequenceViewer('sqv6');
-    const opt6 = { colorScheme: 'clustal'};
-    s6.draw(seqs, opt6);
+
 
     // consensus EXAMPLE
     const s7 = new SequenceViewer('sqv7');
@@ -133,6 +143,15 @@ export class AppComponent implements OnInit {
     ];
     const opt8 = { oneLineSetting: true, oneLineWidth: '350px'};
     s8.draw(seqs8, opt8);
+
+    // selections EXAMPLE
+    const s9 = new SequenceViewer('sqv9');
+    const seqs9 = [
+      {sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN'},
+      {sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'sp|P01942|HBA_MOUSE'},
+      {sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 3, label: 'sp|P13786|HBAZ_CAPHI'}
+    ];
+    s9.draw(seqs9);
   }
 
 
