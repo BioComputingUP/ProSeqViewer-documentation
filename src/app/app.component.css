@@ -312,3 +312,55 @@ td, th {
 .field0 {
   background-color: rgba(0,0,0,.04);
 }
+
+.n {
+  height: 25px;
+  width: 25px;
+  background-color: #f09048;
+  border-radius: 50%;
+  display: flex; /* or inline-flex */
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.h {
+  height: 25px;
+  width: 25px;
+  background-color: #558B6E;
+  border-radius: 50%;
+  display: flex; /* or inline-flex */
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.p {
+  height: 25px;
+  width: 25px;
+  background-color: #D4358D;
+  border-radius: 50%;
+  display: flex; /* or inline-flex */
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.neg {
+  height: 25px;
+  width: 25px;
+  background-color: #A10702;
+  border-radius: 50%;
+  display: flex; /* or inline-flex */
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.pos {
+  height: 25px;
+  width: 25px;
+  background-color: #3626A7;
+  border-radius: 50%;
+  display: flex; /* or inline-flex */
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
