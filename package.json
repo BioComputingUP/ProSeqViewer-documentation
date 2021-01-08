@@ -22,7 +22,7 @@
     "@angular/router": "~10.2.3",
     "angular-cli-ghpages": "0.6.2",
     "rxjs": "~6.6.3",
-    "sequence-viewer-typescript": "1.0.20",
+    "sequence-viewer-typescript": "1.0.21",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
   },

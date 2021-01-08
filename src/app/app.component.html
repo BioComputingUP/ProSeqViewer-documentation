@@ -37,7 +37,7 @@
       <li><a href="#colorscheme" target="_self">Colorscheme example</a></li>
       <li><a href="#lateralindexes" target="_self">Lateral indexes example</a></li>
       <li><a href="#consensus" target="_self">Consensus example</a></li>
-      <li><a href="#oneLineSetting" target="_self">OneLineSetting example</a></li>
+      <li><a href="#oneLineSetting" target="_self">One line setting example</a></li>
       <li><a href="#selection" target="_self">Selection example</a></li>
     </ul>
   </div>
@@ -75,7 +75,7 @@
   <!-------------------------------------  REGIONS  EXAMPLE ---------------------------------------->
 
   <h2 id="regions" class="snippet-title">Regions example<a fragment="simple-slider"><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h2>
-    <p>Set the sequences and highlight them with customizable colors.</p>
+    <p>Highlight part of the sequences with customizable colors.</p>
     <div class="sqvDemo"><div id="sqv2"></div></div>
 
   <div class="tab">
@@ -89,9 +89,9 @@
           <span class="hljs-js">&lt;script></span>
             <span><span class="hljs-js">const</span> sequenceviewer = new SequenceViewer('sqvRegions'); </span>
             <span><span class="hljs-js">const</span> sequences = [ </span>
-            <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN'},</span>
+            <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHGGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN'},</span>
             <span>      &#123;sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'sp|P01942|HBA_MOUSE'},</span>
-            <span>      &#123;sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 2, label: 'sp|P13786|HBAZ_CAPHI'}</span>
+            <span>      &#123;sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDVSSGSAQLRAHG', id: 2, label: 'sp|P13786|HBAZ_CAPHI'}</span>
             <span>      ];</span>
             <span><span class="hljs-js">const</span> regions = [ </span>
             <span>      &#123;sequenceId: 2, start: 1, end: 10, backgroundColor: '#D72638', color: '#FFFFFF'},</span>
@@ -110,7 +110,7 @@
   <!-------------------------------------  ICONS  EXAMPLE ---------------------------------------->
 
   <h2 id="icons" class="snippet-title">Icons example<a fragment="simple-slider"><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h2>
-  <p>Add icons on the top of the sequences.</p>
+  <p>Add icons on the top of the sequences to indicate the secondary structure.</p>
   <p> You can use the icons already available or input customizable icons, for more information check the instructions in the API Documentation.</p>
 
   <div class="sqvDemo"><div id="sqv3"></div></div>
@@ -131,13 +131,22 @@
             <span>      &#123;sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 2, label: 'sp|P13786|HBAZ_CAPHI'}</span>
             <span>      ];</span>
             <span><span class="hljs-js">const</span> icons = [ </span>
-            <span>      &#123;sequenceId: 1, start: 11, end: 21, icon: 'turn'},</span>
-            <span>      &#123;sequenceId: 1, start: 21, end: 30, icon: 'helix'},</span>
-            <span>      &#123;sequenceId: 1, start: 31, end: 40, icon: 'lollipop'},</span>
-            <span>      &#123;sequenceId: 1, start: 41, end: 41, icon: 'arrowLeft'},</span>
-            <span>      &#123;sequenceId: 1, start: 42, end: 50, icon: 'strand'},</span>
-            <span>      &#123;sequenceId: 1, start: 48, end: 50, icon: 'noSecondary'},</span>
+            <span>      &#123;sequenceId: 1, start: 1, end: 5, icon: 'turn'},</span>
+            <span>      &#123;sequenceId: 1, start: 6, end: 15, icon: 'noSecondary'},</span>
+            <span>      &#123;sequenceId: 1, start: 15, end: 19, icon: 'strand'},</span>
+            <span>      &#123;sequenceId: 1, start: 20, end: 20, icon: 'arrowRight'},</span>
+            <span>      &#123;sequenceId: 1, start: 21, end: 25, icon: 'helix'},</span>
+            <span>      &#123;sequenceId: 1, start: 26, end: 30, icon: 'noSecondary'},</span>
+            <span>      &#123;sequenceId: 1, start: 31, end: 35, icon: 'strand'},</span>
+            <span>      &#123;sequenceId: 1, start: 36, end: 36, icon: 'arrowRight'},</span>
+            <span>      &#123;sequenceId: 1, start: 37, end: 46, icon: 'helix'},</span>
+            <span>      &#123;sequenceId: 1, start: 47, end: 47, icon: 'noSecondary'},</span>
+            <span>      &#123;sequenceId: 1, start: 47, end: 49, icon: 'lollipop', display: 'center'},</span>
+            <span>      &#123;sequenceId: 1, start: 49, end: 54, icon: 'noSecondary', display: 'center'},</span>
+            <span>      &#123;sequenceId: 1, start: 55, end: 60, icon: 'turn'},</span>
             <span>      ];</span>
+            <span><span class="hljs-js">const</span> opt3 = &#123;chunkSize: 60}; // sequence length </span>
+
             sequenceviewer.<span class="hljs-js">draw</span>(sequences, icons);
           <span class="hljs-js">&lt;/script></span>
 
@@ -147,7 +156,7 @@
   <!-------------------------------------  PATTERNS  EXAMPLE ---------------------------------------->
 
   <h2 id="patterns" class="snippet-title">Patterns example<a fragment="simple-slider"><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h2>
-  <p>Match the sequences against a regular expression. </p>
+  <p>Match the sequences against a regular expression to show possible patterns. </p>
   <div class="sqvDemo"><div id="sqv4"></div></div>
 
   <div class="tab">
@@ -166,11 +175,14 @@
             <span>      &#123;sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 2, label: 'sp|P13786|HBAZ_CAPHI'}</span>
             <span>      ];</span>
             <span><span class="hljs-js">const</span> patterns = [ </span>
-            <span>      &#123;sequenceId: 1, pattern: /MVL/g, backgroundColor: '#D72638'},</span>
             <span>      &#123;sequenceId: 1, pattern: /GA/g, backgroundColor: '#D72638'},</span>
-            <span>      &#123;sequenceId: 2, pattern: /LE/g, backgroundColor: '#FF570A'},</span>
+            <span>      &#123;sequenceId: 2, pattern: /GA/g, backgroundColor: '#D72638'},</span>
+            <span>      &#123;sequenceId: 1, pattern: /TT/g, backgroundColor: '#FF570A'},</span>
             <span>      &#123;sequenceId: 2, pattern: /TT/g, backgroundColor: '#FF570A'},</span>
-            <span>      &#123;sequenceId: 3, pattern: /AA/g, backgroundColor: '#FFBC42'}</span>
+            <span>      &#123;sequenceId: 2, pattern: /VS/g, backgroundColor: '#FFBC42'}</span>
+            <span>      &#123;sequenceId: 3, pattern: /VS/g, backgroundColor: '#FFBC42'}</span>
+            <span>      &#123;sequenceId: 2, pattern: /VS/g, backgroundColor: '#FFBC42'}</span>
+            <span>      &#123;sequenceId: 3, pattern: /VS/g, backgroundColor: '#FFBC42'}</span>
             <span>      ];</span>
             sequenceviewer.<span class="hljs-js">draw</span>(sequences, patterns);
          <span class="hljs-js">&lt;/script></span>
@@ -207,7 +219,7 @@
   </div>
   <!-------------------------------------  Lateral INDEXES  EXAMPLE ---------------------------------------->
 
-  <h2 id="lateralindexes" class="snippet-title">LateralIndexes example<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h2>
+  <h2 id="lateralindexes" class="snippet-title">Lateral Indexes example<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h2>
   <p>Set a lateral starting index for the sequence/s. You can count gaps or not. (See API Documentation)</p>
   <p>Here the start index is set at 2 and gaps are counted.</p>
   <p> The sequence-viewer width is set to 450px to show the indexes behaviour when the sequence is split in several lines.</p>
@@ -224,7 +236,7 @@
         <span class="hljs-js">&lt;script></span>
           <span><span class="hljs-js">const</span> sequenceviewer = new SequenceViewer('sqvLateralIndexes'); </span>
           <span><span class="hljs-js">const</span> sequences = [ </span>
-          <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN', startIndex: 2}</span>
+          <span>      &#123;sequence: 'MVLSPADKTNVKAA-----EYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN', startIndex: 2}</span>
           <span>      ];</span>
           <span><span class="hljs-js">const</span> options =  &#123;</span>
           <span>      lateralIndexesGap: true</span>
@@ -239,6 +251,17 @@
 
   <h2 id="consensus" class="snippet-title">Consensus example<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h2>
   <p>Set consensus and consensus threshold. Available consensus types are: identity, physical.</p>
+
+<!--  identity -->
+  <div class="palette">
+    <p style="color:#000;"><b>1. Identity consensus</b></p>
+    <div style="width:120px;background-color: #213945; color: white;">&nbsp;100%</div>
+    <div style="width:100px; background-color: #42728A; color: white;">&nbsp;70%</div>
+    <div style="width:80px; background-color: #5a93af; color: white;">&nbsp;40%</div>
+    <div style="width:60px; background-color: #9fc0d1; color: white;">&nbsp;10%</div>
+    <div style="width:40px; background-color: #9fc0d1; color: white;">&nbsp;0%</div>
+  </div>
+
   <div class="sqvDemo"><div id="sqv7"></div></div>
 
   <div class="tab">
@@ -248,9 +271,9 @@
   <!-- Tab content -->
   <div>
        <pre class="prettyprint prettyprinted"><code class="language-java">
-         <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvConsensus"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
+         <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvConsensusIdentity"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
          <span class="hljs-js">&lt;script></span>
-          <span><span class="hljs-js">const</span> sequenceviewer = new SequenceViewer('sqvConsensus'); </span>
+          <span><span class="hljs-js">const</span> sequenceviewer = new SequenceViewer('sqvConsensusIdentity'); </span>
           <span><span class="hljs-js">const</span> sequences = [ </span>
           <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN', startIndex: 2},</span>
           <span>      &#123;sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'sp|P01942|HBA_MOUSE'},</span>
@@ -264,9 +287,145 @@
           </code></pre>
   </div>
 
+  <!--  physical-->
+  <p style="color: #000; margin-top: 20px;"><b>2. Physical consensus</b></p>
+  <p>If there there is 100% identity in a column, consensus identity is displayed. In all other cases, physical consensus is calculated.</p>
+
+  <table style="width: 50%;">
+    <tr class="first">
+      <th>Letter</th>
+      <th>Symbol</th>
+      <th>Property</th>
+    </tr>
+    <tr class="field0">
+      <td>A</td>
+      <td style="background-color: #f09048;">n</td>
+      <td>small nonpolar</td>
+    </tr>
+    <tr class="field0">
+      <td>G</td>
+      <td style="background-color: #f09048;">n</td>
+      <td>small nonpolar</td>
+    </tr>
+    <tr class="field0">
+      <td>S</td>
+      <td style="background-color: #f09048;">n</td>
+      <td>small nonpolar</td>
+    </tr>
+    <tr class="field0">
+      <td>T</td>
+      <td style="background-color: #f09048;">n</td>
+      <td>small nonpolar</td>
+    </tr>
+    <tr class="field0">
+      <td>C</td>
+      <td style="background-color: #558B6E;">h</td>
+      <td>hydrophobic</td>
+    </tr>
+    <tr class="field0">
+      <td>V</td>
+      <td style="background-color: #558B6E;">h</td>
+      <td>hydrophobic</td>
+    </tr>
+    <tr class="field0">
+      <td>I</td>
+      <td style="background-color: #558B6E;">h</td>
+      <td>hydrophobic</td>
+    </tr>
+    <tr class="field0">
+      <td>L</td>
+      <td style="background-color: #558B6E;">h</td>
+      <td>hydrophobic</td>
+    </tr>
+    <tr class="field0">
+      <td>P</td>
+      <td style="background-color: #558B6E;">h</td>
+      <td>hydrophobic</td>
+    </tr>
+    <tr class="field0">
+      <td>F</td>
+      <td style="background-color: #558B6E;">h</td>
+      <td>hydrophobic</td>
+    </tr>
+    <tr class="field0">
+      <td>Y</td>
+      <td style="background-color: #558B6E;">h</td>
+      <td>hydrophobic</td>
+    </tr>
+    <tr class="field0">
+      <td>M</td>
+      <td style="background-color: #558B6E;">h</td>
+      <td>hydrophobic</td>
+    </tr>
+    <tr class="field0">
+      <td>W</td>
+      <td style="background-color: #558B6E;">h</td>
+      <td>hydrophobic</td>
+    </tr>
+    <tr class="field0">
+      <td>N</td>
+      <td style="background-color: #D4358D;">p</td>
+      <td>polar</td>
+    </tr>
+    <tr class="field0">
+      <td>Q</td>
+      <td style="background-color: #D4358D;">p</td>
+      <td>polar</td>
+    </tr>
+    <tr class="field0">
+      <td>H</td>
+      <td style="background-color: #D4358D;">p</td>
+      <td>polar</td>
+    </tr>
+    <tr class="field0">
+      <td>D</td>
+      <td style="background-color: #A10702;">~</td>
+      <td>negatively charged</td>
+    </tr>
+    <tr class="field0">
+      <td>E</td>
+      <td style="background-color: #A10702;">~</td>
+      <td>negatively charged</td>
+    </tr>
+    <tr class="field0">
+      <td>K</td>
+      <td style="background-color: #3626A7;">+</td>
+      <td>positively charged</td>
+    </tr>
+    <tr class="field0">
+      <td>R</td>
+      <td style="background-color: #3626A7;">+</td>
+      <td>positively charged</td>
+    </tr>
+
+  </table>
+
+  <div class="sqvDemo"><div id="sqvPhysical"></div></div>
+  <div class="tab">
+    <button>index.html</button>
+  </div>
+
+  <!-- Tab content -->
+  <div>
+       <pre class="prettyprint prettyprinted"><code class="language-java">
+         <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvConsensusPhysical"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
+         <span class="hljs-js">&lt;script></span>
+          <span><span class="hljs-js">const</span> sequenceviewer = new SequenceViewer('sqvConsensusPhysical'); </span>
+          <span><span class="hljs-js">const</span> sequences = [ </span>
+          <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN', startIndex: 2},</span>
+          <span>      &#123;sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'sp|P01942|HBA_MOUSE'},</span>
+          <span>      &#123;sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 2, label: 'sp|P13786|HBAZ_CAPHI'}</span>
+          <span>      ];</span>
+          <span><span class="hljs-js">const</span> options =  &#123;</span>
+          <span>      consensusType: 'physical'</span>
+          <span>      };</span>
+          sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);
+         <span class="hljs-js">&lt;/script></span>
+          </code></pre>
+  </div>
   <!-------------------------------------  ONELINESETTING  EXAMPLE ---------------------------------------->
 
-  <h2 id="oneLineSetting" class="snippet-title">OneLineSetting example<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h2>
+  <h2 id="oneLineSetting" class="snippet-title">One line setting example<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h2>
   <p>Set a non-responsive version of the sequence viewer. The width is fixed and a scrollbar helps the visualization of the sequences.</p>
   <div class="sqvDemo">
     <div class="row">
@@ -308,8 +467,19 @@
       <div id="sqv9"></div>
     </div>
   </div>
-<!--  <input id="paste" placeholder="Try to paste something here!" >-->
+  <div class="box">
+    <form>
+      <div class="row">
+        <div class="col-25">
+          <label for="subject">Try it out!</label>
+        </div>
+        <div class="col-75">
+          <textarea id="subject" name="subject" placeholder="Copy-paste something.." style="height:200px"></textarea>
+        </div>
+      </div>
 
+    </form>
+  </div>
 
   <p><b>1. On character selected event </b></p>
   <p>The double click event will return information about the clicked character, like the x, y positions and the character itself.</p>
