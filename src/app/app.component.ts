@@ -46,13 +46,41 @@ export class AppComponent implements OnInit {
     ];
     s0.draw(seqs0, reg, opt);
 
-    // GENERAL EXAMPLE: multisequence
+    // GENERAL EXAMPLE: single sequence
     const seqSingle = new SequenceViewer('sqvSingle');
     const seq = [
       {sequence: 'MKTTRRSFLKLVGVSVVGLSLGQLGFDLEDAQAYAVKLKIEGAKEVGTVCPFCSVCCQVIAYVRNGKLVSTEGDPDFPVNEGALCAKGAALFSMYTNPHRLTKPLYRAPHSDKWVEKDWDWTLNQIARRVKDARDKDMILKNDKGQTVNRLESIFMMGTSHASNEECAVIHQAMRGLGVVHMDHQARVUHSPTVAALAESFGRGAMTNHWIDIKNTDAVLIIGSNAAEHHPVAFKWIMRARDNGAVLMHVDPKFSRTSARCDFHVPLRSGTDIAFLGGMVNHIIAKDLYFKDYVANYTNAAFVVGKDYAFEDGIFSGYDPKTRTYDRSKWEFEKGPDGGPVMDPTLKNERCVFNLMKKHYERYTLKNVSDVTGVSEENLLRVYDAFCATGRPDKAGTILYALGWTQHTVGVQNIRTSTLIQLLLGNIGVAGGGINALRGEPNVQGSTDHALLYHILPGYNAMPVAQWQTLADYNKANTPVTTLKNSANWWSNRPKYVASLLKGWFGDAATPENDFCYEYLPKLEKGEDYSYMYVMDRMYHGKLKGGFIFGVNPMNSFPNTNKMRAALDKLDWLVCSELHNSETTDNWKRPGVDPKACKTEVFLLPSAHRVEKAGTISNSGRWLQWFDKAVEPGQARNFADIFVPLVNKIRALYKAEGGTLPDPVLKLHWTDKFDPEEWTRRINGFFWADTKVGDKEYKRGQLVPAFGQLKDDGSTSSLNWLYTGSYTEEDGNKSKRRDARQTPMQANIGLFPNWSWCWPVNRRILYNRASVDVNGKPWNPKKAVIEWDGAKWVGDVPDGPWPPMADKEKGKLPFIMNKDGFAQFYGTGRMDGPFPEHYEPAETPLDSHPFSKQLSSPVYKFHTSDMDQIAKAADPKYPIVLTTYSLTEHWCGGGETRNVPNLLETEPQLYIEMSPELAEEKGIKNGDGVIVESIRGRAEAIAMVTVRIRPFTVMGKTVHLVGMPFAYGWTTPKCGDSTNRLTVGAYDPNTTIPESKACLVNVRKADKLTEIA', id: 1, label: 'Q727P3'}
     ];
+    const singleReg = [
+      {sequenceId: 1, start: 311, end: 340, backgroundColor: '#78A1BB', color: '#FFFFFF'},
+      {sequenceId: 1, start: 371, end: 390, backgroundColor: '#78A1BB', color: '#FFFFFF'},
+      {sequenceId: 1, start: 411, end: 430, backgroundColor: '#ED254E', color: '#FFFFFF'},
+      {sequenceId: 1, start: 481, end: 500, backgroundColor: '#ED254E', color: '#FFFFFF'},
+      {sequenceId: 1, start: 521, end: 540, backgroundColor: '#283044', color: '#FFFFFF'},
+      {sequenceId: 1, start: 521, end: 540, backgroundColor: '#283044', color: '#FFFFFF'},
+      {sequenceId: 1, start: 521, end: 540, backgroundColor: '#A60067', color: '#FFFFFF'},
+      {sequenceId: 1, start: 571, end: 590, backgroundColor: '#A60067', color: '#FFFFFF'},
+      {sequenceId: 1, start: 611, end: 630, backgroundColor: '#393C93', color: '#FFFFFF'},
+      {sequenceId: 1, start: 691, end: 710, backgroundColor: '#393C93', color: '#FFFFFF'},
+      {sequenceId: 1, start: 781, end: 800, backgroundColor: '#7E1173', color: '#FFFFFF'},
+      {sequenceId: 1, start: 891, end: 910, backgroundColor: '#7E1173', color: '#FFFFFF'},
+    ];
+    const singleIco = [
+      {sequenceId: 1, start: 1, end: 10, icon: 'turn'},
+      {sequenceId: 1, start: 21, end: 24, icon: 'noSecondary'},
+      {sequenceId: 1, start: 25, end: 29, icon: 'strand'},
+      {sequenceId: 1, start: 30, end: 30, icon: 'arrowRight'},
+      {sequenceId: 1, start: 51, end: 60, icon: 'helix'},
+      {sequenceId: 1, start: 111, end: 116, icon: 'noSecondary'},
+      {sequenceId: 1, start: 117, end: 119, icon: 'strand'},
+      {sequenceId: 1, start: 120, end: 120, icon: 'arrowRight'},
+      {sequenceId: 1, start: 161, end: 190, icon: 'helix'},
+      {sequenceId: 1, start: 231, end: 240, icon: 'lollipop'},
+      {sequenceId: 1, start: 251, end: 260, icon: 'helix'},
+      {sequenceId: 1, start: 271, end: 290, icon: 'turn'}
+    ];
 
-    seqSingle.draw(seq);
+    seqSingle.draw(seq, singleReg, singleIco);
 
 
     // SIMPLE EXAMPLE
@@ -79,7 +107,6 @@ export class AppComponent implements OnInit {
       {sequenceId: 2, start: 21, end: 30, backgroundColor: '#FFBC42', color: '#FFFFFF'},
       {sequenceId: 2, start: 31, end: 40, backgroundColor: '#44885B', color: '#FFFFFF'},
       {sequenceId: 2, start: 41, end: 50, backgroundColor: '#393C93', color: '#FFFFFF'},
-      {sequenceId: 3, start: 41, end: 50, backgroundColor: '#393C93', color: '#FFFFFF'},
       {sequenceId: 2, start: 51, end: 60, backgroundColor: '#7E1173', color: '#FFFFFF'},
     ];
     s2.draw(seqs, reg1);
