@@ -1,27 +1,68 @@
-# SequenceViewerDocumentation
+# TypeScript Sequence Viewer
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.22.
+This is a code repository for the BioComputingUP Sequence Viewer project.
+Full documentation is work in progress and will be available at: https://biocomputingup.github.io/sequence-viewer-documentation/.
 
-## Development server
+This version is based on [Typescript](https://www.typescriptlang.org/) and compatible with [Angular 2+](https://angular.io/) framework.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Represent biological data with the sequence viewer library! Used in [MobiDB](http://mobidb.bio.unipd.it/),
+[DisProt](http://www.disprot.org/) and [RepeatsDB](http://repeatsdb.bio.unipd.it/).
 
-## Code scaffolding
+## Dependencies
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* [Typescript](https://www.typescriptlang.org/)
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Output demo
 
-## Running unit tests
+![Sequence Viewer](src/assets/sqvDemo.png)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Getting started
 
-## Running end-to-end tests
+1 Install the library using npm
+```
+npm install sequence-viewer-typescript
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+2 Import the sequence viewer in javascript or your angular component
+```typescript
+import {SequenceViewer} from 'sequence-viewer-typescript/dist';
+```
 
-## Further help
+3 Optional: if you are installing the feature viewer in an Angular 2+ based App, you may
+need to load the feature viewer stylesheet in your angular.json "styles" to
+ensure the correct prioritization of stylesheets.
+```json
+styles: [
+    "./node_modules/sequence-viewer-typescript/dist/assets/sqv.scss"
+]
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+4 Place the sequence viewer in your html
+```html
+ <div id="sqv"></div>
+```
+
+5 Create an instance of the sequence viewer in javascript and style it
+```typescript
+this.sequenceviewer = new SequenceViewer('sqv');
+```
+
+6 Add inputs -- here an example with minimum required input, for the full list of input settings options check github documentation --.
+```typescript
+ this.sequences = [{sequence: 'DFRLE--F---'}]
+```
+7 Execute the function to draw the sequence viewer on the page
+```typescript
+ this.sequenceviewer.draw(this.sequences);
+```
+
+## Support
+
+If you have any problem or suggestion please open an issue.
+
+## License
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public
+License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later
+version.
