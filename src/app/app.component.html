@@ -1,7 +1,15 @@
 <div class="jumbotron jumbotron-fluid pb-3 mb-0">
   <div class="container"><div class="d-flex flex-row"><div class="mr-3">
     <div><h1 class="display-4">Sequence Viewer Typescript</h1>
-      <p _ngcontent-c1="" class="lead">Self-contained Typescript library for the visualization of (not only) biological sequence features: <a _ngcontent-c1="" href="https://github.com/BioComputingUP/sequence-viewer-typescript">sequence-viewer-typescript</a> (Github)</p><a href="https://www.npmjs.com/package/sequence-viewer-typescript"><span id="npm">npm package </span><span id="version">1.0.26</span></a></div></div></div></div></div>
+      <p class="lead">This is the full documentation of the Sequence Viewer Typescript library for the visualization of (not only) biological sequence features: <a _ngcontent-c1="" href="https://github.com/BioComputingUP/sequence-viewer-typescript">sequence-viewer-typescript</a> (Github). Used in
+        <a href="https://mobidb.bio.unipd.it/">MobiDB</a>,
+        <a href="https://www.disprot.org/">DisProt</a> and
+        <a href="https://repeatsdb.bio.unipd.it/">RepeatsDB</a>.</p>
+      <p class="lead">This package is based on Typescript and compatible with Angular 2+ framework. A Javascript version of the package is also available (see the API documentation for more info).</p>
+      <a href="https://www.npmjs.com/package/sequence-viewer-typescript"><span id="npm">npm package </span><span id="version">1.0.26</span></a></div></div></div></div></div>
+<button class="tablink" (click)="openPage('Demos')" id="defaultOpen" >Demos</button>
+<button class="tablink" (click)="openPage('API')" >API  Documentation</button>
+
 <div id="preview">
   <h3>Multisequence alignment</h3>
   <div class="sqvDemoGeneral">
@@ -16,8 +24,7 @@
     </div>
   </div>
 </div>
-<button class="tablink" (click)="openPage('Demos')" id="defaultOpen" >Demos</button>
-<button class="tablink" (click)="openPage('API')" >API  Documentation</button>
+
 
 <!------------------------------------- DEMO ---------------------------------------->
 
@@ -27,7 +34,7 @@
 
   <div>
     <ul>
-      <li><h2 class="txt">Tutorial</h2>
+      <li id="tutorial"><h2 class="txt">Tutorial</h2>
         <p>The following are example demo, for a complete list of the available features please check the API Documentation.</p>
       <li>
       <li><a href="#simple" target="_self">Simple example</a></li>
@@ -239,6 +246,7 @@
           </code></pre>
   </div>
   <p style="color:#000;margin-top: 20px"><b>2. Blosum62</b></p>
+<!--  <div id="heatmap"></div>-->
 
   <!-------------------------------------  Lateral INDEXES  EXAMPLE ---------------------------------------->
 

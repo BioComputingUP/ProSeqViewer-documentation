@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {SequenceViewer} from 'sequence-viewer-typescript/dist';
+import Plotly from 'plotly.js';
 
 @Component({
   selector: 'app-root',
@@ -80,7 +81,9 @@ export class AppComponent implements OnInit {
       {sequenceId: 1, start: 271, end: 290, icon: 'turn'}
     ];
 
-    seqSingle.draw(seq, singleReg, singleIco);
+    const singleOpt = {chunkSize: 200};
+
+    seqSingle.draw(seq, singleReg, singleIco, singleOpt);
 
 
     // SIMPLE EXAMPLE
@@ -154,6 +157,15 @@ export class AppComponent implements OnInit {
       {sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 3, label: 'sp|P13786|HBAZ_CAPHI'}
     ];
     s6.draw(seqs6, opt6);
+
+    // const data = [
+    //   {
+    //     z: [[1, 20, 30], [20, 1, 60], [30, 60, 1], [60, 20, 30]],
+    //     type: 'heatmap'
+    //   }
+    // ];
+    //
+    // Plotly.newPlot('heatmap', data);
 
     // indexes EXAMPLE
     const s5 = new SequenceViewer('sqv5');

@@ -18,6 +18,9 @@
   margin-left: auto;
 }
 
+.intro {
+}
+
 #preview{
   padding: 50px 100px 100px 100px;
 }
@@ -174,7 +177,6 @@ h3 {
 
 .sqvDemo {
   display: flex;
-  justify-content: center;
   margin-top: 20px;
   margin-bottom: 20px;
   border: 1px solid #dddddd;
@@ -183,8 +185,8 @@ h3 {
   overflow-x: auto;
 }
 .sqvDemoGeneral {
+  overflow-x: auto;
   display: flex;
-  justify-content: center;
   border: 1px solid #dddddd;
   padding: 20px;
 }
