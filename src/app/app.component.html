@@ -218,6 +218,33 @@
   <p>Set a global colorScheme. Available global colorschemes are: clustal, blosum62.</p>
   <p style="color:#000;"><b>1. Clustal</b></p>
 
+  <table>
+    <tr class="first">
+      <th>Aminoacid</th>
+      <th>Color</th>
+    </tr>
+    <tr class="field0">
+      <td> A, I, L, M, F, W, V</td>
+      <td><span class="a"></span></td>
+    </tr>
+    <tr class="field0">
+      <td>K, R</td>
+      <td><span class="k"></span></td>
+    </tr>
+    <tr class="field0">
+      <td>E, D</td>
+      <td><span class="e"></span></td>
+    </tr>
+    <tr class="field0">
+      <td>C, G</td>
+      <td><span class="c"></span></td>
+    </tr>
+    <tr class="field0">
+      <td>N, Q, S, T, P, H, Y</td>
+      <td><span class="q"></span></td>
+    </tr>
+  </table>
+
   <div class="sqvDemo"><div id="sqv6"></div></div>
   <div class="tab">
     <button>index.html</button>
@@ -229,10 +256,10 @@
          <span class="hljs-js">&lt;head></span>
           <span class="hljs-js">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">>&lt;/div&gt;</span>
          <span class="hljs-js">&lt;/head></span>
-         <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvColorscheme"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
+         <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvClustal"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
          <span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">&lt;/div&gt;</span>
           <span class="hljs-js">&lt;script></span>
-            <span><span class="hljs-js">const</span> sequenceviewer = new SequenceViewer('sqvColorscheme'); </span>
+            <span><span class="hljs-js">const</span> sequenceviewer = new SequenceViewer('sqvClustal'); </span>
             <span><span class="hljs-js">const</span> sequences = [ </span>
             <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN', startIndex: 2},</span>
             <span>      &#123;sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'sp|P01942|HBA_MOUSE'},</span>
@@ -246,8 +273,36 @@
           </code></pre>
   </div>
   <p style="color:#000;margin-top: 20px"><b>2. Blosum62</b></p>
-<!--  <div id="heatmap"></div>-->
 
+    <img src="assets/heatmap.svg">
+
+  <div class="sqvDemo"><div id="sqvBlosum"></div></div>
+  <div class="tab">
+    <button>index.html</button>
+  </div>
+
+  <!-- Tab content -->
+  <div>
+       <pre class="prettyprint prettyprinted"><code class="language-java">
+         <span class="hljs-js">&lt;head></span>
+          <span class="hljs-js">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">>&lt;/div&gt;</span>
+         <span class="hljs-js">&lt;/head></span>
+         <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvBlosum"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
+         <span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">&lt;/div&gt;</span>
+          <span class="hljs-js">&lt;script></span>
+            <span><span class="hljs-js">const</span> sequenceviewer = new SequenceViewer('sqvBlosum'); </span>
+            <span><span class="hljs-js">const</span> sequences = [ </span>
+            <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN'},</span>
+            <span>      &#123;sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'sp|P01942|HBA_MOUSE'},</span>
+            <span>      &#123;sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 2, label: 'sp|P13786|HBAZ_CAPHI'}</span>
+            <span>      ];</span>
+            <span><span class="hljs-js">const</span> options =  &#123;</span>
+            <span>      colorScheme: 'blosum62'</span>
+            <span>      };</span>
+            sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);
+         <span class="hljs-js">&lt;/script></span>
+          </code></pre>
+  </div>
   <!-------------------------------------  Lateral INDEXES  EXAMPLE ---------------------------------------->
 
   <h2 id="lateralindexes" class="snippet-title">Lateral Indexes example<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h2>
@@ -335,7 +390,7 @@
 
   <table>
     <tr class="first">
-      <th>Letter</th>
+      <th>Aminoacid</th>
       <th>Symbol</th>
       <th>Property</th>
     </tr>

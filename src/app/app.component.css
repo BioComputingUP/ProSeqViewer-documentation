@@ -314,6 +314,63 @@ td, th {
   background-color: rgba(0,0,0,.04);
 }
 
+
+/*clustal*/
+.a {
+  height: 25px;
+  width: 25px;
+  background-color: #80a0f0;
+  border-radius: 50%;
+  display: flex; /* or inline-flex */
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.k {
+  height: 25px;
+  width: 25px;
+  background-color: #f01505;
+  border-radius: 50%;
+  display: flex; /* or inline-flex */
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.e {
+  height: 25px;
+  width: 25px;
+  background-color: #c048c0;
+  border-radius: 50%;
+  display: flex; /* or inline-flex */
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.c {
+  height: 25px;
+  width: 25px;
+  background-color: #f08080;
+  border-radius: 50%;
+  display: flex; /* or inline-flex */
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.q {
+  height: 25px;
+  width: 25px;
+  background-color: #15c015;
+  border-radius: 50%;
+  display: flex; /* or inline-flex */
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+/*physical consensus*/
+
 .n {
   height: 25px;
   width: 25px;

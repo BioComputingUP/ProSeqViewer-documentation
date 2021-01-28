@@ -157,14 +157,15 @@ export class AppComponent implements OnInit {
     ];
     s6.draw(seqs6, opt6);
 
-    // const data = [
-    //   {
-    //     z: [[1, 20, 30], [20, 1, 60], [30, 60, 1], [60, 20, 30]],
-    //     type: 'heatmap'
-    //   }
-    // ];
-    //
-    // Plotly.newPlot('heatmap', data);
+    // blosum62
+    const sBlos = new SequenceViewer('sqvBlosum');
+    const optBlos = { colorScheme: 'blosum62'};
+    const seqsBlos = [
+      {sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN'},
+      {sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'sp|P01942|HBA_MOUSE'},
+      {sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 3, label: 'sp|P13786|HBAZ_CAPHI'}
+    ];
+    sBlos.draw(seqsBlos, optBlos);
 
     // indexes EXAMPLE
     const s5 = new SequenceViewer('sqv5');
