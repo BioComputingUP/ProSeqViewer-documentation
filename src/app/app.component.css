@@ -1,53 +1,18 @@
 
-.jumbotron-fluid {
-  padding-right: 0;
-  padding-left: 0;
-  border-radius: 0;
-}
-  .jumbotron {
-    padding: 2rem 1rem;
-    background-color: #D9D9D9;
-    border-radius: .3rem;
-  }
-
-.container {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+#container {
+  margin-right: 250px;
+  margin-left: 300px;
 }
 
-.intro {
-}
-
-#preview{
-  padding: 100px 100px 0px 100px;
-}
-
-.display-4 {
-  font-size: 3.5rem;
+.tit {
+  color: #E36397;
+  font-size: 6.5rem;
   font-weight: 300;
   line-height: 1.2;
 }
-.h1, h1 {
-  font-size: 2.5rem;
-}
-a {
-  color: #007bff;
-  text-decoration: none;
-  background-color: transparent;
-}
-
-.fork-me-ribbon[_ngcontent-c1] {
-  position: absolute;
-  top: 0;
-  right: 0;
-  border: 0;
-}
 
 .lead {
-  font-size: 1.25rem;
+  font-size: 1.7rem;
   font-weight: 300;
 }
 p {
@@ -63,55 +28,32 @@ p {
   background-color: dimgrey;
   color: #e9ecef;
   padding: 5px;
-  border-radius: 5px;
+  border: 5px;
 }
 
-#version{
+#git{
+  background-color: dimgrey;
+  color: #e9ecef;
+  padding: 5px;
+  border: 5px;
+}
+
+#version {
   background-color: brown;
   color: white;
   padding: 5px;
-  border-radius: 5px;
+  border: 5px;
+  margin-right: 1rem;
+}
+
+#versiongit{
+  background-color: seagreen;
+  color: white;
+  padding: 5px;
+  border: 5px;
 }
 .txt {
   color: #E36397;
-}
-
-li {
-  border-top: 0.5px solid #eee;
-  border-bottom: 0.5px solid #eee;
-}
-
-ul {
-  padding: 0;
-  list-style-type: none;
-}
-
-.wlink {
-  color: white;
-}
-
-/* Style tab links */
-.tablink {
-  display: inline-block;
-  width: 50%;
-  background-color: #E36397;
-  color: white;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  font-size: 17px;
-}
-
-.tablink:hover {
-  background-color: #BC8DA7;
-}
-
-/* Style the tab content (and add height:100% for full page content) */
-.tabcontent {
-  display: none;
-  padding: 50px  100px 100px 100px;
-  height: 100%;
 }
 
 @media only screen and (max-width: 600px) {
@@ -123,11 +65,7 @@ ul {
   }
 }
 
-
-h2 {
-  font-size: 2rem;
-}
-h3 {
+h4 {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
@@ -140,48 +78,6 @@ h3 {
   color: inherit;
 }
 
- .tab {
-  overflow: hidden;
-  background-color: #F5F5F5;
-}
-
-/* Style the buttons that are used to open the tab content */
-.tab button {
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-  border-left: 1px solid #cccc;
-  border-right: 1px solid #cccc;
-  border-top: 1px solid #cccc;
-  background-color: #f1f1f1;
-}
-
-/* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #E0E0E0;
-}
-
-/* Create an active/current tablink class */
-.tab button.active {
-  background-color: #ccc;
-}
-
-/* Style the tab content */
-.tb {
-  font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid #cccc;
-  border-top: none;
-  background-color: #f1f1f1;
-}
- .tl {
-   border: 1px solid #ccc;
- }
-
 .sqvDemo {
   display: flex;
   margin-top: 20px;
@@ -191,6 +87,7 @@ h3 {
   box-shadow: 2.5px 5px #dddddd;
   overflow-x: auto;
 }
+
 .sqvDemoGeneral {
   overflow-x: auto;
   overflow-y: auto;
@@ -261,12 +158,6 @@ label {
   }
 }
 
-/*#paste{*/
-/*  width: 450px;*/
-/*  height: 100px;*/
-/*  margin-bottom: 10px;*/
-/*  overflow-x: scroll;*/
-/*}*/
 
 pre  {
   padding: 10px;
@@ -426,4 +317,52 @@ td, th {
   align-items: center;
   justify-content: center;
   color: white;
+}
+
+
+.sidenav {
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0px;
+  left: 20px;
+  background: #eee;
+  overflow-x: hidden;
+  padding: 8px 0;
+  height: 100%;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 1.7rem;
+  color: black;
+  display: block;
+}
+
+.sidenav b {
+  color: #E36397;
+}
+
+.sidenav a:hover {
+  color: #064579;
+}
+
+.main {
+  margin-left: 140px; /* Same width as the sidebar + left position in px */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+#reg {
+  margin-top: 250px;
+}
+
+#api {
+  margin-top: 20px;
 }

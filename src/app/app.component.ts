@@ -9,23 +9,8 @@ import {SequenceViewer} from 'sequence-viewer-typescript/dist';
 export class AppComponent implements OnInit {
   title = 'sequence-viewer-documentation';
 
-  public openPage(pageName) {
-    let i;
-    let tabcontent;
-    let tablinks;
-    tabcontent = document.getElementsByClassName('tabcontent');
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = 'none';
-    }
-    tablinks = document.getElementsByClassName('tablink');
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].style.backgroundColor = '';
-    }
-    document.getElementById(pageName).style.display = 'block';
-  }
 
   ngOnInit(): void {
-    document.getElementById('defaultOpen').click();
 
     // GENERAL EXAMPLE: multisequence
     const s0 = new SequenceViewer('sqv0');
@@ -40,11 +25,8 @@ export class AppComponent implements OnInit {
     ];
 
 
-    const opt = { topIndexes: true, colorScheme: 'blosum62', consensusType: 'identity'};
-    const reg = [
-      {sequenceId: 2, start: 1, end: 10, backgroundColor: '#D72638', color: '#FFFFFF'}
-    ];
-    s0.draw(seqs0, reg, opt);
+    const opt = { topIndexes: true, colorScheme: 'blosum62'};
+    s0.draw(seqs0, opt);
 
     // GENERAL EXAMPLE: single sequence
     const seqSingle = new SequenceViewer('sqvSingle');
@@ -84,17 +66,6 @@ export class AppComponent implements OnInit {
 
     seqSingle.draw(seq, singleReg, singleIco, singleOpt);
 
-
-    // SIMPLE EXAMPLE
-    const s1 = new SequenceViewer('sqv1');
-
-    const seqs1 = [
-      {sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN'},
-      {sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'sp|P01942|HBA_MOUSE', colorScheme: 'clustal'},
-      {sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 3, label: 'sp|P13786|HBAZ_CAPHI'}
-    ];
-    s1.draw(seqs1);
-
     // REGIONS EXAMPLE
     const s2 = new SequenceViewer('sqv2');
     const seqs = [
@@ -111,7 +82,7 @@ export class AppComponent implements OnInit {
       {sequenceId: 2, start: 41, end: 50, backgroundColor: '#393C93', color: '#FFFFFF'},
       {sequenceId: 2, start: 51, end: 60, backgroundColor: '#7E1173', color: '#FFFFFF'},
     ];
-    s2.draw(seqs, reg1);
+    s2.draw(seqs);
 
     // icons EXAMPLE
     const s3 = new SequenceViewer('sqv3');
