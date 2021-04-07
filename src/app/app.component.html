@@ -597,7 +597,7 @@
       <p>You can find the <i>sqv.css</i> file in the src/assets folder on the <a href="https://github.com/BioComputingUP/sequence-viewer-typescript">Github repo.</a></p>
 
       <h5><strong>2. Download the library code</strong></h5>
-      <p>You can find the <i>sqv-bundle.js</i> file in the src/assets folder on the <a href="https://github.com/BioComputingUP/sequence-viewer-typescript">Github repo.</a></p>
+      <p>You can find the <i>sqv-bundle.js</i> file in the dist folder on the <a href="https://github.com/BioComputingUP/sequence-viewer-typescript">Github repo.</a></p>
 
       <h5><strong>3. In your index.html:</strong></h5>
 
@@ -605,23 +605,21 @@
       <div>
       <pre class="prettyprint prettyprinted"><code class="language-java">
         <span class="hljs-js">&lt;head></span>
-        Place the sequence viewer in your index.html
-          <span class="hljs-js">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">>&lt;/div&gt;</span>  #Load the stylesheet
-
+          <span class="hljs-js">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">>&lt;/div&gt;</span>  // Load the stylesheet
         <span class="hljs-js">&lt;/head></span>
+        <span class="hljs-js">&lt;body></span>
         <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvSimple"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
-        <span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">&lt;/div&gt;</span>
+        <span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">>&lt;/script&gt;</span>
         <span class="hljs-js">&lt;script></span>
-        Create an instance of the sequence viewer in javascript
-          <span><span class="hljs-js">const</span> sequenceviewer = new SequenceViewer('sqvSimple'); </span>
-          <span><span class="hljs-js">const</span> sequences = [ </span>
-          <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN'},</span>
-          <span>      &#123;sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'sp|P01942|HBA_MOUSE',  colorScheme: 'clustal'},</span>
-          <span>      &#123;sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 2, label: 'sp|P13786|HBAZ_CAPHI'}</span>
+
+          <span><span class="hljs-js">const</span> sequenceviewer = new SequenceViewer('sqvSimple'); </span>  // Create an instance of the sequence viewer in javascript
+          <span><span class="hljs-js">const</span> sequence = [ </span>
+          <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAG--ALERMFL--YFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN'}</span>
           <span>      ];</span>
-        Execute the function to draw the sequence viewer on the page
-          <span>sequenceviewer.<span class="hljs-js">draw</span>(sequences);</span>
+
+          <span>sequenceviewer.<span class="hljs-js">draw</span>(sequence);</span>  // Execute the function to draw the sequence viewer on the page
         <span class="hljs-js">&lt;/script></span>
+        <span class="hljs-js">&lt;/body></span>
       </code></pre>
       </div>
 
@@ -637,19 +635,16 @@
       <h5><strong>3. Import the sequence viewer in your angular component </strong></h5>
       <pre><code><span class="hljs-js">import</span> &#123; SequenceViewer &#125; <span class="hljs-keyword">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</code></pre>
 
-      <h5><strong> 4. Place the sequence viewer in your html </strong></h5>
+      <h5><strong> 4. Place the sequence viewer in your template </strong></h5>
       <pre><code><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqv"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></code></pre>
 
 
-      <h5><strong> 5. Create an instance of the sequence viewer in your app.component.ts</strong></h5>
-      <pre><code><p><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span> SequenceViewer(<span class="hljs-id">'sqv'</span>);</p></code></pre>
-
-      <h5><strong> 6. Add inputs</strong></h5>
-      <p>Here an example with minimum required input, for the full list of input settings options check the available parameters.</p>
-      <pre><code><p><span class="hljs-js">const</span> sequence = [&#123;sequence: 'DFRLE--F-DFRLEDFRLE----&#125;]</p></code></pre>
-
-      <h5><strong> 7. Execute the function to draw the sequence viewer on the page </strong></h5>
-      <pre><code>sequenceviewer.<span class="hljs-js">draw</span>(sequence);</code></pre>
+      <h5><strong> 5. Create an instance of the sequence viewer in your component, add inputs and execute</strong></h5>
+      <pre><code>
+      <span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span> SequenceViewer(<span class="hljs-id">'sqv'</span>);
+      <span class="hljs-js">const</span> sequence = [&#123;sequence: 'DFRLE--F-DFRLEDFRLE----&#125;]
+      sequenceviewer.<span class="hljs-js">draw</span>(sequence);
+      </code></pre>
       <h4 class="txt" id="parameters">Available parameters</h4>
 
       <table>
@@ -692,7 +687,7 @@
           <td></td>
           <td>colorScheme</td>
           <td>string</td>
-          <td>clustal, gradient, binary, blosum62</td>
+          <td>clustal, gradient, binary</td>
           <td>Predefined color palette</td>
         </tr>
         <tr class="field1">
@@ -916,7 +911,7 @@
         <td></td>
         <td>colorScheme</td>
         <td>integer</td>
-        <td>clustal, gradient, binary,  blosum62</td>
+        <td>clustal, blosum62</td>
         <td>Colorscheme to apply to all sequences.</td>
       </tr>
       <tr class="field1">
