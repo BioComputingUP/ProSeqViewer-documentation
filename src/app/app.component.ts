@@ -15,13 +15,13 @@ export class AppComponent implements OnInit {
     // GENERAL EXAMPLE: multisequence
     const s0 = new SequenceViewer('sqv0');
     const seqs0 = [
-      {sequence: '---------DFEYLQLVLTWPASFCYANH---CE------------RIAPNNFTIHGLWPDNVKT-RLHN----------CKPKPTYSY-FT----------GKMLNDLDKHWMQLKFEQDY--GRTEQPSWKYQYIKHGSCCQKR--Y-NQNTYFGLALRLKD--KFDLLRTLQTHRIIP-GS-SYTFQDIFDAIKT-VSQEN----PDIKCAEVTKG--TPELYEIGICFTP------ -NADSMFRCPQS-D----------------------TCDKTAKV-L-F-----RR----', id: 1, label: '1iooA'},
-      {sequence: '----------YDYFQFTQQYQLAVCNSNRT-LCK------------DPPDKLFTVHGLWPSNMVGPDPSK----------CP-IKNIRK-RE----------KLLEHQLEIIWPNVFDRT-K-----NNLFWDKEWMKHGSCGYPT--IDNENHYFETVIKMYISKKQNVSRILSKAKIEPDGK-KRALLDIENAIRNGADNKK----PKLKCQKKGT---TTELVEITLCSDK-------SGEHFIDCPHP-FEPISP----------------HYCPTNNI--KY------------', id: 2, label: '1iqqA'},
-      {sequence: 'YVE---FAQDFDFFYFVQQWPGSYCDTKQS-CCYPK---------TGKPASDFGIHGLWPNNNDGSYPSN----------CDSNSPYDQSQV----------SDLISRMQQNWPTLACPSGT-----GSAFWSHEWEKHGTCAENV--F-DQHGYFKKALDLKN--QINLLEILQGAGIHPDGG-FYSLNSIKNAIRS-AIGYA----PGIECNVDESG--NSQLYQIYICVDG------ -SGSNLIECPIFPR---------------------GKCGSSIEF-P-T-----F-----', id: 3, label: '1iybA'},
-      {sequence: '------GHKEFDYFTLALTWSGTECLSVKD-SCPTN--ACS----RSEVETGFTIKGLWPDYDDGTWPSC----------CE-GAKYDQNEI----------SILSNDLSKYWPSYSCPSSSACGSFDASDLAYEWAKHGTCSSPV--LGNQYEYFSTTLMLYF--KYNISEILSESGYLPSNTAEYKVEGIMSAIQS-ALRVT----PVVKCKSD-------AVEQVQICFDK------ -T-LQLQECPST-A---------------------STCPSLVSL-P-IKNTIKP-----', id: 4, label: '1jy5A'},
-      {sequence: '----------FDSFWFVQQWPPAVCSFQKSGSCP------------GSGLRTFTIHGLWPQQS-GTSLTN----------CP-GSPFDITKI----------SHLQSQLNTLWPNVLRAN-------NQQFWSHEWTKHGTCSEST--F-NQAAYFKLAVDMRN--NYDIIGALRPHAAGPNGR-TKSRQAIKGFLKA-KFGKF----PGLRCRTDPQT-KVSYLVQVVACFAQ------ -DGSTLIDCTR------------------------DTCGANFI----------F-----', id: 5, label: '1ucdA'},
-      {sequence: 'LALQAKQYGDFDRYVLALSWQTGFCQSQHD-RNRNERDECRLQTETTNKADFLTVHGLWPGLPKSVAARGVDERRWMRFGCATRPIPNLPEARASRMCSSPETGLSLETAAKLSEVMPGAGG-----RSCLERYEYAKHGACFG----F-DPDAYFGTMVRLNQ--EIKESEAGKF-LADNYGK-TVSRRDFDAAFAK-SWGKENVKAVKLTCQGNP-----AYLTEIQISIKADAINAPLSANSFLPQPHP-----------------------GNCGKTFVI-D-K-----AGY---', id: 6, label: '2pqxA'},
-      {sequence: 'DKR-LRDNHEWKKLIMVQHWPETVCEKIQN-DCR------------D-PPDYWTIHGLWPDKSEG---------------CNRSWPFNLEEI----------KDLLPEMRAYWPDVIHSFPN-----RSRFWKHEWEKHGTCAAQVDALNSQKKYFGRSLELYR--ELDLNSVLLKLGIKPSIN-YYQVADFKDALAR-VYGVI----PKIQCLPPSQDEEVQTIGQIELCLTK-------QDQQLQNCTEP-GEQPSPKQEVWLANGAAESRGLRVCEDGPVFYPPPKKTKHHHHHHH', id: 7, label: '3t0oA'}
+      {sequence: '---------DFEYLQLVLTWPASFCYANH---CE------------RIAPNNFTIHGLWPDNVKT-RLHN----------CKPKPTYSY-FT----------GKMLNDLDKHWMQLKFEQDY--GRTEQPSWKYQYIKHGSCCQKR--Y-', id: 1, label: '1iooA'},
+      {sequence: '----------YDYFQFTQQYQLAVCNSNRT-LCK------------DPPDKLFTVHGLWPSNMVGPDPSK----------CP-IKNIRK-RE----------KLLEHQLEIIWPNVFDRT-K-----NNLFWDKEWMKHGSCGYPT--ID', id: 2, label: '1iqqA'},
+      {sequence: 'YVE---FAQDFDFFYFVQQWPGSYCDTKQS-CCYPK---------TGKPASDFGIHGLWPNNNDGSYPSN----------CDSNSPYDQSQV----------SDLISRMQQNWPTLACPSGT-----GSAFWSHEWEKHGTCAENV--F-', id: 3, label: '1iybA'},
+      {sequence: '------GHKEFDYFTLALTWSGTECLSVKD-SCPTN--ACS----RSEVETGFTIKGLWPDYDDGTWPSC----------CE-GAKYDQNEI----------SILSNDLSKYWPSYSCPSSSACGSFDASDLAYEWAKHGTCSSPV--LG', id: 4, label: '1jy5A'},
+      {sequence: '----------FDSFWFVQQWPPAVCSFQKSGSCP------------GSGLRTFTIHGLWPQQS-GTSLTN----------CP-GSPFDITKI----------SHLQSQLNTLWPNVLRAN-------NQQFWSHEWTKHGTCSEST--F-', id: 5, label: '1ucdA'},
+      {sequence: 'LALQAKQYGDFDRYVLALSWQTGFCQSQHD-RNRNERDECRLQTETTNKADFLTVHGLWPGLPKSVAARGVDERRWMRFGCATRPIPNLPEARASRMCSSPETGLSLETAAKLSEVMPGAGG-----RSCLERYEYAKHGACFG----F-', id: 6, label: '2pqxA'},
+      {sequence: 'DKR-LRDNHEWKKLIMVQHWPETVCEKIQN-DCR------------D-PPDYWTIHGLWPDKSEG---------------CNRSWPFNLEEI----------KDLLPEMRAYWPDVIHSFPN-----RSRFWKHEWEKHGTCAAQVDALN', id: 7, label: '3t0oA'}
     ];
 
 
@@ -62,7 +62,7 @@ export class AppComponent implements OnInit {
       {sequenceId: 1, start: 271, end: 290, icon: 'turn'}
     ];
 
-    const singleOpt = {chunkSize: 200};
+    const singleOpt = {chunkSize: 0};
 
     seqSingle.draw(seq, singleReg, singleIco, singleOpt);
 
@@ -76,13 +76,12 @@ export class AppComponent implements OnInit {
     const reg1 = [
       {sequenceId: 2, start: 1, end: 10, backgroundColor: '#D72638', color: '#FFFFFF'},
       {sequenceId: 2, start: 11, end: 20, backgroundColor: '#FF570A', color: '#FFFFFF'},
-      {sequenceId: 1, start: 21, end: 30, backgroundColor: '#FFBC42', color: '#FFFFFF'},
       {sequenceId: 2, start: 21, end: 30, backgroundColor: '#FFBC42', color: '#FFFFFF'},
       {sequenceId: 2, start: 31, end: 40, backgroundColor: '#44885B', color: '#FFFFFF'},
       {sequenceId: 2, start: 41, end: 50, backgroundColor: '#393C93', color: '#FFFFFF'},
       {sequenceId: 2, start: 51, end: 60, backgroundColor: '#7E1173', color: '#FFFFFF'},
     ];
-    s2.draw(seqs);
+    s2.draw(seqs, reg1);
 
     // icons EXAMPLE
     const s3 = new SequenceViewer('sqv3');

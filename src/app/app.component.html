@@ -1,7 +1,10 @@
 
 <div class="sidenav">
  <a  id="reg" href="#Demos" target="_self"><b>Demos</b></a>
- <a href="#regions" target="_self"> Regions</a>
+  <a href="#regions" target="_self"> Multi sequence</a>
+  <a href="#regions" target="_self"> Single sequence</a>
+  <a href="#Simple" target="_self"><b>Simple tutorials</b></a>
+  <a href="#regions" target="_self"> Regions</a>
  <a href="#icons" target="_self">Icons</a>
  <a href="#patterns" target="_self">Patterns</a>
  <a href="#colorscheme" target="_self">Colorscheme</a>
@@ -10,8 +13,8 @@
  <a href="#oneLineSetting" target="_self">One line setting</a>
  <a href="#selection" target="_self">Selection</a>
  <a id="api" href="#APIDocumentation" target="_self"><b>API Documentation</b></a>
- <a href="#angular" target="_self">Angular Installation</a>
- <a href="#javascript" target="_self">Javascript Installation</a>
+  <a href="#javascript" target="_self">Javascript Installation</a>
+  <a href="#angular" target="_self">Angular Installation</a>
  <a href="#parameters" target="_self">Available parameters</a>
 </div>
 <!------------------------------------- DEMO ---------------------------------------->
@@ -26,32 +29,81 @@
           <a href="https://www.disprot.org/">DisProt</a> and
           <a href="https://repeatsdb.bio.unipd.it/">RepeatsDB</a>.</p>
         <p class="lead">Based on Typescript and compatible with Angular 2+ framework. A Javascript version of the package is also available (see the <a href="#APIDocumentation">API documentation</a>).</p>
-        <a href="https://www.npmjs.com/package/sequence-viewer-typescript"><span id="npm">npm package </span><span id="version">1.0.26</span></a>
-        <a href="https://github.com/BioComputingUP/sequence-viewer-typescript"><span id="git">github </span><span id="versiongit">1.0.26</span></a></div></div></div></div>
-
-
-<div id="Demos">
-
-  <h2 class="txt"><b>Demos</b></h2>
-
-
-  <div>
-    <h4>Multisequence alignment</h4>
-    <div class="sqvDemoGeneral">
-      <div class="row">
-        <div id="sqv0"></div>
-      </div>
-    </div>
-    <h4>Single sequence</h4>
-    <div class="sqvDemoGeneral">
-      <div class="row">
-        <div id="sqvSingle"></div>
+        <a role="button" class="btn btn-primary" id="npm" href="https://www.npmjs.com/package/sequence-viewer-typescript">npm package 1.0.31</a>
+        <a role="button" class="btn btn-primary" id="git" href="https://github.com/BioComputingUP/sequence-viewer-typescript">github 1.0.31</a>
       </div>
     </div>
   </div>
 
-  <!-------------------------------------  REGIONS  EXAMPLE ---------------------------------------->
 
+<div id="Demos">
+
+  <h2 class="txt">Demos</h2>
+
+
+  <div>
+    <h4 class="snippet-title">Multisequence alignment</h4>
+
+
+        <div class="sqvDemo" id="sqv0"></div>
+
+        <!-- Tab content -->
+        <div>
+        <pre class="prettyprint prettyprinted"><code class="language-java">
+          <span class="hljs-js">&lt;head></span>
+            <span class="hljs-js">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">>&lt;/div&gt;</span>
+          <span class="hljs-js">&lt;/head></span>
+          <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvRegions"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
+          <span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">&lt;/div&gt;</span>
+          <span class="hljs-js">&lt;script></span>
+            <span><span class="hljs-js">const</span> sequenceviewer = new SequenceViewer('sqvMsa'); </span>
+            <span><span class="hljs-js">const</span> sequences = [ </span>
+            <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHGGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN'},</span>
+            <span>      &#123;sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'sp|P01942|HBA_MOUSE'},</span>
+            <span>      &#123;sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDVSSGSAQLRAHG', id: 2, label: 'sp|P13786|HBAZ_CAPHI'}</span>
+            <span>      ];</span>
+            <span><span class="hljs-js">const</span> options =  &#123;</span>
+            <span>      topIndexes: true, colorScheme: 'blosum62'</span>
+            <span>      };</span>
+            sequenceviewer.<span class="hljs-js">draw</span>(sequences, opt);
+          <span class="hljs-js">&lt;/script></span>
+
+       </code></pre>
+        </div>
+
+
+    <h4 class="snippet-title">Single sequence</h4>
+
+        <div id="sqvSingle"></div>
+
+    <!-- Tab content -->
+    <div>
+        <pre class="prettyprint prettyprinted"><code class="language-java">
+          <span class="hljs-js">&lt;head></span>
+            <span class="hljs-js">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">>&lt;/div&gt;</span>
+          <span class="hljs-js">&lt;/head></span>
+          <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvRegions"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
+          <span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">&lt;/div&gt;</span>
+          <span class="hljs-js">&lt;script></span>
+            <span><span class="hljs-js">const</span> sequenceviewer = new SequenceViewer('sqvMsa'); </span>
+            <span><span class="hljs-js">const</span> sequences = [ </span>
+            <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHGGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN'},</span>
+            <span>      &#123;sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'sp|P01942|HBA_MOUSE'},</span>
+            <span>      &#123;sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDVSSGSAQLRAHG', id: 2, label: 'sp|P13786|HBAZ_CAPHI'}</span>
+            <span>      ];</span>
+            <span><span class="hljs-js">const</span> options =  &#123;</span>
+            <span>      topIndexes: true, colorScheme: 'blosum62'</span>
+            <span>      };</span>
+            sequenceviewer.<span class="hljs-js">draw</span>(sequences, opt);
+          <span class="hljs-js">&lt;/script></span>
+
+       </code></pre>
+    </div>
+
+  </div>
+
+  <!-------------------------------------  REGIONS  EXAMPLE ---------------------------------------->
+  <h2 class="txt"> Simple tutorials</h2>
   <h4 id="regions" class="snippet-title">Regions<a fragment="simple-slider"><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h4>
     <p>Highlight part of the sequences with customizable colors.</p>
     <div class="sqvDemo"><div id="sqv2"></div></div>
@@ -295,11 +347,11 @@
     <p>A color is set for each percentage of consensus.</p>
     <p> Legend:</p>
 
-    <div style="width:120px;background-color: #213945; color: white;">&nbsp;100%</div>
-    <div style="width:100px; background-color: #42728A; color: white;">&nbsp;70%</div>
-    <div style="width:80px; background-color: #5a93af; color: white;">&nbsp;40%</div>
-    <div style="width:60px; background-color: #9fc0d1; color: white;">&nbsp;10%</div>
-    <div style="width:40px; background-color: #9fc0d1; color: white;">&nbsp;0%</div>
+    <div style="width:120px;background-color: #0A0A0A; color: white;">&nbsp;100%</div>
+    <div style="width:100px; background-color: #333333; color: white;">&nbsp;70%</div>
+    <div style="width:80px; background-color: #707070; color: white;">&nbsp;40%</div>
+    <div style="width:60px; background-color: #A3A3A3; color: white;">&nbsp;10%</div>
+    <div style="width:40px; background-color: #FFFFFF; color: white;">&nbsp;0%</div>
   </div>
 
   <div class="sqvDemo"><div id="sqv7"></div></div>

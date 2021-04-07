@@ -24,36 +24,32 @@ p {
   text-align: center;
 }
 
-#npm{
-  background-color: dimgrey;
+#npm {
+  color: #FFFFFF;
+  text-decoration: none;
+  margin-right: 5px;
+  background-color: #D8829D;
+  border: none;
+}
+
+#git {
+  text-decoration: none;
   color: #e9ecef;
-  padding: 5px;
-  border: 5px;
+  background-color: #01295F;
+  border: none;
+
 }
 
-#git{
-  background-color: dimgrey;
-  color: #e9ecef;
-  padding: 5px;
-  border: 5px;
-}
-
-#version {
-  background-color: brown;
-  color: white;
-  padding: 5px;
-  border: 5px;
-  margin-right: 1rem;
-}
-
-#versiongit{
-  background-color: seagreen;
-  color: white;
-  padding: 5px;
-  border: 5px;
-}
 .txt {
   color: #E36397;
+  margin-top: 5rem;
+  font-weight: bold;
+}
+
+.snippet-title {
+  font-weight: bold;
+  margin-top: 2rem;
+  color: #064579;
 }
 
 @media only screen and (max-width: 600px) {
