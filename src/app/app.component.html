@@ -1,13 +1,10 @@
-
-
-
-<nav class="d-flex flex-row navbar"><div class="mr-3">
-  <div><h1 class="tit">ProSeq</h1>
+<nav class="navbar"><div class="mr-3">
+  <div><h1 class="tit">ProSeq Viewer</h1>
     <p class="lead">ProSeq library for the visualization of (not only) biological sequence features. Used in
       <a href="https://mobidb.bio.unipd.it/">MobiDB</a>,
       <a href="https://www.disprot.org/">DisProt</a> and
       <a href="https://repeatsdb.bio.unipd.it/">RepeatsDB</a>.</p>
-    <p class="lead">Based on Typescript and compatible with Angular 2+ framework. A Javascript version of the package is also available (see the <a href="#APIDocumentation">API documentation</a>).</p>
+    <p class="lead">Based on Typescript and compatible with Angular 2+ framework. A JavaScript version of the package is also available (see the <a href="#APIDocumentation">API documentation</a>).</p>
     <a role="button" class="btn btn-primary" id="npm" href="https://www.npmjs.com/package/sequence-viewer-typescript">npm package 1.0.31</a>
     <a role="button" class="btn btn-primary" id="git" href="https://github.com/BioComputingUP/sequence-viewer-typescript">github 1.0.31</a>
   </div>
@@ -33,15 +30,10 @@
     <a href="#oneLineSetting" target="_self">One line setting</a>
     <a href="#selection" target="_self">Selection</a>
     <a id="api" href="#APIDocumentation" target="_self"><b>API Documentation</b></a>
-    <a href="#javascript" target="_self">Javascript Installation</a>
+    <a href="#javascript" target="_self">JavaScript Installation</a>
     <a href="#angular" target="_self">Angular Installation</a>
     <a href="#parameters" target="_self">Available parameters</a>
   </div>
-
-
-
-
-
 
 
   <div class="row">
@@ -52,20 +44,41 @@
 
       <h2 class="txt">Demos</h2>
 
-
+      <!---------------------------------------------- Multisequence alignment ------------------------------------------>
       <div>
         <h4 class="snippet-title">Multisequence alignment</h4>
-
 
         <div class="sqvDemo" id="sqv0"></div>
 
         <!-- Tab content -->
-        <div>
+          <ul class="nav nav-pills">
+            <li class="nav-item">
+              <button type="button" class="btn btn-primary" (click)="showtabjs('msa')">JavaScript</button>
+            </li>
+            <li class="nav-item">
+              <button type="button" class="btn btn-primary" (click)="showtaban('msa')">Angular</button>
+            </li>
+          </ul>
+
+        <div *ngIf="angularMsa">
+            <ul class="nav nav-tabs">
+              <li class="nav-item">
+                <button class="btn" (click)="showtabcom('msa')">Component</button>
+              </li>
+              <li class="nav-item">
+                <button class="btn" (click)="showtabtem('msa')">Template</button>
+              </li>
+            </ul>
+        </div>
+
+        <div *ngIf="javascriptMsa">
+          <button class="btn">Template</button>
+          <div>
         <pre class="prettyprint prettyprinted"><code class="language-java">
           <span class="hljs-js">&lt;head></span>
             <span class="hljs-js">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">>&lt;/div&gt;</span>
           <span class="hljs-js">&lt;/head></span>
-          <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvRegions"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
+          <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvMsa"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
           <span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">&lt;/div&gt;</span>
           <span class="hljs-js">&lt;script></span>
             <span><span class="hljs-js">const</span> sequenceviewer = new SequenceViewer('sqvMsa'); </span>
@@ -81,16 +94,60 @@
           <span class="hljs-js">&lt;/script></span>
 
        </code></pre>
+          </div>
         </div>
 
-
+        <div *ngIf="componentMsa">
+          <div>
+        <pre class="prettyprint prettyprinted"><code class="language-java">
+            <span><span class="hljs-js">const</span> sequenceviewer = new SequenceViewer('sqvMsa'); </span>
+            <span><span class="hljs-js">const</span> sequences = [ </span>
+            <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHGGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN'},</span>
+            <span>      &#123;sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'sp|P01942|HBA_MOUSE'},</span>
+            <span>      &#123;sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDVSSGSAQLRAHG', id: 2, label: 'sp|P13786|HBAZ_CAPHI'}</span>
+            <span>      ];</span>
+            <span><span class="hljs-js">const</span> options =  &#123;</span>
+            <span>      topIndexes: true, colorScheme: 'blosum62'</span>
+            <span>      };</span>
+            sequenceviewer.<span class="hljs-js">draw</span>(sequences, opt);
+       </code></pre>
+          </div>
+        </div>
+        <div *ngIf="templateMsa">
+        <pre class="prettyprint prettyprinted"><code class="language-java">
+          <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvRegions"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
+       </code></pre>
+        </div>
+      </div>
+      <!---------------------------------------------- Single sequence -------------------------------------------------->
+      <div>
         <h4 class="snippet-title">Single sequence</h4>
 
         <div id="sqvSingle"></div>
 
         <!-- Tab content -->
-        <div>
-        <pre class="prettyprint prettyprinted"><code class="language-java">
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <button type="button" class="btn btn-primary" (click)="showtabjs('sin')">JavaScript</button>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="btn btn-primary" (click)="showtaban('sin')">Angular</button>
+          </li>
+        </ul>
+
+        <div *ngIf="angularSin">
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <button class="btn" (click)="showtabcom('sin')">Component</button>
+            </li>
+            <li class="nav-item">
+              <button class="btn" (click)="showtabtem('sin')">Template</button>
+            </li>
+          </ul>
+        </div>
+        <div *ngIf="javascriptSin">
+          <button class="btn">Template</button>
+          <pre class="prettyprint prettyprinted"><code class="language-java">
           <span class="hljs-js">&lt;head></span>
             <span class="hljs-js">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">>&lt;/div&gt;</span>
           <span class="hljs-js">&lt;/head></span>
@@ -111,10 +168,28 @@
 
        </code></pre>
         </div>
-
+        <div *ngIf="componentSin">
+        <pre class="prettyprint prettyprinted"><code class="language-java">
+            <span><span class="hljs-js">const</span> sequenceviewer = new SequenceViewer('sqvSingle'); </span>
+            <span><span class="hljs-js">const</span> sequences = [ </span>
+            <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHGGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN'},</span>
+            <span>      &#123;sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'sp|P01942|HBA_MOUSE'},</span>
+            <span>      &#123;sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDVSSGSAQLRAHG', id: 2, label: 'sp|P13786|HBAZ_CAPHI'}</span>
+            <span>      ];</span>
+            <span><span class="hljs-js">const</span> options =  &#123;</span>
+            <span>      topIndexes: true, colorScheme: 'blosum62'</span>
+            <span>      };</span>
+            sequenceviewer.<span class="hljs-js">draw</span>(sequences, opt);
+       </code></pre>
+        </div>
+        <div *ngIf="templateSin">
+        <pre class="prettyprint prettyprinted"><code class="language-java">
+          <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvSingle"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
+       </code></pre>
+        </div>
       </div>
 
-      <!-------------------------------------  REGIONS  EXAMPLE ---------------------------------------->
+      <!--------------------------------------------  REGIONS  EXAMPLE ---------------------------------------->
       <h2 class="txt"> Simple tutorials</h2>
       <h4 id="regions" class="snippet-title">Regions<a fragment="simple-slider"><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h4>
       <p>Highlight part of the sequences with customizable colors.</p>
@@ -122,7 +197,27 @@
 
 
       <!-- Tab content -->
-      <div>
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" (click)="showtabjs('reg')">JavaScript</button>
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" (click)="showtaban('reg')">Angular</button>
+        </li>
+      </ul>
+
+      <div *ngIf="angularReg">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <button class="btn" (click)="showtabcom('reg')">Component</button>
+          </li>
+          <li class="nav-item">
+            <button class="btn" (click)="showtabtem('reg')">Template</button>
+          </li>
+        </ul>
+      </div>
+      <div *ngIf="javascriptReg">
+        <button class="btn">Template</button>
         <pre class="prettyprint prettyprinted"><code class="language-java">
           <span class="hljs-js">&lt;head></span>
             <span class="hljs-js">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">>&lt;/div&gt;</span>
@@ -149,7 +244,30 @@
 
        </code></pre>
       </div>
-
+      <div *ngIf="componentReg">
+        <pre class="prettyprint prettyprinted"><code class="language-java">
+            <span><span class="hljs-js">const</span> sequenceviewer = new SequenceViewer('sqvRegions'); </span>
+            <span><span class="hljs-js">const</span> sequences = [ </span>
+            <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHGGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN'},</span>
+            <span>      &#123;sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'sp|P01942|HBA_MOUSE'},</span>
+            <span>      &#123;sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDVSSGSAQLRAHG', id: 2, label: 'sp|P13786|HBAZ_CAPHI'}</span>
+            <span>      ];</span>
+            <span><span class="hljs-js">const</span> regions = [ </span>
+            <span>      &#123;sequenceId: 2, start: 1, end: 10, backgroundColor: '#D72638', color: '#FFFFFF'},</span>
+            <span>      &#123;sequenceId: 2, start: 11, end: 20, backgroundColor: '#FF570A', color: '#FFFFFF'},</span>
+            <span>      &#123;sequenceId: 2, start: 21, end: 30, backgroundColor: '#FFBC42', color: '#FFFFFF'},</span>
+            <span>      &#123;sequenceId: 2, start: 31, end: 40, backgroundColor: '#44885B', color: '#FFFFFF'},</span>
+            <span>      &#123;sequenceId: 2, start: 41, end: 50, backgroundColor: '#393C93', color: '#FFFFFF'},</span>
+            <span>      &#123;sequenceId: 2, start: 51, end: 60, backgroundColor: '#7E1173', color: '#FFFFFF'}</span>
+            <span>      ];</span>
+            sequenceviewer.<span class="hljs-js">draw</span>(sequences, regions);
+       </code></pre>
+      </div>
+      <div *ngIf="templateReg">
+        <pre class="prettyprint prettyprinted"><code class="language-java">
+          <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvRegions"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
+       </code></pre>
+      </div>
       <!-------------------------------------  ICONS  EXAMPLE ---------------------------------------->
 
       <h4 id="icons" class="snippet-title">Icons<a fragment="simple-slider"><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h4>
@@ -159,6 +277,25 @@
       <div class="sqvDemo"><div id="sqv3"></div></div>
 
       <!-- Tab content -->
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" (click)="showtabjs('ico')">JavaScript</button>
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" (click)="showtaban('ico')">Angular</button>
+        </li>
+      </ul>
+
+      <div *ngIf="angularIco">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <button class="btn" (click)="showtabcom('ico')">Component</button>
+          </li>
+          <li class="nav-item">
+            <button class="btn" (click)="showtabtem('ico')">Template</button>
+          </li>
+        </ul>
+      </div>
       <div>
        <pre class="prettyprint prettyprinted"><code class="language-java">
          <span class="hljs-js">&lt;head></span>
@@ -203,6 +340,25 @@
       <div class="sqvDemo"><div id="sqv4"></div></div>
 
       <!-- Tab content -->
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" (click)="showtabjs('pat')">JavaScript</button>
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" (click)="showtaban('pat')">Angular</button>
+        </li>
+      </ul>
+
+      <div *ngIf="angularPat">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <button class="btn" (click)="showtabcom()">Component</button>
+          </li>
+          <li class="nav-item">
+            <button class="btn" (click)="showtabtem()">Template</button>
+          </li>
+        </ul>
+      </div>
       <div>
        <pre class="prettyprint prettyprinted"><code class="language-java">
          <span class="hljs-js">&lt;head></span>
@@ -268,6 +424,25 @@
       <div class="sqvDemo"><div id="sqv6"></div></div>
 
       <!-- Tab content -->
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" (click)="showtabjs('col')">JavaScript</button>
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" (click)="showtaban('col')">Angular</button>
+        </li>
+      </ul>
+
+      <div *ngIf="angularCol">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <button class="btn" (click)="showtabcom('col')">Component</button>
+          </li>
+          <li class="nav-item">
+            <button class="btn" (click)="showtabtem('col')">Template</button>
+          </li>
+        </ul>
+      </div>
       <div>
        <pre class="prettyprint prettyprinted"><code class="language-java">
          <span class="hljs-js">&lt;head></span>
@@ -296,6 +471,25 @@
       <div class="sqvDemo"><div id="sqvBlosum"></div></div>
 
       <!-- Tab content -->
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" (click)="showtabjs('blo')">JavaScript</button>
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" (click)="showtaban('blo')">Angular</button>
+        </li>
+      </ul>
+
+      <div *ngIf="angularBlo">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <button class="btn" (click)="showtabcom()">Component</button>
+          </li>
+          <li class="nav-item">
+            <button class="btn" (click)="showtabtem()">Template</button>
+          </li>
+        </ul>
+      </div>
       <div>
        <pre class="prettyprint prettyprinted"><code class="language-java">
          <span class="hljs-js">&lt;head></span>
@@ -327,6 +521,25 @@
 
 
       <!-- Tab content -->
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" (click)="showtabjs('lat')">JavaScript</button>
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" (click)="showtaban('lat')">Angular</button>
+        </li>
+      </ul>
+
+      <div *ngIf="angularLat">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <button class="btn" (click)="showtabcom()">Component</button>
+          </li>
+          <li class="nav-item">
+            <button class="btn" (click)="showtabtem()">Template</button>
+          </li>
+        </ul>
+      </div>
       <div>
        <pre class="prettyprint prettyprinted"><code class="language-java">
          <span class="hljs-js">&lt;head></span>
@@ -369,6 +582,25 @@
       <div class="sqvDemo"><div id="sqv7"></div></div>
 
       <!-- Tab content -->
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" (click)="showtabjs('con')">JavaScript</button>
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" (click)="showtaban('con')">Angular</button>
+        </li>
+      </ul>
+
+      <div *ngIf="angularCon">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <button class="btn" (click)="showtabcom()">Component</button>
+          </li>
+          <li class="nav-item">
+            <button class="btn" (click)="showtabtem()">Template</button>
+          </li>
+        </ul>
+      </div>
       <div>
        <pre class="prettyprint prettyprinted"><code class="language-java">
          <span class="hljs-js">&lt;head></span>
@@ -507,6 +739,25 @@
       <div class="sqvDemo"><div id="sqvPhysical"></div></div>
 
       <!-- Tab content -->
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" (click)="showtabjs('phy')">JavaScript</button>
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" (click)="showtaban('phy')">Angular</button>
+        </li>
+      </ul>
+
+      <div *ngIf="angularPhy">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <button class="btn" (click)="showtabcom()">Component</button>
+          </li>
+          <li class="nav-item">
+            <button class="btn" (click)="showtabtem()">Template</button>
+          </li>
+        </ul>
+      </div>
       <div>
        <pre class="prettyprint prettyprinted"><code class="language-java">
          <span class="hljs-js">&lt;head></span>
@@ -539,6 +790,25 @@
       </div>
 
       <!-- Tab content -->
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" (click)="showtabjs('one')">JavaScript</button>
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" (click)="showtaban('one')">Angular</button>
+        </li>
+      </ul>
+
+      <div *ngIf="angularOne">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <button class="btn" (click)="showtabcom('one')">Component</button>
+          </li>
+          <li class="nav-item">
+            <button class="btn" (click)="showtabtem('one')">Template</button>
+          </li>
+        </ul>
+      </div>
       <div>
        <pre class="prettyprint prettyprinted"><code class="language-java">
          <span class="hljs-js">&lt;head></span>
@@ -603,7 +873,7 @@
 
       <div class="snippet-card card">
         <div>
-          <h4 class="txt" id="javascript">Installation Guide - Javascript</h4>
+          <h4 class="txt" id="javascript">Installation Guide - JavaScript</h4>
 
           <h5><strong>1. Download the sequence viewer stylesheet</strong></h5>
           <p>You can find the <i>sqv.css</i> file in the src/assets folder on the <a href="https://github.com/BioComputingUP/sequence-viewer-typescript">Github repo.</a></p>
@@ -624,7 +894,7 @@
         <span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">>&lt;/script&gt;</span>
         <span class="hljs-js">&lt;script></span>
 
-          <span><span class="hljs-js">const</span> sequenceviewer = new SequenceViewer('sqvSimple'); </span>  // Create an instance of the sequence viewer in javascript
+          <span><span class="hljs-js">const</span> sequenceviewer = new SequenceViewer('sqvSimple'); </span>  // Create an instance of the sequence viewer in JavaScript
           <span><span class="hljs-js">const</span> sequence = [ </span>
           <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAG--ALERMFL--YFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN'}</span>
           <span>      ];</span>

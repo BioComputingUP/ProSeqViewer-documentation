@@ -8,6 +8,73 @@ import {SequenceViewer} from 'sequence-viewer-typescript/dist';
 })
 export class AppComponent implements OnInit {
   title = 'sequence-viewer-documentation';
+  // multisequence
+  angularMsa = false;
+  javascriptMsa = true;
+  componentMsa = false;
+  templateMsa = false;
+
+  // singlesequence
+  angularSin = false;
+  javascriptSin = true;
+  componentSin = false;
+  templateSin = false;
+
+
+  // regions
+  angularReg = false;
+  javascriptReg = true;
+  componentReg = false;
+  templateReg = false;
+
+  // icons
+  angularIco = false;
+  javascriptIco = true;
+  componentIco = false;
+  templateIco = false;
+
+  // patterns
+  angularPat = false;
+  javascriptPat = true;
+  componentPat = false;
+  templatePat = false;
+
+  // colorscheme clustal
+  angularCol = false;
+  javascriptCol = true;
+  componentCol = false;
+  templateCol = false;
+
+
+  // blosum
+  angularBlo = false;
+  javascriptBlo = true;
+  componentBlo = false;
+  templateBlo = false;
+
+  // lateral
+  angularLat = false;
+  javascriptLat = true;
+  componentLat = false;
+  templateLat = false;
+
+  // consensus identity
+  angularCon = false;
+  javascriptCon = true;
+  componentCon = false;
+  templateCon = false;
+
+  // consensus physical
+  angularPhy = false;
+  javascriptPhy = true;
+  componentPhy = false;
+  templatePhy = false;
+
+  // one line
+  angularOne = false;
+  javascriptOne = true;
+  componentOne = false;
+  templateOne = false;
 
 
   ngOnInit(): void {
@@ -187,6 +254,150 @@ export class AppComponent implements OnInit {
   }
 
 
+  showtabjs(id) {
+    switch (id) {
+      case 'msa': {
+        if (!this.javascriptMsa) {
+          this.angularMsa = (!this.angularMsa);
+          this.javascriptMsa = (!this.javascriptMsa);
+          this.componentMsa = false;
+          this.templateMsa = false;
+        }
+        break;
+      }
+      case 'sin': {
+        if (!this.javascriptSin) {
+          this.angularSin = (!this.angularSin);
+          this.javascriptSin = (!this.javascriptSin);
+          this.componentSin = false;
+          this.templateSin = false;
+        }
+        break;
+      }
+      case 'reg': {
+        if (!this.javascriptReg) {
+          this.angularReg = (!this.angularReg);
+          this.javascriptReg = (!this.javascriptReg);
+          this.componentReg = false;
+          this.templateReg = false;
+        }
+        break;
+      }
+      case 'ico': {
+        if (!this.javascriptIco) {
+          this.angularIco = (!this.angularIco);
+          this.javascriptReg = (!this.javascriptIco);
+          this.componentIco = false;
+          this.templateIco = false;
+        }
+        break;
+      }
+      case 'pat': {
+        if (!this.javascriptPat) {
+          this.angularPat = (!this.angularPat);
+          this.javascriptPat = (!this.javascriptPat);
+          this.componentPat = false;
+          this.templatePat = false;
+        }
+        break;
+      }
+      case 'col': {
+        if (!this.javascriptCol) {
+          this.angularCol = (!this.angularCol);
+          this.javascriptCol = (!this.javascriptCol);
+          this.componentCol = false;
+          this.templateCol = false;
+        }
+        break;
+      }
+    }
 
 
+  }
+
+  showtaban(id) {
+    switch (id) {
+      case 'msa': {
+        if (!this.angularMsa) {
+          this.angularMsa = (!this.angularMsa);
+          this.javascriptMsa = (!this.javascriptMsa);
+          this.componentMsa = true;
+          this.templateMsa = false;
+        }
+        break;
+      }
+      case 'sin': {
+        if (!this.angularSin) {
+          this.angularSin = (!this.angularSin);
+          this.javascriptSin = (!this.javascriptSin);
+          this.componentSin = true;
+          this.templateSin = false;
+        }
+        break;
+      }
+      case 'reg': {
+        if (!this.angularReg) {
+          this.angularReg = (!this.angularReg);
+          this.javascriptReg = (!this.javascriptReg);
+          this.componentReg = true;
+          this.templateReg = false;
+        }
+        break;
+      }
+    }
+
+  }
+
+  showtabcom(id) {
+    switch (id) {
+      case 'msa': {
+        if (!this.componentMsa) {
+          this.componentMsa = (!this.componentMsa);
+          this.templateMsa = (!this.templateMsa);
+        }
+        break;
+      }
+      case 'sin': {
+        if (!this.componentSin) {
+          this.componentSin = (!this.componentSin);
+          this.templateSin = (!this.templateSin);
+        }
+        break;
+      }
+      case 'reg': {
+        if (!this.componentReg) {
+          this.componentReg = (!this.componentReg);
+          this.templateReg = (!this.templateReg);
+        }
+        break;
+      }
+    }
+
+  }
+
+  showtabtem(id) {
+    switch (id) {
+      case 'msa': {
+        if (!this.templateMsa) {
+          this.componentMsa = (!this.componentMsa);
+          this.templateMsa = (!this.templateMsa);
+        }
+        break;
+      }
+      case 'sin': {
+        if (!this.templateSin) {
+          this.componentSin = (!this.componentSin);
+          this.templateSin = (!this.templateSin);
+        }
+        break;
+      }
+      case 'reg': {
+        if (!this.templateReg) {
+          this.componentReg = (!this.componentReg);
+          this.templateReg = (!this.templateReg);
+        }
+        break;
+      }
+    }
+  }
 }

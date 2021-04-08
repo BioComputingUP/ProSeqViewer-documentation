@@ -166,6 +166,8 @@ pre  {
   background-color: rgba(0,0,0,.04);
   display: block;
   overflow-x: auto;
+  border: none;
+  height: 400px;
 }
 
 code {
@@ -327,11 +329,9 @@ td, th {
 }
 
 .navbar {
-  flex-flow: row nowrap;
+  text-align: center;
   justify-content:center;
    position: relative;
-   display: flex;
-   flex-wrap: wrap;
    align-items: center;
    padding: 0.5rem 1rem;
   background-color: #F3F4F7;
