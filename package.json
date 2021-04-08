@@ -24,7 +24,7 @@
     "ngx-bootstrap": "6.2.0",
     "plotly.js": "1.47.4",
     "rxjs": "~6.6.3",
-    "sequence-viewer-typescript": "1.0.32",
+    "sequence-viewer-typescript": "1.0.33",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
   },

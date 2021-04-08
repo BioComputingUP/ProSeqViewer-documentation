@@ -1,7 +1,10 @@
 
-#container {
-  margin-right: 250px;
-  margin-left: 300px;
+.container-fluid {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .tit {
@@ -317,15 +320,21 @@ td, th {
 
 
 .sidenav {
-  width: 200px;
-  position: fixed;
-  z-index: 1;
-  top: 0px;
-  left: 20px;
-  background: #eee;
-  overflow-x: hidden;
-  padding: 8px 0;
-  height: 100%;
+  top: 0;
+  padding: 0 15px;
+  display: block !important;
+  width: 300px;
+}
+
+.navbar {
+  flex-flow: row nowrap;
+  justify-content:center;
+   position: relative;
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   padding: 0.5rem 1rem;
+  background-color: #F3F4F7;
 }
 
 .sidenav a {
@@ -344,6 +353,16 @@ td, th {
   color: #064579;
 }
 
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: 30px;
+}
+
+
+
 .main {
   margin-left: 140px; /* Same width as the sidebar + left position in px */
   font-size: 28px; /* Increased text to enable scrolling */
@@ -355,10 +374,32 @@ td, th {
   .sidenav a {font-size: 18px;}
 }
 
-#reg {
-  margin-top: 250px;
+@media screen and (min-width: 800px) {
+  .sidenav {
+    float: left;
+    position: sticky;
+  }
+  .row {margin-left: -15px;}
+
 }
+
 
 #api {
   margin-top: 20px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
