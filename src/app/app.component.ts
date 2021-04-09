@@ -310,6 +310,51 @@ export class AppComponent implements OnInit {
         }
         break;
       }
+      case 'blo': {
+        if (!this.javascriptBlo) {
+          this.angularBlo = (!this.angularBlo);
+          this.javascriptBlo = (!this.javascriptBlo);
+          this.componentBlo = false;
+          this.templateBlo = false;
+        }
+        break;
+      }
+      case 'lat': {
+        if (!this.javascriptLat) {
+          this.angularLat = (!this.angularLat);
+          this.javascriptLat = (!this.javascriptLat);
+          this.componentLat = false;
+          this.templateLat = false;
+        }
+        break;
+      }
+      case 'con': {
+        if (!this.javascriptCon) {
+          this.angularCon = (!this.angularCon);
+          this.javascriptCon = (!this.javascriptCon);
+          this.componentCon = false;
+          this.templateCon = false;
+        }
+        break;
+      }
+      case 'phy': {
+        if (!this.javascriptPhy) {
+          this.angularPhy = (!this.angularPhy);
+          this.javascriptPhy = (!this.javascriptPhy);
+          this.componentPhy = false;
+          this.templatePhy = false;
+        }
+        break;
+      }
+      case 'one': {
+        if (!this.javascriptOne) {
+          this.angularOne = (!this.angularOne);
+          this.javascriptOne = (!this.javascriptOne);
+          this.componentOne = false;
+          this.templateOne = false;
+        }
+        break;
+      }
     }
 
 
@@ -344,6 +389,78 @@ export class AppComponent implements OnInit {
         }
         break;
       }
+      case 'ico': {
+        if (!this.angularIco) {
+          this.angularIco = (!this.angularIco);
+          this.javascriptIco = (!this.javascriptIco);
+          this.componentIco = true;
+          this.templateIco = false;
+        }
+        break;
+      }
+      case 'pat': {
+        if (!this.angularPat) {
+          this.angularPat = (!this.angularPat);
+          this.javascriptPat = (!this.javascriptPat);
+          this.componentPat = true;
+          this.templatePat = false;
+        }
+        break;
+      }
+      case 'col': {
+        if (!this.angularCol) {
+          this.angularCol = (!this.angularCol);
+          this.javascriptCol = (!this.javascriptCol);
+          this.componentCol = true;
+          this.templateCol = false;
+        }
+        break;
+      }
+      case 'blo': {
+        if (!this.angularBlo) {
+          this.angularBlo = (!this.angularBlo);
+          this.javascriptBlo = (!this.javascriptBlo);
+          this.componentBlo = true;
+          this.templateBlo = false;
+        }
+        break;
+      }
+      case 'lat': {
+        if (!this.angularLat) {
+          this.angularLat = (!this.angularLat);
+          this.javascriptLat = (!this.javascriptLat);
+          this.componentLat = true;
+          this.templateLat = false;
+        }
+        break;
+      }
+      case 'con': {
+        if (!this.angularCon) {
+          this.angularCon = (!this.angularCon);
+          this.javascriptCon = (!this.javascriptCon);
+          this.componentCon = true;
+          this.templateCon = false;
+        }
+        break;
+      }
+      case 'phy': {
+        if (!this.angularPhy) {
+          this.angularPhy = (!this.angularPhy);
+          this.javascriptPhy = (!this.javascriptPhy);
+          this.componentPhy = true;
+          this.templatePhy = false;
+        }
+        break;
+      }
+      case 'one': {
+        if (!this.angularOne) {
+          this.angularOne = (!this.angularOne);
+          this.javascriptOne = (!this.javascriptOne);
+          this.componentOne = true;
+          this.templateOne = false;
+        }
+        break;
+      }
     }
 
   }
@@ -371,6 +488,62 @@ export class AppComponent implements OnInit {
         }
         break;
       }
+      case 'ico': {
+        if (!this.componentIco) {
+          this.componentIco = (!this.componentIco);
+          this.templateIco = (!this.templateIco);
+        }
+        break;
+      }
+      case 'pat': {
+        if (!this.componentPat) {
+          this.componentPat = (!this.componentPat);
+          this.templatePat = (!this.templatePat);
+        }
+        break;
+      }
+      case 'col': {
+        if (!this.componentCol) {
+          this.componentCol = (!this.componentCol);
+          this.templateCol = (!this.templateCol);
+        }
+        break;
+      }
+      case 'blo': {
+        if (!this.componentBlo) {
+          this.componentBlo = (!this.componentBlo);
+          this.templateBlo = (!this.templateBlo);
+        }
+        break;
+      }
+      case 'lat': {
+        if (!this.componentLat) {
+          this.componentLat = (!this.componentLat);
+          this.templateLat = (!this.templateLat);
+        }
+        break;
+      }
+      case 'con': {
+        if (!this.componentCon) {
+          this.componentCon = (!this.componentCon);
+          this.templateCon = (!this.templateCon);
+        }
+        break;
+      }
+      case 'phy': {
+        if (!this.componentPhy) {
+          this.componentPhy = (!this.componentPhy);
+          this.templatePhy = (!this.templatePhy);
+        }
+        break;
+      }
+      case 'one': {
+        if (!this.componentOne) {
+          this.componentOne = (!this.componentOne);
+          this.templateOne = (!this.templateOne);
+        }
+        break;
+      }
     }
 
   }
@@ -395,6 +568,62 @@ export class AppComponent implements OnInit {
         if (!this.templateReg) {
           this.componentReg = (!this.componentReg);
           this.templateReg = (!this.templateReg);
+        }
+        break;
+      }
+      case 'ico': {
+        if (!this.templateIco) {
+          this.componentIco = (!this.componentIco);
+          this.templateIco = (!this.templateIco);
+        }
+        break;
+      }
+      case 'pat': {
+        if (!this.templatePat) {
+          this.componentPat = (!this.componentPat);
+          this.templatePat = (!this.templatePat);
+        }
+        break;
+      }
+      case 'col': {
+        if (!this.templateCol) {
+          this.componentCol = (!this.componentCol);
+          this.templateCol = (!this.templateCol);
+        }
+        break;
+      }
+      case 'blo': {
+        if (!this.templateBlo) {
+          this.componentBlo = (!this.componentBlo);
+          this.templateBlo = (!this.templateBlo);
+        }
+        break;
+      }
+      case 'lat': {
+        if (!this.templateLat) {
+          this.componentLat = (!this.componentLat);
+          this.templateLat = (!this.templateLat);
+        }
+        break;
+      }
+      case 'con': {
+        if (!this.templateCon) {
+          this.componentCon = (!this.componentCon);
+          this.templateCon = (!this.templateCon);
+        }
+        break;
+      }
+      case 'phy': {
+        if (!this.templatePhy) {
+          this.componentPhy = (!this.componentPhy);
+          this.templatePhy = (!this.templatePhy);
+        }
+        break;
+      }
+      case 'one': {
+        if (!this.templateOne) {
+          this.componentOne = (!this.componentOne);
+          this.templateOne = (!this.templateOne);
         }
         break;
       }
