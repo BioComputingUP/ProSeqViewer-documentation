@@ -28,10 +28,10 @@ export class AppComponent implements OnInit {
   templateReg = false;
 
   // icons
-  angularIco = false;
-  javascriptIco = true;
-  componentIco = false;
-  templateIco = false;
+  angularIc = false;
+  javascriptIc = true;
+  componentIc = false;
+  templateIc = false;
 
   // patterns
   angularPat = false;
@@ -283,15 +283,6 @@ export class AppComponent implements OnInit {
         }
         break;
       }
-      case 'ico': {
-        if (!this.javascriptIco) {
-          this.angularIco = (!this.angularIco);
-          this.javascriptReg = (!this.javascriptIco);
-          this.componentIco = false;
-          this.templateIco = false;
-        }
-        break;
-      }
       case 'pat': {
         if (!this.javascriptPat) {
           this.angularPat = (!this.angularPat);
@@ -355,6 +346,15 @@ export class AppComponent implements OnInit {
         }
         break;
       }
+      case 'ic': {
+        if (!this.javascriptIc) {
+          this.angularIc = (!this.angularIc);
+          this.javascriptIc = (!this.javascriptIc);
+          this.componentIc = false;
+          this.templateIc = false;
+        }
+        break;
+      }
     }
 
 
@@ -386,15 +386,6 @@ export class AppComponent implements OnInit {
           this.javascriptReg = (!this.javascriptReg);
           this.componentReg = true;
           this.templateReg = false;
-        }
-        break;
-      }
-      case 'ico': {
-        if (!this.angularIco) {
-          this.angularIco = (!this.angularIco);
-          this.javascriptIco = (!this.javascriptIco);
-          this.componentIco = true;
-          this.templateIco = false;
         }
         break;
       }
@@ -461,6 +452,15 @@ export class AppComponent implements OnInit {
         }
         break;
       }
+      case 'ic': {
+        if (!this.angularIc) {
+          this.angularIc = (!this.angularIc);
+          this.javascriptIc = (!this.javascriptIc);
+          this.componentIc = true;
+          this.templateIc = false;
+        }
+        break;
+      }
     }
 
   }
@@ -485,13 +485,6 @@ export class AppComponent implements OnInit {
         if (!this.componentReg) {
           this.componentReg = (!this.componentReg);
           this.templateReg = (!this.templateReg);
-        }
-        break;
-      }
-      case 'ico': {
-        if (!this.componentIco) {
-          this.componentIco = (!this.componentIco);
-          this.templateIco = (!this.templateIco);
         }
         break;
       }
@@ -544,6 +537,13 @@ export class AppComponent implements OnInit {
         }
         break;
       }
+      case 'ic': {
+        if (!this.componentIc) {
+          this.componentIc = (!this.componentIc);
+          this.templateIc = (!this.templateIc);
+        }
+        break;
+      }
     }
 
   }
@@ -568,13 +568,6 @@ export class AppComponent implements OnInit {
         if (!this.templateReg) {
           this.componentReg = (!this.componentReg);
           this.templateReg = (!this.templateReg);
-        }
-        break;
-      }
-      case 'ico': {
-        if (!this.templateIco) {
-          this.componentIco = (!this.componentIco);
-          this.templateIco = (!this.templateIco);
         }
         break;
       }
@@ -624,6 +617,13 @@ export class AppComponent implements OnInit {
         if (!this.templateOne) {
           this.componentOne = (!this.componentOne);
           this.templateOne = (!this.templateOne);
+        }
+        break;
+      }
+      case 'ic': {
+        if (!this.templateIc) {
+          this.componentIc = (!this.componentIc);
+          this.templateIc = (!this.templateIc);
         }
         break;
       }
