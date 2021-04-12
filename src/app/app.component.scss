@@ -35,10 +35,10 @@ p {
   border: none;
 }
 
-#git {
+.btn-primary {
   text-decoration: none;
   color: #e9ecef;
-  background-color: #01295F;
+  background-color: #8CB2E3;
   border: none;
 
 }
@@ -181,6 +181,7 @@ code {
 
 .code {
   height: 400px;
+  margin-bottom: 50px;
 }
 
 
@@ -360,8 +361,8 @@ td, th {
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: 30px;
+  margin-right: 90px;
+  margin-left: 60px;
 }
 
 

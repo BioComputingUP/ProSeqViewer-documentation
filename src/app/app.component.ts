@@ -98,40 +98,84 @@ export class AppComponent implements OnInit {
     // GENERAL EXAMPLE: single sequence
     const seqSingle = new SequenceViewer('sqvSingle');
     const seq = [
-      {sequence: 'MKTTRRSFLKLVGVSVVGLSLGQLGFDLEDAQAYAVKLKIEGAKEVGTVCPFCSVCCQVIAYVRNGKLVSTEGDPDFPVNEGALCAKGAALFSMYTNPHRLTKPLYRAPHSDKWVEKDWDWTLNQIARRVKDARDKDMILKNDKGQTVNRLESIFMMGTSHASNEECAVIHQAMRGLGVVHMDHQARVUHSPTVAALAESFGRGAMTNHWIDIKNTDAVLIIGSNAAEHHPVAFKWIMRARDNGAVLMHVDPKFSRTSARCDFHVPLRSGTDIAFLGGMVNHIIAKDLYFKDYVANYTNAAFVVGKDYAFEDGIFSGYDPKTRTYDRSKWEFEKGPDGGPVMDPTLKNERCVFNLMKKHYERYTLKNVSDVTGVSEENLLRVYDAFCATGRPDKAGTILYALGWTQHTVGVQNIRTSTLIQLLLGNIGVAGGGINALRGEPNVQGSTDHALLYHILPGYNAMPVAQWQTLADYNKANTPVTTLKNSANWWSNRPKYVASLLKGWFGDAATPENDFCYEYLPKLEKGEDYSYMYVMDRMYHGKLKGGFIFGVNPMNSFPNTNKMRAALDKLDWLVCSELHNSETTDNWKRPGVDPKACKTEVFLLPSAHRVEKAGTISNSGRWLQWFDKAVEPGQARNFADIFVPLVNKIRALYKAEGGTLPDPVLKLHWTDKFDPEEWTRRINGFFWADTKVGDKEYKRGQLVPAFGQLKDDGSTSSLNWLYTGSYTEEDGNKSKRRDARQTPMQANIGLFPNWSWCWPVNRRILYNRASVDVNGKPWNPKKAVIEWDGAKWVGDVPDGPWPPMADKEKGKLPFIMNKDGFAQFYGTGRMDGPFPEHYEPAETPLDSHPFSKQLSSPVYKFHTSDMDQIAKAADPKYPIVLTTYSLTEHWCGGGETRNVPNLLETEPQLYIEMSPELAEEKGIKNGDGVIVESIRGRAEAIAMVTVRIRPFTVMGKTVHLVGMPFAYGWTTPKCGDSTNRLTVGAYDPNTTIPESKACLVNVRKADKLTEIA', id: 1}
+      {sequence: 'MASESGKLWGGRFVGAVDPIMEKFNASIAYDRHLWEVDVQGSKAYSRGLEKAGLLTKAEMDQILHGLDKVAEEWAQGTFKLNSNDEDIHTANERRLKELIGATAGKLHTGRSRNDQVVTDLRLWMRQTCSTLSGLLWELIRTMVDRAEAERDVLFPGYTHLQRAQPIRWSHWILSHAVALTRDSERLLEVRKRINVLPLGSGAIAGNPLGVDRELLRAELNFGAITLNSMDATSERDFVAEFLFWASLCMTHLSRMAEDL ILYCTKEFSFVQLSDAYSTGSSLMPQKKNPDSLELIRSKAGRVFGRCAGLLMTLKGLPSTYNKDLQEDKEAVFEVSDTMSAVLQVATGVISTLQIHQENMGQALSPDMLATDLAYYLVRKGMPFRQAHEASGKAVFMAETKGVALNQLSLQELQTISPLFSGDVICVWDYGHSVEQYGALGGTARSSVDWQIRQVRALLQAQQA', id: 1}
     ];
-    const singleReg = [
-      {sequenceId: 1, start: 311, end: 340, backgroundColor: '#78A1BB', color: '#FFFFFF'},
-      {sequenceId: 1, start: 371, end: 390, backgroundColor: '#78A1BB', color: '#FFFFFF'},
-      {sequenceId: 1, start: 411, end: 430, backgroundColor: '#ED254E', color: '#FFFFFF'},
-      {sequenceId: 1, start: 481, end: 500, backgroundColor: '#ED254E', color: '#FFFFFF'},
-      {sequenceId: 1, start: 521, end: 540, backgroundColor: '#283044', color: '#FFFFFF'},
-      {sequenceId: 1, start: 521, end: 540, backgroundColor: '#283044', color: '#FFFFFF'},
-      {sequenceId: 1, start: 521, end: 540, backgroundColor: '#A60067', color: '#FFFFFF'},
-      {sequenceId: 1, start: 571, end: 590, backgroundColor: '#A60067', color: '#FFFFFF'},
-      {sequenceId: 1, start: 611, end: 630, backgroundColor: '#393C93', color: '#FFFFFF'},
-      {sequenceId: 1, start: 691, end: 710, backgroundColor: '#393C93', color: '#FFFFFF'},
-      {sequenceId: 1, start: 781, end: 800, backgroundColor: '#7E1173', color: '#FFFFFF'},
-      {sequenceId: 1, start: 891, end: 910, backgroundColor: '#7E1173', color: '#FFFFFF'},
-    ];
+
     const singleIco = [
-      {sequenceId: 1, start: 1, end: 10, icon: 'turn'},
-      {sequenceId: 1, start: 21, end: 24, icon: 'noSecondary'},
-      {sequenceId: 1, start: 25, end: 29, icon: 'strand'},
-      {sequenceId: 1, start: 30, end: 30, icon: 'arrowRight'},
-      {sequenceId: 1, start: 51, end: 60, icon: 'helix'},
-      {sequenceId: 1, start: 111, end: 116, icon: 'noSecondary'},
-      {sequenceId: 1, start: 117, end: 119, icon: 'strand'},
-      {sequenceId: 1, start: 120, end: 120, icon: 'arrowRight'},
-      {sequenceId: 1, start: 161, end: 190, icon: 'helix'},
-      {sequenceId: 1, start: 231, end: 240, icon: 'lollipop'},
-      {sequenceId: 1, start: 251, end: 260, icon: 'helix'},
-      {sequenceId: 1, start: 271, end: 290, icon: 'turn'}
+      {sequenceId: 1, start: 1, end: 11, icon: 'noSecondary'},
+      {sequenceId: 1, start: 12, end: 12, icon: 'lollipop'},
+      {sequenceId: 1, start: 13, end: 18, icon: 'noSecondary'},
+      {sequenceId: 1, start: 19, end: 25, icon: 'helix'},
+      {sequenceId: 1, start: 26, end: 27, icon: 'noSecondary'},
+      {sequenceId: 1, start: 28, end: 30, icon: 'helix'},
+      {sequenceId: 1, start: 31, end: 31, icon: 'lollipop'},
+      {sequenceId: 1, start: 32, end: 51, icon: 'helix'},
+      {sequenceId: 1, start: 52, end: 56, icon: 'noSecondary'},
+      {sequenceId: 1, start: 57, end: 76, icon: 'helix'},
+      {sequenceId: 1, start: 77, end: 87, icon: 'noSecondary'},
+      {sequenceId: 1, start: 88, end: 93, icon: 'helix'},
+      {sequenceId: 1, start: 94, end: 94, icon: 'lollipop'},
+      {sequenceId: 1, start: 95, end: 95, icon: 'helix'},
+      {sequenceId: 1, start: 96, end: 99, icon: 'helix'},
+      {sequenceId: 1, start: 100, end: 100, icon: 'lollipop'},
+      {sequenceId: 1, start: 101, end: 106, icon: 'helix'},
+      {sequenceId: 1, start: 107, end: 112, icon: 'noSecondary'},
+      {sequenceId: 1, start: 113, end: 149, icon: 'strand'},
+      {sequenceId: 1, start: 150, end: 150, icon: 'arrowRight'},
+      {sequenceId: 1, start: 151, end: 153, icon: 'noSecondary'},
+      {sequenceId: 1, start: 154, end: 158, icon: 'strand'},
+      {sequenceId: 1, start: 159, end: 159, icon: 'arrowRight'},
+      {sequenceId: 1, start: 160, end: 161, icon: 'noSecondary'},
+      {sequenceId: 1, start: 162, end: 177, icon: 'helix'},
+      {sequenceId: 1, start: 178, end: 178, icon: 'lollipop'},
+      {sequenceId: 1, start: 179, end: 188, icon: 'helix'},
+      {sequenceId: 1, start: 189, end: 189, icon: 'lollipop'},
+      {sequenceId: 1, start: 190, end: 192, icon: 'helix'},
+      {sequenceId: 1, start: 193, end: 193, icon: 'helix'},
+      {sequenceId: 1, start: 194, end: 194, icon: 'helix'},
+      {sequenceId: 1, start: 195, end: 196, icon: 'strand'},
+      {sequenceId: 1, start: 197, end: 197, icon: 'arrowRight'},
+      {sequenceId: 1, start: 198, end: 212, icon: 'noSecondary'},
+      {sequenceId: 1, start: 213, end: 219, icon: 'helix'},
+      {sequenceId: 1, start: 220, end: 222, icon: 'helix'},
+      {sequenceId: 1, start: 223, end: 224, icon: 'strand'},
+      {sequenceId: 1, start: 225, end: 225, icon: 'arrowRight'},
+      {sequenceId: 1, start: 226, end: 236, icon: 'noSecondary'},
+      {sequenceId: 1, start: 237, end: 264, icon: 'helix'},
+      {sequenceId: 1, start: 265, end: 285, icon: 'noSecondary'},
+      {sequenceId: 1, start: 286, end: 286, icon: 'lollipop'},
+      {sequenceId: 1, start: 287, end: 290, icon: 'noSecondary'},
+      {sequenceId: 1, start: 291, end: 314, icon: 'helix'},
+      {sequenceId: 1, start: 315, end: 321, icon: 'noSecondary'},
+      {sequenceId: 1, start: 322, end: 334, icon: 'helix'},
+      {sequenceId: 1, start: 335, end: 335, icon: 'lollipop'},
+      {sequenceId: 1, start: 336, end: 352, icon: 'helix'},
+      {sequenceId: 1, start: 353, end: 356, icon: 'noSecondary'},
+      {sequenceId: 1, start: 357, end: 378, icon: 'helix'},
+      {sequenceId: 1, start: 379, end: 379, icon: 'lollipop'},
+      {sequenceId: 1, start: 380, end: 383, icon: 'noSecondary'},
+      {sequenceId: 1, start: 384, end: 384, icon: 'helix'},
+      {sequenceId: 1, start: 385, end: 385, icon: 'lollipop'},
+      {sequenceId: 1, start: 386, end: 390, icon: 'helix'},
+      {sequenceId: 1, start: 391, end: 394, icon: 'noSecondary'},
+      {sequenceId: 1, start: 395, end: 397, icon: 'helix'},
+      {sequenceId: 1, start: 398, end: 399, icon: 'noSecondary'},
+      {sequenceId: 1, start: 400, end: 405, icon: 'helix'},
+      {sequenceId: 1, start: 406, end: 422, icon: 'noSecondary'},
+      {sequenceId: 1, start: 423, end: 428, icon: 'helix'},
+      {sequenceId: 1, start: 429, end: 429, icon: 'noSecondary'},
+      {sequenceId: 1, start: 430, end: 434, icon: 'helix'},
+      {sequenceId: 1, start: 435, end: 441, icon: 'noSecondary'},
+      {sequenceId: 1, start: 442, end: 443, icon: 'strand'},
+      {sequenceId: 1, start: 444, end: 444, icon: 'arrowRight'},
+      {sequenceId: 1, start: 445, end: 445, icon: 'lollipop'},
+      {sequenceId: 1, start: 446, end: 463, icon: 'helix'},
+      {sequenceId: 1, start: 464, end: 464, icon: 'helix'}
     ];
 
     const singleOpt = {chunkSize: 0};
 
-    seqSingle.draw(seq, singleReg, singleIco, singleOpt);
+    seqSingle.draw(seq, singleIco, singleOpt);
 
     // REGIONS EXAMPLE
     const s2 = new SequenceViewer('sqv2');
@@ -151,24 +195,42 @@ export class AppComponent implements OnInit {
     s2.draw(seqs, reg1);
 
     // icons EXAMPLE
+
     const s3 = new SequenceViewer('sqv3');
-    const ico3 = [
-      {sequenceId: 1, start: 1, end: 5, icon: 'turn'},
-      {sequenceId: 1, start: 6, end: 15, icon: 'noSecondary'},
-      {sequenceId: 1, start: 15, end: 19, icon: 'strand'},
-      {sequenceId: 1, start: 20, end: 20, icon: 'arrowRight'},
-      {sequenceId: 1, start: 21, end: 25, icon: 'helix'},
-      {sequenceId: 1, start: 26, end: 30, icon: 'noSecondary'},
-      {sequenceId: 1, start: 31, end: 35, icon: 'strand'},
-      {sequenceId: 1, start: 36, end: 36, icon: 'arrowRight'},
-      {sequenceId: 1, start: 37, end: 46, icon: 'helix'},
-      {sequenceId: 1, start: 47, end: 47, icon: 'noSecondary'},
-      {sequenceId: 1, start: 47, end: 49, icon: 'lollipop', display: 'center'},
-      {sequenceId: 1, start: 49, end: 54, icon: 'noSecondary'},
-      {sequenceId: 1, start: 55, end: 60, icon: 'turn'},
+    const seq3 = [
+      {sequence: 'MASESGKLWGGRFVGAVDPIMEKFNASIAYDRHLWEVDVQGSKAYSRGLEKAGLLTKAEMDQILHGLDKVAEEWAQGTFKLNSNDEDIHTANERRLKELIGATAGKLHTGRSRNDQVVTDLRLWMRQTCSTLSGLLWELIRTMVDRAEAERDVLFPGYTHLQRAQPIRWSHWILSHAVALTRDSERLLEVRKRINVLPLGSGAIAGNPLGVDRELLRAELNFGAITLNSMDATSERDFVAEFLFWASLCMTHLSRMAEDL ILYCTKEFSFVQLSDAYSTGSSLMPQKKNPDSLELIRSKAGRVFGRCAGLLMTLKGLPSTYNKDLQEDKEAVFEVSDTMSAVLQVATGVISTLQIHQENMGQALSPDMLATDLAYYLVRKGMPFRQAHEASGKAVFMAETKGVALNQLSLQELQTISPLFSGDVICVWDYGHSVEQYGALGGTARSSVDWQIRQVRALLQAQQA', id: 1}
     ];
-    const opt3 = {chunkSize: 60}; // sequence length
-    s3.draw(seqs, ico3, opt3);
+
+    const ico = [
+      {sequenceId: 1, start: 12, end: 12, icon: 'lollipop'},
+      {sequenceId: 1, start: 19, end: 25, icon: 'helix'},
+      {sequenceId: 1, start: 28, end: 30, icon: 'helix'},
+      {sequenceId: 1, start: 31, end: 31, icon: 'lollipop'},
+      {sequenceId: 1, start: 32, end: 51, icon: 'helix'},
+      {sequenceId: 1, start: 57, end: 76, icon: 'helix'},
+      {sequenceId: 1, start: 88, end: 94, icon: 'helix'},
+      {sequenceId: 1, start: 95, end: 95, icon: 'helix'},
+      {sequenceId: 1, start: 96, end: 99, icon: 'helix'},
+      {sequenceId: 1, start: 100, end: 100, icon: 'lollipop'},
+      {sequenceId: 1, start: 101, end: 106, icon: 'helix'},
+      {sequenceId: 1, start: 113, end: 149, icon: 'strand'},
+      {sequenceId: 1, start: 150, end: 150, icon: 'arrowRight'},
+      {sequenceId: 1, start: 154, end: 158, icon: 'strand'},
+      {sequenceId: 1, start: 159, end: 159, icon: 'arrowRight'},
+      {sequenceId: 1, start: 162, end: 194, icon: 'helix'},
+      {sequenceId: 1, start: 195, end: 196, icon: 'strand'},
+      {sequenceId: 1, start: 197, end: 197, icon: 'arrowRight'},
+      {sequenceId: 1, start: 213, end: 219, icon: 'helix'},
+      {sequenceId: 1, start: 223, end: 224, icon: 'strand'},
+      {sequenceId: 1, start: 225, end: 225, icon: 'arrowRight'},
+      {sequenceId: 1, start: 237, end: 264, icon: 'helix'},
+      {sequenceId: 1, start: 286, end: 286, icon: 'lollipop'},
+      {sequenceId: 1, start: 291, end: 314, icon: 'helix'}
+    ];
+
+    const opt3 = {chunkSize: 0};
+
+    s3.draw(seq3, ico, opt3);
 
     // patterns EXAMPLE
     const s4 = new SequenceViewer('sqv4');
