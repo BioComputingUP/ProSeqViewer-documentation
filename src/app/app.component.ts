@@ -82,13 +82,18 @@ export class AppComponent implements OnInit {
     // GENERAL EXAMPLE: multisequence
     const s0 = new SequenceViewer('sqv0');
     const seqs0 = [
-      {sequence: '---------DFEYLQLVLTWPASFCYANH---CE------------RIAPNNFTIHGLWPDNVKT-RLHN----------CKPKPTYSY-FT----------GKMLNDLDKHWMQLKFEQDY--GRTEQPSWKYQYIKHGSCCQKR--Y-', id: 1, label: '1iooA'},
-      {sequence: '----------YDYFQFTQQYQLAVCNSNRT-LCK------------DPPDKLFTVHGLWPSNMVGPDPSK----------CP-IKNIRK-RE----------KLLEHQLEIIWPNVFDRT-K-----NNLFWDKEWMKHGSCGYPT--ID', id: 2, label: '1iqqA'},
-      {sequence: 'YVE---FAQDFDFFYFVQQWPGSYCDTKQS-CCYPK---------TGKPASDFGIHGLWPNNNDGSYPSN----------CDSNSPYDQSQV----------SDLISRMQQNWPTLACPSGT-----GSAFWSHEWEKHGTCAENV--F-', id: 3, label: '1iybA'},
-      {sequence: '------GHKEFDYFTLALTWSGTECLSVKD-SCPTN--ACS----RSEVETGFTIKGLWPDYDDGTWPSC----------CE-GAKYDQNEI----------SILSNDLSKYWPSYSCPSSSACGSFDASDLAYEWAKHGTCSSPV--LG', id: 4, label: '1jy5A'},
-      {sequence: '----------FDSFWFVQQWPPAVCSFQKSGSCP------------GSGLRTFTIHGLWPQQS-GTSLTN----------CP-GSPFDITKI----------SHLQSQLNTLWPNVLRAN-------NQQFWSHEWTKHGTCSEST--F-', id: 5, label: '1ucdA'},
-      {sequence: 'LALQAKQYGDFDRYVLALSWQTGFCQSQHD-RNRNERDECRLQTETTNKADFLTVHGLWPGLPKSVAARGVDERRWMRFGCATRPIPNLPEARASRMCSSPETGLSLETAAKLSEVMPGAGG-----RSCLERYEYAKHGACFG----F-', id: 6, label: '2pqxA'},
-      {sequence: 'DKR-LRDNHEWKKLIMVQHWPETVCEKIQN-DCR------------D-PPDYWTIHGLWPDKSEG---------------CNRSWPFNLEEI----------KDLLPEMRAYWPDVIHSFPN-----RSRFWKHEWEKHGTCAAQVDALN', id: 7, label: '3t0oA'}
+      // tslint:disable-next-line:max-line-length
+      {sequence: '--------DFEYLQLVLTWPASFCYANH--CE------RIAPNNFTIHGLWPDNVKT-RLHNCKPKPTYSY-FTGKMLNDLDKHWMQLKFEQDY--GRTEQPSWKYQYIKHG', id: 1, label: '1iooA'},
+      // tslint:disable-next-line:max-line-length
+      {sequence: 'DKRLRDNHEWKKLIMVQHWPETVCEKIQNDCR-------DPPDYWTIHGLWPDKSEG-----CNRSWPFNLEEIKDLLPEMRAYWPDVIHSFPN-----RSRFWKHEWEKHG', id: 2, label: '1iqqA'},
+      // tslint:disable-next-line:max-line-length
+      {sequence: '-----GHKEFDYFTLALTWSGTECLSVKDSCPTNACSRSEVETGFTIKGLWPDYDDGTWPSCCE-GAKYDQNEISILSNDLSKYWPSYSCPSSSACGSFDASDLAYEWAKHG', id: 3, label: '1iybA'},
+      // tslint:disable-next-line:max-line-length
+      {sequence: '---------YDYFQFTQQYQLAVCNSNRTLCK------DPPDKLFTVHGLWPSNMVGPDPSKCP-IKNIRK-REKLLEHQLEIIWPNVFDRTK------NNLFWDKEWMKHG', id: 4, label: '1jy5A'},
+      // tslint:disable-next-line:max-line-length
+      {sequence: '--YVEFAQDFDFFYFVQQWPGSYCDTKQSCCYPK---TGKPASDFGIHGLWPNNNDGSYPSNCDSNSPYDQSQVSDLISRMQQNWPTLACPSGT-----GSAFWSHEWEKHG', id: 5, label: '1ucdA'},
+      // tslint:disable-next-line:max-line-length
+      {sequence: '---------FDSFWFVQQWPPAVCSFQKSGSCP-----GSGLRTFTIHGLWPQQ-SGTSLTNCP-GSPFDITKISHLQSQLNTLWPNVLRAN-------NQQFWSHEWTKHG', id: 7, label: '3t0oA'}
     ];
 
 
@@ -98,7 +103,7 @@ export class AppComponent implements OnInit {
     // GENERAL EXAMPLE: single sequence
     const seqSingle = new SequenceViewer('sqvSingle');
     const seq = [
-      {sequence: 'MASESGKLWGGRFVGAVDPIMEKFNASIAYDRHLWEVDVQGSKAYSRGLEKAGLLTKAEMDQILHGLDKVAEEWAQGTFKLNSNDEDIHTANERRLKELIGATAGKLHTGRSRNDQVVTDLRLWMRQTCSTLSGLLWELIRTMVDRAEAERDVLFPGYTHLQRAQPIRWSHWILSHAVALTRDSERLLEVRKRINVLPLGSGAIAGNPLGVDRELLRAELNFGAITLNSMDATSERDFVAEFLFWASLCMTHLSRMAEDL ILYCTKEFSFVQLSDAYSTGSSLMPQKKNPDSLELIRSKAGRVFGRCAGLLMTLKGLPSTYNKDLQEDKEAVFEVSDTMSAVLQVATGVISTLQIHQENMGQALSPDMLATDLAYYLVRKGMPFRQAHEASGKAVFMAETKGVALNQLSLQELQTISPLFSGDVICVWDYGHSVEQYGALGGTARSSVDWQIRQVRALLQAQQA', id: 1}
+      {sequence: 'MASESGKLWGGRFVGAVDPIMEKFNASIAYDRHLWEVDVQGSKAYSRGLEKAGLLTKAEMDQILHGLDKVAEEWAQGTFKLNSNDEDIHTANERRLKELIGATAGKLHTGRSRNDQVVTDLRLWMRQTCSTLSGLLWELIRTMVDRAEAERDVLFPGYTHLQRAQPIRWSHWILSHAVALTRDSERLLEVRKRINVLPLGSGAIAGNPLGVDRELLRAELNFGAITLNSMDATSERDFVAEFLFWASLCMTHLSRMAEDL ILYCTKEFSFVQLSDAYSTGSSLMPQKKNPDSLELIRSKAGRVFGRCAGLLMTLKGLPSTYNKDLQEDKEAVFEVSDTMSAVLQVATGVISTLQIHQENMGQALSPDMLATDLAYYLVRKGMPFRQAHEASGKAVFMAETKGVALNQLSLQELQTISPLFSGDVICVWDYGHSVEQYGALGGTARSSVDWQIRQVRALLQAQQA', id: 1, label: 'P04424 | Homo sapiens'}
     ];
 
     const singleIco = [
@@ -119,7 +124,8 @@ export class AppComponent implements OnInit {
       {sequenceId: 1, start: 96, end: 99, icon: 'helix'},
       {sequenceId: 1, start: 100, end: 100, icon: 'lollipop'},
       {sequenceId: 1, start: 101, end: 106, icon: 'helix'},
-      {sequenceId: 1, start: 107, end: 112, icon: 'noSecondary'},
+      {sequenceId: 1, start: 107, end: 110, icon: 'turn'},
+      {sequenceId: 1, start: 111, end: 112, icon: 'noSecondary'},
       {sequenceId: 1, start: 113, end: 149, icon: 'strand'},
       {sequenceId: 1, start: 150, end: 150, icon: 'arrowRight'},
       {sequenceId: 1, start: 151, end: 153, icon: 'noSecondary'},
@@ -135,14 +141,18 @@ export class AppComponent implements OnInit {
       {sequenceId: 1, start: 194, end: 194, icon: 'helix'},
       {sequenceId: 1, start: 195, end: 196, icon: 'strand'},
       {sequenceId: 1, start: 197, end: 197, icon: 'arrowRight'},
-      {sequenceId: 1, start: 198, end: 212, icon: 'noSecondary'},
+      {sequenceId: 1, start: 198, end: 201, icon: 'noSecondary'},
+      {sequenceId: 1, start: 202, end: 205, icon: 'turn'},
+      {sequenceId: 1, start: 206, end: 212, icon: 'noSecondary'},
       {sequenceId: 1, start: 213, end: 219, icon: 'helix'},
       {sequenceId: 1, start: 220, end: 222, icon: 'helix'},
       {sequenceId: 1, start: 223, end: 224, icon: 'strand'},
       {sequenceId: 1, start: 225, end: 225, icon: 'arrowRight'},
       {sequenceId: 1, start: 226, end: 236, icon: 'noSecondary'},
       {sequenceId: 1, start: 237, end: 264, icon: 'helix'},
-      {sequenceId: 1, start: 265, end: 285, icon: 'noSecondary'},
+      {sequenceId: 1, start: 265, end: 265, icon: 'noSecondary'},
+      {sequenceId: 1, start: 266, end: 268, icon: 'turn'},
+      {sequenceId: 1, start: 269, end: 285, icon: 'noSecondary'},
       {sequenceId: 1, start: 286, end: 286, icon: 'lollipop'},
       {sequenceId: 1, start: 287, end: 290, icon: 'noSecondary'},
       {sequenceId: 1, start: 291, end: 314, icon: 'helix'},
@@ -180,17 +190,21 @@ export class AppComponent implements OnInit {
     // REGIONS EXAMPLE
     const s2 = new SequenceViewer('sqv2');
     const seqs = [
-      {sequence: 'MVLSPADKTNVKAAWGKVGAHGGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN'},
-      {sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'sp|P01942|HBA_MOUSE'},
-      {sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDVSSGSAQLRAHG', id: 3, label: 'sp|P13786|HBAZ_CAPHI'}
+      {sequence: 'MVAVEQSEASRLGPVFDSCRANNRAALIGYLPTGYPDVPASVAAMTALVESGCDIIEVGVPYSDPGMDGPTIARATEAALRGGVRVRDTLAAVEAISIAGGRAVVMTYWNPVLRYGVDAFARDLAAAGGLGLITPDLIPDEAQQWLAASEEHRLDRIFLVAPSSTPERLAATVEASRGFVYAASTMGVTGARDAVSQAAPELVGRVKAVSDIPVGVGLGVRSRAQAAQIAQYADGVIVGSALVTALTEGLPRLRALTGELAAGVRLGMSAHHHHHH', id: 1, label: '6ub9A | Mycobacterium tuberculosis'}
     ];
     const reg1 = [
-      {sequenceId: 2, start: 1, end: 10, backgroundColor: '#D72638', color: '#FFFFFF'},
-      {sequenceId: 2, start: 11, end: 20, backgroundColor: '#FF570A', color: '#FFFFFF'},
-      {sequenceId: 2, start: 21, end: 30, backgroundColor: '#FFBC42', color: '#FFFFFF'},
-      {sequenceId: 2, start: 31, end: 40, backgroundColor: '#44885B', color: '#FFFFFF'},
-      {sequenceId: 2, start: 41, end: 50, backgroundColor: '#393C93', color: '#FFFFFF'},
-      {sequenceId: 2, start: 51, end: 60, backgroundColor: '#7E1173', color: '#FFFFFF'},
+      {sequenceId: 1, start: 25, end: 53, backgroundColor: '#2f6690', color: '#FFFFFF'},
+      {sequenceId: 1, start: 54, end: 63, backgroundColor: '#FF6978', color: '#FFFFFF'},
+      {sequenceId: 1, start: 64, end: 84, backgroundColor: '#FAC05E', color: '#FFFFFF'},
+      {sequenceId: 1, start: 85, end: 100, backgroundColor: '#FF6978', color: '#FFFFFF'},
+      {sequenceId: 1, start: 101, end: 127, backgroundColor: '#2f6690', color: '#FFFFFF'},
+      {sequenceId: 1, start: 128, end: 152, backgroundColor: '#FF6978', color: '#FFFFFF'},
+      {sequenceId: 1, start: 153, end: 177, backgroundColor: '#2f6690', color: '#FFFFFF'},
+      {sequenceId: 1, start: 178, end: 210, backgroundColor: '#FF6978', color: '#FFFFFF'},
+      {sequenceId: 1, start: 211, end: 232, backgroundColor: '#2f6690', color: '#FFFFFF'},
+      {sequenceId: 1, start: 233, end: 238, backgroundColor: '#FF6978', color: '#FFFFFF'},
+      {sequenceId: 1, start: 239, end: 249, backgroundColor: '#FAC05E', color: '#FFFFFF'},
+      {sequenceId: 1, start: 250, end: 267, backgroundColor: '#FF6978', color: '#FFFFFF'},
     ];
     s2.draw(seqs, reg1);
 
@@ -198,61 +212,43 @@ export class AppComponent implements OnInit {
 
     const s3 = new SequenceViewer('sqv3');
     const seq3 = [
-      {sequence: 'MASESGKLWGGRFVGAVDPIMEKFNASIAYDRHLWEVDVQGSKAYSRGLEKAGLLTKAEMDQILHGLDKVAEEWAQGTFKLNSNDEDIHTANERRLKELIGATAGKLHTGRSRNDQVVTDLRLWMRQTCSTLSGLLWELIRTMVDRAEAERDVLFPGYTHLQRAQPIRWSHWILSHAVALTRDSERLLEVRKRINVLPLGSGAIAGNPLGVDRELLRAELNFGAITLNSMDATSERDFVAEFLFWASLCMTHLSRMAEDL ILYCTKEFSFVQLSDAYSTGSSLMPQKKNPDSLELIRSKAGRVFGRCAGLLMTLKGLPSTYNKDLQEDKEAVFEVSDTMSAVLQVATGVISTLQIHQENMGQALSPDMLATDLAYYLVRKGMPFRQAHEASGKAVFMAETKGVALNQLSLQELQTISPLFSGDVICVWDYGHSVEQYGALGGTARSSVDWQIRQVRALLQAQQA', id: 1}
-    ];
-
-    const ico = [
-      {sequenceId: 1, start: 12, end: 12, icon: 'lollipop'},
-      {sequenceId: 1, start: 19, end: 25, icon: 'helix'},
-      {sequenceId: 1, start: 28, end: 30, icon: 'helix'},
-      {sequenceId: 1, start: 31, end: 31, icon: 'lollipop'},
-      {sequenceId: 1, start: 32, end: 51, icon: 'helix'},
-      {sequenceId: 1, start: 57, end: 76, icon: 'helix'},
-      {sequenceId: 1, start: 88, end: 94, icon: 'helix'},
-      {sequenceId: 1, start: 95, end: 95, icon: 'helix'},
-      {sequenceId: 1, start: 96, end: 99, icon: 'helix'},
-      {sequenceId: 1, start: 100, end: 100, icon: 'lollipop'},
-      {sequenceId: 1, start: 101, end: 106, icon: 'helix'},
-      {sequenceId: 1, start: 113, end: 149, icon: 'strand'},
-      {sequenceId: 1, start: 150, end: 150, icon: 'arrowRight'},
-      {sequenceId: 1, start: 154, end: 158, icon: 'strand'},
-      {sequenceId: 1, start: 159, end: 159, icon: 'arrowRight'},
-      {sequenceId: 1, start: 162, end: 194, icon: 'helix'},
-      {sequenceId: 1, start: 195, end: 196, icon: 'strand'},
-      {sequenceId: 1, start: 197, end: 197, icon: 'arrowRight'},
-      {sequenceId: 1, start: 213, end: 219, icon: 'helix'},
-      {sequenceId: 1, start: 223, end: 224, icon: 'strand'},
-      {sequenceId: 1, start: 225, end: 225, icon: 'arrowRight'},
-      {sequenceId: 1, start: 237, end: 264, icon: 'helix'},
-      {sequenceId: 1, start: 286, end: 286, icon: 'lollipop'},
-      {sequenceId: 1, start: 291, end: 314, icon: 'helix'}
+      {sequence: 'MASESGKLWGGRFVGAVDPIMEKFNASIAYDRHLWEVDVQGSKAYSRGLEKAGLLTKAEMDQILHGLDKVAEEWAQGTFKLNSNDEDIHTANERRLKELIGATAGKLHTGRSRNDQVVTDLRLWMRQTCSTLSGLLWELIRTMVDRAEAERDVLFPGYTHLQRAQPIRWSHWILSHAVALTRDSERLLEVRKRINVLPLGSGAIAGNPLGVDRELLRAELNFGAITLNSMDATSERDFVAEFLFWASLCMTHLSRMAEDL ILYCTKEFSFVQLSDAYSTGSSLMPQKKNPDSLELIRSKAGRVFGRCAGLLMTLKGLPSTYNKDLQEDKEAVFEVSDTMSAVLQVATGVISTLQIHQENMGQALSPDMLATDLAYYLVRKGMPFRQAHEASGKAVFMAETKGVALNQLSLQELQTISPLFSGDVICVWDYGHSVEQYGALGGTARSSVDWQIRQVRALLQAQQA', id: 1,  label: 'P04424 | Homo sapiens'}
     ];
 
     const opt3 = {chunkSize: 0};
 
-    s3.draw(seq3, ico, opt3);
+    s3.draw(seq3, singleIco, opt3);
 
     // patterns EXAMPLE
     const s4 = new SequenceViewer('sqv4');
     const pat4 = [
-      {sequenceId: 1, pattern: /GA/g, backgroundColor: '#D72638'},
-      {sequenceId: 2, pattern: /GA/g, backgroundColor: '#D72638'},
-      {sequenceId: 1, pattern: /TT/g, backgroundColor: '#FF570A'},
-      {sequenceId: 2, pattern: /TT/g, backgroundColor: '#FF570A'},
-      {sequenceId: 2, pattern: /VS/g, backgroundColor: '#FFBC42'},
-      {sequenceId: 3, pattern: /VS/g, backgroundColor: '#FFBC42'},
-      {sequenceId: 2, pattern: /VS/g, backgroundColor: '#FFBC42'},
-      {sequenceId: 3, pattern: /VS/g, backgroundColor: '#FFBC42'}
+      {sequenceId: 1, pattern: /RRP/g, backgroundColor: '#D72638'},
+      {sequenceId: 2, pattern: /RRP/g, backgroundColor: '#D72638'},
+      {sequenceId: 3, pattern: /RRP/g, backgroundColor: '#D72638'},
+      {sequenceId: 1, pattern: /FGE/g, backgroundColor: '#FF570A'},
+      {sequenceId: 2, pattern: /FGE/g, backgroundColor: '#FF570A'},
+      {sequenceId: 3, pattern: /FGE/g, backgroundColor: '#FF570A'},
+      {sequenceId: 1, pattern: /LSP/g, backgroundColor: '#FFBC42'},
+      {sequenceId: 2, pattern: /LSP/g, backgroundColor: '#FFBC42'},
+      {sequenceId: 3, pattern: /LSP/g, backgroundColor: '#FFBC42'}
     ];
-    s4.draw(seqs, pat4);
+
+
+
+    const patseq = [
+      {sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPASTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},
+      {sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},
+      {sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'sp|P13786|CRAB_CHICK'}
+    ];
+    s4.draw(pat4, patseq);
 
     // colorscheme EXAMPLE
     const s6 = new SequenceViewer('sqv6');
     const opt6 = { colorScheme: 'clustal'};
     const seqs6 = [
-      {sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN'},
-      {sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'sp|P01942|HBA_MOUSE'},
-      {sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 3, label: 'sp|P13786|HBAZ_CAPHI'}
+      {sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPTSTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},
+      {sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},
+      {sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'sp|P13786|CRAB_CHICK'}
     ];
     s6.draw(seqs6, opt6);
 
@@ -260,16 +256,16 @@ export class AppComponent implements OnInit {
     const sBlos = new SequenceViewer('sqvBlosum');
     const optBlos = { colorScheme: 'blosum62'};
     const seqsBlos = [
-      {sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN'},
-      {sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'sp|P01942|HBA_MOUSE'},
-      {sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 3, label: 'sp|P13786|HBAZ_CAPHI'}
+      {sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPTSTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},
+      {sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},
+      {sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'sp|P13786|CRAB_CHICK'}
     ];
     sBlos.draw(seqsBlos, optBlos);
 
     // indexes EXAMPLE
     const s5 = new SequenceViewer('sqv5');
     const seqs5 = [
-      {sequence: 'MVLSPADKTNVKAA-----EYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN', startIndex: 2}
+      {sequence: 'MVLSPADKTNVKAA-----EYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|CRAB_HUMAN', startIndex: 2}
     ];
     const opt5 = { lateralIndexesGap: true};
     s5.draw(seqs5, opt5);
@@ -279,18 +275,18 @@ export class AppComponent implements OnInit {
     // consensus EXAMPLE
     const s7 = new SequenceViewer('sqv7');
     const seqs7 = [
-      {sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN'},
-      {sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'sp|P01942|HBA_MOUSE'},
-      {sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 3, label: 'sp|P13786|HBAZ_CAPHI'}
+      {sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPTSTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},
+      {sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},
+      {sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'sp|P13786|CRAB_CHICK'}
     ];
     const opt7 = { consensusType: 'identity', consensusThreshold: 80};
     s7.draw(seqs7, opt7);
 
     const sPhysical = new SequenceViewer('sqvPhysical');
     const seqsPhysical = [
-      {sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN'},
-      {sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'sp|P01942|HBA_MOUSE'},
-      {sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 3, label: 'sp|P13786|HBAZ_CAPHI'}
+      {sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPTSTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},
+      {sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},
+      {sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'sp|P13786|CRAB_CHICK'}
     ];
     const optPhysical = { consensusType: 'physical'};
     sPhysical.draw(seqsPhysical, optPhysical);
@@ -298,9 +294,9 @@ export class AppComponent implements OnInit {
     // oneLineSetting EXAMPLE
     const s8 = new SequenceViewer('sqv8');
     const seqs8 = [
-      {sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN'},
-      {sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'sp|P01942|HBA_MOUSE'},
-      {sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 3, label: 'sp|P13786|HBAZ_CAPHI'}
+      {sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPTSTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},
+      {sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},
+      {sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'sp|P13786|CRAB_CHICK'}
     ];
     const opt8 = { oneLineSetting: true, oneLineWidth: '350px'};
     s8.draw(seqs8, opt8);
@@ -308,9 +304,9 @@ export class AppComponent implements OnInit {
     // selections EXAMPLE
     const s9 = new SequenceViewer('sqv9');
     const seqs9 = [
-      {sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN'},
-      {sequence: 'MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG', id: 2, label: 'sp|P01942|HBA_MOUSE'},
-      {sequence: 'MSLTRTERTIILSLWSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG', id: 3, label: 'sp|P13786|HBAZ_CAPHI'}
+      {sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPTSTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},
+      {sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},
+      {sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'sp|P13786|CRAB_CHICK'}
     ];
     s9.draw(seqs9);
   }
