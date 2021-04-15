@@ -684,9 +684,9 @@
         </li>
       </ul>
 
-      <div *ngIf="javascriptCon">
-        <button class="btn">Template</button>
-        <pre class="prettyprint prettyprinted"><code class="language-java">
+      <tabset *ngIf="javascriptCon">
+        <tab heading="Template">
+              <pre class="prettyprint prettyprinted"><code class="language-java">
          <span class="hljs-js">&lt;head></span>
           <span class="hljs-js">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">></span>
          <span class="hljs-js">&lt;/head></span>
@@ -705,9 +705,11 @@
           sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);
          <span class="hljs-js">&lt;/script></span>
           </code></pre>
-      </div>
-      <div *ngIf="componentCon">
-       <pre class="prettyprint prettyprinted"><code class="language-java">
+        </tab>
+      </tabset>
+      <tabset *ngIf="angularCon">
+        <tab heading="Component">
+              <pre class="prettyprint prettyprinted"><code class="language-java">
           <span><span class="hljs-js">const</span> sequenceviewer = new SequenceViewer('sqvConsensusIdentity'); </span>
           <span><span class="hljs-js">const</span> sequences = [ </span>
           <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN', startIndex: 2},</span>
@@ -719,12 +721,14 @@
           <span>      };</span>
           sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);
           </code></pre>
-      </div>
-      <div *ngIf="templateCon">
-       <pre class="prettyprint prettyprinted"><code class="language-java">
-        <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvConsensusIdentity"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
-       </code></pre>
-      </div>
+        </tab>
+        <tab heading="Template">
+         <pre class="prettyprint prettyprinted"><code class="language-java">
+          <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvConsensusIdentity"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
+         </code></pre>
+        </tab>
+      </tabset>
+
 
 
 
@@ -860,9 +864,9 @@
         </li>
       </ul>
 
-      <div *ngIf="javascriptPhy">
-        <button class="btn">Template</button>
-        <pre class="prettyprint prettyprinted"><code class="language-java">
+      <tabset *ngIf="javascriptPhy">
+        <tab heading="Template">
+             <pre class="prettyprint prettyprinted"><code class="language-java">
          <span class="hljs-js">&lt;head></span>
           <span class="hljs-js">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">></span>
          <span class="hljs-js">&lt;/head></span>
@@ -881,9 +885,11 @@
           sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);
          <span class="hljs-js">&lt;/script></span>
           </code></pre>
-      </div>
-      <div *ngIf="componentPhy">
-       <pre class="prettyprint prettyprinted"><code class="language-java">
+        </tab>
+      </tabset>
+      <tabset *ngIf="angularPhy">
+        <tab heading="Component">
+           <pre class="prettyprint prettyprinted"><code class="language-java">
           <span><span class="hljs-js">const</span> sequenceviewer = new SequenceViewer('sqvConsensusPhysical'); </span>
           <span><span class="hljs-js">const</span> sequences = [ </span>
           <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN', startIndex: 2},</span>
@@ -895,12 +901,15 @@
           <span>      };</span>
           sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);
           </code></pre>
-      </div>
-      <div *ngIf="templatePhy">
-       <pre class="prettyprint prettyprinted"><code class="language-java">
-         <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvConsensusPhysical"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
-          </code></pre>
-      </div>
+        </tab>
+        <tab heading="Template">
+          <pre class="prettyprint prettyprinted">
+            <code class="language-java">
+             <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvConsensusPhysical"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
+            </code></pre>
+        </tab>
+      </tabset>
+
       <!-------------------------------------  ONELINESETTING  EXAMPLE ---------------------------------------->
 
       <h6 id="oneLineSetting" class="snippet-title">One line setting example<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h6>
@@ -921,9 +930,9 @@
         </li>
       </ul>
 
-      <div *ngIf="javascriptOne">
-        <button class="btn">Template</button>
-        <pre class="prettyprint prettyprinted"><code class="language-java">
+      <tabset *ngIf="javascriptOne">
+        <tab heading="Template">
+             <pre class="prettyprint prettyprinted"><code class="language-java">
          <span class="hljs-js">&lt;head></span>
           <span class="hljs-js">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">></span>
          <span class="hljs-js">&lt;/head></span>
@@ -942,9 +951,12 @@
             sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);
          <span class="hljs-js">&lt;/script></span>
           </code></pre>
-      </div>
-      <div *ngIf="componentOne">
-       <pre class="prettyprint prettyprinted"><code class="language-java">
+        </tab>
+
+      </tabset>
+      <tabset *ngIf="angularOne">
+        <tab heading="Component">
+             <pre class="prettyprint prettyprinted"><code class="language-java">
              <span><span class="hljs-js">const</span> sequenceviewer = new SequenceViewer('sqvOneLineSetting'); </span>
              <span><span class="hljs-js">const</span> sequences = [ </span>
              <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN', startIndex: 2},</span>
@@ -956,12 +968,16 @@
              <span>      };</span>
             sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);
           </code></pre>
-      </div>
-      <div *ngIf="templateOne">
-       <pre class="prettyprint prettyprinted"><code class="language-java">
-          <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvOneLineSetting"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
-          </code></pre>
-      </div>
+        </tab>
+        <tab heading="Template">
+         <pre class="prettyprint prettyprinted">
+           <code class="language-java">
+            <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvOneLineSetting"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
+            </code>
+         </pre>
+        </tab>
+      </tabset>
+
 
       <!-------------------------------------  SELECTIONS  EXAMPLE ---------------------------------------->
 
@@ -1003,9 +1019,9 @@
     <div id="APIDocumentation" class="tabcontent">
       <h2 class="txt">API Documentation</h2>
 
-      <div class="snippet-card card">
+      <div class="snippet-card">
         <div>
-          <h6 class="txt" id="javascript">Installation Guide - JavaScript</h6>
+          <h6 class="snippet-title" id="javascript">Installation Guide - JavaScript</h6>
 
           <h5><strong>1. Download the sequence viewer stylesheet</strong></h5>
           <p>You can find the <i>sqv.css</i> file in the src/assets folder on the <a href="https://github.com/BioComputingUP/sequence-viewer-typescript">Github repo.</a></p>
@@ -1037,7 +1053,7 @@
       </code></pre>
           </div>
 
-          <h6 class="txt" id="angular">Installation Guide - Angular</h6>
+          <h6 class="snippet-title" id="angular">Installation Guide - Angular</h6>
 
           <p>The sequence-viewer-typescript package is written in pure typescript and does not have any dependencies. This guide focus on how to install the package in an Angular app.</p>
           <h5><strong>1. Install the library using npm</strong></h5>
@@ -1059,7 +1075,7 @@
       <span class="hljs-js">const</span> sequence = [&#123;sequence: 'DFRLE--F-DFRLEDFRLE----&#125;]
       sequenceviewer.<span class="hljs-js">draw</span>(sequence);
       </code></pre>
-          <h6 class="txt" id="parameters">Available parameters</h6>
+          <h6 class="snippet-title" id="parameters">Available parameters</h6>
 
           <table>
             <tr class="first">
