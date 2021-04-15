@@ -11,70 +11,36 @@ export class AppComponent implements OnInit {
   // multisequence
   angularMsa = false;
   javascriptMsa = true;
-
-
   // singlesequence
   angularSin = false;
   javascriptSin = true;
-  componentSin = false;
-  templateSin = false;
-
-
   // regions
   angularReg = false;
   javascriptReg = true;
-  componentReg = false;
-  templateReg = false;
-
   // icons
   angularIc = false;
   javascriptIc = true;
-  componentIc = false;
-  templateIc = false;
-
   // patterns
   angularPat = false;
   javascriptPat = true;
-  componentPat = false;
-  templatePat = false;
-
   // colorscheme clustal
   angularCol = false;
   javascriptCol = true;
-  componentCol = false;
-  templateCol = false;
-
-
   // blosum
   angularBlo = false;
   javascriptBlo = true;
-  componentBlo = false;
-  templateBlo = false;
-
   // lateral
   angularLat = false;
   javascriptLat = true;
-  componentLat = false;
-  templateLat = false;
-
   // consensus identity
   angularCon = false;
   javascriptCon = true;
-  componentCon = false;
-  templateCon = false;
-
   // consensus physical
   angularPhy = false;
   javascriptPhy = true;
-  componentPhy = false;
-  templatePhy = false;
-
   // one line
   angularOne = false;
   javascriptOne = true;
-  componentOne = false;
-  templateOne = false;
-
 
   ngOnInit(): void {
 
@@ -324,8 +290,6 @@ export class AppComponent implements OnInit {
         if (!this.javascriptSin) {
           this.angularSin = (!this.angularSin);
           this.javascriptSin = (!this.javascriptSin);
-          this.componentSin = false;
-          this.templateSin = false;
         }
         break;
       }
@@ -333,8 +297,6 @@ export class AppComponent implements OnInit {
         if (!this.javascriptReg) {
           this.angularReg = (!this.angularReg);
           this.javascriptReg = (!this.javascriptReg);
-          this.componentReg = false;
-          this.templateReg = false;
         }
         break;
       }
@@ -342,8 +304,6 @@ export class AppComponent implements OnInit {
         if (!this.javascriptPat) {
           this.angularPat = (!this.angularPat);
           this.javascriptPat = (!this.javascriptPat);
-          this.componentPat = false;
-          this.templatePat = false;
         }
         break;
       }
@@ -351,8 +311,6 @@ export class AppComponent implements OnInit {
         if (!this.javascriptCol) {
           this.angularCol = (!this.angularCol);
           this.javascriptCol = (!this.javascriptCol);
-          this.componentCol = false;
-          this.templateCol = false;
         }
         break;
       }
@@ -360,8 +318,6 @@ export class AppComponent implements OnInit {
         if (!this.javascriptBlo) {
           this.angularBlo = (!this.angularBlo);
           this.javascriptBlo = (!this.javascriptBlo);
-          this.componentBlo = false;
-          this.templateBlo = false;
         }
         break;
       }
@@ -369,8 +325,6 @@ export class AppComponent implements OnInit {
         if (!this.javascriptLat) {
           this.angularLat = (!this.angularLat);
           this.javascriptLat = (!this.javascriptLat);
-          this.componentLat = false;
-          this.templateLat = false;
         }
         break;
       }
@@ -378,8 +332,6 @@ export class AppComponent implements OnInit {
         if (!this.javascriptCon) {
           this.angularCon = (!this.angularCon);
           this.javascriptCon = (!this.javascriptCon);
-          this.componentCon = false;
-          this.templateCon = false;
         }
         break;
       }
@@ -387,8 +339,6 @@ export class AppComponent implements OnInit {
         if (!this.javascriptPhy) {
           this.angularPhy = (!this.angularPhy);
           this.javascriptPhy = (!this.javascriptPhy);
-          this.componentPhy = false;
-          this.templatePhy = false;
         }
         break;
       }
@@ -396,8 +346,6 @@ export class AppComponent implements OnInit {
         if (!this.javascriptOne) {
           this.angularOne = (!this.angularOne);
           this.javascriptOne = (!this.javascriptOne);
-          this.componentOne = false;
-          this.templateOne = false;
         }
         break;
       }
@@ -405,8 +353,6 @@ export class AppComponent implements OnInit {
         if (!this.javascriptIc) {
           this.angularIc = (!this.angularIc);
           this.javascriptIc = (!this.javascriptIc);
-          this.componentIc = false;
-          this.templateIc = false;
         }
         break;
       }
@@ -428,8 +374,6 @@ export class AppComponent implements OnInit {
         if (!this.angularSin) {
           this.angularSin = (!this.angularSin);
           this.javascriptSin = (!this.javascriptSin);
-          this.componentSin = true;
-          this.templateSin = false;
         }
         break;
       }
@@ -437,8 +381,6 @@ export class AppComponent implements OnInit {
         if (!this.angularReg) {
           this.angularReg = (!this.angularReg);
           this.javascriptReg = (!this.javascriptReg);
-          this.componentReg = true;
-          this.templateReg = false;
         }
         break;
       }
@@ -446,8 +388,6 @@ export class AppComponent implements OnInit {
         if (!this.angularPat) {
           this.angularPat = (!this.angularPat);
           this.javascriptPat = (!this.javascriptPat);
-          this.componentPat = true;
-          this.templatePat = false;
         }
         break;
       }
@@ -455,8 +395,6 @@ export class AppComponent implements OnInit {
         if (!this.angularCol) {
           this.angularCol = (!this.angularCol);
           this.javascriptCol = (!this.javascriptCol);
-          this.componentCol = true;
-          this.templateCol = false;
         }
         break;
       }
@@ -464,8 +402,6 @@ export class AppComponent implements OnInit {
         if (!this.angularBlo) {
           this.angularBlo = (!this.angularBlo);
           this.javascriptBlo = (!this.javascriptBlo);
-          this.componentBlo = true;
-          this.templateBlo = false;
         }
         break;
       }
@@ -473,8 +409,6 @@ export class AppComponent implements OnInit {
         if (!this.angularLat) {
           this.angularLat = (!this.angularLat);
           this.javascriptLat = (!this.javascriptLat);
-          this.componentLat = true;
-          this.templateLat = false;
         }
         break;
       }
@@ -482,8 +416,6 @@ export class AppComponent implements OnInit {
         if (!this.angularCon) {
           this.angularCon = (!this.angularCon);
           this.javascriptCon = (!this.javascriptCon);
-          this.componentCon = true;
-          this.templateCon = false;
         }
         break;
       }
@@ -491,8 +423,6 @@ export class AppComponent implements OnInit {
         if (!this.angularPhy) {
           this.angularPhy = (!this.angularPhy);
           this.javascriptPhy = (!this.javascriptPhy);
-          this.componentPhy = true;
-          this.templatePhy = false;
         }
         break;
       }
@@ -500,8 +430,6 @@ export class AppComponent implements OnInit {
         if (!this.angularOne) {
           this.angularOne = (!this.angularOne);
           this.javascriptOne = (!this.javascriptOne);
-          this.componentOne = true;
-          this.templateOne = false;
         }
         break;
       }
@@ -509,8 +437,6 @@ export class AppComponent implements OnInit {
         if (!this.angularIc) {
           this.angularIc = (!this.angularIc);
           this.javascriptIc = (!this.javascriptIc);
-          this.componentIc = true;
-          this.templateIc = false;
         }
         break;
       }
