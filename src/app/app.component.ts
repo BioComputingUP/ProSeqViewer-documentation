@@ -11,8 +11,7 @@ export class AppComponent implements OnInit {
   // multisequence
   angularMsa = false;
   javascriptMsa = true;
-  componentMsa = false;
-  templateMsa = false;
+
 
   // singlesequence
   angularSin = false;
@@ -318,8 +317,6 @@ export class AppComponent implements OnInit {
         if (!this.javascriptMsa) {
           this.angularMsa = (!this.angularMsa);
           this.javascriptMsa = (!this.javascriptMsa);
-          this.componentMsa = false;
-          this.templateMsa = false;
         }
         break;
       }
@@ -424,8 +421,6 @@ export class AppComponent implements OnInit {
         if (!this.angularMsa) {
           this.angularMsa = (!this.angularMsa);
           this.javascriptMsa = (!this.javascriptMsa);
-          this.componentMsa = true;
-          this.templateMsa = false;
         }
         break;
       }
@@ -521,170 +516,5 @@ export class AppComponent implements OnInit {
       }
     }
 
-  }
-
-  showtabcom(id) {
-    switch (id) {
-      case 'msa': {
-        if (!this.componentMsa) {
-          this.componentMsa = (!this.componentMsa);
-          this.templateMsa = (!this.templateMsa);
-        }
-        break;
-      }
-      case 'sin': {
-        if (!this.componentSin) {
-          this.componentSin = (!this.componentSin);
-          this.templateSin = (!this.templateSin);
-        }
-        break;
-      }
-      case 'reg': {
-        if (!this.componentReg) {
-          this.componentReg = (!this.componentReg);
-          this.templateReg = (!this.templateReg);
-        }
-        break;
-      }
-      case 'pat': {
-        if (!this.componentPat) {
-          this.componentPat = (!this.componentPat);
-          this.templatePat = (!this.templatePat);
-        }
-        break;
-      }
-      case 'col': {
-        if (!this.componentCol) {
-          this.componentCol = (!this.componentCol);
-          this.templateCol = (!this.templateCol);
-        }
-        break;
-      }
-      case 'blo': {
-        if (!this.componentBlo) {
-          this.componentBlo = (!this.componentBlo);
-          this.templateBlo = (!this.templateBlo);
-        }
-        break;
-      }
-      case 'lat': {
-        if (!this.componentLat) {
-          this.componentLat = (!this.componentLat);
-          this.templateLat = (!this.templateLat);
-        }
-        break;
-      }
-      case 'con': {
-        if (!this.componentCon) {
-          this.componentCon = (!this.componentCon);
-          this.templateCon = (!this.templateCon);
-        }
-        break;
-      }
-      case 'phy': {
-        if (!this.componentPhy) {
-          this.componentPhy = (!this.componentPhy);
-          this.templatePhy = (!this.templatePhy);
-        }
-        break;
-      }
-      case 'one': {
-        if (!this.componentOne) {
-          this.componentOne = (!this.componentOne);
-          this.templateOne = (!this.templateOne);
-        }
-        break;
-      }
-      case 'ic': {
-        if (!this.componentIc) {
-          this.componentIc = (!this.componentIc);
-          this.templateIc = (!this.templateIc);
-        }
-        break;
-      }
-    }
-
-  }
-
-  showtabtem(id) {
-    switch (id) {
-      case 'msa': {
-        if (!this.templateMsa) {
-          this.componentMsa = (!this.componentMsa);
-          this.templateMsa = (!this.templateMsa);
-        }
-        break;
-      }
-      case 'sin': {
-        if (!this.templateSin) {
-          this.componentSin = (!this.componentSin);
-          this.templateSin = (!this.templateSin);
-        }
-        break;
-      }
-      case 'reg': {
-        if (!this.templateReg) {
-          this.componentReg = (!this.componentReg);
-          this.templateReg = (!this.templateReg);
-        }
-        break;
-      }
-      case 'pat': {
-        if (!this.templatePat) {
-          this.componentPat = (!this.componentPat);
-          this.templatePat = (!this.templatePat);
-        }
-        break;
-      }
-      case 'col': {
-        if (!this.templateCol) {
-          this.componentCol = (!this.componentCol);
-          this.templateCol = (!this.templateCol);
-        }
-        break;
-      }
-      case 'blo': {
-        if (!this.templateBlo) {
-          this.componentBlo = (!this.componentBlo);
-          this.templateBlo = (!this.templateBlo);
-        }
-        break;
-      }
-      case 'lat': {
-        if (!this.templateLat) {
-          this.componentLat = (!this.componentLat);
-          this.templateLat = (!this.templateLat);
-        }
-        break;
-      }
-      case 'con': {
-        if (!this.templateCon) {
-          this.componentCon = (!this.componentCon);
-          this.templateCon = (!this.templateCon);
-        }
-        break;
-      }
-      case 'phy': {
-        if (!this.templatePhy) {
-          this.componentPhy = (!this.componentPhy);
-          this.templatePhy = (!this.templatePhy);
-        }
-        break;
-      }
-      case 'one': {
-        if (!this.templateOne) {
-          this.componentOne = (!this.componentOne);
-          this.templateOne = (!this.templateOne);
-        }
-        break;
-      }
-      case 'ic': {
-        if (!this.templateIc) {
-          this.componentIc = (!this.componentIc);
-          this.templateIc = (!this.templateIc);
-        }
-        break;
-      }
-    }
   }
 }
