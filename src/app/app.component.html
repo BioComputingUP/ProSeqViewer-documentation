@@ -12,47 +12,39 @@
 </nav>
 
 
-
+<div class="sidenav">
+  <a  id="reg" href="#Demos" target="_self"><h6><b>Demos</b></h6></a>
+  <a href="#multi" target="_self"> <h6>Multi sequence</h6></a>
+  <a href="#single" target="_self"> <h6>Single sequence</h6></a>
+  <a href="#simple" target="_self"><h6><b>Simple tutorials</b></h6></a>
+  <a href="#regions" target="_self"><h6> Regions</h6></a>
+  <a href="#icons" target="_self"><h6>Icons</h6></a>
+  <a href="#patterns" target="_self"><h6>Patterns</h6></a>
+  <a href="#colorscheme" target="_self"><h6>Colorscheme</h6></a>
+  <a href="#lateralindexes" target="_self"><h6>Lateral indexes</h6></a>
+  <a href="#consensus" target="_self"><h6>Consensus</h6></a>
+  <a href="#oneLineSetting" target="_self"><h6>One line setting</h6></a>
+  <a href="#selection" target="_self"><h6>Selection</h6></a>
+  <a id="api" href="#APIDocumentation" target="_self"><h6><b>API Documentation</b></h6></a>
+  <a href="#javascript" target="_self"><h6>JavaScript Installation</h6></a>
+  <a href="#angular" target="_self"><h6>Angular Installation</h6></a>
+  <a href="#parameters" target="_self"><h6>Available parameters</h6></a>
+</div>
 <!------------------------------------- DEMO ---------------------------------------->
 
-<div class="container-fluid">
-  <div class="sidenav">
-    <a  id="reg" href="#Demos" target="_self"><h6><b>Demos</b></h6></a>
-    <a href="#multi" target="_self"> <h6>Multi sequence</h6></a>
-    <a href="#single" target="_self"> <h6>Single sequence</h6></a>
-    <a href="#simple" target="_self"><h6><b>Simple tutorials</b></h6></a>
-    <a href="#regions" target="_self"><h6> Regions</h6></a>
-    <a href="#icons" target="_self"><h6>Icons</h6></a>
-    <a href="#patterns" target="_self"><h6>Patterns</h6></a>
-    <a href="#colorscheme" target="_self"><h6>Colorscheme</h6></a>
-    <a href="#lateralindexes" target="_self"><h6>Lateral indexes</h6></a>
-    <a href="#consensus" target="_self"><h6>Consensus</h6></a>
-    <a href="#oneLineSetting" target="_self"><h6>One line setting</h6></a>
-    <a href="#selection" target="_self"><h6>Selection</h6></a>
-    <a id="api" href="#APIDocumentation" target="_self"><h6><b>API Documentation</b></h6></a>
-    <a href="#javascript" target="_self"><h6>JavaScript Installation</h6></a>
-    <a href="#angular" target="_self"><h6>Angular Installation</h6></a>
-    <a href="#parameters" target="_self"><h6>Available parameters</h6></a>
-  </div>
-
-
-  <div class="row">
+<div class="row1">
 
 
 
-
-    <div id="Demos">
-
-      <h2 class="txt">Demos</h2>
+      <h2 id="Demos" class="txt">Demos</h2>
 
       <!---------------------------------------------- Multisequence alignment ------------------------------------------>
-      <div>
-        <h6 class="snippet-title" id="multi">Multisequence alignment</h6>
+      <h6 class="snippet-title" id="multi">Multisequence alignment</h6>
 
-        <div class="sqvDemo" id="sqv0"></div>
+      <div class="sqvDemo" id="sqv0"></div>
 
         <!-- Tab content -->
-          <ul class="nav nav-pills">
+      <ul class="nav nav-pills">
             <li class="nav-item">
               <button type="button" class="btn btn-primary" (click)="showtabjs('msa')">JavaScript</button>
             </li>
@@ -60,12 +52,9 @@
               <button type="button" class="btn btn-primary" (click)="showtaban('msa')">Angular</button>
             </li>
           </ul>
-
-        <div *ngIf="javascriptMsa">
-          <tabset>
+      <tabset *ngIf="javascriptMsa">
             <tab heading="Template">
               <pre class="code">
-                <div class="code-js">
                   <span class="hljs-js">&lt;head></span>
                   <span class="hljs-js">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">></span>
                   <span class="hljs-js">&lt;/head></span>
@@ -86,17 +75,14 @@
                   <span>      };</span>
                   sequenceviewer.<span class="hljs-js">draw</span>(sequences, opt);
                   <span class="hljs-js">&lt;/script></span>
-                </div>
               </pre>
             </tab>
           </tabset>
-        </div>
 
 
-          <tabset *ngIf="angularMsa">
+      <tabset *ngIf="angularMsa">
               <tab heading="Component">
                 <pre class="code">
-                   <div class="code-an">
                       <span><span class="hljs-js">import</span> &#123;Component, OnInit} <span class="hljs-js">from</span> <span class="hljs-id">'@angular/core'</span>;</span>
                       <span><span class="hljs-js">import</span> &#123;SequenceViewer} <span class="hljs-js">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</span>
                       <span class="hljs-js">@Component(&#123;…})</span>
@@ -118,25 +104,21 @@
 
                       <span>      }</span>
                       <span>}</span>
-                   </div>
                 </pre>
               </tab>
               <tab heading="Template">
                 <pre class="code">
-                   <div class="code-an">
                     <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvMsa"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
-                   </div>
                 </pre>
               </tab>
 
           </tabset>
-      </div>
+
       <!---------------------------------------------- Single sequence -------------------------------------------------->
-      <div>
         <h6 class="snippet-title" id="single">Single sequence</h6>
         <p>Mutations in the ASL protein mapped onto the <b>secondary structure</b>  of the human ASL protein sequence.</p>
         <p> <b>Mutations</b> are indicated with orange lollipops. <b>Helices</b> are shown in pink and <b>beta strands</b> are shown as yellow arrows. </p>
-        <div class="sqvDemo"><div id="sqvSingle"></div></div>
+        <div class="sqvDemo" id="sqvSingle"></div>
 
         <!-- Tab content -->
         <ul class="nav nav-pills">
@@ -152,7 +134,6 @@
         <tabset *ngIf="javascriptSin">
           <tab heading="Template">
              <pre class="code">
-               <div class="code-js">
                 <span class="hljs-js">&lt;head></span>
                  <span class="hljs-js">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">></span>
                 <span class="hljs-js">&lt;/head></span>
@@ -184,7 +165,6 @@
                  <span><span class="hljs-js">const</span> options = &#123;chunkSize: 0}; // sequence length </span>
                   sequenceviewer.<span class="hljs-js">draw</span>(sequences, icons, options);
                 <span class="hljs-js">&lt;/script></span>
-              </div>
              </pre>
           </tab>
         </tabset>
@@ -232,7 +212,7 @@
         </pre>
           </tab>
         </tabset>
-      </div>
+
 
       <!--------------------------------------------  REGIONS  EXAMPLE ---------------------------------------->
       <h2 id="simple" class="txt"> Simple tutorials</h2>
@@ -514,32 +494,32 @@
       <p>Set a global colorScheme. Available global colorschemes are: clustal, blosum62.</p>
       <p style="color:#000;"><b>1. Clustal</b></p>
 
-      <table>
-        <tr class="first">
-          <th>Aminoacid</th>
-          <th>Color</th>
-        </tr>
-        <tr class="field0">
-          <td> A, I, L, M, F, W, V</td>
-          <td><span class="a"></span></td>
-        </tr>
-        <tr class="field0">
-          <td>K, R</td>
-          <td><span class="k"></span></td>
-        </tr>
-        <tr class="field0">
-          <td>E, D</td>
-          <td><span class="e"></span></td>
-        </tr>
-        <tr class="field0">
-          <td>C, G</td>
-          <td><span class="c"></span></td>
-        </tr>
-        <tr class="field0">
-          <td>N, Q, S, T, P, H, Y</td>
-          <td><span class="q"></span></td>
-        </tr>
-      </table>
+      <div class="container">
+        <div class="row first">
+          <div class="col-sm">Aminoacid</div>
+          <div class="col-sm">Color</div>
+       </div>
+        <div class="row field0">
+         <div class="col-sm"> A, I, L, M, F, W, V</div>
+         <div class="col-sm"><span class="a"></span></div>
+       </div>
+        <div class="row field0">
+         <div class="col-sm">K, R</div>
+         <div class="col-sm"><span class="k"></span></div>
+       </div>
+        <div class="row field0">
+         <div class="col-sm">E, D</div>
+         <div class="col-sm"><span class="e"></span></div>
+       </div>
+        <div class="row field0">
+         <div class="col-sm">C, G</div>
+         <div class="col-sm"><span class="c"></span></div>
+       </div>
+        <div class="row field0">
+         <div class="col-sm">N, Q, S, T, P, H, Y</div>
+         <div class="col-sm"><span class="q"></span></div>
+       </div>
+      </div>
 
       <div class="sqvDemo"><div id="sqv6"></div></div>
 
@@ -1121,8 +1101,8 @@
            });
     </span>
   </code></pre>
-    </div>
-    <!------------------------------------- API ---------------------------------------->
+
+    ----------------------------------- API --------------------------------------
 
     <div id="APIDocumentation" class="tabcontent">
       <h2 class="txt">API Documentation</h2>
@@ -1185,312 +1165,316 @@
       </code></pre>
           <h6 class="snippet-title" id="parameters">Available parameters</h6>
 
-          <table>
-            <tr class="first">
-              <th>Field 0</th>
-              <th>Field 1</th>
-              <th>Type</th>
-              <th>Example</th>
-              <th>Description</th>
-            </tr>
-            <tr class="field0">
-              <th>Sequences</th>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
-            </tr>
-            <tr class="field1">
-              <td></td>
-              <td>sequence</td>
-              <td>string</td>
-              <td>LYRLELERECAMT</td>
-              <td>Sequence of characters</td>
-            </tr>
-            <tr class="field1">
-              <td></td>
-              <td>id</td>
-              <td>integer</td>
-              <td>1</td>
-              <td>Identifier of the sequence</td>
-            </tr>
-            <tr class="field1">
-              <td></td>
-              <td>label</td>
-              <td>string</td>
-              <td>1xvz_1_30.pdb</td>
-              <td>Lateral label</td>
-            </tr>
-            <tr class="field1">
-              <td></td>
-              <td>colorScheme</td>
-              <td>string</td>
-              <td>clustal, gradient, binary</td>
-              <td>Predefined color palette</td>
-            </tr>
-            <tr class="field1">
-              <td></td>
-              <td>labelTooltip</td>
-              <td>string</td>
-              <td>&lt;span class="tooltipText" style="background-color: blue;"&gt;Tooltip text&lt;/span&gt;</td>
-              <td>Stylable tooltip</td>
-            </tr>
-            <tr class="field1">
-              <td></td>
-              <td>startIndex</td>
-              <td>integer</td>
-              <td>30</td>
-              <td>Start index of the input sequence.</td>
-            </tr>
-            <tr class="field0">
-              <th>Regions</th>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
-            </tr>
-            <tr class="field1">
-              <td></td>
-              <td>sequenceId</td>
-              <td>integer</td>
-              <td>1</td>
-              <td>Identifier of the sequence.</td>
-            </tr>
-            <tr class="field1">
-              <td></td>
-              <td>start</td>
-              <td>integer</td>
-              <td>10</td>
-              <td>Start position of the region to color.</td>
-            </tr>
-            <tr class="field1">
-              <td></td>
-              <td>end</td>
-              <td>integer</td>
-              <td>20</td>
-              <td>End position of the region to color.</td>
-            </tr>
-            <tr class="field1">
-              <td></td>
-              <td>backgroundColor</td>
-              <td>string</td>
-              <td>hex, rgb</td>
-              <td>Color the character background.</td>
-            </tr>
-            <tr class="field1">
-              <td></td>
-              <td>color</td>
-              <td>string</td>
-              <td>hex, rgb</td>
-              <td>Color the character.</td>
-            </tr>
-            <tr class="field1">
-              <td></td>
-              <td>backgroundImage</td>
-              <td>integer</td>
-              <td>linear-gradient(red, yellow)</td>
-              <td>Color the character background with a two color gradient.</td>
-            </tr>
-            <tr class="field0">
-              <th>Patterns</th>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
-            </tr>
-            <tr class="field1">
-              <td></td>
-              <td>sequenceId</td>
-              <td>integer</td>
-              <td>1</td>
-              <td>Identifier of the sequence.</td>
-            </tr>
-            <tr class="field1">
-              <td></td>
-              <td>start</td>
-              <td>integer</td>
-              <td>10</td>
-              <td>Start position of the region where to perform the regex.</td>
-            </tr>
-            <tr class="field1">
-              <td></td>
-              <td>end</td>
-              <td>integer</td>
-              <td>20</td>
-              <td>End position of the region where to perform the regex.</td>
-            </tr>
-            <tr class="field1">
-              <td></td>
-              <td>backgroundColor</td>
-              <td>string</td>
-              <td>hex, rgb</td>
-              <td>Color the regex match background.</td>
-            </tr>
-            <tr class="field1">
-              <td></td>
-              <td>color</td>
-              <td>string</td>
-              <td>hex, rgb</td>
-              <td>Color the regex match the character.</td>
-            </tr>
-            <tr class="field1">
-              <td></td>
-              <td>backgroundImage</td>
-              <td>integer</td>
-              <td>linear-gradient(red, yellow)</td>
-              <td>Color the regex match character background with a two color gradient.</td>
-            </tr>
-            <tr class="field0">
-              <th>Icons</th>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
-            </tr>
-            <tr class="field1">
-              <td></td>
-              <td>sequenceId</td>
-              <td>integer</td>
-              <td>1</td>
-              <td>Identifier of the sequence.</td>
-            </tr>
-            <tr class="field1">
-              <td></td>
-              <td>start</td>
-              <td>integer</td>
-              <td>10</td>
-              <td>Start position of the icon region.</td>
-            </tr>
-            <tr class="field1">
-              <td></td>
-              <td>end</td>
-              <td>integer</td>
-              <td>20</td>
-              <td>End position of the icon region.</td>
-            </tr>
-            <tr class="field1">
-              <td></td>
-              <td>icon</td>
-              <td>string</td>
-              <td>lollipop, helix, strand, strand-arrow-left, turn</td>
-              <td>svg image to apply on top of the indicated sequence.</td>
-            </tr>
-            <tr class="field1">
-              <td></td>
-              <td>display</td>
-              <td>string</td>
-              <td>center</td>
-              <td>Center the icon in the middle of the start-end region.</td>
-            </tr>
-            <tr class="field0">
-              <th>Options</th>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
-            </tr>
-            <tr class="field1">
-              <td></td>
-              <td>fontSize</td>
-              <td>string</td>
-              <td>14px</td>
-              <td>Font dimension.</td>
-            </tr>
-            <tr class="field1">
-              <td></td>
-              <td>chunkSize</td>
-              <td>integer</td>
-              <td>10</td>
-              <td>group the sequence into chunks of subsequential characters.</td>
-            </tr>
-            <tr class="field1">
-              <td></td>
-              <td>spaceSize</td>
-              <td>integer</td>
-              <td>2</td>
-              <td>Space among chunks.</td>
-            </tr>
-            <tr class="field1">
-              <td></td>
-              <td>logLevel</td>
-              <td>string</td>
-              <td>debug or none</td>
-              <td>Print console log error with "debug" option.</td>
-            </tr>
-            <tr class="field1">
-              <td></td>
-              <td>topIndexes</td>
-              <td>boolean</td>
-              <td>true</td>
-              <td>Place an index on top of the end of each chunk (first row only).</td>
-            </tr>
-            <tr class="field1">
-              <td></td>
-              <td>oneLineSetting</td>
-              <td>boolean</td>
-              <td>true</td>
-              <td>Display the viewer with fixed width (not responsive) and scrollbar on the sequences.</td>
-            </tr>
-            <tr class="field1">
-              <td></td>
-              <td>oneLineWidth</td>
-              <td>integer</td>
-              <td>2</td>
-              <td>Width of sequenceViewer - sidebar.</td>
-            </tr>
-            <tr class="field1">
-              <td></td>
-              <td>lateralIndexesGap</td>
-              <td>boolean</td>
-              <td>true</td>
-              <td>Shows lateral indexes including gaps in the count (true) or excluding them (false).</td>
-            </tr>
-            <tr class="field1">
-              <td></td>
-              <td>colorScheme</td>
-              <td>integer</td>
-              <td>clustal, blosum62</td>
-              <td>Colorscheme to apply to all sequences.</td>
-            </tr>
-            <tr class="field1">
-              <td></td>
-              <td>consensusType</td>
-              <td>string</td>
-              <td>identity, physical</td>
-              <td>Add a line with consensus information.</td>
-            </tr>
-            <tr class="field1">
-              <td></td>
-              <td>consensusThreshold</td>
-              <td>integer</td>
-              <td>90</td>
-              <td>Threeshold for consensus information.</td>
-            </tr>
-            <tr class="field0">
-              <th>iconsHtml</th>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
-            </tr>
-            <tr class="field1">
-              <td></td>
-              <td>id</td>
-              <td>string</td>
-              <td>icons</td>
-              <td>Input identifier.</td>
-            </tr>
-            <tr class="field1">
-              <td></td>
-              <td>iconName</td>
-              <td>string</td>
-              <td>&lt;svg>...&lt;/svg></td>
-              <td>An svg icon.</td>
-            </tr>
-          </table>
+          <div class="container">
+            <div class="row first">
+              <div class="col-sm">Field 0</div>
+              <div class="col-sm">Field 1</div>
+              <div class="col-sm">Type</div>
+              <div class="col-sm">Example</div>
+              <div class="col-sm">Description</div>
+            </div>
+            <div class="row field0">
+              <div class="col-sm">Sequences</div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+            </div>
+           <div class="row field1">
+            <div class="col-sm"></div>
+             <div class="col-sm">sequence</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">LYRLELERECAMT</div>
+             <div class="col-sm">Sequence of characters</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">id</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">1</div>
+             <div class="col-sm">Identifier of the sequence</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">label</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">1xvz_1_30.pdb</div>
+             <div class="col-sm">Lateral label</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">colorScheme</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">clustal, gradient, binary</div>
+             <div class="col-sm">Predefined color palette</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">labelTooltip</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">&lt;span class="tooltipText" style="background-color: blue;"&gt;Tooltip text&lt;/span&gt;</div>
+             <div class="col-sm">Stylable tooltip</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">startIndex</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">30</div>
+             <div class="col-sm">Start index of the input sequence.</div>
+           </div>
+            <div class="row field0">
+              <div class="col-sm">Regions</div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">sequenceId</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">1</div>
+             <div class="col-sm">Identifier of the sequence.</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">start</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">10</div>
+             <div class="col-sm">Start position of the region to color.</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">end</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">20</div>
+             <div class="col-sm">End position of the region to color.</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">backgroundColor</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">hex, rgb</div>
+             <div class="col-sm">Color the character background.</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">color</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">hex, rgb</div>
+             <div class="col-sm">Color the character.</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">backgroundImage</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">linear-gradient(red, yellow)</div>
+             <div class="col-sm">Color the character background with a two color gradient.</div>
+           </div>
+            <div class="row field0">
+              <div class="col-sm">Patterns</div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">sequenceId</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">1</div>
+             <div class="col-sm">Identifier of the sequence.</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">start</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">10</div>
+             <div class="col-sm">Start position of the region where to perform the regex.</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">end</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">20</div>
+             <div class="col-sm">End position of the region where to perform the regex.</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">backgroundColor</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">hex, rgb</div>
+             <div class="col-sm">Color the regex match background.</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">color</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">hex, rgb</div>
+             <div class="col-sm">Color the regex match the character.</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">backgroundImage</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">linear-gradient(red, yellow)</div>
+             <div class="col-sm">Color the regex match character background with a two color gradient.</div>
+           </div>
+            <div class="row field0">
+              <div class="col-sm">Icons</div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">sequenceId</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">1</div>
+             <div class="col-sm">Identifier of the sequence.</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">start</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">10</div>
+             <div class="col-sm">Start position of the icon region.</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">end</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">20</div>
+             <div class="col-sm">End position of the icon region.</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">icon</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">lollipop, helix, strand, strand-arrow-left, turn</div>
+             <div class="col-sm">svg image to apply on top of the indicated sequence.</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">display</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">center</div>
+             <div class="col-sm">Center the icon in the middle of the start-end region.</div>
+           </div>
+            <div class="row field0">
+              <div class="col-sm">Options</div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">fontSize</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">14px</div>
+             <div class="col-sm">Font dimension.</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">chunkSize</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">10</div>
+             <div class="col-sm">group the sequence into chunks of subsequential characters.</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">spaceSize</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">2</div>
+             <div class="col-sm">Space among chunks.</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">logLevel</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">debug or none</div>
+             <div class="col-sm">Print console log error with "debug" option.</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">topIndexes</div>
+             <div class="col-sm">boolean</div>
+             <div class="col-sm">true</div>
+             <div class="col-sm">Place an index on top of the end of each chunk (first row only).</div>
+           </div>
+            <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">oneLineSetting</div>
+             <div class="col-sm">boolean</div>
+             <div class="col-sm">true</div>
+             <div class="col-sm">Display the viewer with fixed width (not responsive) and scrollbar on the sequences.</div>
+           </div>
+            <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">oneLineWidth</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">2</div>
+             <div class="col-sm">Width of sequenceViewer - sidebar.</div>
+           </div>
+            <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">lateralIndexesGap</div>
+             <div class="col-sm">boolean</div>
+             <div class="col-sm">true</div>
+             <div class="col-sm">Shows lateral indexes including gaps in the count (true) or excluding them (false).</div>
+           </div>
+            <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">colorScheme</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">clustal, blosum62</div>
+             <div class="col-sm">Colorscheme to apply to all sequences.</div>
+           </div>
+            <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">consensusType</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">identity, physical</div>
+             <div class="col-sm">Add a line with consensus information.</div>
+           </div>
+            <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">consensusThreshold</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">90</div>
+             <div class="col-sm">Threeshold for consensus information.</div>
+           </div>
+            <div class="row field0">
+              <div class="col-sm">iconsHtml</div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+           </div>
+            <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">id</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">icons</div>
+             <div class="col-sm">Input identifier.</div>
+           </div>
+            <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">iconName</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">&lt;svg>...&lt;/svg></div>
+             <div class="col-sm">An svg icon.</div>
+           </div>
+
         </div>
       </div>
     </div>
 
 </div>
+
+
+
+
 </div>
