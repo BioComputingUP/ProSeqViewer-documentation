@@ -144,20 +144,31 @@ label {
 
 
 pre  {
-  padding: 10px;
   font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
-  margin: 0;
+}
+
+.tab-sp {
+  margin-left: 30px;
+
+}
+
+.tab-sp-db {
+  margin-left: 60px;
+
+}
+
+.code li {
+  color: #64747D;
+  background: none;
+  margin-bottom: 5px;
+  line-height: normal;
+  list-style-type: decimal;
   font-size: 14px;
-  background-color: rgba(0,0,0,.04);
-  display: block;
-  border: none;
-  //overflow-x: scroll;
-  //width: 1200px;
+  white-space: pre;
 }
 
 code {
   margin: 0;
-  font-size: 14px;
   color: #000;
   font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
   text-align: left;
@@ -166,6 +177,7 @@ code {
 }
 
 .code {
+  margin-top: 50px;
   height: 400px;
   margin-bottom: 50px;
 }
