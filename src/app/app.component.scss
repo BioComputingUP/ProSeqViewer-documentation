@@ -165,8 +165,9 @@ pre  {
   font-size: 14px;
   background-color: rgba(0,0,0,.04);
   display: block;
-  overflow-x: auto;
   border: none;
+  //overflow-x: scroll;
+  //width: 1200px;
 }
 
 code {
@@ -180,10 +181,18 @@ code {
 }
 
 .code {
+  font-size: 10px;
   height: 400px;
   margin-bottom: 50px;
 }
 
+//.code-js {
+//  margin-left: -120px;
+//}
+//
+//.code-an {
+//  margin-left: -160px;
+//}
 
 .hljs-html {
   color: #FFAD0A;
