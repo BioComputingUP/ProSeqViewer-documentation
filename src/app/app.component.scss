@@ -178,7 +178,8 @@ code {
 
 .code {
   margin-top: 50px;
-  height: 400px;
+  //height: 400px; //TODO
+  overflow-x: auto;
   margin-bottom: 50px;
 }
 

@@ -132,39 +132,33 @@
 
         <tabset *ngIf="javascriptSin">
           <tab heading="Template">
-             <pre class="code">
-                <span class="hljs-js">&lt;head></span>
-                 <span class="hljs-js">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">></span>
-                <span class="hljs-js">&lt;/head></span>
-                <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvSingle"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
-                <span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">&lt;/script&gt;</span>
-                <span class="hljs-js">&lt;script></span>
-                  <span><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span> SequenceViewer(<span class="hljs-id">'sqvSingle'</span>); </span>
-                  <span><span class="hljs-js">const</span> sequences = [ </span>
-                  <span>      &#123;sequence: 'MASESGKLWGGRFVGAVDPIMEKFNASIAYDRHLWEVDVQGSKAY' +</span>
-                  <span>      'SRGLEKAGLLTKAEMDQILHGLDKVAEEWAQGTFKLNSNDEDIHT' + </span>
-                  <span>      'ANERRLKELIGATAGKLHTGRSRNDQVVTDLRLWMRQTCSTLSGL' + </span>
-                  <span>      'LWELIRTMVDRAEAERDVLFPGYTHLQRAQPIRWSHWILSHAVAL' + </span>
-                  <span>      'TRDSERLLEVRKRINVLPLGSGAIAGNPLGVDRELLRAELNFGAI' + </span>
-                  <span>      'TLNSMDATSERDFVAEFLFWASLCMTHLSRMAEDLILYCTKEFSF' + </span>
-                  <span>      'VQLSDAYSTGSSLMPQKKNPDSLELIRSKAGRVFGRCAGLLMTLK' + </span>
-                  <span>      'GLPSTYNKDLQEDKEAVFEVSDTMSAVLQVATGVISTLQIHQENM' + </span>
-                  <span>      ... ,</span>
-                  <span>      id: 1, label: 'P04424 | Homo sapiens'},</span>
-                  <span>      ];</span>
-                  <span><span class="hljs-js">const</span> icons =  &#123;</span>
-                  <span>      &#123;sequenceId: 1, start: 1, end: 11, icon: 'noSecondary'},</span>
-                  <span>      &#123;sequenceId: 1, start: 12, end: 12, icon: 'lollipop'},</span>
-                  <span>      &#123;sequenceId: 1, start: 13, end: 18, icon: 'noSecondary'},</span>
-                  <span>      &#123;sequenceId: 1, start: 19, end: 25, icon: 'helix'},</span>
-                  <span>      &#123;sequenceId: 1, start: 26, end: 27, icon: 'noSecondary'},</span>
-                  <span>      &#123;sequenceId: 1, start: 28, end: 30, icon: 'helix'},</span>
-                  <span>      ... </span>
-                  <span>      };</span>
-                 <span><span class="hljs-js">const</span> options = &#123;chunkSize: 0}; // sequence length </span>
-                  sequenceviewer.<span class="hljs-js">draw</span>(sequences, icons, options);
-                <span class="hljs-js">&lt;/script></span>
-             </pre>
+             <ul class="code">
+               <li><span class="hljs-js">&lt;head></span></li>
+               <li><span class="tab-sp"><span class="hljs-js">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">></span></span></li>
+               <li> <span class="hljs-js">&lt;/head></span></li>
+               <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvSingle"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
+               <li><span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">&lt;/script&gt;</span></li>
+               <li><span class="hljs-js">&lt;script></span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span> SequenceViewer(<span class="hljs-id">'sqvSingle'</span>); </span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
+               <li><span class="tab-sp-db">&#123;sequence: 'MASESGKLWGGRFVGAVDPIMEKFNASIAYDRHLWEVDVQGSKAYSRGLEKAGLLTKAEMDQILHGLDKVAEEWAQGTFKLNSNDEDIHTANERRLKELIGATAGKLHTGRSRNDQVVTDLRLWMRQTCSTLSGLLWELIRTMVDRAEAERDVLFPGYTHLQRAQPIRWSHWILSHAVAL' + </span></li>
+               <li><span class="tab-sp-db">      'TRDSERLLEVRKRINVLPLGSGAIAGNPLGVDRELLRAELNFGAITLNSMDATSERDFVAEFLFWASLCMTHLSRMAEDLILYCTKEFSFVQLSDAYSTGSSLMPQKKNPDSLELIRSKAGRVFGRCAGLLMTLKGLPSTYNKDLQEDKEAVFEVSDTMSAVLQVATGVISTLQIHQENM' + </span></li>
+               <li><span class="tab-sp-db">      ... ,</span></li>
+               <li><span class="tab-sp-db">      id: 1, label: 'P04424 | Homo sapiens'},</span></li>
+               <li><span class="tab-sp">];</span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> icons =  &#123;</span></li>
+               <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 1, end: 11, icon: 'noSecondary'},</span></li>
+               <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 12, end: 12, icon: 'lollipop'},</span></li>
+               <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 13, end: 18, icon: 'noSecondary'},</span></li>
+               <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 19, end: 25, icon: 'helix'},</span></li>
+               <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 26, end: 27, icon: 'noSecondary'},</span></li>
+               <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 28, end: 30, icon: 'helix'},</span></li>
+               <li><span class="tab-sp-db">      ... </span></li>
+               <li><span class="tab-sp-db">      };</span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> options = &#123;chunkSize: 0}; // sequence length </span></li>
+               <li><span class="tab-sp"><span>sequenceviewer.<span class="hljs-js">draw</span>(sequences, icons, options);</span></span></li>
+               <li><span class="hljs-js">&lt;/script></span></li>
+             </ul>
           </tab>
         </tabset>
         <tabset *ngIf="angularSin">
