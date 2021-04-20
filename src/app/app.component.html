@@ -711,51 +711,51 @@
 
       <tabset *ngIf="javascriptCon">
         <tab heading="Template">
-              <pre class="code"><code>
-         <span class="hljs-js">&lt;head></span>
-          <span class="hljs-js">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">></span>
-         <span class="hljs-js">&lt;/head></span>
-         <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvConsensusIdentity"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
-         <span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">&lt;/script&gt;</span>
-         <span class="hljs-js">&lt;script></span>
-          <span><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span>SequenceViewer('sqvConsensusIdentity'); </span>
-           <span><span class="hljs-js">const</span> sequences = [ </span>
-          <span>      &#123;sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPASTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},</span>
-          <span>      &#123;sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},</span>
-          <span>      &#123;sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'sp|P13786|CRAB_CHICK'}</span>
-          <span>      ];</span>
-          <span><span class="hljs-js">const</span> options =  &#123;</span>
-          <span>      consensusType: 'identity', consensusThreshold: 80</span>
-          <span>      };</span>
-          sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);
-         <span class="hljs-js">&lt;/script></span>
-          </code></pre>
+              <ol class="code">
+                <li><span class="hljs-js">&lt;head></span></li>
+                <li><span class="hljs-js tab-sp">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">></span></li>
+                <li><span class="hljs-js">&lt;/head></span></li>
+                <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvConsensusIdentity"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
+                <li><span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">&lt;/script&gt;</span></li>
+                <li><span class="hljs-js">&lt;script></span></li>
+                <li><span class="tab-sp"><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span>SequenceViewer(<span class="hljs-id">'sqvConsensusIdentity'</span>); </span></li>
+                <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
+                <li><span class="tab-sp-db">      &#123;sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPASTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},</span></li>
+                <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},</span></li>
+                <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'sp|P13786|CRAB_CHICK'}</span></li>
+                <li><span class="tab-sp">      ];</span></li>
+                <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
+                <li><span class="tab-sp-db">      consensusType: 'identity', consensusThreshold: 80</span></li>
+                <li><span class="tab-sp">      };</span></li>
+                <li><span>sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
+                <li><span class="hljs-js">&lt;/script></span></li>
+          </ol>
         </tab>
       </tabset>
       <tabset *ngIf="angularCon">
         <tab heading="Component">
-              <pre class="code"><code>
-                <span><span class="hljs-js">import</span> &#123;Component, OnInit} <span class="hljs-js">from</span> <span class="hljs-id">'@angular/core'</span>;</span>
-                <span><span class="hljs-js">import</span> &#123;SequenceViewer} <span class="hljs-js">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</span>
-                <span class="hljs-js">@Component(&#123;…})</span>
-                <span><span class="hljs-js">export class</span> AppComponent <span class="hljs-js">implements</span> OnInit &#123;</span>
-                <span><span class="hljs-js">ngOnInit():</span> void  &#123;</span>
-                <span><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span>SequenceViewer('sqvConsensusIdentity'); </span>
-               <span><span class="hljs-js">const</span> sequences = [ </span>
-              <span>      &#123;sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPASTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},</span>
-              <span>      &#123;sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},</span>
-              <span>      &#123;sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'sp|P13786|CRAB_CHICK'}</span>
-              <span>      ];</span>
-                <span><span class="hljs-js">const</span> options =  &#123;</span>
-                <span>      consensusType: 'identity', consensusThreshold: 80</span>
-                <span>      };</span>
-                sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);
-          </code></pre>
+              <ol class="code">
+                <li><span class="hljs-js">import</span> &#123;Component, OnInit} <span class="hljs-js">from</span> <span class="hljs-id">'@angular/core'</span>;</li>
+                <li><span class="hljs-js">import</span> &#123;SequenceViewer} <span class="hljs-js">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</li>
+                <li><span class="hljs-js">@Component(&#123;…})</span></li>
+                <li><span class="hljs-js">export class</span> AppComponent <span class="hljs-js">implements</span> OnInit &#123;</li>
+                <li><span class="hljs-js">ngOnInit():</span> void  &#123;</li>
+                <li><span class="tab-sp"><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span>SequenceViewer(<span class="hljs-id">'sqvConsensusIdentity'</span>); </span></li>
+                <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
+                <li><span class="tab-sp-db">      &#123;sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPASTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},</span></li>
+                <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},</span></li>
+                <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'sp|P13786|CRAB_CHICK'}</span></li>
+                <li><span class="tab-sp">      ];</span></li>
+                <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
+                <li><span class="tab-sp-db">      consensusType: 'identity', consensusThreshold: 80</span></li>
+                <li><span class="tab-sp">      };</span></li>
+                <li><span>sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
+          </ol>
         </tab>
         <tab heading="Template">
-         <pre class="code"><code>
-          <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvConsensusIdentity"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
-         </code></pre>
+         <ol class="code">
+           <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvConsensusIdentity"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
+         </ol>
         </tab>
       </tabset>
 
@@ -882,7 +882,7 @@
 
 
 
-      <div class="sqvDemo"><div id="sqvPhysical"></div></div>
+      <div class="sqvDemo" id="sqvPhysical"></div>
 
       <!-- Tab content -->
       <ul class="nav nav-pills">
@@ -896,52 +896,51 @@
 
       <tabset *ngIf="javascriptPhy">
         <tab heading="Template">
-             <pre class="code"><code>
-         <span class="hljs-js">&lt;head></span>
-          <span class="hljs-js">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">></span>
-         <span class="hljs-js">&lt;/head></span>
-         <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvConsensusPhysical"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
-         <span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">&lt;/script&gt;</span>
-         <span class="hljs-js">&lt;script></span>
-          <span><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span>SequenceViewer('sqvConsensusPhysical'); </span>
-           <span><span class="hljs-js">const</span> sequences = [ </span>
-          <span>      &#123;sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPASTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},</span>
-          <span>      &#123;sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},</span>
-          <span>      &#123;sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'sp|P13786|CRAB_CHICK'}</span>
-          <span>      ];</span>
-          <span><span class="hljs-js">const</span> options =  &#123;</span>
-          <span>      consensusType: 'physical'</span>
-          <span>      };</span>
-          sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);
-         <span class="hljs-js">&lt;/script></span>
-          </code></pre>
+             <ol class="code">
+                <li><span class="hljs-js">&lt;head></span></li>
+               <li><span class="hljs-js tab-sp">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">></span></li>
+               <li><span class="hljs-js">&lt;/head></span></li>
+               <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvConsensusPhysical"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
+               <li><span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">&lt;/script&gt;</span></li>
+               <li><span class="hljs-js">&lt;script></span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span>SequenceViewer(<span class="hljs-id">'sqvConsensusPhysical'</span>);</span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
+               <li><span class="tab-sp-db">      &#123;sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPASTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},</span></li>
+               <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},</span></li>
+               <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'sp|P13786|CRAB_CHICK'}</span></li>
+               <li><span class="tab-sp">      ];</span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
+               <li><span class="tab-sp-db">      consensusType: 'physical'</span></li>
+               <li><span class="tab-sp">      };</span></li>
+               <li><span class="tab-sp">sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
+               <li><span class="hljs-js">&lt;/script></span></li>
+          </ol>
         </tab>
       </tabset>
       <tabset *ngIf="angularPhy">
         <tab heading="Component">
-           <pre class="code"><code>
-              <span><span class="hljs-js">import</span> &#123;Component, OnInit} <span class="hljs-js">from</span> <span class="hljs-id">'@angular/core'</span>;</span>
-              <span><span class="hljs-js">import</span> &#123;SequenceViewer} <span class="hljs-js">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</span>
-              <span class="hljs-js">@Component(&#123;…})</span>
-              <span><span class="hljs-js">export class</span> AppComponent <span class="hljs-js">implements</span> OnInit &#123;</span>
-              <span><span class="hljs-js">ngOnInit():</span> void  &#123;</span>
-              <span><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span>SequenceViewer('sqvConsensusPhysical'); </span>
-               <span><span class="hljs-js">const</span> sequences = [ </span>
-              <span>      &#123;sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPASTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},</span>
-              <span>      &#123;sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},</span>
-              <span>      &#123;sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'sp|P13786|CRAB_CHICK'}</span>
-              <span>      ];</span>
-              <span><span class="hljs-js">const</span> options =  &#123;</span>
-              <span>      consensusType: 'physical'</span>
-              <span>      };</span>
-              sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);
-          </code></pre>
+           <ol class="code">
+              <li><span class="hljs-js">import</span> &#123;Component, OnInit} <span class="hljs-js">from</span> <span class="hljs-id">'@angular/core'</span>;</li>
+              <li><span class="hljs-js">import</span> &#123;SequenceViewer} <span class="hljs-js">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</li>
+              <li><span class="hljs-js">@Component(&#123;…})</span></li>
+              <li><span class="hljs-js">export class</span> AppComponent <span class="hljs-js">implements</span> OnInit &#123;</li>
+              <li><span class="hljs-js">ngOnInit():</span> void  &#123;</li>
+              <li><span class="tab-sp"><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span>SequenceViewer(<span class="hljs-id">'sqvConsensusPhysical'</span>);</span></li>
+              <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
+              <li><span class="tab-sp-db">      &#123;sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPASTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},</span></li>
+              <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},</span></li>
+              <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'sp|P13786|CRAB_CHICK'}</span></li>
+              <li><span class="tab-sp">      ];</span></li>
+              <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
+              <li><span class="tab-sp-db">      consensusType: 'physical'</span></li>
+              <li><span class="tab-sp">      };</span></li>
+              <li><span class="tab-sp">sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
+          </ol>
         </tab>
         <tab heading="Template">
-          <pre class="code">
-            <code>
-             <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvConsensusPhysical"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
-            </code></pre>
+          <ol class="code">
+            <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvConsensusPhysical"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
+          </ol>
         </tab>
       </tabset>
 
@@ -967,54 +966,52 @@
 
       <tabset *ngIf="javascriptOne">
         <tab heading="Template">
-             <pre class="code"><code>
-         <span class="hljs-js">&lt;head></span>
-          <span class="hljs-js">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">></span>
-         <span class="hljs-js">&lt;/head></span>
-          <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvOneLineSetting"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
-         <span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">&lt;/script&gt;</span>
-          <span class="hljs-js">&lt;script></span>
-             <span><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span>SequenceViewer('sqvOneLineSetting'); </span>
-               <span><span class="hljs-js">const</span> sequences = [ </span>
-              <span>      &#123;sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPASTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},</span>
-              <span>      &#123;sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},</span>
-              <span>      &#123;sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'sp|P13786|CRAB_CHICK'}</span>
-              <span>      ];</span>
-             <span><span class="hljs-js">const</span> options =  &#123;</span>
-             <span>      oneLineSetting: true, oneLineWidth: '350px'</span>
-             <span>      };</span>
-            sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);
-         <span class="hljs-js">&lt;/script></span>
-          </code></pre>
+             <ol class="code">
+               <li><span class="hljs-js">&lt;head></span></li>
+               <li><span class="hljs-js tab-sp">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">></span></li>
+               <li><span class="hljs-js">&lt;/head></span></li>
+               <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvOneLineSetting"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
+               <li><span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">&lt;/script&gt;</span></li>
+               <li><span class="hljs-js">&lt;script></span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span>SequenceViewer(<span class="hljs-id">'sqvOneLineSetting'</span>); </span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
+               <li><span class="tab-sp-db">      &#123;sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPASTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},</span></li>
+               <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},</span></li>
+               <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'sp|P13786|CRAB_CHICK'}</span></li>
+               <li><span class="tab-sp">      ];</span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
+               <li><span class="tab-sp-db">      oneLineSetting: true, oneLineWidth: '350px'</span></li>
+               <li><span class="tab-sp">      };</span></li>
+               <li><span class="tab-sp">sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
+               <li><span class="hljs-js">&lt;/script></span></li>
+          </ol>
         </tab>
 
       </tabset>
       <tabset *ngIf="angularOne">
         <tab heading="Component">
-             <pre class="code"><code>
-                <span><span class="hljs-js">import</span> &#123;Component, OnInit} <span class="hljs-js">from</span> <span class="hljs-id">'@angular/core'</span>;</span>
-                <span><span class="hljs-js">import</span> &#123;SequenceViewer} <span class="hljs-js">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</span>
-                <span class="hljs-js">@Component(&#123;…})</span>
-                <span><span class="hljs-js">export class</span> AppComponent <span class="hljs-js">implements</span> OnInit &#123;</span>
-                <span><span class="hljs-js">ngOnInit():</span> void  &#123;</span>
-                 <span><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span>SequenceViewer('sqvOneLineSetting'); </span>
-                 <span><span class="hljs-js">const</span> sequences = [ </span>
-                <span>      &#123;sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPASTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},</span>
-                <span>      &#123;sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},</span>
-                <span>      &#123;sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'sp|P13786|CRAB_CHICK'}</span>
-                <span>      ];</span>
-                 <span><span class="hljs-js">const</span> options =  &#123;</span>
-                 <span>      oneLineSetting: true, oneLineWidth: '350px'</span>
-                 <span>      };</span>
-                sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);
-          </code></pre>
+             <ol class="code">
+                <li><span class="hljs-js">import</span> &#123;Component, OnInit} <span class="hljs-js">from</span> <span class="hljs-id">'@angular/core'</span>;</li>
+                <li><span class="hljs-js">import</span> &#123;SequenceViewer} <span class="hljs-js">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</li>
+                <li><span class="hljs-js">@Component(&#123;…})</span>
+                <li><span class="hljs-js">export class</span> AppComponent <span class="hljs-js">implements</span> OnInit &#123;</li>
+                <li><span class="hljs-js">ngOnInit():</span> void  &#123;</li>
+                <li><span class="tab-sp"><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span>SequenceViewer(<span class="hljs-id">'sqvOneLineSetting'</span>); </span></li>
+                <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
+                <li><span class="tab-sp-db">      &#123;sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPASTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},</span></li>
+                <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},</span></li>
+                <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'sp|P13786|CRAB_CHICK'}</span></li>
+                <li><span class="tab-sp">      ];</span></li>
+                <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
+                <li><span class="tab-sp-db">      oneLineSetting: true, oneLineWidth: '350px'</span></li>
+                <li><span class="tab-sp">      };</span></li>
+                <li><span class="tab-sp">sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
+          </ol>
         </tab>
         <tab heading="Template">
-         <pre class="code">
-           <code>
-            <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvOneLineSetting"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
-            </code>
-         </pre>
+         <ol class="code">
+           <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvOneLineSetting"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
+         </ol>
         </tab>
       </tabset>
 
@@ -1054,7 +1051,7 @@
     </span>
   </code></pre>
 
-    ----------------------------------- API --------------------------------------
+    <!----------------------------------- API -------------------------------------->
 
     <div id="APIDocumentation" class="tabcontent">
       <h2 class="txt">API Documentation</h2>
@@ -1063,60 +1060,57 @@
         <div>
           <h6 class="snippet-title" id="javascript">Installation Guide - JavaScript</h6>
 
-          <h5><strong>1. Download the sequence viewer stylesheet</strong></h5>
+          <p><strong>1. Download the sequence viewer stylesheet</strong></p>
           <p>You can find the <i>sqv.css</i> file in the src/assets folder on the <a href="https://github.com/BioComputingUP/sequence-viewer-typescript">Github repo.</a></p>
 
-          <h5><strong>2. Download the library code</strong></h5>
+          <p><strong>2. Download the library code</strong></p>
           <p>You can find the <i>sqv-bundle.js</i> file in the dist folder on the <a href="https://github.com/BioComputingUP/sequence-viewer-typescript">Github repo.</a></p>
 
-          <h5><strong>3. In your index.html:</strong></h5>
+          <p><strong>3. In your index.html:</strong></p>
 
           <!-- Tab content -->
-          <div>
-      <pre class="prettyprint prettyprinted"><code>
-        <span class="hljs-js">&lt;head></span>
-          <span class="hljs-js">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">></span>  // Load the stylesheet
-        <span class="hljs-js">&lt;/head></span>
-        <span class="hljs-js">&lt;body></span>
-        <span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvSimple"</span><span class="hljs-html">&gt;&lt;/div&gt;</span>
-        <span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">>&lt;/script&gt;</span>
-        <span class="hljs-js">&lt;script></span>
+          <ol class="code">
+            <li><span class="hljs-js">&lt;head></span></li>
+            <li><span class="hljs-js tab-sp">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">></span> // Load the stylesheet</li>
+            <li><span class="hljs-js">&lt;/head></span></li>
+            <li><span class="hljs-js">&lt;body></span></li>
+            <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvSimple"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
+            <li><span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">>&lt;/script&gt;</span></li>
+            <li><span class="hljs-js">&lt;script></span></li>
+            <li><span class="tab-sp"><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new </span>SequenceViewer(<span class="hljs-id">'sqvSimple'</span>);</span> // Create an instance of the sequence viewer in JavaScript </li>
+            <li><span class="tab-sp"><span class="hljs-js">const</span> sequence = [ </span></li>
+            <li><span class="tab-sp-db">      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAG--ALERMFL--YFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN'}</span></li>
+            <li><span class="tab-sp">      ];</span></li>
+            <li><span class="tab-sp">sequenceviewer.<span class="hljs-js">draw</span>(sequence);</span> // Execute the function to draw the sequence viewer on the page</li>
+            <li><span class="hljs-js">&lt;/script></span></li>
+            <li><span class="hljs-js">&lt;/body></span></li>
+          </ol>
 
-          <span><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span>SequenceViewer('sqvSimple'); </span>  // Create an instance of the sequence viewer in JavaScript
-          <span><span class="hljs-js">const</span> sequence = [ </span>
-          <span>      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAG--ALERMFL--YFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN'}</span>
-          <span>      ];</span>
-
-          <span>sequenceviewer.<span class="hljs-js">draw</span>(sequence);</span>  // Execute the function to draw the sequence viewer on the page
-        <span class="hljs-js">&lt;/script></span>
-        <span class="hljs-js">&lt;/body></span>
-      </code></pre>
-          </div>
 
           <h6 class="snippet-title" id="angular">Installation Guide - Angular</h6>
 
           <p>The sequence-viewer-typescript package is written in pure typescript and does not have any dependencies. This guide focus on how to install the package in an Angular app.</p>
-          <h5><strong>1. Install the library using npm</strong></h5>
+          <p><strong>1. Install the library using npm</strong></p>
           <pre><code>npm i sequence-viewer-typescript</code></pre>
 
-          <h5><strong>2. Load the sequence viewer stylesheet in your angular.json "styles" </strong></h5>
+          <p><strong>2. Load the sequence viewer stylesheet in your angular.json "styles" </strong></p>
           <pre><code><span class="hljs-ang">styles:</span> ["./node_modules/sequence-viewer-typescript/dist/assets/sqv.scss"]</code></pre>
 
-          <h5><strong>3. Import the sequence viewer in your angular component </strong></h5>
+          <p><strong>3. Import the sequence viewer in your angular component </strong></p>
           <pre><code><span class="hljs-js">import</span> &#123; SequenceViewer &#125; <span class="hljs-keyword">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</code></pre>
 
-          <h5><strong> 4. Place the sequence viewer in your template </strong></h5>
-          <pre><code><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqv"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></code></pre>
+          <p><strong> 4. Place the sequence viewer in your template </strong></p>
+          <ol class="code"><li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqv"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li></ol>
 
 
-          <h5><strong> 5. Create an instance of the sequence viewer in your component, add inputs and execute</strong></h5>
-          <pre><code>
-      <span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span> SequenceViewer(<span class="hljs-id">'sqv'</span>);
-      <span class="hljs-js">const</span> sequence = [&#123;sequence: 'DFRLE--F-DFRLEDFRLE----&#125;]
-      sequenceviewer.<span class="hljs-js">draw</span>(sequence);
-      </code></pre>
+          <p><strong> 5. Create an instance of the sequence viewer in your component, add inputs and execute</strong></p>
+          <ol class="code">
+            <li><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span> SequenceViewer(<span class="hljs-id">'sqv'</span>);</li>
+            <li><span class="hljs-js">const</span> sequence = [&#123;sequence: 'DFRLE--F-DFRLEDFRLE----&#125;]</li>
+            <li>sequenceviewer.<span class="hljs-js">draw</span>(sequence);</li>
+          </ol>
+
           <h6 class="snippet-title" id="parameters">Available parameters</h6>
-
           <div class="container">
             <div class="row first">
               <div class="col-sm">Field 0</div>
