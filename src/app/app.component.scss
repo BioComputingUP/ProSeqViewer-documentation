@@ -157,6 +157,18 @@ pre  {
 
 }
 
+.code {
+  margin-top: 50px;
+  height: 400px;
+  overflow-x: auto;
+  margin-bottom: 50px;
+}
+
+.code-no-height {
+  margin-top: 50px;
+  overflow-x: auto;
+  margin-bottom: 50px;
+}
 .code li {
   color: #64747D;
   background: none;
@@ -167,21 +179,17 @@ pre  {
   white-space: pre;
 }
 
-code {
-  margin: 0;
-  color: #000;
-  font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
-  text-align: left;
+.code-no-height li {
+  color: #64747D;
+  background: none;
+  margin-bottom: 5px;
+  line-height: normal;
+  list-style-type: decimal;
+  font-size: 14px;
   white-space: pre;
-  line-height: 1.5;
 }
 
-.code {
-  margin-top: 50px;
-  //height: 400px; //TODO
-  overflow-x: auto;
-  margin-bottom: 50px;
-}
+
 
 .hljs-html {
   color: #FFAD0A;

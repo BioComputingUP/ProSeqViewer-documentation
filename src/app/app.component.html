@@ -1069,7 +1069,7 @@
           <p><strong>3. In your index.html:</strong></p>
 
           <!-- Tab content -->
-          <ol class="code">
+          <ol class="code-no-height">
             <li><span class="hljs-js">&lt;head></span></li>
             <li><span class="hljs-js tab-sp">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">></span> // Load the stylesheet</li>
             <li><span class="hljs-js">&lt;/head></span></li>
@@ -1097,14 +1097,14 @@
           <pre><code><span class="hljs-ang">styles:</span> ["./node_modules/sequence-viewer-typescript/dist/assets/sqv.scss"]</code></pre>
 
           <p><strong>3. Import the sequence viewer in your angular component </strong></p>
-          <pre><code><span class="hljs-js">import</span> &#123; SequenceViewer &#125; <span class="hljs-keyword">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</code></pre>
+          <ol class="code-no-height"><li><span class="hljs-js">import</span> &#123; SequenceViewer &#125; <span class="hljs-keyword">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</li></ol>
 
           <p><strong> 4. Place the sequence viewer in your template </strong></p>
-          <ol class="code"><li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqv"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li></ol>
+          <ol class="code-no-height"><li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqv"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li></ol>
 
 
           <p><strong> 5. Create an instance of the sequence viewer in your component, add inputs and execute</strong></p>
-          <ol class="code">
+          <ol class="code-no-height">
             <li><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span> SequenceViewer(<span class="hljs-id">'sqv'</span>);</li>
             <li><span class="hljs-js">const</span> sequence = [&#123;sequence: 'DFRLE--F-DFRLEDFRLE----&#125;]</li>
             <li>sequenceviewer.<span class="hljs-js">draw</span>(sequence);</li>
