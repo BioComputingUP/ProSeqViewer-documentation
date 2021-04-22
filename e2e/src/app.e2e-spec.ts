@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('sequence-viewer-documentation app is running!');
+    expect(page.getTitleText()).toEqual('proseqviewer-documentation app is running!');
   });
 
   afterEach(async () => {
