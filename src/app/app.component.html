@@ -1,0 +1,1433 @@
+<nav class="navbar"><div class="mr-3">
+  <div><h1 class="tit">ProSeqViewer</h1>
+    <h6 class="lead">ProSeqViewer library for the visualization of (not only) biological sequence features. Used in
+      <a href="https://mobidb.bio.unipd.it/">MobiDB</a>,
+      <a href="https://www.disprot.org/">DisProt</a> and
+      <a href="https://repeatsdb.bio.unipd.it/">RepeatsDB</a>.</h6>
+    <h6 class="lead">Based on Typescript and compatible with Angular 2+ framework. A JavaScript version of the package is also available (see the <a href="#APIDocumentation">API documentation</a>).</h6>
+    <a role="button" class="btn btn-primary" id="npm" href="https://www.npmjs.com/package/sequence-viewer-typescript">npm package 1.0.31</a>
+    <a role="button" class="btn btn-primary" id="git" href="https://github.com/BioComputingUP/sequence-viewer-typescript">github 1.0.31</a>
+  </div>
+</div>
+</nav>
+
+
+<div class="sidenav">
+  <a  id="reg" href="#Demos" target="_self"><h6><b>Demos</b></h6></a>
+  <a href="#multi" target="_self"> <h6>Multi sequence</h6></a>
+  <a href="#single" target="_self"> <h6>Single sequence</h6></a>
+  <a href="#simple" target="_self"><h6><b>Simple tutorials</b></h6></a>
+  <a href="#regions" target="_self"><h6> Regions</h6></a>
+  <a href="#icons" target="_self"><h6>Icons</h6></a>
+  <a href="#patterns" target="_self"><h6>Patterns</h6></a>
+  <a href="#colorscheme" target="_self"><h6>Colorscheme</h6></a>
+  <a href="#lateralindexes" target="_self"><h6>Lateral indexes</h6></a>
+  <a href="#consensus" target="_self"><h6>Consensus</h6></a>
+  <a href="#oneLineSetting" target="_self"><h6>One line setting</h6></a>
+  <a href="#selection" target="_self"><h6>Selection</h6></a>
+  <a id="api" href="#APIDocumentation" target="_self"><h6><b>API Documentation</b></h6></a>
+  <a href="#javascript" target="_self"><h6>JavaScript Installation</h6></a>
+  <a href="#angular" target="_self"><h6>Angular Installation</h6></a>
+  <a href="#parameters" target="_self"><h6>Available parameters</h6></a>
+</div>
+<!------------------------------------- DEMO ---------------------------------------->
+
+<div class="row1">
+
+
+
+      <h2 id="Demos" class="txt">Demos</h2>
+
+      <!---------------------------------------------- Multisequence alignment ------------------------------------------>
+      <h6 class="snippet-title" id="multi">Multisequence alignment</h6>
+
+      <div class="sqvDemo" id="sqv0"></div>
+
+        <!-- Tab content -->
+      <ul class="nav nav-pills">
+            <li class="nav-item">
+              <button type="button" class="btn btn-primary" (click)="showtabjs('msa')">JavaScript</button>
+            </li>
+            <li class="nav-item">
+              <button type="button" class="btn btn-primary" (click)="showtaban('msa')">Angular</button>
+            </li>
+          </ul>
+      <tabset *ngIf="javascriptMsa">
+            <tab heading="Template">
+              <ul class="code">
+                <li><span class="hljs-js">&lt;head></span></li>
+                <li><span class="hljs-js">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">></span></li>
+                <li><span class="hljs-js">&lt;/head></span></li>
+                <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvMsa"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
+                <li><span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">&lt;/script&gt;</span></li>
+                <li><span class="hljs-js">&lt;script></span></li>
+                <li><span><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span> ProSeqViewer(<span class="hljs-id">'sqvMsa'</span>); </span></li>
+                <li><span><span class="hljs-js">const</span> sequences = [ </span></li>
+                <li><span class="tab-sp"><span>      &#123;sequence: '--------DFEYLQLVLTWPASFCYANH--CE------RIAPNNFTIHGLWPDNVKT-RLHNCKPKPTYSY-FTGKMLNDLDKHWMQLKFEQDY--GRTEQPSWKYQYIKHG', id: 1, label: '1iooA'},</span></span></li>
+                <li><span class="tab-sp"><span>      &#123;sequence: 'DKRLRDNHEWKKLIMVQHWPETVCEKIQNDCR-------DPPDYWTIHGLWPDKSEG-----CNRSWPFNLEEIKDLLPEMRAYWPDVIHSFPN-----RSRFWKHEWEKHG', id: 2, label: '1iqqA'},</span></span></li>
+                <li><span class="tab-sp"><span>      &#123;sequence: '-----GHKEFDYFTLALTWSGTECLSVKDSCPTNACSRSEVETGFTIKGLWPDYDDGTWPSCCE-GAKYDQNEISILSNDLSKYWPSYSCPSSSACGSFDASDLAYEWAKHG', id: 3, label: '1iybA'},</span></span></li>
+                <li><span class="tab-sp"><span>      &#123;sequence: '---------YDYFQFTQQYQLAVCNSNRTLCK------DPPDKLFTVHGLWPSNMVGPDPSKCP-IKNIRK-REKLLEHQLEIIWPNVFDRTK------NNLFWDKEWMKHG', id: 4, label: '1jy5A'},</span></span></li>
+                <li><span class="tab-sp"><span>      &#123;sequence: '--YVEFAQDFDFFYFVQQWPGSYCDTKQSCCYPK---TGKPASDFGIHGLWPNNNDGSYPSNCDSNSPYDQSQVSDLISRMQQNWPTLACPSGT-----GSAFWSHEWEKHG', id: 5, label: '1ucdA'}</span></span></li>
+                <li><span class="tab-sp"><span>      &#123;sequence: '---------FDSFWFVQQWPPAVCSFQKSGSCP-----GSGLRTFTIHGLWPQQ-SGTSLTNCP-GSPFDITKISHLQSQLNTLWPNVLRAN-------NQQFWSHEWTKHG', id: 6, label: '3t0oA'}</span></span></li>
+                <li><span class="tab-sp"><span>      ];</span></span></li>
+                <li><span><span class="hljs-js">const</span> options =  &#123;</span></li>
+                <li><span class="tab-sp"><span>      topIndexes: true, colorScheme: 'blosum62'</span></span></li>
+                <li><span>      };</span></li>
+                <li>proseqviewer.<span class="hljs-js">draw</span>(sequences, opt);</li>
+                <li><span class="hljs-js">&lt;/script></span></li>
+              </ul>
+            </tab>
+          </tabset>
+
+
+      <tabset *ngIf="angularMsa">
+              <tab heading="Component">
+                <ul class="code">
+                      <li><span class="hljs-js">import</span> &#123;Component, OnInit} <span class="hljs-js">from</span> <span class="hljs-id">'@angular/core'</span>;</li>
+                      <li><span class="hljs-js">import</span> &#123;ProSeqViewer} <span class="hljs-js">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</li>
+                      <li><span class="hljs-js">@Component(&#123;…})</span></li>
+                      <li><span class="hljs-js">export class</span> AppComponent <span class="hljs-js">implements</span> OnInit &#123;</li>
+                      <li><span class="hljs-js">ngOnInit():</span> void  &#123;</li>
+                      <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span> ProSeqViewer(<span class="hljs-id">'sqvMsa'</span>); </span></li>
+                      <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
+                      <li><span class="tab-sp-db">&#123;sequence: '--------DFEYLQLVLTWPASFCYANH--CE------RIAPNNFTIHGLWPDNVKT-RLHNCKPKPTYSY-FTGKMLNDLDKHWMQLKFEQDY--GRTEQPSWKYQYIKHG', id: 1, label: '1iooA'},</span></li>
+                      <li><span class="tab-sp-db">&#123;sequence: 'DKRLRDNHEWKKLIMVQHWPETVCEKIQNDCR-------DPPDYWTIHGLWPDKSEG-----CNRSWPFNLEEIKDLLPEMRAYWPDVIHSFPN-----RSRFWKHEWEKHG', id: 2, label: '1iqqA'},</span></li>
+                      <li><span class="tab-sp-db">&#123;sequence: '-----GHKEFDYFTLALTWSGTECLSVKDSCPTNACSRSEVETGFTIKGLWPDYDDGTWPSCCE-GAKYDQNEISILSNDLSKYWPSYSCPSSSACGSFDASDLAYEWAKHG', id: 3, label: '1iybA'},</span></li>
+                      <li><span class="tab-sp-db">&#123;sequence: '---------YDYFQFTQQYQLAVCNSNRTLCK------DPPDKLFTVHGLWPSNMVGPDPSKCP-IKNIRK-REKLLEHQLEIIWPNVFDRTK------NNLFWDKEWMKHG', id: 4, label: '1jy5A'},</span></li>
+                      <li><span class="tab-sp-db">&#123;sequence: '--YVEFAQDFDFFYFVQQWPGSYCDTKQSCCYPK---TGKPASDFGIHGLWPNNNDGSYPSNCDSNSPYDQSQVSDLISRMQQNWPTLACPSGT-----GSAFWSHEWEKHG', id: 5, label: '1ucdA'}</span></li>
+                      <li><span class="tab-sp-db">&#123;sequence: '---------FDSFWFVQQWPPAVCSFQKSGSCP-----GSGLRTFTIHGLWPQQ-SGTSLTNCP-GSPFDITKISHLQSQLNTLWPNVLRAN-------NQQFWSHEWTKHG', id: 6, label: '3t0oA'}</span></li>
+                      <li><span class="tab-sp"><span>];</span></span></li>
+                      <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
+                      <li><span class="tab-sp-db">topIndexes: true, colorScheme: 'blosum62'</span></li>
+                      <li><span class="tab-sp"><span> };</span></span></li>
+                      <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
+                      <li><span class="tab-sp"><span>}</span></span></li>
+                      <li>}</li>
+                </ul>
+              </tab>
+              <tab heading="Template">
+                <ol class="code">
+                    <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvMsa"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
+                </ol>
+              </tab>
+
+          </tabset>
+
+      <!---------------------------------------------- Single sequence -------------------------------------------------->
+        <h6 class="snippet-title" id="single">Single sequence</h6>
+        <p>Mutations in the ASL protein mapped onto the <b>secondary structure</b>  of the human ASL protein sequence.</p>
+        <p> <b>Mutations</b> are indicated with orange lollipops. <b>Helices</b> are shown in pink and <b>beta strands</b> are shown as yellow arrows. </p>
+        <div class="sqvDemo" id="sqvSingle"></div>
+
+        <!-- Tab content -->
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <button type="button" class="btn btn-primary" (click)="showtabjs('sin')">JavaScript</button>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="btn btn-primary" (click)="showtaban('sin')">Angular</button>
+          </li>
+        </ul>
+
+
+        <tabset *ngIf="javascriptSin">
+          <tab heading="Template">
+             <ol class="code">
+               <li><span class="hljs-js">&lt;head></span></li>
+               <li><span class="tab-sp"><span class="hljs-js">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">></span></span></li>
+               <li> <span class="hljs-js">&lt;/head></span></li>
+               <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvSingle"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
+               <li><span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">&lt;/script&gt;</span></li>
+               <li><span class="hljs-js">&lt;script></span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span> ProSeqViewer(<span class="hljs-id">'sqvSingle'</span>); </span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
+               <li><span class="tab-sp-db">&#123;sequence: 'MASESGKLWGGRFVGAVDPIMEKFNASIAYDRHLWEVDVQGSKAYSRGLEKAGLLTKAEMDQILHGLDKVAEEWAQGTFKLNSNDEDIHTANERRLKELIGATAGKLHTGRSRNDQVVTDLRLWMRQTCSTLSGLLWELIRTMVDRAEAERDVLFPGYTHLQRAQPIRWSHWILSHAVAL' + </span></li>
+               <li><span class="tab-sp-db">      'TRDSERLLEVRKRINVLPLGSGAIAGNPLGVDRELLRAELNFGAITLNSMDATSERDFVAEFLFWASLCMTHLSRMAEDLILYCTKEFSFVQLSDAYSTGSSLMPQKKNPDSLELIRSKAGRVFGRCAGLLMTLKGLPSTYNKDLQEDKEAVFEVSDTMSAVLQVATGVISTLQIHQENM' + </span></li>
+               <li><span class="tab-sp-db">      ... ,</span></li>
+               <li><span class="tab-sp-db">      id: 1, label: 'P04424 | Homo sapiens'},</span></li>
+               <li><span class="tab-sp">];</span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> icons =  &#123;</span></li>
+               <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 1, end: 11, icon: 'noSecondary'},</span></li>
+               <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 12, end: 12, icon: 'lollipop'},</span></li>
+               <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 13, end: 18, icon: 'noSecondary'},</span></li>
+               <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 19, end: 25, icon: 'helix'},</span></li>
+               <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 26, end: 27, icon: 'noSecondary'},</span></li>
+               <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 28, end: 30, icon: 'helix'},</span></li>
+               <li><span class="tab-sp-db">      ... </span></li>
+               <li><span class="tab-sp-db">      };</span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> options = &#123;chunkSize: 0}; // sequence length </span></li>
+               <li><span class="tab-sp"><span>proseqviewer.<span class="hljs-js">draw</span>(sequences, icons, options);</span></span></li>
+               <li><span class="hljs-js">&lt;/script></span></li>
+             </ol>
+          </tab>
+        </tabset>
+        <tabset *ngIf="angularSin">
+          <tab heading="Component">
+            <ol class="code">
+                <li><span class="hljs-js">import</span> &#123;Component, OnInit} <span class="hljs-js">from</span> <span class="hljs-id">'@angular/core'</span>;</li>
+                <li><span class="hljs-js">import</span> &#123;ProSeqViewer} <span class="hljs-js">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</li>
+                <li><span class="hljs-js">@Component(&#123;…})</span>
+                <li><span class="hljs-js">export class</span> AppComponent <span class="hljs-js">implements</span> OnInit &#123;</li>
+                <li><span class="hljs-js">ngOnInit():</span> void  &#123;</li>
+              <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span> ProSeqViewer(<span class="hljs-id">'sqvSingle'</span>); </span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
+               <li><span class="tab-sp-db">&#123;sequence: 'MASESGKLWGGRFVGAVDPIMEKFNASIAYDRHLWEVDVQGSKAYSRGLEKAGLLTKAEMDQILHGLDKVAEEWAQGTFKLNSNDEDIHTANERRLKELIGATAGKLHTGRSRNDQVVTDLRLWMRQTCSTLSGLLWELIRTMVDRAEAERDVLFPGYTHLQRAQPIRWSHWILSHAVAL' + </span></li>
+               <li><span class="tab-sp-db">      'TRDSERLLEVRKRINVLPLGSGAIAGNPLGVDRELLRAELNFGAITLNSMDATSERDFVAEFLFWASLCMTHLSRMAEDLILYCTKEFSFVQLSDAYSTGSSLMPQKKNPDSLELIRSKAGRVFGRCAGLLMTLKGLPSTYNKDLQEDKEAVFEVSDTMSAVLQVATGVISTLQIHQENM' + </span></li>
+               <li><span class="tab-sp-db">      ... ,</span></li>
+               <li><span class="tab-sp-db">      id: 1, label: 'P04424 | Homo sapiens'},</span></li>
+               <li><span class="tab-sp">];</span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> icons =  &#123;</span></li>
+               <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 1, end: 11, icon: 'noSecondary'},</span></li>
+               <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 12, end: 12, icon: 'lollipop'},</span></li>
+               <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 13, end: 18, icon: 'noSecondary'},</span></li>
+               <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 19, end: 25, icon: 'helix'},</span></li>
+               <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 26, end: 27, icon: 'noSecondary'},</span></li>
+               <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 28, end: 30, icon: 'helix'},</span></li>
+               <li><span class="tab-sp-db">      ... </span></li>
+               <li><span class="tab-sp-db">      };</span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> options = &#123;chunkSize: 0}; // sequence length </span></li>
+               <li><span class="tab-sp"><span>proseqviewer.<span class="hljs-js">draw</span>(sequences, icons, options);</span></span></li>
+            </ol>
+          </tab>
+          <tab heading="Template">
+            <ol class="code">
+              <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvSingle"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
+            </ol>
+          </tab>
+        </tabset>
+
+
+      <!--------------------------------------------  REGIONS  EXAMPLE ---------------------------------------->
+      <h2 id="simple" class="txt"> Simple tutorials</h2>
+      <h6 id="regions" class="snippet-title">Regions<a fragment="simple-slider"><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h6>
+      <p>Highlight part of the sequences with customizable colors.</p>
+      <p>Tandem repeat regions are shown on the PDB sequence of 6ub9A - Tryptophan synthase alpha chain, in alternating blue and red. Insertions are in yellow.</p>
+      <div class="sqvDemo"  id="sqv2"></div>
+
+
+      <!-- Tab content -->
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" (click)="showtabjs('reg')">JavaScript</button>
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" (click)="showtaban('reg')">Angular</button>
+        </li>
+      </ul>
+
+
+      <tabset *ngIf="javascriptReg">
+        <tab heading="Template">
+            <ol class="code">
+              <li><span class="hljs-js">&lt;head></span></li>
+              <li><span class="tab-sp"><span class="hljs-js">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">></span></span></li>
+              <li><span class="hljs-js">&lt;/head></span></li>
+              <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvRegions"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
+              <li><span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">&lt;/script&gt;</span></li>
+              <li><span class="hljs-js">&lt;script></span></li>
+              <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span> ProSeqViewer(<span class="hljs-id">'sqvRegions'</span>);</span></li>
+              <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
+              <li><span class="tab-sp-db">      &#123;sequence: 'MVAVEQSEASRLGPVFDSCRANNRAALIGYLPTGYPDVPASVAAMTALVESGCDIIEVGVPYSDPGMDGPTIARATEAALRGGVRVRDTLAAVEAISIAGGRAVVMT' +</span></li>
+              <li><span class="tab-sp-db">      'YWNPVLRYGVDAFARDLAAAGGLGLITPDLIPDEAQQWLAASEEHRLDRIFLVAPSSTPERLAATVEASRGFVYAASTMGVTGARDAVSQAAPELVGRVKAVSDIPVGVGLGVR' +</span></li>
+              <li><span class="tab-sp-db">      'SRAQAAQIAQYADGVIVGSALVTALTEGLPRLRALTGELAAGVRLGMSAHHHHHH', id: 1, label: '6ub9A | Mycobacterium tuberculosis'</span></li>
+              <li><span class="tab-sp">      ];</span></li>
+              <li><span class="tab-sp"><span class="hljs-js">const</span> regions = [ </span></li>
+              <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 25, end: 53, backgroundColor: '#2f6690', color: '#FFFFFF'},</span></li>
+              <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 54, end: 63, backgroundColor: '#FF6978', color: '#FFFFFF'},</span></li>
+              <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 64, end: 84, backgroundColor: '#FAC05E', color: '#FFFFFF'},</span></li>
+              <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 85, end: 100, backgroundColor: '#FF6978', color: '#FFFFFF'},</span></li>
+              <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 101, end: 127, backgroundColor: '#2f6690', color: '#FFFFFF'},</span></li>
+              <li><span class="tab-sp-db">      ... ,</span></li>
+              <li><span class="tab-sp">      ];</span></li>
+              <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(sequences, regions);</span></li>
+              <li><span class="hljs-js tab-sp">&lt;/script></span></li>
+            </ol>
+        </tab>
+      </tabset>
+      <tabset *ngIf="angularReg">
+        <tab heading="Component">
+          <ol class="code">
+            <li><span class="hljs-js">import</span> &#123;Component, OnInit} <span class="hljs-js">from</span> <span class="hljs-id">'@angular/core'</span>;</li>
+            <li><span class="hljs-js">import</span> &#123;ProSeqViewer} <span class="hljs-js">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</li>
+            <li><span class="hljs-js">@Component(&#123;…})</span></li>
+            <li><span class="hljs-js">export class</span> AppComponent <span class="hljs-js">implements</span> OnInit &#123;</li>
+            <li><span class="hljs-js">ngOnInit():</span> void  &#123;</li>
+            <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span> ProSeqViewer(<span class="hljs-id">'sqvRegions'</span>);</span></li>
+            <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
+            <li><span class="tab-sp-db">      &#123;sequence: 'MVAVEQSEASRLGPVFDSCRANNRAALIGYLPTGYPDVPASVAAMTALVESGCDIIEVGVPYSDPGMDGPTIARATEAALRGGVRVRDTLAAVEAISIAGGRAVVMT' +</span></li>
+            <li><span class="tab-sp-db">      'YWNPVLRYGVDAFARDLAAAGGLGLITPDLIPDEAQQWLAASEEHRLDRIFLVAPSSTPERLAATVEASRGFVYAASTMGVTGARDAVSQAAPELVGRVKAVSDIPVGVGLGVR' +</span></li>
+            <li><span class="tab-sp-db">      'SRAQAAQIAQYADGVIVGSALVTALTEGLPRLRALTGELAAGVRLGMSAHHHHHH', id: 1, label: '6ub9A | Mycobacterium tuberculosis'</span></li>
+            <li><span class="tab-sp">      ];</span></li>
+            <li><span class="tab-sp"><span class="hljs-js">const</span> regions = [ </span></li>
+            <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 25, end: 53, backgroundColor: '#2f6690', color: '#FFFFFF'},</span></li>
+            <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 54, end: 63, backgroundColor: '#FF6978', color: '#FFFFFF'},</span></li>
+            <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 64, end: 84, backgroundColor: '#FAC05E', color: '#FFFFFF'},</span></li>
+            <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 85, end: 100, backgroundColor: '#FF6978', color: '#FFFFFF'},</span></li>
+            <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 101, end: 127, backgroundColor: '#2f6690', color: '#FFFFFF'},</span></li>
+            <li><span class="tab-sp-db">      ... ,</span></li>
+            <li><span class="tab-sp">      ];</span></li>
+            <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(sequences, regions);</span></li>
+        </ol>
+        </tab>
+        <tab heading="Template">
+          <ol class="code">
+            <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvRegions"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
+          </ol>
+        </tab>
+      </tabset>
+      <!-------------------------------------  ICONS  EXAMPLE ---------------------------------------->
+
+      <h6 id="icons" class="snippet-title">Icons<a fragment="simple-slider"><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h6>
+      <p>Add icons on the top of the sequences to indicate the secondary structure.</p>
+      <p> You can use the icons already available (helix, turn, lollipop, strand, arrowLeft, arrowRight, noSecondary) or you can input customizable icons (check the API Documentation.) </p>
+
+      <div class="sqvDemo" id="sqv3"></div>
+
+      <!-- Tab content -->
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" (click)="showtabjs('ic')">JavaScript</button>
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" (click)="showtaban('ic')">Angular</button>
+        </li>
+      </ul>
+
+      <tabset *ngIf="javascriptIc">
+        <tab heading="Template">
+           <ol class="code">
+             <li><span class="hljs-js">&lt;head></span></li>
+             <li><span class="hljs-js tab-sp">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">></span></li>
+             <li><span class="hljs-js">&lt;/head></span></li>
+             <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvIcons"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
+             <li><span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">&lt;/script&gt;</span></li>
+             <li><span class="hljs-js">&lt;script></span></li>
+             <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span> ProSeqViewer(<span class="hljs-id">'sqvIcons'</span>);</span></li>
+             <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
+             <li><span class="tab-sp-db">      &#123;sequence: 'MASESGKLWGGRFVGAVDPIMEKFNASIAYDRHLWEVDVQGSKAYSRGLEKAGLLTKAEMDQILHGLDKVAEEWAQGTFKLNSNDEDIHT' + </span></li>
+             <li><span class="tab-sp-db">      'ANERRLKELIGATAGKLHTGRSRNDQVVTDLRLWMRQTCSTLSGLLWELIRTMVDRAEAERDVLFPGYTHLQRAQPIRWSHWILSHAVAL' + </span></li>
+             <li><span class="tab-sp-db">      'TRDSERLLEVRKRINVLPLGSGAIAGNPLGVDRELLRAELNFGAITLNSMDATSERDFVAEFLFWASLCMTHLSRMAEDLILYCTKEFSF' + </span></li>
+             <li><span class="tab-sp-db">      'VQLSDAYSTGSSLMPQKKNPDSLELIRSKAGRVFGRCAGLLMTLKGLPSTYNKDLQEDKEAVFEVSDTMSAVLQVATGVISTLQIHQENM' + </span></li>
+             <li><span class="tab-sp-db">      ... ,</span></li>
+             <li><span class="tab-sp-db">      id: 1, label: 'P04424 | Homo sapiens'},</span></li>
+             <li><span class="tab-sp">      ];</span></li>
+             <li><span class="tab-sp"><span class="hljs-js">const</span> icons =  &#123;</span></li>
+             <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 1, end: 11, icon: 'noSecondary'},</span></li>
+             <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 12, end: 12, icon: 'lollipop'},</span></li>
+             <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 13, end: 18, icon: 'noSecondary'},</span></li>
+             <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 19, end: 25, icon: 'helix'},</span></li>
+             <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 26, end: 27, icon: 'noSecondary'},</span></li>
+             <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 28, end: 30, icon: 'helix'},</span></li>
+             <li><span class="tab-sp-db">      ... </span></li>
+             <li><span class="tab-sp">      };</span></li>
+             <li><span class="tab-sp"><span class="hljs-js">const</span> options = &#123;chunkSize: 0}; // sequence length </span></li>
+             <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(sequences, icons, options);</span></li>
+             <li><span class="hljs-js">&lt;/script></span></li>
+           </ol>
+        </tab>
+      </tabset>
+
+      <tabset *ngIf="angularIc">
+        <tab heading="Component">
+          <ol class="code">
+            <li><span class="hljs-js">import</span> &#123;Component, OnInit} <span class="hljs-js">from</span> <span class="hljs-id">'@angular/core'</span>;</li>
+            <li><span class="hljs-js">import</span> &#123;ProSeqViewer} <span class="hljs-js">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</li>
+            <li class="hljs-js">@Component(&#123;…})</li>
+            <li><span class="hljs-js">export class</span> AppComponent <span class="hljs-js">implements</span> OnInit &#123;</li>
+            <li><span class="hljs-js">ngOnInit():</span> void  &#123;</li>
+            <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span> ProSeqViewer(<span class="hljs-id">'sqvIcons'</span>);</span></li>
+            <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
+            <li><span class="tab-sp-db">      &#123;sequence: 'MASESGKLWGGRFVGAVDPIMEKFNASIAYDRHLWEVDVQGSKAYSRGLEKAGLLTKAEMDQILHGLDKVAEEWAQGTFKLNSNDEDIHT' + </span></li>
+            <li><span class="tab-sp-db">      'ANERRLKELIGATAGKLHTGRSRNDQVVTDLRLWMRQTCSTLSGLLWELIRTMVDRAEAERDVLFPGYTHLQRAQPIRWSHWILSHAVAL' + </span></li>
+            <li><span class="tab-sp-db">      'TRDSERLLEVRKRINVLPLGSGAIAGNPLGVDRELLRAELNFGAITLNSMDATSERDFVAEFLFWASLCMTHLSRMAEDLILYCTKEFSF' + </span></li>
+            <li><span class="tab-sp-db">      'VQLSDAYSTGSSLMPQKKNPDSLELIRSKAGRVFGRCAGLLMTLKGLPSTYNKDLQEDKEAVFEVSDTMSAVLQVATGVISTLQIHQENM' + </span></li>
+            <li><span class="tab-sp-db">      ... ,</span></li>
+            <li><span class="tab-sp-db">      id: 1, label: 'P04424 | Homo sapiens'},</span></li>
+            <li><span class="tab-sp">      ];</span></li>
+            <li><span class="tab-sp"><span class="hljs-js">const</span> icons =  &#123;</span></li>
+            <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 1, end: 11, icon: 'noSecondary'},</span></li>
+            <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 12, end: 12, icon: 'lollipop'},</span></li>
+            <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 13, end: 18, icon: 'noSecondary'},</span></li>
+            <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 19, end: 25, icon: 'helix'},</span></li>
+            <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 26, end: 27, icon: 'noSecondary'},</span></li>
+            <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 28, end: 30, icon: 'helix'},</span></li>
+            <li><span class="tab-sp-db">      ... </span></li>
+            <li><span class="tab-sp">      };</span></li>
+            <li><span class="tab-sp"><span class="hljs-js">const</span> options = &#123;chunkSize: 0}; // sequence length </span></li>
+            <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(sequences, icons, options);</span></li>
+          </ol>
+        </tab>
+        <tab heading="Template">
+            <ol class="code">
+              <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvIcons"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
+            </ol>
+        </tab>
+      </tabset>
+
+      <!-------------------------------------  PATTERNS  EXAMPLE ---------------------------------------->
+
+      <h6 id="patterns" class="snippet-title">Patterns<a fragment="simple-slider"><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h6>
+      <p>Match the sequences against a regular expression to show possible patterns. </p>
+      <div class="sqvDemo" id="sqv4"></div>
+
+      <!-- Tab content -->
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" (click)="showtabjs('pat')">JavaScript</button>
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" (click)="showtaban('pat')">Angular</button>
+        </li>
+      </ul>
+
+      <tabset *ngIf="javascriptPat">
+        <tab heading="Template">
+             <ol class="code">
+               <li><span class="hljs-js">&lt;head></span></li>
+               <li><span class="hljs-js tab-sp">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">></span></li>
+               <li><span class="hljs-js">&lt;/head></span></li>
+               <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvPatterns"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
+               <li><span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">&lt;/script&gt;</span></li>
+               <li><span class="hljs-js">&lt;script></span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span>ProSeqViewer(<span class="hljs-id">'sqvPatterns'</span>); </span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
+               <li><span class="tab-sp-db">      &#123;sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPASTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},</span></li>
+               <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},</span></li>
+               <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'sp|P13786|CRAB_CHICK'}</span></li>
+               <li><span class="tab-sp">      ];</span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> patterns = [ </span></li>
+               <li><span class="tab-sp-db">      &#123;sequenceId: 1, pattern: /RRP/g, backgroundColor: '#D72638'},</span></li>
+               <li><span class="tab-sp-db">      &#123;sequenceId: 2, pattern: /RRP/g, backgroundColor: '#D72638'},</span></li>
+               <li><span class="tab-sp-db">      &#123;sequenceId: 3, pattern: /RRP/g, backgroundColor: '#D72638'},</span></li>
+               <li><span class="tab-sp-db">      &#123;sequenceId: 1, pattern: /FGE/g, backgroundColor: '#FF570A'},</span></li>
+               <li><span class="tab-sp-db">      &#123;sequenceId: 2, pattern: /FGE/g, backgroundColor: '#FF570A'}</span></li>
+               <li><span class="tab-sp-db">      &#123;sequenceId: 3, pattern: /FGE/g, backgroundColor: '#FF570A'}</span></li>
+               <li><span class="tab-sp-db">      &#123;sequenceId: 1, pattern: /LSP/g, backgroundColor: '#FFBC42'}</span></li>
+               <li><span class="tab-sp-db">      &#123;sequenceId: 2, pattern: /LSP/g, backgroundColor: '#FFBC42'}</span></li>
+               <li><span class="tab-sp-db">      &#123;sequenceId: 3, pattern: /LSP/g, backgroundColor: '#FFBC42'}</span></li>
+               <li><span class="tab-sp">      ];</span></li>
+               <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(sequences, patterns);</span></li>
+               <li><span class="hljs-js">&lt;/script></span></li>
+            </ol>
+        </tab>
+      </tabset>
+      <tabset *ngIf="angularPat">
+        <tab heading="Component">
+             <ol class="code">
+               <li><span class="hljs-js">import</span> &#123;Component, OnInit} <span class="hljs-js">from</span> <span class="hljs-id">'@angular/core'</span>;</li>
+               <li><span class="hljs-js">import</span> &#123;ProSeqViewer} <span class="hljs-js">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</li>
+               <li><span class="hljs-js">@Component(&#123;…})</span></li>
+               <li><span class="hljs-js">export class</span> AppComponent <span class="hljs-js">implements</span> OnInit &#123;</li>
+               <li><span class="hljs-js">ngOnInit():</span> void  &#123;</li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span>ProSeqViewer(<span class="hljs-id">'sqvPatterns'</span>); </span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
+               <li><span class="tab-sp-db">      &#123;sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPASTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},</span></li>
+               <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},</span></li>
+               <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'sp|P13786|CRAB_CHICK'}</span></li>
+               <li><span class="tab-sp">      ];</span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> patterns = [ </span></li>
+               <li><span class="tab-sp-db">      &#123;sequenceId: 1, pattern: /RRP/g, backgroundColor: '#D72638'},</span></li>
+               <li><span class="tab-sp-db">      &#123;sequenceId: 2, pattern: /RRP/g, backgroundColor: '#D72638'},</span></li>
+               <li><span class="tab-sp-db">      &#123;sequenceId: 3, pattern: /RRP/g, backgroundColor: '#D72638'},</span></li>
+               <li><span class="tab-sp-db">      &#123;sequenceId: 1, pattern: /FGE/g, backgroundColor: '#FF570A'},</span></li>
+               <li><span class="tab-sp-db">      &#123;sequenceId: 2, pattern: /FGE/g, backgroundColor: '#FF570A'}</span></li>
+               <li><span class="tab-sp-db">      &#123;sequenceId: 3, pattern: /FGE/g, backgroundColor: '#FF570A'}</span></li>
+               <li><span class="tab-sp-db">      &#123;sequenceId: 1, pattern: /LSP/g, backgroundColor: '#FFBC42'}</span></li>
+               <li><span class="tab-sp-db">      &#123;sequenceId: 2, pattern: /LSP/g, backgroundColor: '#FFBC42'}</span></li>
+               <li><span class="tab-sp-db">      &#123;sequenceId: 3, pattern: /LSP/g, backgroundColor: '#FFBC42'}</span></li>
+               <li><span class="tab-sp">      ];</span></li>
+               <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(sequences, patterns);</span></li>
+            </ol>
+        </tab>
+        <tab heading="Template">
+         <ol class="code">
+           <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvPatterns"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
+         </ol>
+        </tab>
+      </tabset>
+
+
+      <!-------------------------------------  COLORSCHEME clustal  EXAMPLE ---------------------------------------->
+
+      <h6 id="colorscheme" class="snippet-title">ColorScheme<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h6>
+      <p>Set a global colorScheme. Available global colorschemes are: clustal, blosum62.</p>
+      <p style="color:#000;"><b>1. Clustal</b></p>
+
+      <div class="container">
+        <div class="row first">
+          <div class="col-sm">Aminoacid</div>
+          <div class="col-sm">Color</div>
+       </div>
+        <div class="row field0">
+         <div class="col-sm"> A, I, L, M, F, W, V</div>
+         <div class="col-sm"><span class="a"></span></div>
+       </div>
+        <div class="row field0">
+         <div class="col-sm">K, R</div>
+         <div class="col-sm"><span class="k"></span></div>
+       </div>
+        <div class="row field0">
+         <div class="col-sm">E, D</div>
+         <div class="col-sm"><span class="e"></span></div>
+       </div>
+        <div class="row field0">
+         <div class="col-sm">C, G</div>
+         <div class="col-sm"><span class="c"></span></div>
+       </div>
+        <div class="row field0">
+         <div class="col-sm">N, Q, S, T, P, H, Y</div>
+         <div class="col-sm"><span class="q"></span></div>
+       </div>
+      </div>
+
+      <div class="sqvDemo" id="sqv6"></div>
+
+      <!-- Tab content -->
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" (click)="showtabjs('col')">JavaScript</button>
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" (click)="showtaban('col')">Angular</button>
+        </li>
+      </ul>
+
+      <tabset *ngIf="javascriptCol">
+        <tab heading="Template">
+             <ol class="code">
+               <li><span class="hljs-js">&lt;head></span></li>
+               <li><span class="hljs-js tab-sp">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">&gt;</span></li>
+               <li><span class="hljs-js">&lt;/head></span></li>
+               <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvClustal"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
+               <li><span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">&lt;/script&gt;</span></li>
+               <li><span class="hljs-js">&lt;script></span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span>ProSeqViewer('sqvClustal'); </span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
+               <li><span class="tab-sp-db">      &#123;sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPASTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},</span></li>
+               <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},</span></li>
+               <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'sp|P13786|CRAB_CHICK'}</span></li>
+               <li><span class="tab-sp">      ];</span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
+               <li><span class="tab-sp-db">      colorScheme: 'clustal'</span></li>
+               <li><span class="tab-sp">      };</span></li>
+               <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
+               <li><span class="hljs-js">&lt;/script></span></li>
+            </ol>
+        </tab>
+      </tabset>
+      <tabset *ngIf="angularCol">
+        <tab heading="Component">
+            <ol class="code">
+              <li><span class="hljs-js">import</span> &#123;Component, OnInit} <span class="hljs-js">from</span> <span class="hljs-id">'@angular/core'</span>;</li>
+              <li><span class="hljs-js">import</span> &#123;ProSeqViewer} <span class="hljs-js">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</li>
+              <li><span class="hljs-js">@Component(&#123;…})</span></li>
+              <li><span class="hljs-js">export class</span> AppComponent <span class="hljs-js">implements</span> OnInit &#123;</li>
+              <li><span class="hljs-js">ngOnInit():</span> void  &#123;</li>
+              <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span>ProSeqViewer('sqvClustal'); </span></li>
+              <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
+              <li><span class="tab-sp-db">      &#123;sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPASTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},</span></li>
+              <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},</span></li>
+              <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'sp|P13786|CRAB_CHICK'}</span></li>
+              <li><span class="tab-sp">      ];</span></li>
+              <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
+              <li><span class="tab-sp-db">      colorScheme: 'clustal'</span></li>
+              <li><span class="tab-sp">      };</span></li>
+              <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
+          </ol>
+        </tab>
+        <tab heading="Template">
+         <ol class="code">
+           <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvClustal"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
+         </ol>
+        </tab>
+      </tabset>
+
+      <!-------------------------------------  COLORSCHEME blosum  EXAMPLE ---------------------------------------->
+
+      <p style="color:#000;margin-top: 20px"><b>2. Blosum62</b></p>
+
+      <img src="assets/heatmap.svg">
+
+      <div class="sqvDemo" id="sqvBlosum"></div>
+
+      <!-- Tab content -->
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" (click)="showtabjs('blo')">JavaScript</button>
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" (click)="showtaban('blo')">Angular</button>
+        </li>
+      </ul>
+
+
+      <tabset *ngIf="javascriptBlo">
+        <tab heading="Template">
+           <ol class="code">
+             <li><span class="hljs-js">&lt;head></span></li>
+             <li><span class="hljs-js tab-sp">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">></span></li>
+             <li><span class="hljs-js">&lt;/head></span></li>
+             <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvBlosum"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
+             <li><span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">&lt;/script&gt;</span></li>
+             <li><span class="hljs-js">&lt;script></span></li>
+             <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span>ProSeqViewer(<span class="hljs-id">'sqvBlosum'</span>); </span></li>
+             <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
+             <li><span class="tab-sp-db">      &#123;sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPASTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},</span></li>
+             <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},</span></li>
+             <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'sp|P13786|CRAB_CHICK'}</span></li>
+             <li><span class="tab-sp">      ];</span></li>
+             <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
+             <li><span class="tab-sp-db">      colorScheme: 'blosum62'</span></li>
+             <li><span class="tab-sp">      };</span></li>
+             <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
+             <li><span class="hljs-js">&lt;/script></span></li>
+          </ol>
+        </tab>
+      </tabset>
+      <tabset *ngIf="angularBlo">
+        <tab heading="Component">
+            <ol class="code">
+              <li><span class="hljs-js">import</span> &#123;Component, OnInit} <span class="hljs-js">from</span> <span class="hljs-id">'@angular/core'</span>;</li>
+              <li><span class="hljs-js">import</span> &#123;ProSeqViewer} <span class="hljs-js">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</li>
+              <li><span class="hljs-js">@Component(&#123;…})</span></li>
+              <li><span class="hljs-js">export class</span> AppComponent <span class="hljs-js">implements</span> OnInit &#123;</li>
+              <li><span class="hljs-js">ngOnInit():</span> void  &#123;</li>
+              <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span>ProSeqViewer(<span class="hljs-id">'sqvBlosum'</span>); </span></li>
+              <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
+              <li><span class="tab-sp-db">      &#123;sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPASTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},</span></li>
+              <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},</span></li>
+              <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'sp|P13786|CRAB_CHICK'}</span></li>
+              <li><span class="tab-sp">      ];</span></li>
+              <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
+              <li><span class="tab-sp-db">      colorScheme: 'blosum62'</span></li>
+              <li><span class="tab-sp">      };</span></li>
+              <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
+          </ol>
+        </tab>
+        <tab heading="Template">
+       <ol class="code">
+         <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvBlosum"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
+       </ol>
+        </tab>
+      </tabset>
+
+      <!-------------------------------------  Lateral INDEXES  EXAMPLE ---------------------------------------->
+
+      <h6 id="lateralindexes" class="snippet-title">Lateral Indexes example<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h6>
+      <p>Set a lateral starting index for the sequence/s. You can count gaps or not. (See API Documentation)</p>
+      <p>Here the start index is set at 2 and gaps are counted.</p>
+      <p> The sequence-viewer width is set to 450px to show the indexes behaviour when the sequence is split in several lines.</p>
+      <div class="sqvDemo"><div id="sqv5" style="width: 450px"></div></div>
+
+
+      <!-- Tab content -->
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" (click)="showtabjs('lat')">JavaScript</button>
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" (click)="showtaban('lat')">Angular</button>
+        </li>
+      </ul>
+
+      <tabset *ngIf="javascriptLat">
+        <tab heading="Template">
+             <ol class="code">
+               <li><span class="hljs-js">&lt;head></span></li>
+               <li><span class="hljs-js tab-sp">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">></span></li>
+               <li><span class="hljs-js">&lt;/head></span></li>
+               <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvLateralIndexes"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
+               <li><span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">&lt;/script&gt;</span></li>
+               <li><span class="hljs-js">&lt;script></span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span>ProSeqViewer(<span class="hljs-id">'sqvLateralIndexes'</span>); </span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
+               <li><span class="tab-sp-db">      &#123;sequence: 'MVLSPADKTNVKAA-----EYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|CRAB_HUMAN', startIndex: 2}</span></li>
+               <li><span class="tab-sp">      ];</span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
+               <li><span class="tab-sp-db">      lateralIndexesGap: true</span></li>
+               <li><span class="tab-sp">      };</span></li>
+               <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
+               <li><span class="hljs-js">&lt;/script></span></li>
+          </ol>
+        </tab>
+      </tabset>
+      <tabset *ngIf="angularLat">
+        <tab heading="Component">
+           <ol class="code">
+              <li><span class="hljs-js">import</span> &#123;Component, OnInit} <span class="hljs-js">from</span> <span class="hljs-id">'@angular/core'</span>;</li>
+              <li><span class="hljs-js">import</span> &#123;ProSeqViewer} <span class="hljs-js">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</li>
+              <li><span class="hljs-js">@Component(&#123;…})</span></li>
+              <li><span class="hljs-js">export class</span> AppComponent <span class="hljs-js">implements</span> OnInit &#123;</li>
+              <li><span class="hljs-js">ngOnInit():</span> void  &#123;</li>
+              <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span>ProSeqViewer(<span class="hljs-id">'sqvLateralIndexes'</span>); </span></li>
+              <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
+              <li><span class="tab-sp-db">      &#123;sequence: 'MVLSPADKTNVKAA-----EYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|CRAB_HUMAN', startIndex: 2}</span></li>
+              <li><span class="tab-sp">      ];</span></li>
+              <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
+              <li><span class="tab-sp-db">      lateralIndexesGap: true</span></li>
+              <li><span class="tab-sp">      };</span></li>
+              <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
+          </ol>
+        </tab>
+
+        <tab heading="Template">
+          <ol class="code">
+            <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvLateralIndexes"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
+          </ol>
+        </tab>
+      </tabset>
+
+
+
+      <!-------------------------------------  CONSENSUS  EXAMPLE ---------------------------------------->
+
+      <h6 id="consensus" class="snippet-title">Consensus example<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h6>
+      <p>Set consensus and consensus threshold. Available consensus types are: identity, physical.</p>
+
+      <!--  identity -->
+      <div class="palette">
+        <p style="color:#000;"><b>1. Identity consensus</b></p>
+        <p>A color is set for each percentage of consensus.</p>
+        <p> Legend:</p>
+
+        <div style="width:120px;background-color: #0A0A0A; color: white;">&nbsp;100%</div>
+        <div style="width:100px; background-color: #333333; color: white;">&nbsp;70%</div>
+        <div style="width:80px; background-color: #707070; color: white;">&nbsp;40%</div>
+        <div style="width:60px; background-color: #A3A3A3; color: white;">&nbsp;10%</div>
+        <div style="width:40px; background-color: #FFFFFF; color: white;">&nbsp;0%</div>
+      </div>
+
+      <div class="sqvDemo"><div id="sqv7"></div></div>
+
+      <!-- Tab content -->
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" (click)="showtabjs('con')">JavaScript</button>
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" (click)="showtaban('con')">Angular</button>
+        </li>
+      </ul>
+
+      <tabset *ngIf="javascriptCon">
+        <tab heading="Template">
+              <ol class="code">
+                <li><span class="hljs-js">&lt;head></span></li>
+                <li><span class="hljs-js tab-sp">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">></span></li>
+                <li><span class="hljs-js">&lt;/head></span></li>
+                <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvConsensusIdentity"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
+                <li><span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">&lt;/script&gt;</span></li>
+                <li><span class="hljs-js">&lt;script></span></li>
+                <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span>ProSeqViewer(<span class="hljs-id">'sqvConsensusIdentity'</span>); </span></li>
+                <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
+                <li><span class="tab-sp-db">      &#123;sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPASTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},</span></li>
+                <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},</span></li>
+                <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'sp|P13786|CRAB_CHICK'}</span></li>
+                <li><span class="tab-sp">      ];</span></li>
+                <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
+                <li><span class="tab-sp-db">      consensusType: 'identity', consensusThreshold: 80</span></li>
+                <li><span class="tab-sp">      };</span></li>
+                <li><span>proseqviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
+                <li><span class="hljs-js">&lt;/script></span></li>
+          </ol>
+        </tab>
+      </tabset>
+      <tabset *ngIf="angularCon">
+        <tab heading="Component">
+              <ol class="code">
+                <li><span class="hljs-js">import</span> &#123;Component, OnInit} <span class="hljs-js">from</span> <span class="hljs-id">'@angular/core'</span>;</li>
+                <li><span class="hljs-js">import</span> &#123;ProSeqViewer} <span class="hljs-js">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</li>
+                <li><span class="hljs-js">@Component(&#123;…})</span></li>
+                <li><span class="hljs-js">export class</span> AppComponent <span class="hljs-js">implements</span> OnInit &#123;</li>
+                <li><span class="hljs-js">ngOnInit():</span> void  &#123;</li>
+                <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span>ProSeqViewer(<span class="hljs-id">'sqvConsensusIdentity'</span>); </span></li>
+                <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
+                <li><span class="tab-sp-db">      &#123;sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPASTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},</span></li>
+                <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},</span></li>
+                <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'sp|P13786|CRAB_CHICK'}</span></li>
+                <li><span class="tab-sp">      ];</span></li>
+                <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
+                <li><span class="tab-sp-db">      consensusType: 'identity', consensusThreshold: 80</span></li>
+                <li><span class="tab-sp">      };</span></li>
+                <li><span>proseqviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
+          </ol>
+        </tab>
+        <tab heading="Template">
+         <ol class="code">
+           <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvConsensusIdentity"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
+         </ol>
+        </tab>
+      </tabset>
+
+
+
+
+
+      <!--  physical-->
+      <p style="color: #000; margin-top: 20px;"><b>2. Consensus based on physico-chemical properties</b></p>
+      <p>Legend:</p>
+      <p>If there there is 100% identity in a column, consensus identity is displayed.</p>
+      <div style="width:120px;background-color: #0A0A0A; color: white;margin-bottom: 10px;">&nbsp;100%</div>
+      <p> In all other cases, physical consensus is calculated, and symbols are set accordingly to the table below.</p>
+
+
+      <div class="container">
+        <div class="row first">
+          <div class="col-sm">Aminoacid</div>
+          <div class="col-sm">Symbol</div>
+          <div class="col-sm">Property</div>
+        </div>
+        <div class="row field0">
+          <div class="col-sm">A</div>
+          <div class="col-sm"><span class="n">n</span></div>
+          <div class="col-sm">small nonpolar</div>
+        </div>
+        <div class="row field0">
+          <div class="col-sm">G</div>
+          <div class="col-sm"><span class="n">n</span></div>
+          <div class="col-sm">small nonpolar</div>
+        </div>
+        <div class="row field0">
+          <div class="col-sm">S</div>
+          <div class="col-sm"><span class="n">n</span></div>
+          <div class="col-sm">small nonpolar</div>
+        </div>
+        <div class="row field0">
+          <div class="col-sm">T</div>
+          <div class="col-sm"><span class="n">n</span></div>
+          <div class="col-sm">small nonpolar</div>
+        </div>
+        <div class="row field0">
+          <div class="col-sm">C</div>
+          <div class="col-sm"><span class="h">h</span></div>
+          <div class="col-sm">hydrophobic</div>
+        </div>
+        <div class="row field0">
+          <div class="col-sm">V</div>
+          <div class="col-sm"><span class="h">h</span></div>
+          <div class="col-sm">hydrophobic</div>
+        </div>
+        <div class="row field0">
+          <div class="col-sm">I</div>
+          <div class="col-sm"><span class="h">h</span></div>
+          <div class="col-sm">hydrophobic</div>
+        </div>
+        <div class="row field0">
+          <div class="col-sm">L</div>
+          <div class="col-sm"><span class="h">h</span></div>
+          <div class="col-sm">hydrophobic</div>
+        </div>
+        <div class="row field0">
+          <div class="col-sm">P</div>
+          <div class="col-sm"><span class="h">h</span></div>
+          <div class="col-sm">hydrophobic</div>
+        </div>
+        <div class="row field0">
+          <div class="col-sm">F</div>
+          <div class="col-sm"><span class="h">h</span></div>
+          <div class="col-sm">hydrophobic</div>
+        </div>
+        <div class="row field0">
+          <div class="col-sm">Y</div>
+          <div class="col-sm"><span class="h">h</span></div>
+          <div class="col-sm">hydrophobic</div>
+        </div>
+        <div class="row field0">
+          <div class="col-sm">M</div>
+          <div class="col-sm"><span class="h">h</span></div>
+          <div class="col-sm">hydrophobic</div>
+        </div>
+        <div class="row field0">
+          <div class="col-sm">W</div>
+          <div class="col-sm"><span class="h">h</span></div>
+          <div class="col-sm">hydrophobic</div>
+        </div>
+        <div class="row field0">
+          <div class="col-sm">N</div>
+          <div class="col-sm"><span class="p">p</span></div>
+          <div class="col-sm">polar</div>
+        </div>
+        <div class="row field0">
+          <div class="col-sm">Q</div>
+          <div class="col-sm"><span class="p">p</span></div>
+          <div class="col-sm">polar</div>
+        </div>
+        <div class="row field0">
+          <div class="col-sm">H</div>
+          <div class="col-sm"><span class="p">p</span></div>
+          <div class="col-sm">polar</div>
+        </div>
+        <div class="row field0">
+          <div class="col-sm">D</div>
+          <div class="col-sm"><span class="neg">~</span></div>
+          <div class="col-sm">negatively charged</div>
+        </div>
+        <div class="row field0">
+          <div class="col-sm">E</div>
+          <div class="col-sm"><span class="neg">~</span></div>
+          <div class="col-sm">negatively charged</div>
+        </div>
+        <div class="row field0">
+          <div class="col-sm">K</div>
+          <div class="col-sm"><span class="pos">+</span></div>
+          <div class="col-sm">positively charged</div>
+        </div>
+        <div class="row field0">
+          <div class="col-sm">R</div>
+          <div class="col-sm"><span class="pos">+</span></div>
+          <div class="col-sm">positively charged</div>
+        </div>
+
+      </div>
+
+
+
+      <div class="sqvDemo" id="sqvPhysical"></div>
+
+      <!-- Tab content -->
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" (click)="showtabjs('phy')">JavaScript</button>
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" (click)="showtaban('phy')">Angular</button>
+        </li>
+      </ul>
+
+      <tabset *ngIf="javascriptPhy">
+        <tab heading="Template">
+             <ol class="code">
+                <li><span class="hljs-js">&lt;head></span></li>
+               <li><span class="hljs-js tab-sp">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">></span></li>
+               <li><span class="hljs-js">&lt;/head></span></li>
+               <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvConsensusPhysical"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
+               <li><span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">&lt;/script&gt;</span></li>
+               <li><span class="hljs-js">&lt;script></span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span>ProSeqViewer(<span class="hljs-id">'sqvConsensusPhysical'</span>);</span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
+               <li><span class="tab-sp-db">      &#123;sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPASTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},</span></li>
+               <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},</span></li>
+               <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'sp|P13786|CRAB_CHICK'}</span></li>
+               <li><span class="tab-sp">      ];</span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
+               <li><span class="tab-sp-db">      consensusType: 'physical'</span></li>
+               <li><span class="tab-sp">      };</span></li>
+               <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
+               <li><span class="hljs-js">&lt;/script></span></li>
+          </ol>
+        </tab>
+      </tabset>
+      <tabset *ngIf="angularPhy">
+        <tab heading="Component">
+           <ol class="code">
+              <li><span class="hljs-js">import</span> &#123;Component, OnInit} <span class="hljs-js">from</span> <span class="hljs-id">'@angular/core'</span>;</li>
+              <li><span class="hljs-js">import</span> &#123;ProSeqViewer} <span class="hljs-js">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</li>
+              <li><span class="hljs-js">@Component(&#123;…})</span></li>
+              <li><span class="hljs-js">export class</span> AppComponent <span class="hljs-js">implements</span> OnInit &#123;</li>
+              <li><span class="hljs-js">ngOnInit():</span> void  &#123;</li>
+              <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span>ProSeqViewer(<span class="hljs-id">'sqvConsensusPhysical'</span>);</span></li>
+              <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
+              <li><span class="tab-sp-db">      &#123;sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPASTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},</span></li>
+              <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},</span></li>
+              <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'sp|P13786|CRAB_CHICK'}</span></li>
+              <li><span class="tab-sp">      ];</span></li>
+              <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
+              <li><span class="tab-sp-db">      consensusType: 'physical'</span></li>
+              <li><span class="tab-sp">      };</span></li>
+              <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
+          </ol>
+        </tab>
+        <tab heading="Template">
+          <ol class="code">
+            <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvConsensusPhysical"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
+          </ol>
+        </tab>
+      </tabset>
+
+      <!-------------------------------------  ONELINESETTING  EXAMPLE ---------------------------------------->
+
+      <h6 id="oneLineSetting" class="snippet-title">One line setting example<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h6>
+      <p>Set a non-responsive version of the ProSeqViewer. The width is fixed and a scrollbar helps the visualization of the sequences.</p>
+      <div class="sqvDemo">
+        <div class="row">
+          <div id="sqv8"></div>
+        </div>
+      </div>
+
+      <!-- Tab content -->
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" (click)="showtabjs('one')">JavaScript</button>
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" (click)="showtaban('one')">Angular</button>
+        </li>
+      </ul>
+
+      <tabset *ngIf="javascriptOne">
+        <tab heading="Template">
+             <ol class="code">
+               <li><span class="hljs-js">&lt;head></span></li>
+               <li><span class="hljs-js tab-sp">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">></span></li>
+               <li><span class="hljs-js">&lt;/head></span></li>
+               <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvOneLineSetting"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
+               <li><span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">&lt;/script&gt;</span></li>
+               <li><span class="hljs-js">&lt;script></span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span>ProSeqViewer(<span class="hljs-id">'sqvOneLineSetting'</span>); </span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
+               <li><span class="tab-sp-db">      &#123;sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPASTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},</span></li>
+               <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},</span></li>
+               <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'sp|P13786|CRAB_CHICK'}</span></li>
+               <li><span class="tab-sp">      ];</span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
+               <li><span class="tab-sp-db">      oneLineSetting: true, oneLineWidth: '350px'</span></li>
+               <li><span class="tab-sp">      };</span></li>
+               <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
+               <li><span class="hljs-js">&lt;/script></span></li>
+          </ol>
+        </tab>
+
+      </tabset>
+      <tabset *ngIf="angularOne">
+        <tab heading="Component">
+             <ol class="code">
+                <li><span class="hljs-js">import</span> &#123;Component, OnInit} <span class="hljs-js">from</span> <span class="hljs-id">'@angular/core'</span>;</li>
+                <li><span class="hljs-js">import</span> &#123;ProSeqViewer} <span class="hljs-js">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</li>
+                <li><span class="hljs-js">@Component(&#123;…})</span>
+                <li><span class="hljs-js">export class</span> AppComponent <span class="hljs-js">implements</span> OnInit &#123;</li>
+                <li><span class="hljs-js">ngOnInit():</span> void  &#123;</li>
+                <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span>ProSeqViewer(<span class="hljs-id">'sqvOneLineSetting'</span>); </span></li>
+                <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
+                <li><span class="tab-sp-db">      &#123;sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPASTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},</span></li>
+                <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},</span></li>
+                <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'sp|P13786|CRAB_CHICK'}</span></li>
+                <li><span class="tab-sp">      ];</span></li>
+                <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
+                <li><span class="tab-sp-db">      oneLineSetting: true, oneLineWidth: '350px'</span></li>
+                <li><span class="tab-sp">      };</span></li>
+                <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
+          </ol>
+        </tab>
+        <tab heading="Template">
+         <ol class="code">
+           <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvOneLineSetting"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
+         </ol>
+        </tab>
+      </tabset>
+
+
+      <!-------------------------------------  SELECTIONS  EXAMPLE ---------------------------------------->
+
+      <h6 id="selection" class="snippet-title">Selection example<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h6>
+      <p><b>1. Copy-paste event</b></p>
+      <p>Click and drag the mouse to select a region, the region will be highlighted in yellow. Use the
+        shortcut Ctrl+C to copy and Ctrl+V to paste. The selected region will disappear after using a
+        shortcut or clicking on another area.</p>
+      <div class="sqvDemo">
+        <div class="row">
+          <div id="sqv9"></div>
+        </div>
+      </div>
+      <div class="box">
+        <form>
+          <div class="row">
+            <div class="col-25">
+              <label for="subject">Try it out!</label>
+            </div>
+            <div class="col-75">
+              <textarea id="subject" name="subject" placeholder="Copy-paste something.." style="height:200px"></textarea>
+            </div>
+          </div>
+
+        </form>
+      </div>
+
+      <p><b>1. On character selected event </b></p>
+      <p>The double click event will return information about the clicked character, like the x, y positions and the character itself.</p>
+      <pre class="prettyprint prettyprinted"><code>
+    <span> window.<span class="hljs-js">addEventListener</span>('onRegionSelected', (e) =>   &#123;
+             console.<span class="hljs-js">log</span>('character selected', e);
+           });
+    </span>
+  </code></pre>
+
+    <!----------------------------------- API -------------------------------------->
+
+    <div id="APIDocumentation" class="tabcontent">
+      <h2 class="txt">API Documentation</h2>
+
+      <div class="snippet-card">
+        <div>
+          <h6 class="snippet-title" id="javascript">Installation Guide - JavaScript</h6>
+
+          <p><strong>1. Download the ProSeqViewer stylesheet</strong></p>
+          <p>You can find the <i>sqv.css</i> file in the src/assets folder on the <a href="https://github.com/BioComputingUP/sequence-viewer-typescript">Github repo.</a></p>
+
+          <p><strong>2. Download the library code</strong></p>
+          <p>You can find the <i>sqv-bundle.js</i> file in the dist folder on the <a href="https://github.com/BioComputingUP/sequence-viewer-typescript">Github repo.</a></p>
+
+          <p><strong>3. In your index.html:</strong></p>
+
+          <!-- Tab content -->
+          <ol class="code-no-height">
+            <li><span class="hljs-js">&lt;head></span></li>
+            <li><span class="hljs-js tab-sp">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">></span> // Load the stylesheet</li>
+            <li><span class="hljs-js">&lt;/head></span></li>
+            <li><span class="hljs-js">&lt;body></span></li>
+            <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvSimple"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
+            <li><span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">>&lt;/script&gt;</span></li>
+            <li><span class="hljs-js">&lt;script></span></li>
+            <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new </span>ProSeqViewer(<span class="hljs-id">'sqvSimple'</span>);</span> // Create an instance of the ProSeqViewer in JavaScript </li>
+            <li><span class="tab-sp"><span class="hljs-js">const</span> sequence = [ </span></li>
+            <li><span class="tab-sp-db">      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAG--ALERMFL--YFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN'}</span></li>
+            <li><span class="tab-sp">      ];</span></li>
+            <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(sequence);</span> // Execute the function to draw the ProSeqViewer on the page</li>
+            <li><span class="hljs-js">&lt;/script></span></li>
+            <li><span class="hljs-js">&lt;/body></span></li>
+          </ol>
+
+
+          <h6 class="snippet-title" id="angular">Installation Guide - Angular</h6>
+
+          <p>The sequence-viewer-typescript package is written in pure typescript and does not have any dependencies. This guide focus on how to install the package in an Angular app.</p>
+          <p><strong>1. Install the library using npm</strong></p>
+          <pre><code>npm i sequence-viewer-typescript</code></pre>
+
+          <p><strong>2. Load the ProSeqViewer stylesheet in your angular.json "styles" </strong></p>
+          <pre><code><span class="hljs-ang">styles:</span> ["./node_modules/sequence-viewer-typescript/dist/assets/sqv.scss"]</code></pre>
+
+          <p><strong>3. Import the ProSeqViewer in your angular component </strong></p>
+          <ol class="code-no-height"><li><span class="hljs-js">import</span> &#123; ProSeqViewer &#125; <span class="hljs-keyword">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</li></ol>
+
+          <p><strong> 4. Place the ProSeqViewer in your template </strong></p>
+          <ol class="code-no-height"><li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqv"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li></ol>
+
+
+          <p><strong> 5. Create an instance of the ProSeqViewer in your component, add inputs and execute</strong></p>
+          <ol class="code-no-height">
+            <li><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span> ProSeqViewer(<span class="hljs-id">'sqv'</span>);</li>
+            <li><span class="hljs-js">const</span> sequence = [&#123;sequence: 'DFRLE--F-DFRLEDFRLE----&#125;]</li>
+            <li>proseqviewer.<span class="hljs-js">draw</span>(sequence);</li>
+          </ol>
+
+          <h6 class="snippet-title" id="parameters">Available parameters</h6>
+          <div class="container">
+            <div class="row first">
+              <div class="col-sm">Field 0</div>
+              <div class="col-sm">Field 1</div>
+              <div class="col-sm">Type</div>
+              <div class="col-sm">Example</div>
+              <div class="col-sm">Description</div>
+            </div>
+            <div class="row field0">
+              <div class="col-sm">Sequences</div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+            </div>
+           <div class="row field1">
+            <div class="col-sm"></div>
+             <div class="col-sm">sequence</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">LYRLELERECAMT</div>
+             <div class="col-sm">Sequence of characters</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">id</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">1</div>
+             <div class="col-sm">Identifier of the sequence</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">label</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">1xvz_1_30.pdb</div>
+             <div class="col-sm">Lateral label</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">colorScheme</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">clustal, gradient, binary</div>
+             <div class="col-sm">Predefined color palette</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">labelTooltip</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">&lt;span class="tooltipText" style="background-color: blue;"&gt;Tooltip text&lt;/span&gt;</div>
+             <div class="col-sm">Stylable tooltip</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">startIndex</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">30</div>
+             <div class="col-sm">Start index of the input sequence.</div>
+           </div>
+            <div class="row field0">
+              <div class="col-sm">Regions</div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">sequenceId</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">1</div>
+             <div class="col-sm">Identifier of the sequence.</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">start</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">10</div>
+             <div class="col-sm">Start position of the region to color.</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">end</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">20</div>
+             <div class="col-sm">End position of the region to color.</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">backgroundColor</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">hex, rgb</div>
+             <div class="col-sm">Color the character background.</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">color</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">hex, rgb</div>
+             <div class="col-sm">Color the character.</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">backgroundImage</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">linear-gradient(red, yellow)</div>
+             <div class="col-sm">Color the character background with a two color gradient.</div>
+           </div>
+            <div class="row field0">
+              <div class="col-sm">Patterns</div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">sequenceId</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">1</div>
+             <div class="col-sm">Identifier of the sequence.</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">start</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">10</div>
+             <div class="col-sm">Start position of the region where to perform the regex.</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">end</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">20</div>
+             <div class="col-sm">End position of the region where to perform the regex.</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">backgroundColor</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">hex, rgb</div>
+             <div class="col-sm">Color the regex match background.</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">color</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">hex, rgb</div>
+             <div class="col-sm">Color the regex match the character.</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">backgroundImage</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">linear-gradient(red, yellow)</div>
+             <div class="col-sm">Color the regex match character background with a two color gradient.</div>
+           </div>
+            <div class="row field0">
+              <div class="col-sm">Icons</div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">sequenceId</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">1</div>
+             <div class="col-sm">Identifier of the sequence.</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">start</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">10</div>
+             <div class="col-sm">Start position of the icon region.</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">end</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">20</div>
+             <div class="col-sm">End position of the icon region.</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">icon</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">lollipop, helix, strand, strand-arrow-left, turn</div>
+             <div class="col-sm">svg image to apply on top of the indicated sequence.</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">display</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">center</div>
+             <div class="col-sm">Center the icon in the middle of the start-end region.</div>
+           </div>
+            <div class="row field0">
+              <div class="col-sm">Options</div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">fontSize</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">14px</div>
+             <div class="col-sm">Font dimension.</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">chunkSize</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">10</div>
+             <div class="col-sm">Group the sequence into chunks of subsequential characters.</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">spaceSize</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">2</div>
+             <div class="col-sm">Space among chunks.</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">logLevel</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">debug or none</div>
+             <div class="col-sm">Print console log error with "debug" option.</div>
+           </div>
+           <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">topIndexes</div>
+             <div class="col-sm">boolean</div>
+             <div class="col-sm">true</div>
+             <div class="col-sm">Place an index on top of the end of each chunk (first row only).</div>
+           </div>
+            <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">oneLineSetting</div>
+             <div class="col-sm">boolean</div>
+             <div class="col-sm">true</div>
+             <div class="col-sm">Display the viewer with fixed width (not responsive) and scrollbar on the sequences.</div>
+           </div>
+            <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">oneLineWidth</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">2</div>
+             <div class="col-sm">Width of ProSeqViewer - sidebar.</div>
+           </div>
+            <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">lateralIndexesGap</div>
+             <div class="col-sm">boolean</div>
+             <div class="col-sm">true</div>
+             <div class="col-sm">Shows lateral indexes including gaps in the count (true) or excluding them (false).</div>
+           </div>
+            <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">colorScheme</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">clustal, blosum62</div>
+             <div class="col-sm">Colorscheme to apply to all sequences.</div>
+           </div>
+            <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">consensusType</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">identity, physical</div>
+             <div class="col-sm">Add a line with consensus information.</div>
+           </div>
+            <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">consensusThreshold</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">90</div>
+             <div class="col-sm">Threeshold for consensus information.</div>
+           </div>
+            <div class="row field1">
+              <div class="col-sm"></div>
+              <div class="col-sm">rowMarginBottom</div>
+              <div class="col-sm">integer</div>
+              <div class="col-sm">15</div>
+              <div class="col-sm">Space under the horizontal row of characters (px).</div>
+            </div>
+            <div class="row field0">
+              <div class="col-sm">iconsHtml</div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+           </div>
+            <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">id</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">icons</div>
+             <div class="col-sm">Input identifier.</div>
+           </div>
+            <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">iconName</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">&lt;svg>...&lt;/svg></div>
+             <div class="col-sm">An svg icon.</div>
+           </div>
+
+        </div>
+      </div>
+    </div>
+
+</div>
+
+
+
+
+</div>

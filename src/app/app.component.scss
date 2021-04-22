@@ -1,0 +1,415 @@
+
+.tit {
+  color: #E36397;
+  font-size: 4rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.lead {
+  font-size: 1rem;
+  font-weight: 300;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.d-flex {
+  text-align: center;
+}
+
+#npm {
+  color: #FFFFFF;
+  text-decoration: none;
+  margin-right: 5px;
+  background-color: #D8829D;
+  border: none;
+}
+
+.btn-primary {
+  text-decoration: none;
+  color: #e9ecef;
+  background-color: #8CB2E3;
+  border: none;
+
+}
+
+.txt {
+  color: #E36397;
+  margin-top: 2rem;
+  font-weight: bold;
+}
+
+.snippet-title {
+  font-weight: bold;
+  margin-top: 2rem;
+  color: #064579;
+}
+
+@media only screen and (max-width: 600px) {
+  .tabcontent {
+    padding: 30px  30px 30px 30px;
+  }
+  #preview {
+    padding: 30px 30px 0px 30px;
+  }
+}
+
+h4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.h2 {
+  margin-top: 0;
+  margin-bottom: .5rem;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.2;
+  color: inherit;
+}
+
+.sqvDemo {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #dddddd;
+  padding: 20px;
+  box-shadow: 2.5px 5px #dddddd;
+  overflow-x: auto;
+}
+
+.sqvDemoGeneral {
+  overflow-x: auto;
+  overflow-y: auto;
+  height: 280px;
+  display: flex;
+  border: 1px solid #dddddd;
+  padding: 20px;
+}
+
+.palette {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.physical {
+  color: white;float: left
+}
+/* Style inputs, select elements and textareas */
+input[type=text], select, textarea{
+  width: 90%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+/* Style the label to display next to the inputs */
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+/* Style the container */
+.box {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* Floating column for labels: 25% width */
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+/* Floating column for inputs: 75% width */
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+
+pre  {
+  font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+}
+
+.tab-sp {
+  margin-left: 30px;
+
+}
+
+.tab-sp-db {
+  margin-left: 60px;
+
+}
+
+.code {
+  margin-top: 50px;
+  height: 400px;
+  overflow-x: auto;
+  margin-bottom: 50px;
+}
+
+.code-no-height {
+  margin-top: 50px;
+  overflow-x: auto;
+  margin-bottom: 50px;
+}
+.code li {
+  color: #64747D;
+  background: none;
+  margin-bottom: 5px;
+  line-height: normal;
+  list-style-type: decimal;
+  font-size: 14px;
+  white-space: pre;
+}
+
+.code-no-height li {
+  color: #64747D;
+  background: none;
+  margin-bottom: 5px;
+  line-height: normal;
+  list-style-type: decimal;
+  font-size: 14px;
+  white-space: pre;
+}
+
+
+
+.hljs-html {
+  color: #FFAD0A;
+}
+.hljs-id {
+  color: #8ED025;
+}
+.hljs-js {
+  color: darkorange;
+}
+.hljs-ang {
+  color: purple;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.first {
+  border: 1px solid #dddddd;
+}
+
+td, th {
+  text-align: left;
+  padding: 8px;
+}
+
+.field0 {
+  background-color: rgba(0,0,0,.04);
+}
+
+
+/*clustal*/
+.a {
+  height: 25px;
+  width: 25px;
+  background-color: #80a0f0;
+  border-radius: 50%;
+  display: flex; /* or inline-flex */
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.k {
+  height: 25px;
+  width: 25px;
+  background-color: #f01505;
+  border-radius: 50%;
+  display: flex; /* or inline-flex */
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.e {
+  height: 25px;
+  width: 25px;
+  background-color: #c048c0;
+  border-radius: 50%;
+  display: flex; /* or inline-flex */
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.c {
+  height: 25px;
+  width: 25px;
+  background-color: #f08080;
+  border-radius: 50%;
+  display: flex; /* or inline-flex */
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.q {
+  height: 25px;
+  width: 25px;
+  background-color: #15c015;
+  border-radius: 50%;
+  display: flex; /* or inline-flex */
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+/*physical consensus*/
+
+.n {
+  height: 25px;
+  width: 25px;
+  background-color: #f09048;
+  border-radius: 50%;
+  display: flex; /* or inline-flex */
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.h {
+  height: 25px;
+  width: 25px;
+  background-color: #558B6E;
+  border-radius: 50%;
+  display: flex; /* or inline-flex */
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.p {
+  height: 25px;
+  width: 25px;
+  background-color: #D4358D;
+  border-radius: 50%;
+  display: flex; /* or inline-flex */
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.neg {
+  height: 25px;
+  width: 25px;
+  background-color: #A10702;
+  border-radius: 50%;
+  display: flex; /* or inline-flex */
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.pos {
+  height: 25px;
+  width: 25px;
+  background-color: #3626A7;
+  border-radius: 50%;
+  display: flex; /* or inline-flex */
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+
+.sidenav {
+  top: 0;
+  padding: 0 15px;
+  display: block !important;
+  width: 300px;
+}
+
+.navbar {
+  text-align: center;
+  justify-content:center;
+   position: relative;
+   align-items: center;
+   padding: 0.5rem 1rem;
+  background-color: #F3F4F7;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 1.7rem;
+  color: black;
+  display: block;
+}
+
+.sidenav b {
+  color: #E36397;
+}
+
+.sidenav a:hover {
+  color: #064579;
+}
+
+.row1 {
+  margin-right: 0px;
+  margin-left: 50px;
+}
+
+
+
+.main {
+  margin-left: 140px; /* Same width as the sidebar + left position in px */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-width: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+@media screen and (min-width: 800px) {
+  .sidenav {
+    float: left;
+    position: sticky;
+  }
+  .row1 {
+    margin-right: 90px;
+    margin-left: 300px;
+  }
+
+}
+
+
+#api {
+  margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
