@@ -1,7 +1,7 @@
 # ProSeqViewer
 
 This is a code repository for the BioComputingUP ProSeqViewer project.
-Full documentation is work in progress and will be available at: https://biocomputingup.github.io/proseqviewer-documentation/.
+Full documentation is work in progress and will be available at: https://biocomputingup.github.io/ProSeqViewer-documentation/.
 
 This version is based on [Typescript](https://www.typescriptlang.org/) and compatible with [Angular 2+](https://angular.io/) framework.
 
