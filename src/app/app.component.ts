@@ -44,7 +44,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // GENERAL EXAMPLE: multisequence
+    // GENERAL EXAMPLE: multi sequence
     const s0 = new SequenceViewer('sqv0');
     const seqs0 = [
       // tslint:disable-next-line:max-line-length
