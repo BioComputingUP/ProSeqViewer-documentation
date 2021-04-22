@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {SequenceViewer} from 'sequence-viewer-typescript/dist';
+import {ProSeqViewer} from 'proseqviewer/dist';
 
 @Component({
   selector: 'app-root',
@@ -45,7 +45,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
 
     // GENERAL EXAMPLE: multi sequence
-    const s0 = new SequenceViewer('sqv0');
+    const s0 = new ProSeqViewer('sqv0');
     const seqs0 = [
       // tslint:disable-next-line:max-line-length
       {sequence: '--------DFEYLQLVLTWPASFCYANH--CE------RIAPNNFTIHGLWPDNVKT-RLHNCKPKPTYSY-FTGKMLNDLDKHWMQLKFEQDY--GRTEQPSWKYQYIK', id: 1, label: '1iooA'},
@@ -66,7 +66,7 @@ export class AppComponent implements OnInit {
     s0.draw(seqs0, opt);
 
     // GENERAL EXAMPLE: single sequence
-    const seqSingle = new SequenceViewer('sqvSingle');
+    const seqSingle = new ProSeqViewer('sqvSingle');
     const seq = [
       {sequence: 'MASESGKLWGGRFVGAVDPIMEKFNASIAYDRHLWEVDVQGSKAYSRGLEKAGLLTKAEMDQILHGLDKVAEEWAQGTFKLNSNDEDIHTANERRLKELIGATAGKLHTGRSRNDQVVTDLRLWMRQTCSTLSGLLWELIRTMVDRAEAERDVLFPGYTHLQRAQPIRWSHWILSHAVALTRDSERLLEVRKRINVLPLGSGAIAGNPLGVDRELLRAELNFGAITLNSMDATSERDFVAEFLFWASLCMTHLSRMAEDLILYCTKEFSFVQLSDAYSTGSSLMPQKKNPDSLELIRSKAGRVFGRCAGLLMTLKGLPSTYNKDLQEDKEAVFEVSDTMSAVLQVATGVISTLQIHQENMGQALSPDMLATDLAYYLVRKGMPFRQAHEASGKAVFMAETKGVALNQLSLQELQTISPLFSGDVICVWDYGHSVEQYGALGGTARSSVDWQIRQVRALLQAQQA', id: 1, label: 'P04424 | Homo sapiens'}
     ];
@@ -153,7 +153,7 @@ export class AppComponent implements OnInit {
     seqSingle.draw(seq, singleIco, singleOpt);
 
     // REGIONS EXAMPLE
-    const s2 = new SequenceViewer('sqv2');
+    const s2 = new ProSeqViewer('sqv2');
     const seqs = [
       {sequence: 'MVAVEQSEASRLGPVFDSCRANNRAALIGYLPTGYPDVPASVAAMTALVE' +
           'SGCDIIEVGVPYSDPGMDGPTIARATEAALRGGVRVRDTLAAVEAISIAGGRAVVMT' +
@@ -180,7 +180,7 @@ export class AppComponent implements OnInit {
 
     // icons EXAMPLE
 
-    const s3 = new SequenceViewer('sqv3');
+    const s3 = new ProSeqViewer('sqv3');
     const seq3 = [
       {sequence: 'MASESGKLWGGRFVGAVDPIMEKFNASIAYDRHLWEVDVQGSKAYSRGLEKAGLLTKAEMDQILHGLDKVAEEWAQGTFKLNSNDEDIHTANERRLKELIGATAGKLHTGRSRNDQVVTDLRLWMRQTCSTLSGLLWELIRTMVDRAEAERDVLFPGYTHLQRAQPIRWSHWILSHAVALTRDSERLLEVRKRINVLPLGSGAIAGNPLGVDRELLRAELNFGAITLNSMDATSERDFVAEFLFWASLCMTHLSRMAEDL ILYCTKEFSFVQLSDAYSTGSSLMPQKKNPDSLELIRSKAGRVFGRCAGLLMTLKGLPSTYNKDLQEDKEAVFEVSDTMSAVLQVATGVISTLQIHQENMGQALSPDMLATDLAYYLVRKGMPFRQAHEASGKAVFMAETKGVALNQLSLQELQTISPLFSGDVICVWDYGHSVEQYGALGGTARSSVDWQIRQVRALLQAQQA', id: 1,  label: 'P04424 | Homo sapiens'}
     ];
@@ -190,7 +190,7 @@ export class AppComponent implements OnInit {
     s3.draw(seq3, singleIco, opt3);
 
     // patterns EXAMPLE
-    const s4 = new SequenceViewer('sqv4');
+    const s4 = new ProSeqViewer('sqv4');
     const pat4 = [
       {sequenceId: 1, pattern: /RRP/g, backgroundColor: '#D72638'},
       {sequenceId: 2, pattern: /RRP/g, backgroundColor: '#D72638'},
@@ -213,7 +213,7 @@ export class AppComponent implements OnInit {
     s4.draw(pat4, patseq);
 
     // colorscheme EXAMPLE
-    const s6 = new SequenceViewer('sqv6');
+    const s6 = new ProSeqViewer('sqv6');
     const opt6 = { colorScheme: 'clustal'};
     const seqs6 = [
       {sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPTSTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},
@@ -223,7 +223,7 @@ export class AppComponent implements OnInit {
     s6.draw(seqs6, opt6);
 
     // blosum62
-    const sBlos = new SequenceViewer('sqvBlosum');
+    const sBlos = new ProSeqViewer('sqvBlosum');
     const optBlos = { colorScheme: 'blosum62'};
     const seqsBlos = [
       {sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPTSTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},
@@ -233,7 +233,7 @@ export class AppComponent implements OnInit {
     sBlos.draw(seqsBlos, optBlos);
 
     // indexes EXAMPLE
-    const s5 = new SequenceViewer('sqv5');
+    const s5 = new ProSeqViewer('sqv5');
     const seqs5 = [
       {sequence: 'MVLSPADKTNVKAA-----EYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|CRAB_HUMAN', startIndex: 2}
     ];
@@ -243,7 +243,7 @@ export class AppComponent implements OnInit {
 
 
     // consensus EXAMPLE
-    const s7 = new SequenceViewer('sqv7');
+    const s7 = new ProSeqViewer('sqv7');
     const seqs7 = [
       {sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPTSTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},
       {sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},
@@ -252,7 +252,7 @@ export class AppComponent implements OnInit {
     const opt7 = { consensusType: 'identity', consensusThreshold: 80};
     s7.draw(seqs7, opt7);
 
-    const sPhysical = new SequenceViewer('sqvPhysical');
+    const sPhysical = new ProSeqViewer('sqvPhysical');
     const seqsPhysical = [
       {sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPTSTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},
       {sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},
@@ -262,7 +262,7 @@ export class AppComponent implements OnInit {
     sPhysical.draw(seqsPhysical, optPhysical);
 
     // oneLineSetting EXAMPLE
-    const s8 = new SequenceViewer('sqv8');
+    const s8 = new ProSeqViewer('sqv8');
     const seqs8 = [
       {sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPTSTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},
       {sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},
@@ -272,7 +272,7 @@ export class AppComponent implements OnInit {
     s8.draw(seqs8, opt8);
 
     // selections EXAMPLE
-    const s9 = new SequenceViewer('sqv9');
+    const s9 = new ProSeqViewer('sqv9');
     const seqs9 = [
       {sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPTSTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},
       {sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},

@@ -26,7 +26,7 @@ npm install proseqviewer
 
 2 Import the ProSeqViewer in javascript or your angular component
 ```typescript
-import {ProSeqViewer} from 'proseqviewer-typescript/dist';
+import {ProSeqViewer} from 'proseqviewer/dist';
 ```
 
 3 Optional: if you are installing the feature viewer in an Angular 2+ based App, you may
