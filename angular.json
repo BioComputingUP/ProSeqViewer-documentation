@@ -24,7 +24,7 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/sequence-viewer-typescript/dist/assets/sqv.css",
+              "./node_modules/sequence-viewer-typescript/dist/assets/proseqviewer.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -89,7 +89,7 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/sequence-viewer-typescript/dist/assets/sqv.scss",
+              "./node_modules/sequence-viewer-typescript/dist/assets/proseqviewer.scss",
               "src/styles.css"
             ],
             "scripts": []
