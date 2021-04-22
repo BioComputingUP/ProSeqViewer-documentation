@@ -1,6 +1,6 @@
 <nav class="navbar"><div class="mr-3">
-  <div><h1 class="tit">ProSeq Viewer</h1>
-    <h6 class="lead">ProSeq library for the visualization of (not only) biological sequence features. Used in
+  <div><h1 class="tit">ProSeqViewer</h1>
+    <h6 class="lead">ProSeqViewer library for the visualization of (not only) biological sequence features. Used in
       <a href="https://mobidb.bio.unipd.it/">MobiDB</a>,
       <a href="https://www.disprot.org/">DisProt</a> and
       <a href="https://repeatsdb.bio.unipd.it/">RepeatsDB</a>.</h6>
@@ -61,7 +61,7 @@
                 <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvMsa"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
                 <li><span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">&lt;/script&gt;</span></li>
                 <li><span class="hljs-js">&lt;script></span></li>
-                <li><span><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span> SequenceViewer(<span class="hljs-id">'sqvMsa'</span>); </span></li>
+                <li><span><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span> ProSeqViewer(<span class="hljs-id">'sqvMsa'</span>); </span></li>
                 <li><span><span class="hljs-js">const</span> sequences = [ </span></li>
                 <li><span class="tab-sp"><span>      &#123;sequence: '--------DFEYLQLVLTWPASFCYANH--CE------RIAPNNFTIHGLWPDNVKT-RLHNCKPKPTYSY-FTGKMLNDLDKHWMQLKFEQDY--GRTEQPSWKYQYIKHG', id: 1, label: '1iooA'},</span></span></li>
                 <li><span class="tab-sp"><span>      &#123;sequence: 'DKRLRDNHEWKKLIMVQHWPETVCEKIQNDCR-------DPPDYWTIHGLWPDKSEG-----CNRSWPFNLEEIKDLLPEMRAYWPDVIHSFPN-----RSRFWKHEWEKHG', id: 2, label: '1iqqA'},</span></span></li>
@@ -73,7 +73,7 @@
                 <li><span><span class="hljs-js">const</span> options =  &#123;</span></li>
                 <li><span class="tab-sp"><span>      topIndexes: true, colorScheme: 'blosum62'</span></span></li>
                 <li><span>      };</span></li>
-                <li>sequenceviewer.<span class="hljs-js">draw</span>(sequences, opt);</li>
+                <li>proseqviewer.<span class="hljs-js">draw</span>(sequences, opt);</li>
                 <li><span class="hljs-js">&lt;/script></span></li>
               </ul>
             </tab>
@@ -84,11 +84,11 @@
               <tab heading="Component">
                 <ul class="code">
                       <li><span class="hljs-js">import</span> &#123;Component, OnInit} <span class="hljs-js">from</span> <span class="hljs-id">'@angular/core'</span>;</li>
-                      <li><span class="hljs-js">import</span> &#123;SequenceViewer} <span class="hljs-js">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</li>
+                      <li><span class="hljs-js">import</span> &#123;ProSeqViewer} <span class="hljs-js">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</li>
                       <li><span class="hljs-js">@Component(&#123;…})</span></li>
                       <li><span class="hljs-js">export class</span> AppComponent <span class="hljs-js">implements</span> OnInit &#123;</li>
                       <li><span class="hljs-js">ngOnInit():</span> void  &#123;</li>
-                      <li><span class="tab-sp"><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span> SequenceViewer(<span class="hljs-id">'sqvMsa'</span>); </span></li>
+                      <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span> ProSeqViewer(<span class="hljs-id">'sqvMsa'</span>); </span></li>
                       <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
                       <li><span class="tab-sp-db">&#123;sequence: '--------DFEYLQLVLTWPASFCYANH--CE------RIAPNNFTIHGLWPDNVKT-RLHNCKPKPTYSY-FTGKMLNDLDKHWMQLKFEQDY--GRTEQPSWKYQYIKHG', id: 1, label: '1iooA'},</span></li>
                       <li><span class="tab-sp-db">&#123;sequence: 'DKRLRDNHEWKKLIMVQHWPETVCEKIQNDCR-------DPPDYWTIHGLWPDKSEG-----CNRSWPFNLEEIKDLLPEMRAYWPDVIHSFPN-----RSRFWKHEWEKHG', id: 2, label: '1iqqA'},</span></li>
@@ -100,7 +100,7 @@
                       <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
                       <li><span class="tab-sp-db">topIndexes: true, colorScheme: 'blosum62'</span></li>
                       <li><span class="tab-sp"><span> };</span></span></li>
-                      <li><span class="tab-sp">sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
+                      <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
                       <li><span class="tab-sp"><span>}</span></span></li>
                       <li>}</li>
                 </ul>
@@ -139,7 +139,7 @@
                <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvSingle"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
                <li><span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">&lt;/script&gt;</span></li>
                <li><span class="hljs-js">&lt;script></span></li>
-               <li><span class="tab-sp"><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span> SequenceViewer(<span class="hljs-id">'sqvSingle'</span>); </span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span> ProSeqViewer(<span class="hljs-id">'sqvSingle'</span>); </span></li>
                <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
                <li><span class="tab-sp-db">&#123;sequence: 'MASESGKLWGGRFVGAVDPIMEKFNASIAYDRHLWEVDVQGSKAYSRGLEKAGLLTKAEMDQILHGLDKVAEEWAQGTFKLNSNDEDIHTANERRLKELIGATAGKLHTGRSRNDQVVTDLRLWMRQTCSTLSGLLWELIRTMVDRAEAERDVLFPGYTHLQRAQPIRWSHWILSHAVAL' + </span></li>
                <li><span class="tab-sp-db">      'TRDSERLLEVRKRINVLPLGSGAIAGNPLGVDRELLRAELNFGAITLNSMDATSERDFVAEFLFWASLCMTHLSRMAEDLILYCTKEFSFVQLSDAYSTGSSLMPQKKNPDSLELIRSKAGRVFGRCAGLLMTLKGLPSTYNKDLQEDKEAVFEVSDTMSAVLQVATGVISTLQIHQENM' + </span></li>
@@ -156,7 +156,7 @@
                <li><span class="tab-sp-db">      ... </span></li>
                <li><span class="tab-sp-db">      };</span></li>
                <li><span class="tab-sp"><span class="hljs-js">const</span> options = &#123;chunkSize: 0}; // sequence length </span></li>
-               <li><span class="tab-sp"><span>sequenceviewer.<span class="hljs-js">draw</span>(sequences, icons, options);</span></span></li>
+               <li><span class="tab-sp"><span>proseqviewer.<span class="hljs-js">draw</span>(sequences, icons, options);</span></span></li>
                <li><span class="hljs-js">&lt;/script></span></li>
              </ol>
           </tab>
@@ -165,11 +165,11 @@
           <tab heading="Component">
             <ol class="code">
                 <li><span class="hljs-js">import</span> &#123;Component, OnInit} <span class="hljs-js">from</span> <span class="hljs-id">'@angular/core'</span>;</li>
-                <li><span class="hljs-js">import</span> &#123;SequenceViewer} <span class="hljs-js">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</li>
+                <li><span class="hljs-js">import</span> &#123;ProSeqViewer} <span class="hljs-js">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</li>
                 <li><span class="hljs-js">@Component(&#123;…})</span>
                 <li><span class="hljs-js">export class</span> AppComponent <span class="hljs-js">implements</span> OnInit &#123;</li>
                 <li><span class="hljs-js">ngOnInit():</span> void  &#123;</li>
-              <li><span class="tab-sp"><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span> SequenceViewer(<span class="hljs-id">'sqvSingle'</span>); </span></li>
+              <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span> ProSeqViewer(<span class="hljs-id">'sqvSingle'</span>); </span></li>
                <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
                <li><span class="tab-sp-db">&#123;sequence: 'MASESGKLWGGRFVGAVDPIMEKFNASIAYDRHLWEVDVQGSKAYSRGLEKAGLLTKAEMDQILHGLDKVAEEWAQGTFKLNSNDEDIHTANERRLKELIGATAGKLHTGRSRNDQVVTDLRLWMRQTCSTLSGLLWELIRTMVDRAEAERDVLFPGYTHLQRAQPIRWSHWILSHAVAL' + </span></li>
                <li><span class="tab-sp-db">      'TRDSERLLEVRKRINVLPLGSGAIAGNPLGVDRELLRAELNFGAITLNSMDATSERDFVAEFLFWASLCMTHLSRMAEDLILYCTKEFSFVQLSDAYSTGSSLMPQKKNPDSLELIRSKAGRVFGRCAGLLMTLKGLPSTYNKDLQEDKEAVFEVSDTMSAVLQVATGVISTLQIHQENM' + </span></li>
@@ -186,7 +186,7 @@
                <li><span class="tab-sp-db">      ... </span></li>
                <li><span class="tab-sp-db">      };</span></li>
                <li><span class="tab-sp"><span class="hljs-js">const</span> options = &#123;chunkSize: 0}; // sequence length </span></li>
-               <li><span class="tab-sp"><span>sequenceviewer.<span class="hljs-js">draw</span>(sequences, icons, options);</span></span></li>
+               <li><span class="tab-sp"><span>proseqviewer.<span class="hljs-js">draw</span>(sequences, icons, options);</span></span></li>
             </ol>
           </tab>
           <tab heading="Template">
@@ -225,7 +225,7 @@
               <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvRegions"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
               <li><span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">&lt;/script&gt;</span></li>
               <li><span class="hljs-js">&lt;script></span></li>
-              <li><span class="tab-sp"><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span> SequenceViewer(<span class="hljs-id">'sqvRegions'</span>);</span></li>
+              <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span> ProSeqViewer(<span class="hljs-id">'sqvRegions'</span>);</span></li>
               <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
               <li><span class="tab-sp-db">      &#123;sequence: 'MVAVEQSEASRLGPVFDSCRANNRAALIGYLPTGYPDVPASVAAMTALVESGCDIIEVGVPYSDPGMDGPTIARATEAALRGGVRVRDTLAAVEAISIAGGRAVVMT' +</span></li>
               <li><span class="tab-sp-db">      'YWNPVLRYGVDAFARDLAAAGGLGLITPDLIPDEAQQWLAASEEHRLDRIFLVAPSSTPERLAATVEASRGFVYAASTMGVTGARDAVSQAAPELVGRVKAVSDIPVGVGLGVR' +</span></li>
@@ -239,7 +239,7 @@
               <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 101, end: 127, backgroundColor: '#2f6690', color: '#FFFFFF'},</span></li>
               <li><span class="tab-sp-db">      ... ,</span></li>
               <li><span class="tab-sp">      ];</span></li>
-              <li><span class="tab-sp">sequenceviewer.<span class="hljs-js">draw</span>(sequences, regions);</span></li>
+              <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(sequences, regions);</span></li>
               <li><span class="hljs-js tab-sp">&lt;/script></span></li>
             </ol>
         </tab>
@@ -248,11 +248,11 @@
         <tab heading="Component">
           <ol class="code">
             <li><span class="hljs-js">import</span> &#123;Component, OnInit} <span class="hljs-js">from</span> <span class="hljs-id">'@angular/core'</span>;</li>
-            <li><span class="hljs-js">import</span> &#123;SequenceViewer} <span class="hljs-js">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</li>
+            <li><span class="hljs-js">import</span> &#123;ProSeqViewer} <span class="hljs-js">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</li>
             <li><span class="hljs-js">@Component(&#123;…})</span></li>
             <li><span class="hljs-js">export class</span> AppComponent <span class="hljs-js">implements</span> OnInit &#123;</li>
             <li><span class="hljs-js">ngOnInit():</span> void  &#123;</li>
-            <li><span class="tab-sp"><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span> SequenceViewer(<span class="hljs-id">'sqvRegions'</span>);</span></li>
+            <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span> ProSeqViewer(<span class="hljs-id">'sqvRegions'</span>);</span></li>
             <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
             <li><span class="tab-sp-db">      &#123;sequence: 'MVAVEQSEASRLGPVFDSCRANNRAALIGYLPTGYPDVPASVAAMTALVESGCDIIEVGVPYSDPGMDGPTIARATEAALRGGVRVRDTLAAVEAISIAGGRAVVMT' +</span></li>
             <li><span class="tab-sp-db">      'YWNPVLRYGVDAFARDLAAAGGLGLITPDLIPDEAQQWLAASEEHRLDRIFLVAPSSTPERLAATVEASRGFVYAASTMGVTGARDAVSQAAPELVGRVKAVSDIPVGVGLGVR' +</span></li>
@@ -266,7 +266,7 @@
             <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 101, end: 127, backgroundColor: '#2f6690', color: '#FFFFFF'},</span></li>
             <li><span class="tab-sp-db">      ... ,</span></li>
             <li><span class="tab-sp">      ];</span></li>
-            <li><span class="tab-sp">sequenceviewer.<span class="hljs-js">draw</span>(sequences, regions);</span></li>
+            <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(sequences, regions);</span></li>
         </ol>
         </tab>
         <tab heading="Template">
@@ -302,7 +302,7 @@
              <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvIcons"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
              <li><span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">&lt;/script&gt;</span></li>
              <li><span class="hljs-js">&lt;script></span></li>
-             <li><span class="tab-sp"><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span> SequenceViewer(<span class="hljs-id">'sqvIcons'</span>);</span></li>
+             <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span> ProSeqViewer(<span class="hljs-id">'sqvIcons'</span>);</span></li>
              <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
              <li><span class="tab-sp-db">      &#123;sequence: 'MASESGKLWGGRFVGAVDPIMEKFNASIAYDRHLWEVDVQGSKAYSRGLEKAGLLTKAEMDQILHGLDKVAEEWAQGTFKLNSNDEDIHT' + </span></li>
              <li><span class="tab-sp-db">      'ANERRLKELIGATAGKLHTGRSRNDQVVTDLRLWMRQTCSTLSGLLWELIRTMVDRAEAERDVLFPGYTHLQRAQPIRWSHWILSHAVAL' + </span></li>
@@ -321,7 +321,7 @@
              <li><span class="tab-sp-db">      ... </span></li>
              <li><span class="tab-sp">      };</span></li>
              <li><span class="tab-sp"><span class="hljs-js">const</span> options = &#123;chunkSize: 0}; // sequence length </span></li>
-             <li><span class="tab-sp">sequenceviewer.<span class="hljs-js">draw</span>(sequences, icons, options);</span></li>
+             <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(sequences, icons, options);</span></li>
              <li><span class="hljs-js">&lt;/script></span></li>
            </ol>
         </tab>
@@ -331,11 +331,11 @@
         <tab heading="Component">
           <ol class="code">
             <li><span class="hljs-js">import</span> &#123;Component, OnInit} <span class="hljs-js">from</span> <span class="hljs-id">'@angular/core'</span>;</li>
-            <li><span class="hljs-js">import</span> &#123;SequenceViewer} <span class="hljs-js">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</li>
+            <li><span class="hljs-js">import</span> &#123;ProSeqViewer} <span class="hljs-js">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</li>
             <li class="hljs-js">@Component(&#123;…})</li>
             <li><span class="hljs-js">export class</span> AppComponent <span class="hljs-js">implements</span> OnInit &#123;</li>
             <li><span class="hljs-js">ngOnInit():</span> void  &#123;</li>
-            <li><span class="tab-sp"><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span> SequenceViewer(<span class="hljs-id">'sqvIcons'</span>);</span></li>
+            <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span> ProSeqViewer(<span class="hljs-id">'sqvIcons'</span>);</span></li>
             <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
             <li><span class="tab-sp-db">      &#123;sequence: 'MASESGKLWGGRFVGAVDPIMEKFNASIAYDRHLWEVDVQGSKAYSRGLEKAGLLTKAEMDQILHGLDKVAEEWAQGTFKLNSNDEDIHT' + </span></li>
             <li><span class="tab-sp-db">      'ANERRLKELIGATAGKLHTGRSRNDQVVTDLRLWMRQTCSTLSGLLWELIRTMVDRAEAERDVLFPGYTHLQRAQPIRWSHWILSHAVAL' + </span></li>
@@ -354,7 +354,7 @@
             <li><span class="tab-sp-db">      ... </span></li>
             <li><span class="tab-sp">      };</span></li>
             <li><span class="tab-sp"><span class="hljs-js">const</span> options = &#123;chunkSize: 0}; // sequence length </span></li>
-            <li><span class="tab-sp">sequenceviewer.<span class="hljs-js">draw</span>(sequences, icons, options);</span></li>
+            <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(sequences, icons, options);</span></li>
           </ol>
         </tab>
         <tab heading="Template">
@@ -389,7 +389,7 @@
                <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvPatterns"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
                <li><span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">&lt;/script&gt;</span></li>
                <li><span class="hljs-js">&lt;script></span></li>
-               <li><span class="tab-sp"><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span>SequenceViewer(<span class="hljs-id">'sqvPatterns'</span>); </span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span>ProSeqViewer(<span class="hljs-id">'sqvPatterns'</span>); </span></li>
                <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
                <li><span class="tab-sp-db">      &#123;sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPASTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},</span></li>
                <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},</span></li>
@@ -406,7 +406,7 @@
                <li><span class="tab-sp-db">      &#123;sequenceId: 2, pattern: /LSP/g, backgroundColor: '#FFBC42'}</span></li>
                <li><span class="tab-sp-db">      &#123;sequenceId: 3, pattern: /LSP/g, backgroundColor: '#FFBC42'}</span></li>
                <li><span class="tab-sp">      ];</span></li>
-               <li><span class="tab-sp">sequenceviewer.<span class="hljs-js">draw</span>(sequences, patterns);</span></li>
+               <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(sequences, patterns);</span></li>
                <li><span class="hljs-js">&lt;/script></span></li>
             </ol>
         </tab>
@@ -415,11 +415,11 @@
         <tab heading="Component">
              <ol class="code">
                <li><span class="hljs-js">import</span> &#123;Component, OnInit} <span class="hljs-js">from</span> <span class="hljs-id">'@angular/core'</span>;</li>
-               <li><span class="hljs-js">import</span> &#123;SequenceViewer} <span class="hljs-js">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</li>
+               <li><span class="hljs-js">import</span> &#123;ProSeqViewer} <span class="hljs-js">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</li>
                <li><span class="hljs-js">@Component(&#123;…})</span></li>
                <li><span class="hljs-js">export class</span> AppComponent <span class="hljs-js">implements</span> OnInit &#123;</li>
                <li><span class="hljs-js">ngOnInit():</span> void  &#123;</li>
-               <li><span class="tab-sp"><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span>SequenceViewer(<span class="hljs-id">'sqvPatterns'</span>); </span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span>ProSeqViewer(<span class="hljs-id">'sqvPatterns'</span>); </span></li>
                <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
                <li><span class="tab-sp-db">      &#123;sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPASTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},</span></li>
                <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},</span></li>
@@ -436,7 +436,7 @@
                <li><span class="tab-sp-db">      &#123;sequenceId: 2, pattern: /LSP/g, backgroundColor: '#FFBC42'}</span></li>
                <li><span class="tab-sp-db">      &#123;sequenceId: 3, pattern: /LSP/g, backgroundColor: '#FFBC42'}</span></li>
                <li><span class="tab-sp">      ];</span></li>
-               <li><span class="tab-sp">sequenceviewer.<span class="hljs-js">draw</span>(sequences, patterns);</span></li>
+               <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(sequences, patterns);</span></li>
             </ol>
         </tab>
         <tab heading="Template">
@@ -501,7 +501,7 @@
                <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvClustal"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
                <li><span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">&lt;/script&gt;</span></li>
                <li><span class="hljs-js">&lt;script></span></li>
-               <li><span class="tab-sp"><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span>SequenceViewer('sqvClustal'); </span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span>ProSeqViewer('sqvClustal'); </span></li>
                <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
                <li><span class="tab-sp-db">      &#123;sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPASTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},</span></li>
                <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},</span></li>
@@ -510,7 +510,7 @@
                <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
                <li><span class="tab-sp-db">      colorScheme: 'clustal'</span></li>
                <li><span class="tab-sp">      };</span></li>
-               <li><span class="tab-sp">sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
+               <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
                <li><span class="hljs-js">&lt;/script></span></li>
             </ol>
         </tab>
@@ -519,11 +519,11 @@
         <tab heading="Component">
             <ol class="code">
               <li><span class="hljs-js">import</span> &#123;Component, OnInit} <span class="hljs-js">from</span> <span class="hljs-id">'@angular/core'</span>;</li>
-              <li><span class="hljs-js">import</span> &#123;SequenceViewer} <span class="hljs-js">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</li>
+              <li><span class="hljs-js">import</span> &#123;ProSeqViewer} <span class="hljs-js">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</li>
               <li><span class="hljs-js">@Component(&#123;…})</span></li>
               <li><span class="hljs-js">export class</span> AppComponent <span class="hljs-js">implements</span> OnInit &#123;</li>
               <li><span class="hljs-js">ngOnInit():</span> void  &#123;</li>
-              <li><span class="tab-sp"><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span>SequenceViewer('sqvClustal'); </span></li>
+              <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span>ProSeqViewer('sqvClustal'); </span></li>
               <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
               <li><span class="tab-sp-db">      &#123;sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPASTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},</span></li>
               <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},</span></li>
@@ -532,7 +532,7 @@
               <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
               <li><span class="tab-sp-db">      colorScheme: 'clustal'</span></li>
               <li><span class="tab-sp">      };</span></li>
-              <li><span class="tab-sp">sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
+              <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
           </ol>
         </tab>
         <tab heading="Template">
@@ -570,7 +570,7 @@
              <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvBlosum"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
              <li><span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">&lt;/script&gt;</span></li>
              <li><span class="hljs-js">&lt;script></span></li>
-             <li><span class="tab-sp"><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span>SequenceViewer(<span class="hljs-id">'sqvBlosum'</span>); </span></li>
+             <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span>ProSeqViewer(<span class="hljs-id">'sqvBlosum'</span>); </span></li>
              <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
              <li><span class="tab-sp-db">      &#123;sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPASTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},</span></li>
              <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},</span></li>
@@ -579,7 +579,7 @@
              <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
              <li><span class="tab-sp-db">      colorScheme: 'blosum62'</span></li>
              <li><span class="tab-sp">      };</span></li>
-             <li><span class="tab-sp">sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
+             <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
              <li><span class="hljs-js">&lt;/script></span></li>
           </ol>
         </tab>
@@ -588,11 +588,11 @@
         <tab heading="Component">
             <ol class="code">
               <li><span class="hljs-js">import</span> &#123;Component, OnInit} <span class="hljs-js">from</span> <span class="hljs-id">'@angular/core'</span>;</li>
-              <li><span class="hljs-js">import</span> &#123;SequenceViewer} <span class="hljs-js">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</li>
+              <li><span class="hljs-js">import</span> &#123;ProSeqViewer} <span class="hljs-js">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</li>
               <li><span class="hljs-js">@Component(&#123;…})</span></li>
               <li><span class="hljs-js">export class</span> AppComponent <span class="hljs-js">implements</span> OnInit &#123;</li>
               <li><span class="hljs-js">ngOnInit():</span> void  &#123;</li>
-              <li><span class="tab-sp"><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span>SequenceViewer(<span class="hljs-id">'sqvBlosum'</span>); </span></li>
+              <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span>ProSeqViewer(<span class="hljs-id">'sqvBlosum'</span>); </span></li>
               <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
               <li><span class="tab-sp-db">      &#123;sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPASTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},</span></li>
               <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},</span></li>
@@ -601,7 +601,7 @@
               <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
               <li><span class="tab-sp-db">      colorScheme: 'blosum62'</span></li>
               <li><span class="tab-sp">      };</span></li>
-              <li><span class="tab-sp">sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
+              <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
           </ol>
         </tab>
         <tab heading="Template">
@@ -639,14 +639,14 @@
                <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvLateralIndexes"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
                <li><span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">&lt;/script&gt;</span></li>
                <li><span class="hljs-js">&lt;script></span></li>
-               <li><span class="tab-sp"><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span>SequenceViewer(<span class="hljs-id">'sqvLateralIndexes'</span>); </span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span>ProSeqViewer(<span class="hljs-id">'sqvLateralIndexes'</span>); </span></li>
                <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
                <li><span class="tab-sp-db">      &#123;sequence: 'MVLSPADKTNVKAA-----EYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|CRAB_HUMAN', startIndex: 2}</span></li>
                <li><span class="tab-sp">      ];</span></li>
                <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
                <li><span class="tab-sp-db">      lateralIndexesGap: true</span></li>
                <li><span class="tab-sp">      };</span></li>
-               <li><span class="tab-sp">sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
+               <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
                <li><span class="hljs-js">&lt;/script></span></li>
           </ol>
         </tab>
@@ -655,18 +655,18 @@
         <tab heading="Component">
            <ol class="code">
               <li><span class="hljs-js">import</span> &#123;Component, OnInit} <span class="hljs-js">from</span> <span class="hljs-id">'@angular/core'</span>;</li>
-              <li><span class="hljs-js">import</span> &#123;SequenceViewer} <span class="hljs-js">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</li>
+              <li><span class="hljs-js">import</span> &#123;ProSeqViewer} <span class="hljs-js">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</li>
               <li><span class="hljs-js">@Component(&#123;…})</span></li>
               <li><span class="hljs-js">export class</span> AppComponent <span class="hljs-js">implements</span> OnInit &#123;</li>
               <li><span class="hljs-js">ngOnInit():</span> void  &#123;</li>
-              <li><span class="tab-sp"><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span>SequenceViewer(<span class="hljs-id">'sqvLateralIndexes'</span>); </span></li>
+              <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span>ProSeqViewer(<span class="hljs-id">'sqvLateralIndexes'</span>); </span></li>
               <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
               <li><span class="tab-sp-db">      &#123;sequence: 'MVLSPADKTNVKAA-----EYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|CRAB_HUMAN', startIndex: 2}</span></li>
               <li><span class="tab-sp">      ];</span></li>
               <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
               <li><span class="tab-sp-db">      lateralIndexesGap: true</span></li>
               <li><span class="tab-sp">      };</span></li>
-              <li><span class="tab-sp">sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
+              <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
           </ol>
         </tab>
 
@@ -718,7 +718,7 @@
                 <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvConsensusIdentity"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
                 <li><span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">&lt;/script&gt;</span></li>
                 <li><span class="hljs-js">&lt;script></span></li>
-                <li><span class="tab-sp"><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span>SequenceViewer(<span class="hljs-id">'sqvConsensusIdentity'</span>); </span></li>
+                <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span>ProSeqViewer(<span class="hljs-id">'sqvConsensusIdentity'</span>); </span></li>
                 <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
                 <li><span class="tab-sp-db">      &#123;sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPASTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},</span></li>
                 <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},</span></li>
@@ -727,7 +727,7 @@
                 <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
                 <li><span class="tab-sp-db">      consensusType: 'identity', consensusThreshold: 80</span></li>
                 <li><span class="tab-sp">      };</span></li>
-                <li><span>sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
+                <li><span>proseqviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
                 <li><span class="hljs-js">&lt;/script></span></li>
           </ol>
         </tab>
@@ -736,11 +736,11 @@
         <tab heading="Component">
               <ol class="code">
                 <li><span class="hljs-js">import</span> &#123;Component, OnInit} <span class="hljs-js">from</span> <span class="hljs-id">'@angular/core'</span>;</li>
-                <li><span class="hljs-js">import</span> &#123;SequenceViewer} <span class="hljs-js">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</li>
+                <li><span class="hljs-js">import</span> &#123;ProSeqViewer} <span class="hljs-js">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</li>
                 <li><span class="hljs-js">@Component(&#123;…})</span></li>
                 <li><span class="hljs-js">export class</span> AppComponent <span class="hljs-js">implements</span> OnInit &#123;</li>
                 <li><span class="hljs-js">ngOnInit():</span> void  &#123;</li>
-                <li><span class="tab-sp"><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span>SequenceViewer(<span class="hljs-id">'sqvConsensusIdentity'</span>); </span></li>
+                <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span>ProSeqViewer(<span class="hljs-id">'sqvConsensusIdentity'</span>); </span></li>
                 <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
                 <li><span class="tab-sp-db">      &#123;sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPASTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},</span></li>
                 <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},</span></li>
@@ -749,7 +749,7 @@
                 <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
                 <li><span class="tab-sp-db">      consensusType: 'identity', consensusThreshold: 80</span></li>
                 <li><span class="tab-sp">      };</span></li>
-                <li><span>sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
+                <li><span>proseqviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
           </ol>
         </tab>
         <tab heading="Template">
@@ -903,7 +903,7 @@
                <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvConsensusPhysical"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
                <li><span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">&lt;/script&gt;</span></li>
                <li><span class="hljs-js">&lt;script></span></li>
-               <li><span class="tab-sp"><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span>SequenceViewer(<span class="hljs-id">'sqvConsensusPhysical'</span>);</span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span>ProSeqViewer(<span class="hljs-id">'sqvConsensusPhysical'</span>);</span></li>
                <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
                <li><span class="tab-sp-db">      &#123;sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPASTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},</span></li>
                <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},</span></li>
@@ -912,7 +912,7 @@
                <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
                <li><span class="tab-sp-db">      consensusType: 'physical'</span></li>
                <li><span class="tab-sp">      };</span></li>
-               <li><span class="tab-sp">sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
+               <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
                <li><span class="hljs-js">&lt;/script></span></li>
           </ol>
         </tab>
@@ -921,11 +921,11 @@
         <tab heading="Component">
            <ol class="code">
               <li><span class="hljs-js">import</span> &#123;Component, OnInit} <span class="hljs-js">from</span> <span class="hljs-id">'@angular/core'</span>;</li>
-              <li><span class="hljs-js">import</span> &#123;SequenceViewer} <span class="hljs-js">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</li>
+              <li><span class="hljs-js">import</span> &#123;ProSeqViewer} <span class="hljs-js">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</li>
               <li><span class="hljs-js">@Component(&#123;…})</span></li>
               <li><span class="hljs-js">export class</span> AppComponent <span class="hljs-js">implements</span> OnInit &#123;</li>
               <li><span class="hljs-js">ngOnInit():</span> void  &#123;</li>
-              <li><span class="tab-sp"><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span>SequenceViewer(<span class="hljs-id">'sqvConsensusPhysical'</span>);</span></li>
+              <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span>ProSeqViewer(<span class="hljs-id">'sqvConsensusPhysical'</span>);</span></li>
               <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
               <li><span class="tab-sp-db">      &#123;sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPASTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},</span></li>
               <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},</span></li>
@@ -934,7 +934,7 @@
               <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
               <li><span class="tab-sp-db">      consensusType: 'physical'</span></li>
               <li><span class="tab-sp">      };</span></li>
-              <li><span class="tab-sp">sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
+              <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
           </ol>
         </tab>
         <tab heading="Template">
@@ -947,7 +947,7 @@
       <!-------------------------------------  ONELINESETTING  EXAMPLE ---------------------------------------->
 
       <h6 id="oneLineSetting" class="snippet-title">One line setting example<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h6>
-      <p>Set a non-responsive version of the sequence viewer. The width is fixed and a scrollbar helps the visualization of the sequences.</p>
+      <p>Set a non-responsive version of the ProSeqViewer. The width is fixed and a scrollbar helps the visualization of the sequences.</p>
       <div class="sqvDemo">
         <div class="row">
           <div id="sqv8"></div>
@@ -973,7 +973,7 @@
                <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvOneLineSetting"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
                <li><span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">&lt;/script&gt;</span></li>
                <li><span class="hljs-js">&lt;script></span></li>
-               <li><span class="tab-sp"><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span>SequenceViewer(<span class="hljs-id">'sqvOneLineSetting'</span>); </span></li>
+               <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span>ProSeqViewer(<span class="hljs-id">'sqvOneLineSetting'</span>); </span></li>
                <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
                <li><span class="tab-sp-db">      &#123;sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPASTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},</span></li>
                <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},</span></li>
@@ -982,7 +982,7 @@
                <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
                <li><span class="tab-sp-db">      oneLineSetting: true, oneLineWidth: '350px'</span></li>
                <li><span class="tab-sp">      };</span></li>
-               <li><span class="tab-sp">sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
+               <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
                <li><span class="hljs-js">&lt;/script></span></li>
           </ol>
         </tab>
@@ -992,11 +992,11 @@
         <tab heading="Component">
              <ol class="code">
                 <li><span class="hljs-js">import</span> &#123;Component, OnInit} <span class="hljs-js">from</span> <span class="hljs-id">'@angular/core'</span>;</li>
-                <li><span class="hljs-js">import</span> &#123;SequenceViewer} <span class="hljs-js">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</li>
+                <li><span class="hljs-js">import</span> &#123;ProSeqViewer} <span class="hljs-js">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</li>
                 <li><span class="hljs-js">@Component(&#123;…})</span>
                 <li><span class="hljs-js">export class</span> AppComponent <span class="hljs-js">implements</span> OnInit &#123;</li>
                 <li><span class="hljs-js">ngOnInit():</span> void  &#123;</li>
-                <li><span class="tab-sp"><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span>SequenceViewer(<span class="hljs-id">'sqvOneLineSetting'</span>); </span></li>
+                <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span>ProSeqViewer(<span class="hljs-id">'sqvOneLineSetting'</span>); </span></li>
                 <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
                 <li><span class="tab-sp-db">      &#123;sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPASTSLSPFYLRPPSFLRAPSW', id: 1, label: 'sp|P69905|CRAB_HUMAN'},</span></li>
                 <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'sp|P01942|CRAB_ANAPL'},</span></li>
@@ -1005,7 +1005,7 @@
                 <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
                 <li><span class="tab-sp-db">      oneLineSetting: true, oneLineWidth: '350px'</span></li>
                 <li><span class="tab-sp">      };</span></li>
-                <li><span class="tab-sp">sequenceviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
+                <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(sequences, options);</span></li>
           </ol>
         </tab>
         <tab heading="Template">
@@ -1060,7 +1060,7 @@
         <div>
           <h6 class="snippet-title" id="javascript">Installation Guide - JavaScript</h6>
 
-          <p><strong>1. Download the sequence viewer stylesheet</strong></p>
+          <p><strong>1. Download the ProSeqViewer stylesheet</strong></p>
           <p>You can find the <i>sqv.css</i> file in the src/assets folder on the <a href="https://github.com/BioComputingUP/sequence-viewer-typescript">Github repo.</a></p>
 
           <p><strong>2. Download the library code</strong></p>
@@ -1077,11 +1077,11 @@
             <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvSimple"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
             <li><span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">>&lt;/script&gt;</span></li>
             <li><span class="hljs-js">&lt;script></span></li>
-            <li><span class="tab-sp"><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new </span>SequenceViewer(<span class="hljs-id">'sqvSimple'</span>);</span> // Create an instance of the sequence viewer in JavaScript </li>
+            <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new </span>ProSeqViewer(<span class="hljs-id">'sqvSimple'</span>);</span> // Create an instance of the ProSeqViewer in JavaScript </li>
             <li><span class="tab-sp"><span class="hljs-js">const</span> sequence = [ </span></li>
             <li><span class="tab-sp-db">      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAG--ALERMFL--YFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN'}</span></li>
             <li><span class="tab-sp">      ];</span></li>
-            <li><span class="tab-sp">sequenceviewer.<span class="hljs-js">draw</span>(sequence);</span> // Execute the function to draw the sequence viewer on the page</li>
+            <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(sequence);</span> // Execute the function to draw the ProSeqViewer on the page</li>
             <li><span class="hljs-js">&lt;/script></span></li>
             <li><span class="hljs-js">&lt;/body></span></li>
           </ol>
@@ -1093,21 +1093,21 @@
           <p><strong>1. Install the library using npm</strong></p>
           <pre><code>npm i sequence-viewer-typescript</code></pre>
 
-          <p><strong>2. Load the sequence viewer stylesheet in your angular.json "styles" </strong></p>
+          <p><strong>2. Load the ProSeqViewer stylesheet in your angular.json "styles" </strong></p>
           <pre><code><span class="hljs-ang">styles:</span> ["./node_modules/sequence-viewer-typescript/dist/assets/sqv.scss"]</code></pre>
 
-          <p><strong>3. Import the sequence viewer in your angular component </strong></p>
-          <ol class="code-no-height"><li><span class="hljs-js">import</span> &#123; SequenceViewer &#125; <span class="hljs-keyword">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</li></ol>
+          <p><strong>3. Import the ProSeqViewer in your angular component </strong></p>
+          <ol class="code-no-height"><li><span class="hljs-js">import</span> &#123; ProSeqViewer &#125; <span class="hljs-keyword">from</span> <span class="hljs-id">'sequence-viewer-typescript/dist'</span>;</li></ol>
 
-          <p><strong> 4. Place the sequence viewer in your template </strong></p>
+          <p><strong> 4. Place the ProSeqViewer in your template </strong></p>
           <ol class="code-no-height"><li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqv"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li></ol>
 
 
-          <p><strong> 5. Create an instance of the sequence viewer in your component, add inputs and execute</strong></p>
+          <p><strong> 5. Create an instance of the ProSeqViewer in your component, add inputs and execute</strong></p>
           <ol class="code-no-height">
-            <li><span class="hljs-js">const</span> sequenceviewer = <span class="hljs-js">new</span> SequenceViewer(<span class="hljs-id">'sqv'</span>);</li>
+            <li><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new</span> ProSeqViewer(<span class="hljs-id">'sqv'</span>);</li>
             <li><span class="hljs-js">const</span> sequence = [&#123;sequence: 'DFRLE--F-DFRLEDFRLE----&#125;]</li>
-            <li>sequenceviewer.<span class="hljs-js">draw</span>(sequence);</li>
+            <li>proseqviewer.<span class="hljs-js">draw</span>(sequence);</li>
           </ol>
 
           <h6 class="snippet-title" id="parameters">Available parameters</h6>
@@ -1327,7 +1327,7 @@
              <div class="col-sm">chunkSize</div>
              <div class="col-sm">integer</div>
              <div class="col-sm">10</div>
-             <div class="col-sm">group the sequence into chunks of subsequential characters.</div>
+             <div class="col-sm">Group the sequence into chunks of subsequential characters.</div>
            </div>
            <div class="row field1">
              <div class="col-sm"></div>
@@ -1362,7 +1362,7 @@
              <div class="col-sm">oneLineWidth</div>
              <div class="col-sm">integer</div>
              <div class="col-sm">2</div>
-             <div class="col-sm">Width of sequenceViewer - sidebar.</div>
+             <div class="col-sm">Width of ProSeqViewer - sidebar.</div>
            </div>
             <div class="row field1">
              <div class="col-sm"></div>
@@ -1392,6 +1392,13 @@
              <div class="col-sm">90</div>
              <div class="col-sm">Threeshold for consensus information.</div>
            </div>
+            <div class="row field1">
+              <div class="col-sm"></div>
+              <div class="col-sm">rowMarginBottom</div>
+              <div class="col-sm">integer</div>
+              <div class="col-sm">15</div>
+              <div class="col-sm">Space under the horizontal row of characters (px).</div>
+            </div>
             <div class="row field0">
               <div class="col-sm">iconsHtml</div>
               <div class="col-sm"></div>
