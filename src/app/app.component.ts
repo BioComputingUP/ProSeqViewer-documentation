@@ -53,8 +53,8 @@ export class AppComponent implements OnInit {
     ];
 
 
-    const opt = { topIndexes: true, colorScheme: 'blosum62'};
-    s0.draw(seqs0, opt);
+    const opt = { indexesLocation: 'top', sequenceColorMatrix: 'blosum62'};
+    s0.draw({sequences: seqs0, options: opt});
 
     // GENERAL EXAMPLE: single sequence
     const seqSingle = new ProSeqViewer('sqvSingle');
@@ -141,7 +141,7 @@ export class AppComponent implements OnInit {
 
     const singleOpt = {chunkSize: 0};
 
-    seqSingle.draw(seq, singleIco, singleOpt);
+    seqSingle.draw({ sequences: seq, icons: singleIco, options: singleOpt});
 
     // REGIONS EXAMPLE
     const s2 = new ProSeqViewer('sqv2');
@@ -167,7 +167,7 @@ export class AppComponent implements OnInit {
       {sequenceId: 1, start: 239, end: 249, backgroundColor: '#FAC05E', color: '#FFFFFF'},
       {sequenceId: 1, start: 250, end: 267, backgroundColor: '#FF6978', color: '#FFFFFF'},
     ];
-    s2.draw(seqs, reg1);
+    s2.draw({sequences: seqs, regions: reg1});
 
     // icons EXAMPLE
 
@@ -178,7 +178,7 @@ export class AppComponent implements OnInit {
 
     const opt3 = {chunkSize: 0};
 
-    s3.draw(seq3, singleIco, opt3);
+    s3.draw({ sequences: seq3, icons: singleIco, options: opt3});
 
     // patterns EXAMPLE
     const s4 = new ProSeqViewer('sqv4');
@@ -201,37 +201,35 @@ export class AppComponent implements OnInit {
       {sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'CRAB_ANAPL'},
       {sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'CRAB_CHICK'}
     ];
-    s4.draw(pat4, patseq);
+    s4.draw({ patterns: pat4, sequences: patseq});
 
-    // colorscheme EXAMPLE
+    // sequenceColor EXAMPLE
     const s6 = new ProSeqViewer('sqv6');
-    const opt6 = { colorScheme: 'clustal'};
+    const opt6 = { sequenceColor: 'clustal'};
     const seqs6 = [
       {sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPTSTSLSPFYLRPPSFLRAPSW', id: 1, label: 'CRAB_HUMAN'},
       {sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'CRAB_ANAPL'},
       {sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'CRAB_CHICK'}
     ];
-    s6.draw(seqs6, opt6);
+    s6.draw({ sequences: seqs6, options: opt6});
 
     // blosum62
     const sBlos = new ProSeqViewer('sqvBlosum');
-    const optBlos = { colorScheme: 'blosum62'};
+    const optBlos = { sequenceColorMatrix: 'blosum62'};
     const seqsBlos = [
       {sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPTSTSLSPFYLRPPSFLRAPSW', id: 1, label: 'CRAB_HUMAN'},
       {sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'CRAB_ANAPL'},
       {sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'CRAB_CHICK'}
     ];
-    sBlos.draw(seqsBlos, optBlos);
+    sBlos.draw({ sequences: seqsBlos, options: optBlos});
 
     // indexes EXAMPLE
     const s5 = new ProSeqViewer('sqv5');
     const seqs5 = [
       {sequence: 'MVLSPADKTNVKAA-----EYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN', startIndex: 2}
     ];
-    const opt5 = { lateralIndexesGap: true};
-    s5.draw(seqs5, opt5);
-
-
+    const opt5 = { indexesLocation: 'lateral'};
+    s5.draw({ sequences: seqs5, options: opt5});
 
     // consensus EXAMPLE
     const s7 = new ProSeqViewer('sqv7');
@@ -240,8 +238,8 @@ export class AppComponent implements OnInit {
       {sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'CRAB_ANAPL'},
       {sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'CRAB_CHICK'}
     ];
-    const opt7 = { consensusType: 'identity', consensusThreshold: 80};
-    s7.draw(seqs7, opt7);
+    const opt7 = { consensusColorIdentity: 'identity', consensusDotThreshold: 80};
+    s7.draw({sequences: seqs7, options: opt7});
 
     const sPhysical = new ProSeqViewer('sqvPhysical');
     const seqsPhysical = [
@@ -249,18 +247,18 @@ export class AppComponent implements OnInit {
       {sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'CRAB_ANAPL'},
       {sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'CRAB_CHICK'}
     ];
-    const optPhysical = { consensusType: 'physical'};
-    sPhysical.draw(seqsPhysical, optPhysical);
+    const optPhysical = { consensusColorMapping: 'physical'};
+    sPhysical.draw({sequences: seqsPhysical, options: optPhysical});
 
-    // oneLineSetting EXAMPLE
+    // wrapline EXAMPLE
     const s8 = new ProSeqViewer('sqv8');
     const seqs8 = [
       {sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPTSTSLSPFYLRPPSFLRAPSW', id: 1, label: 'CRAB_HUMAN'},
       {sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'CRAB_ANAPL'},
       {sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'CRAB_CHICK'}
     ];
-    const opt8 = { oneLineSetting: true, oneLineWidth: '350px'};
-    s8.draw(seqs8, opt8);
+    const opt8 = { wrapLine: true, viewerWidth: '350px'};
+    s8.draw({sequences: seqs8, options: opt8});
 
     // selections EXAMPLE
     const s9 = new ProSeqViewer('sqv9');
@@ -269,7 +267,7 @@ export class AppComponent implements OnInit {
       {sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'CRAB_ANAPL'},
       {sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'CRAB_CHICK'}
     ];
-    s9.draw(seqs9);
+    s9.draw({sequences: seqs9});
   }
 
 
