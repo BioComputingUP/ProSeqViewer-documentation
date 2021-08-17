@@ -547,7 +547,7 @@
     <div>Set a global sequence color matrix. Available global sequence color matrix is blosum62 </div>
     <p> It is also possible to set a custom sequence color matrix, check the API for details.</p>
 
-      <p style="color:#000;margin-top: 20px"><b>Blosum62 exaple</b></p>
+      <p style="color:#000;margin-top: 20px"><b>Blosum62</b></p>
 
       <img src="assets/heatmap.svg">
 
@@ -944,7 +944,7 @@
         </tab>
       </tabset>
 
-      <!-------------------------------------  ONELINESETTING  EXAMPLE ---------------------------------------->
+      <!-------------------------------------  wrapline  EXAMPLE ---------------------------------------->
 
       <h6 id="wrapLine" class="snippet-title">Wrap Line<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h6>
       <p>Set a non-responsive version of the ProSeqViewer. The width is fixed and a scrollbar helps the visualization of the sequences.</p>
@@ -1081,7 +1081,7 @@
             <li><span class="tab-sp"><span class="hljs-js">const</span> sequence = [ </span></li>
             <li><span class="tab-sp-db">      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAG--ALERMFL--YFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN'}</span></li>
             <li><span class="tab-sp">      ];</span></li>
-            <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(sequence);</span> // Execute the function to draw the ProSeqViewer on the page</li>
+            <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(&#123; sequence});</span> // Execute the function to draw the ProSeqViewer on the page</li>
             <li><span class="hljs-js">&lt;/script></span></li>
             <li><span class="hljs-js">&lt;/body></span></li>
           </ol>
@@ -1107,7 +1107,7 @@
           <ol class="code-no-height">
             <li><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new </span> ProSeqViewer(<span class="hljs-id">'sqv'</span>);</li>
             <li><span class="hljs-js">const</span> sequence = [&#123;sequence: 'DFRLE--F-DFRLEDFRLE----&#125;]</li>
-            <li>proseqviewer.<span class="hljs-js">draw</span>(sequence);</li>
+            <li>proseqviewer.<span class="hljs-js">draw</span>(&#123; sequence});</li>
           </ol>
 
           <h6 class="snippet-title" id="parameters">Available parameters</h6>
@@ -1298,7 +1298,7 @@
              <div class="col-sm"></div>
              <div class="col-sm">icon</div>
              <div class="col-sm">string</div>
-             <div class="col-sm">lollipop, helix, strand, strand-arrow-left, turn</div>
+             <div class="col-sm">lollipop, helix, strand, strand-arrow-left, turn or a custom svg image &gt;svg>&gt;/svg&lt;></div>
              <div class="col-sm">svg image to apply on top of the indicated sequence.</div>
            </div>
            <div class="row field1">
@@ -1331,110 +1331,74 @@
            </div>
            <div class="row field1">
              <div class="col-sm"></div>
-             <div class="col-sm">spaceSize</div>
+             <div class="col-sm">chunkSeparation</div>
              <div class="col-sm">integer</div>
              <div class="col-sm">2</div>
              <div class="col-sm">Space among chunks.</div>
            </div>
            <div class="row field1">
              <div class="col-sm"></div>
-             <div class="col-sm">logLevel</div>
+             <div class="col-sm">indexesLocation</div>
              <div class="col-sm">string</div>
-             <div class="col-sm">debug or none</div>
-             <div class="col-sm">Print console log error with "debug" option.</div>
+             <div class="col-sm">top, lateral</div>
+             <div class="col-sm">Place an index on top of the end of each chunk (first row only) or set an index on the left side of each sequence.</div>
            </div>
-           <div class="row field1">
-             <div class="col-sm"></div>
-             <div class="col-sm">topIndexes</div>
-             <div class="col-sm">boolean</div>
-             <div class="col-sm">true</div>
-             <div class="col-sm">Place an index on top of the end of each chunk (first row only).</div>
-           </div>
-              <div class="row field1">
-                  <div class="col-sm"></div>
-                  <div class="col-sm">lateralIndexes</div>
-                  <div class="col-sm">boolean</div>
-                  <div class="col-sm">false</div>
-                  <div class="col-sm">Remove lateral indexes.</div>
-              </div>
             <div class="row field1">
              <div class="col-sm"></div>
-             <div class="col-sm">oneLineSetting</div>
+             <div class="col-sm">wrapLine</div>
              <div class="col-sm">boolean</div>
              <div class="col-sm">true</div>
              <div class="col-sm">Display the viewer with fixed width (not responsive) and scrollbar on the sequences.</div>
            </div>
             <div class="row field1">
              <div class="col-sm"></div>
-             <div class="col-sm">oneLineWidth</div>
+             <div class="col-sm">viewerWidth</div>
              <div class="col-sm">integer</div>
              <div class="col-sm">2</div>
              <div class="col-sm">Width of ProSeqViewer - sidebar.</div>
            </div>
             <div class="row field1">
              <div class="col-sm"></div>
-             <div class="col-sm">lateralIndexesGap</div>
-             <div class="col-sm">boolean</div>
-             <div class="col-sm">true</div>
-             <div class="col-sm">Shows lateral indexes including gaps in the count (true) or excluding them (false).</div>
-           </div>
-            <div class="row field1">
-             <div class="col-sm"></div>
-             <div class="col-sm">colorScheme</div>
-             <div class="col-sm">integer</div>
-             <div class="col-sm">clustal, blosum62</div>
+             <div class="col-sm">sequenceColor</div>
+             <div class="col-sm">string or obj</div>
+             <div class="col-sm">&#123; D: '#ff0000', .. }; or any Jalview colorscheme ('clustal', 'zappo'.. ). See complete list on the tutorials.</div>
              <div class="col-sm">Colorscheme to apply to all sequences.</div>
            </div>
             <div class="row field1">
-             <div class="col-sm"></div>
-             <div class="col-sm">consensusType</div>
-             <div class="col-sm">string</div>
-             <div class="col-sm">identity, physical</div>
-             <div class="col-sm">Add a line with consensus information.</div>
-           </div>
+              <div class="col-sm"></div>
+              <div class="col-sm">sequenceColorMatrix</div>
+              <div class="col-sm">string or obj</div>
+              <div class="col-sm">'blosum62' or &#123;KE: &#123;backgroundColor: '#CFDBF2'}} </div>
+              <div class="col-sm">Add a line with consensus information.</div>
+            </div>
             <div class="row field1">
              <div class="col-sm"></div>
-             <div class="col-sm">consensusThreshold</div>
+             <div class="col-sm">consensusColorIdentity</div>
+             <div class="col-sm">string or obj</div>
+             <div class="col-sm">'identity' or &#123;50: ["#CFDBF2", "#FFCCF2"],...}</div>
+             <div class="col-sm">Add a line with consensus information.</div>
+           </div>
+           <div class="row field1">
+              <div class="col-sm"></div>
+              <div class="col-sm">consensusColorMapping</div>
+              <div class="col-sm">string or obj</div>
+              <div class="col-sm">'physical' or &#123;G: ["+", "#CFDBF2", "#FFCCF2"], ...}</div>
+              <div class="col-sm">Add a line with consensus information.</div>
+            </div>
+            <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">consensusDotThreshold</div>
              <div class="col-sm">integer</div>
              <div class="col-sm">90</div>
              <div class="col-sm">Threeshold for consensus information.</div>
            </div>
-              <div class="row field1">
-                  <div class="col-sm"></div>
-                  <div class="col-sm">consensusStartIndex</div>
-                  <div class="col-sm">integer</div>
-                  <div class="col-sm">50</div>
-                  <div class="col-sm">Residue where the consensus information starts. If not set, default is 1.</div>
-              </div>
             <div class="row field1">
               <div class="col-sm"></div>
-              <div class="col-sm">rowMarginBottom</div>
+              <div class="col-sm">lineSeparation</div>
               <div class="col-sm">integer</div>
               <div class="col-sm">15</div>
               <div class="col-sm">Space under the horizontal row of characters (px).</div>
             </div>
-            <div class="row field0">
-              <div class="col-sm">iconsHtml</div>
-              <div class="col-sm"></div>
-              <div class="col-sm"></div>
-              <div class="col-sm"></div>
-              <div class="col-sm"></div>
-           </div>
-            <div class="row field1">
-             <div class="col-sm"></div>
-             <div class="col-sm">id</div>
-             <div class="col-sm">string</div>
-             <div class="col-sm">icons</div>
-             <div class="col-sm">Input identifier.</div>
-           </div>
-            <div class="row field1">
-             <div class="col-sm"></div>
-             <div class="col-sm">iconName</div>
-             <div class="col-sm">string</div>
-             <div class="col-sm">&lt;svg>...&lt;/svg></div>
-             <div class="col-sm">An svg icon.</div>
-           </div>
-
         </div>
       </div>
     </div>
