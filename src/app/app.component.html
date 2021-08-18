@@ -25,11 +25,12 @@
   <a href="#indexesLocation" target="_self"><h6>Indexes location</h6></a>
   <a href="#consensus" target="_self"><h6>Consensus</h6></a>
   <a href="#wrapLine" target="_self"><h6>Wrap line</h6></a>
-  <a href="#events" target="_self"><h6>Events</h6></a>
+
   <a id="api" href="#APIDocumentation" target="_self"><h6><b>API Documentation</b></h6></a>
   <a href="#javascript" target="_self"><h6>JavaScript Installation</h6></a>
   <a href="#angular" target="_self"><h6>Angular Installation</h6></a>
-  <a href="#parameters" target="_self"><h6>Available parameters</h6></a>
+  <a href="#parameters" target="_self"><h6>Method signature</h6></a>
+    <a href="#events" target="_self"><h6>Events</h6></a>
 </div>
 <!------------------------------------- DEMO ---------------------------------------->
 
@@ -1016,40 +1017,6 @@
       </tabset>
 
 
-      <!-------------------------------------  SELECTIONS  EXAMPLE ---------------------------------------->
-
-      <h6 id="events" class="snippet-title">Events<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h6>
-      <p><b>1. Copy-paste event</b></p>
-      <p>Click and drag the mouse to select a region, the region will be highlighted in yellow. Use the
-        shortcut Ctrl+C to copy and Ctrl+V to paste. The selected region will disappear after using a
-        shortcut or clicking on another area.</p>
-      <div class="sqvDemo">
-        <div class="row">
-          <div id="sqv9"></div>
-        </div>
-      </div>
-      <div class="box">
-        <form>
-          <div class="row">
-            <div class="col-25">
-              <label for="subject">Try it out!</label>
-            </div>
-            <div class="col-75">
-              <textarea id="subject" name="subject" placeholder="Copy-paste something.." style="height:200px"></textarea>
-            </div>
-          </div>
-
-        </form>
-      </div>
-
-      <p><b>1. On character selected event </b></p>
-      <p>The double click event will return information about the clicked character, like the x, y positions and the character itself.</p>
-      <pre class="prettyprint prettyprinted"><code>
-    <span> window.<span class="hljs-js">addEventListener</span>('onRegionSelected', (e) =>   &#123;
-             console.<span class="hljs-js">log</span>('character selected', e);
-           });
-    </span>
-  </code></pre>
 
     <!----------------------------------- API -------------------------------------->
 
@@ -1110,8 +1077,15 @@
             <li>proseqviewer.<span class="hljs-js">draw</span>(&#123; sequence});</li>
           </ol>
 
-          <h6 class="snippet-title" id="parameters">Available parameters</h6>
-          <div class="container">
+          <h6 class="snippet-title" id="parameters">Method signature</h6>
+            <p>The proseqviewer provides a method <i>draw()</i> that take a JSON object in input.</p>
+            <p>The object has 5 keys: &#123;sequences:
+                Array&lt;Sequences&gt;, regions?: Array&lt;Regions&gt;, patterns?: Array&lt;Patterns&gt;, icons?: Array&lt;Icons&gt;, options?: Options
+                    &#125;.</p>
+
+            <p>Each key value is itself a JSON object. E.g.: &#123;sequence: .., id: ..} Below a detailed description of each value.</p>
+
+            <div class="container">
             <div class="row first">
               <div class="col-sm">Field 0</div>
               <div class="col-sm">Field 1</div>
@@ -1146,13 +1120,6 @@
              <div class="col-sm">string</div>
              <div class="col-sm">1xvz_1_30.pdb</div>
              <div class="col-sm">Lateral label</div>
-           </div>
-           <div class="row field1">
-             <div class="col-sm"></div>
-             <div class="col-sm">colorScheme</div>
-             <div class="col-sm">string</div>
-             <div class="col-sm">clustal, gradient, binary</div>
-             <div class="col-sm">Predefined color palette</div>
            </div>
            <div class="row field1">
              <div class="col-sm"></div>
@@ -1404,6 +1371,40 @@
     </div>
 
 </div>
+    <!-------------------------------------  EVENTS  EXAMPLE ---------------------------------------->
+
+    <h6 id="events" class="snippet-title">Events<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h6>
+    <p><b>1. Copy-paste event</b></p>
+    <p>Click and drag the mouse to select a region, the region will be highlighted in yellow. Use the
+        shortcut Ctrl+C to copy and Ctrl+V to paste. The selected region will disappear after using a
+        shortcut or clicking on another area.</p>
+    <div class="sqvDemo">
+        <div class="row">
+            <div id="sqv9"></div>
+        </div>
+    </div>
+    <div class="box">
+        <form>
+            <div class="row">
+                <div class="col-25">
+                    <label for="subject">Try it out!</label>
+                </div>
+                <div class="col-75">
+                    <textarea id="subject" name="subject" placeholder="Copy-paste something.." style="height:200px"></textarea>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+    <p><b>1. On character selected event </b></p>
+    <p>The double click event will return information about the clicked character, like the x, y positions and the character itself.</p>
+    <pre class="prettyprint prettyprinted"><code>
+    <span> window.<span class="hljs-js">addEventListener</span>('onRegionSelected', (e) =>   &#123;
+             console.<span class="hljs-js">log</span>('character selected', e);
+           });
+    </span>
+  </code></pre>
 
 
 
