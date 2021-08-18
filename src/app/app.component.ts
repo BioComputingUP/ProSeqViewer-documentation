@@ -46,40 +46,62 @@ export class AppComponent implements OnInit {
 
     // GENERAL EXAMPLE: multi sequence
     const s0 = new ProSeqViewer('sqv0');
-    const seqs0 = [
-     {sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPTSTSLSPFYLRPPSFLRAPSW', id: 1, label: 'CRAB_HUMAN'},
-      {sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'CRAB_ANAPL'},
-      {sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'CRAB_CHICK'}
-    ];
+    const msa = [
+          {sequence: 'GTREVPADAYYGVHTLRAIENFYISNNKISDIPEFVRGMVMVKKAAAMANKELQTIPKSV' +
+                  'ANAIIAACDEVLNNGKCMDQFPVDVYQGGAGTSVNMNTNEVLANIGLELMGHQKGEYQYLNPNDHVNKCQSTNDAYPTGFRIAV',
+              id: 1, label: 'ASPA_ECOLI/13-157'},
+          {sequence: 'GEKQIEADVYYGIQTLRASENFPITGYKIHEE..MINALAIVKKAAALANMDVKRLYEGIGQAIVQAADEILE.GKWHDQFIVDPIQGGA' +
+                  'GTSMNMNANEVIGNRALEIMGHKKGDYIHLSPNTHVNMSQSTNDVFPTAIHIST',
+              id: 2, label: 'ASPA_BACSU/16-157'},
+          {sequence: 'MKYTDTAPKLFMNTGTKFPRRIIWS.............MGVLKKSCAKVNADLGLLDKKIADSIIKASDDLID.GKLDDKIVLDVFQTGSGTGLNMNVNEV' +
+                  'IAEVASSYSN......LKVHPNDHVNFGQSSNDTVPTAIRIAA',
+              id: 3, label: 'FUMC_SACS2/1-126'},
+          {sequence: 'GRFTQAADQRFKQFNDSLRFDYRLAEQDIV.......GSVAWSKALVTVGVLT....AEEQAQLEEALNVLLEDVRARPQQILESDAEDIHSWVEGKL' +
+                  'IDKVG.................QLGKKLHTGRSRNDQVATDLKLWC',
+              id: 4, label: 'ARLY_ECOLI/6-122'},
+          {sequence: 'GRFVGAVDPIMEKFNASIAYDRHLWEVDVQ.......GSKAYSRGLEKAGLLT....KAE' +
+                  'MDQILHGLDKVAEEWAQG.TFKLNSNDEDIHTANERRLKELIG.................ATAGKLHTGRSRNDQVVTD' +
+                  'LRLWM',
+              id: 5, label: 'ARLY_HUMAN/11-127'},
+          {sequence: 'GGRFSGATDPLMAEFNKSIYSGKEMCEEDVI.......GSMAYAKALCQKNVIS....EEELNSILKGLEQIQREWNSG.QFVLEPSDEDVHTANERRLTEI' +
+                  'IG.................DVAGKLHTGRSRNDQVTTDLRLW',
+              id: 6, label: 'ARLY_SCHPO/12-128'},
+          {sequence: 'GRFTGATDPLMDLYNASLPYDKVMYDADLT.......GTKVYTQGLNKLGLIT....TEELHLIHQGLEQIRQEWHDN.KFIIKAGDEDIHTANERRLG' +
+                  'EIIG................KNISGKVHTGRSRNDQVATDMRIFV',
+              id: 7, label: 'Q59R31_CANAL/14-130'},
+          {sequence: 'GRFTGKTDPLMEKFNESLPFDKRLWAEDIK.......GSQAYAKALAKAGILT....HVE' +
+                  'AASIVDGLSKVAEEWQSG.VFVVKPGDEDIHTANERRLTELIG.................' +
+                  'AVGGKLHTGRSRNDQVATDYRLWL',
+              id: 8, label: 'A0A125YZR4_VOLCA/23-139'},
+          {sequence: 'ERYS..RPEMSAIWTDENRFQAWLE............VEILACEAWAELGVIP.......' +
+                  '.KEDVKVMRENAS.FDINRILEIEKDTRHDVVAFTRAVSESLG.................' +
+                  'EERKWVHYGLTSTDVVDTALSYLL',
+              id: 9, label: 'PUR8_BACSU/3-108'},
+          {sequence: 'GRYGDKVSALRGIFSEYGLLKFRVQVEVR........WLQKLAAHAAIKEVPA......F' +
+                  'AADAIGYLDAIVASFSEEDAARIKTIERTTNHDVKA.VEYFLK....EKVAE...IPELH' +
+                  'AVSEFIHFACTSEDINNLSHALML',
+              id: 10, label: 'PUR8_ECOLI/14-137'}];
 
 
-    const opt = { indexesLocation: 'top', sequenceColorMatrix: 'blosum62'};
-    s0.draw({sequences: seqs0, options: opt});
+    const opt = { indexesLocation: 'top'};
+    s0.draw({sequences: msa, options: opt});
 
     // GENERAL EXAMPLE: single sequence
     const seqSingle = new ProSeqViewer('sqvSingle');
     const seq = [
-      {sequence: 'MASESGKLWGGRFVGAVDPIMEKFNASIAYDRHLWEVDVQGSKAYSRGLEKAGLLTKAEMDQILHGLDKVAEEWAQGTFKLNSNDEDIHTANERRLKELIGATAGKLHTGRSRNDQVVTDLRLWMRQTCSTLSGLLWELIRTMVDRAEAERDVLFPGYTHLQRAQPIRWSHWILSHAVALTRDSERLLEVRKRINVLPLGSGAIAGNPLGVDRELLRAELNFGAITLNSMDATSERDFVAEFLFWASLCMTHLSRMAEDLILYCTKEFSFVQLSDAYSTGSSLMPQKKNPDSLELIRSKAGRVFGRCAGLLMTLKGLPSTYNKDLQEDKEAVFEVSDTMSAVLQVATGVISTLQIHQENMGQALSPDMLATDLAYYLVRKGMPFRQAHEASGKAVFMAETKGVALNQLSLQELQTISPLFSGDVICVWDYGHSVEQYGALGGTARSSVDWQIRQVRALLQAQQA', id: 1, label: 'P04424 | Homo sapiens'}
+      {sequence: 'MASESGKLWGGRFVGAVDPIMEKFNASIAYDRHLWEVDVQGSKAYSRGLEKAGLLTKAEMDQILHGLDKVAEEWAQGTFKLNSNDEDIHTANERRLKELIGATAGKLHTGRSRNDQVVTDLRLWMRQTCSTLSGLLWELIRTMVDRAEAERDVLFPGYTHLQRAQPIRWSHWILSHAVALTRDSERLLEVRKRINVLPLGSGAIAGNPLGVDRELLRAELNFGAITLNSMDATSERDFVAEFLFWASLCMTHLSRMAEDLILYCTKEFSFVQLSDAYSTGSSLMPQKKNPDSLELIRSKAGRVFGRCAGLLMTLKGLPSTYNKDLQEDKEAVFEVSDTMSAVLQVATGVISTLQIHQENMGQALSPDMLATDLAYYLVRKGMPFRQAHEASGKAVFMAETKGVALNQLSLQELQTISPLFSGDVICVWDYGHSVEQYGALGGTARSSVDWQIRQVRALLQAQQA', id: 1}
     ];
 
     const singleIco = [
-      {sequenceId: 1, start: 1, end: 11, icon: 'noSecondary'},
-      {sequenceId: 1, start: 12, end: 12, icon: 'lollipop'},
+      {sequenceId: 1, start: 1, end: 12, icon: 'noSecondary'},
       {sequenceId: 1, start: 13, end: 18, icon: 'noSecondary'},
       {sequenceId: 1, start: 19, end: 25, icon: 'helix'},
       {sequenceId: 1, start: 26, end: 27, icon: 'noSecondary'},
-      {sequenceId: 1, start: 28, end: 30, icon: 'helix'},
-      {sequenceId: 1, start: 31, end: 31, icon: 'lollipop'},
-      {sequenceId: 1, start: 32, end: 51, icon: 'helix'},
+      {sequenceId: 1, start: 28, end: 51, icon: 'helix'},
       {sequenceId: 1, start: 52, end: 56, icon: 'noSecondary'},
       {sequenceId: 1, start: 57, end: 76, icon: 'helix'},
       {sequenceId: 1, start: 77, end: 87, icon: 'noSecondary'},
-      {sequenceId: 1, start: 88, end: 93, icon: 'helix'},
-      {sequenceId: 1, start: 94, end: 94, icon: 'lollipop'},
-      {sequenceId: 1, start: 95, end: 95, icon: 'helix'},
-      {sequenceId: 1, start: 96, end: 99, icon: 'helix'},
-      {sequenceId: 1, start: 100, end: 100, icon: 'lollipop'},
-      {sequenceId: 1, start: 101, end: 106, icon: 'helix'},
+      {sequenceId: 1, start: 88, end: 106, icon: 'helix'},
       {sequenceId: 1, start: 107, end: 110, icon: 'turn'},
       {sequenceId: 1, start: 111, end: 112, icon: 'noSecondary'},
       {sequenceId: 1, start: 113, end: 149, icon: 'strand'},
@@ -88,41 +110,28 @@ export class AppComponent implements OnInit {
       {sequenceId: 1, start: 154, end: 158, icon: 'strand'},
       {sequenceId: 1, start: 159, end: 159, icon: 'arrowRight'},
       {sequenceId: 1, start: 160, end: 161, icon: 'noSecondary'},
-      {sequenceId: 1, start: 162, end: 177, icon: 'helix'},
-      {sequenceId: 1, start: 178, end: 178, icon: 'lollipop'},
-      {sequenceId: 1, start: 179, end: 188, icon: 'helix'},
-      {sequenceId: 1, start: 189, end: 189, icon: 'lollipop'},
-      {sequenceId: 1, start: 190, end: 192, icon: 'helix'},
-      {sequenceId: 1, start: 193, end: 193, icon: 'helix'},
-      {sequenceId: 1, start: 194, end: 194, icon: 'helix'},
+      {sequenceId: 1, start: 162, end: 194, icon: 'helix'},
       {sequenceId: 1, start: 195, end: 196, icon: 'strand'},
       {sequenceId: 1, start: 197, end: 197, icon: 'arrowRight'},
       {sequenceId: 1, start: 198, end: 201, icon: 'noSecondary'},
       {sequenceId: 1, start: 202, end: 205, icon: 'turn'},
       {sequenceId: 1, start: 206, end: 212, icon: 'noSecondary'},
-      {sequenceId: 1, start: 213, end: 219, icon: 'helix'},
-      {sequenceId: 1, start: 220, end: 222, icon: 'helix'},
+      {sequenceId: 1, start: 213, end: 222, icon: 'helix'},
       {sequenceId: 1, start: 223, end: 224, icon: 'strand'},
       {sequenceId: 1, start: 225, end: 225, icon: 'arrowRight'},
       {sequenceId: 1, start: 226, end: 236, icon: 'noSecondary'},
       {sequenceId: 1, start: 237, end: 264, icon: 'helix'},
       {sequenceId: 1, start: 265, end: 265, icon: 'noSecondary'},
       {sequenceId: 1, start: 266, end: 268, icon: 'turn'},
-      {sequenceId: 1, start: 269, end: 285, icon: 'noSecondary'},
-      {sequenceId: 1, start: 286, end: 286, icon: 'lollipop'},
+      {sequenceId: 1, start: 269, end: 286, icon: 'noSecondary'},
       {sequenceId: 1, start: 287, end: 290, icon: 'noSecondary'},
       {sequenceId: 1, start: 291, end: 314, icon: 'helix'},
       {sequenceId: 1, start: 315, end: 321, icon: 'noSecondary'},
-      {sequenceId: 1, start: 322, end: 334, icon: 'helix'},
-      {sequenceId: 1, start: 335, end: 335, icon: 'lollipop'},
-      {sequenceId: 1, start: 336, end: 352, icon: 'helix'},
+      {sequenceId: 1, start: 322, end: 352, icon: 'helix'},
       {sequenceId: 1, start: 353, end: 356, icon: 'noSecondary'},
-      {sequenceId: 1, start: 357, end: 378, icon: 'helix'},
-      {sequenceId: 1, start: 379, end: 379, icon: 'lollipop'},
+      {sequenceId: 1, start: 357, end: 379, icon: 'helix'},
       {sequenceId: 1, start: 380, end: 383, icon: 'noSecondary'},
-      {sequenceId: 1, start: 384, end: 384, icon: 'helix'},
-      {sequenceId: 1, start: 385, end: 385, icon: 'lollipop'},
-      {sequenceId: 1, start: 386, end: 390, icon: 'helix'},
+      {sequenceId: 1, start: 384, end: 390, icon: 'helix'},
       {sequenceId: 1, start: 391, end: 394, icon: 'noSecondary'},
       {sequenceId: 1, start: 395, end: 397, icon: 'helix'},
       {sequenceId: 1, start: 398, end: 399, icon: 'noSecondary'},
@@ -135,8 +144,7 @@ export class AppComponent implements OnInit {
       {sequenceId: 1, start: 442, end: 443, icon: 'strand'},
       {sequenceId: 1, start: 444, end: 444, icon: 'arrowRight'},
       {sequenceId: 1, start: 445, end: 445, icon: 'lollipop'},
-      {sequenceId: 1, start: 446, end: 463, icon: 'helix'},
-      {sequenceId: 1, start: 464, end: 464, icon: 'helix'}
+      {sequenceId: 1, start: 446, end: 464, icon: 'helix'}
     ];
 
     const singleOpt = {chunkSize: 0};
@@ -151,7 +159,7 @@ export class AppComponent implements OnInit {
           'YWNPVLRYGVDAFARDLAAAGGLGLITPDLIPDEAQQWLAASEEHRLDRIFLVAPSS' +
           'TPERLAATVEASRGFVYAASTMGVTGARDAVSQAAPELVGRVKAVSDIPVGVGLGVR' +
           'SRAQAAQIAQYADGVIVGSALVTALTEGLPRLRALTGELAAGVRLGMSAHHHHHH',
-        id: 1, label: '6ub9A | Mycobacterium tuberculosis'}
+        id: 1}
     ];
     const reg1 = [
       {sequenceId: 1, start: 25, end: 53, backgroundColor: '#2f6690', color: '#FFFFFF'},
@@ -183,53 +191,73 @@ export class AppComponent implements OnInit {
     // patterns EXAMPLE
     const s4 = new ProSeqViewer('sqv4');
     const pat4 = [
-      {sequenceId: 1, pattern: /RRP/g, backgroundColor: '#D72638'},
-      {sequenceId: 2, pattern: /RRP/g, backgroundColor: '#D72638'},
-      {sequenceId: 3, pattern: /RRP/g, backgroundColor: '#D72638'},
-      {sequenceId: 1, pattern: /FGE/g, backgroundColor: '#FF570A'},
-      {sequenceId: 2, pattern: /FGE/g, backgroundColor: '#FF570A'},
-      {sequenceId: 3, pattern: /FGE/g, backgroundColor: '#FF570A'},
-      {sequenceId: 1, pattern: /LSP/g, backgroundColor: '#FFBC42'},
-      {sequenceId: 2, pattern: /LSP/g, backgroundColor: '#FFBC42'},
-      {sequenceId: 3, pattern: /LSP/g, backgroundColor: '#FFBC42'}
+      {sequenceId: 1, pattern: /AA/g, backgroundColor: '#D72638'},
+      {sequenceId: 1, pattern: /PD/g, backgroundColor: '#FF570A'},
+      {sequenceId: 1, pattern: /GV/g, backgroundColor: '#FFBC42'},
     ];
 
-
-
-    const patseq = [
-      {sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPASTSLSPFYLRPPSFLRAPSW', id: 1, label: 'CRAB_HUMAN'},
-      {sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'CRAB_ANAPL'},
-      {sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'CRAB_CHICK'}
-    ];
-    s4.draw({ patterns: pat4, sequences: patseq});
+    s4.draw({ patterns: pat4, sequences: seqs});
 
     // sequenceColor EXAMPLE
     const s6 = new ProSeqViewer('sqv6');
     const opt6 = { sequenceColor: 'clustal'};
-    const seqs6 = [
-      {sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPTSTSLSPFYLRPPSFLRAPSW', id: 1, label: 'CRAB_HUMAN'},
-      {sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'CRAB_ANAPL'},
-      {sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'CRAB_CHICK'}
-    ];
-    s6.draw({ sequences: seqs6, options: opt6});
+    s6.draw({ sequences: msa, options: opt6});
 
     // blosum62
     const sBlos = new ProSeqViewer('sqvBlosum');
     const optBlos = { sequenceColorMatrix: 'blosum62'};
     const seqsBlos = [
-      {sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPTSTSLSPFYLRPPSFLRAPSW', id: 1, label: 'CRAB_HUMAN'},
-      {sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'CRAB_ANAPL'},
-      {sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'CRAB_CHICK'}
+        {sequence: 'GTREVPADAYYGVHTLRAIENFYISNNKISDIPEFVRGMVMVKKAAAMANKELQTIPKSV' +
+                'ANAIIAACDEVLNNGKCMDQFPVDVYQGGAGTSVNMNTNEVLANIGLELMGHQKGEYQYLNPNDHVNKCQSTNDAYPTGFRIAV',
+            id: 1, label: 'ASPA_ECOLI/13-157'},
+        {sequence: 'GEKQIEADVYYGIQTLRASENFPITGYKIHEE..MINALAIVKKAAALANMDVKRLYEGIGQAIVQAADEILE.GKWHDQFIVDPIQGGA' +
+                'GTSMNMNANEVIGNRALEIMGHKKGDYIHLSPNTHVNMSQSTNDVFPTAIHIST',
+            id: 2, label: 'ASPA_BACSU/16-157'},
+        {sequence: 'MKYTDTAPKLFMNTGTKFPRRIIWS.............MGVLKKSCAKVNADLGLLDKKIADSIIKASDDLID.GKLDDKIVLDVFQTGSGTGLNMNVNEV' +
+                'IAEVASSYSN......LKVHPNDHVNFGQSSNDTVPTAIRIAA',
+            id: 3, label: 'FUMC_SACS2/1-126'},
+        {sequence: 'GRFTQAADQRFKQFNDSLRFDYRLAEQDIV.......GSVAWSKALVTVGVLT....AEEQAQLEEALNVLLEDVRARPQQILESDAEDIHSWVEGKL' +
+                'IDKVG.................QLGKKLHTGRSRNDQVATDLKLWC',
+            id: 4, label: 'ARLY_ECOLI/6-122'},
+        {sequence: 'GRFVGAVDPIMEKFNASIAYDRHLWEVDVQ.......GSKAYSRGLEKAGLLT....KAE' +
+                'MDQILHGLDKVAEEWAQG.TFKLNSNDEDIHTANERRLKELIG.................ATAGKLHTGRSRNDQVVTD' +
+                'LRLWM',
+            id: 5, label: 'ARLY_HUMAN/11-127'},
+        {sequence: 'GGRFSGATDPLMAEFNKSIYSGKEMCEEDVI.......GSMAYAKALCQKNVIS....EEELNSILKGLEQIQREWNSG.QFVLEPSDEDVHTANERRLTEI' +
+                'IG.................DVAGKLHTGRSRNDQVTTDLRLW',
+            id: 6, label: 'ARLY_SCHPO/12-128'},
+        {sequence: 'GRFTGATDPLMDLYNASLPYDKVMYDADLT.......GTKVYTQGLNKLGLIT....TEELHLIHQGLEQIRQEWHDN.KFIIKAGDEDIHTANERRLG' +
+                'EIIG................KNISGKVHTGRSRNDQVATDMRIFV',
+            id: 7, label: 'Q59R31_CANAL/14-130'},
+        {sequence: 'GRFTGKTDPLMEKFNESLPFDKRLWAEDIK.......GSQAYAKALAKAGILT....HVE' +
+                'AASIVDGLSKVAEEWQSG.VFVVKPGDEDIHTANERRLTELIG.................' +
+                'AVGGKLHTGRSRNDQVATDYRLWL',
+            id: 8, label: 'A0A125YZR4_VOLCA/23-139'},
+        {sequence: 'ERYS..RPEMSAIWTDENRFQAWLE............VEILACEAWAELGVIP.......' +
+                '.KEDVKVMRENAS.FDINRILEIEKDTRHDVVAFTRAVSESLG.................' +
+                'EERKWVHYGLTSTDVVDTALSYLL',
+            id: 9, label: 'PUR8_BACSU/3-108'},
+        {sequence: 'GRYGDKVSALRGIFSEYGLLKFRVQVEVR........WLQKLAAHAAIKEVPA......F' +
+                'AADAIGYLDAIVASFSEEDAARIKTIERTTNHDVKA.VEYFLK....EKVAE...IPELH' +
+                'AVSEFIHFACTSEDINNLSHALML',
+            id: 10, label: 'PUR8_ECOLI/14-137'}
     ];
     sBlos.draw({ sequences: seqsBlos, options: optBlos});
 
     // indexes EXAMPLE
+    // lateral
     const s5 = new ProSeqViewer('sqv5');
     const seqs5 = [
-      {sequence: 'MVLSPADKTNVKAA-----EYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN', startIndex: 2}
+      {sequence: 'MSNNIRIEEDLLGTREVPADAYYGVHTLRAIENFYISNNKISDIPEFVRGMVMVKKAAAMANKELQTIPKSVANAIIA' +
+              'ACDEVLNNGKCMDQFPVDVYQGGAGTSVNMNTNEVLANIGLELMGHQKGEYQYLNPNDHVNKCQSTNDAYPTGFRIAVYSSLIKLVD' +
+              'AINQLREGFERKAVEFQDILKMGRTQLQDAVPMT', id: 1, startIndex: 2}
     ];
     const opt5 = { indexesLocation: 'lateral'};
     s5.draw({ sequences: seqs5, options: opt5});
+    // top
+    const s10 = new ProSeqViewer('sqv10');
+    const opt10 = { indexesLocation: 'top'};
+    s10.draw({ sequences: seqs5, options: opt10});
 
     // consensus EXAMPLE
     const s7 = new ProSeqViewer('sqv7');
@@ -252,13 +280,8 @@ export class AppComponent implements OnInit {
 
     // wrapline EXAMPLE
     const s8 = new ProSeqViewer('sqv8');
-    const seqs8 = [
-      {sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPTSTSLSPFYLRPPSFLRAPSW', id: 1, label: 'CRAB_HUMAN'},
-      {sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'CRAB_ANAPL'},
-      {sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'CRAB_CHICK'}
-    ];
     const opt8 = { wrapLine: true, viewerWidth: '350px'};
-    s8.draw({sequences: seqs8, options: opt8});
+    s8.draw({sequences: seqs5, options: opt8});
 
     // selections EXAMPLE
     const s9 = new ProSeqViewer('sqv9');
@@ -270,171 +293,4 @@ export class AppComponent implements OnInit {
     s9.draw({sequences: seqs9});
   }
 
-
-  showtabjs(id) {
-    switch (id) {
-      case 'msa': {
-        if (!this.javascriptMsa) {
-          this.angularMsa = (!this.angularMsa);
-          this.javascriptMsa = (!this.javascriptMsa);
-        }
-        break;
-      }
-      case 'sin': {
-        if (!this.javascriptSin) {
-          this.angularSin = (!this.angularSin);
-          this.javascriptSin = (!this.javascriptSin);
-        }
-        break;
-      }
-      case 'reg': {
-        if (!this.javascriptReg) {
-          this.angularReg = (!this.angularReg);
-          this.javascriptReg = (!this.javascriptReg);
-        }
-        break;
-      }
-      case 'pat': {
-        if (!this.javascriptPat) {
-          this.angularPat = (!this.angularPat);
-          this.javascriptPat = (!this.javascriptPat);
-        }
-        break;
-      }
-      case 'col': {
-        if (!this.javascriptCol) {
-          this.angularCol = (!this.angularCol);
-          this.javascriptCol = (!this.javascriptCol);
-        }
-        break;
-      }
-      case 'blo': {
-        if (!this.javascriptBlo) {
-          this.angularBlo = (!this.angularBlo);
-          this.javascriptBlo = (!this.javascriptBlo);
-        }
-        break;
-      }
-      case 'lat': {
-        if (!this.javascriptLat) {
-          this.angularLat = (!this.angularLat);
-          this.javascriptLat = (!this.javascriptLat);
-        }
-        break;
-      }
-      case 'con': {
-        if (!this.javascriptCon) {
-          this.angularCon = (!this.angularCon);
-          this.javascriptCon = (!this.javascriptCon);
-        }
-        break;
-      }
-      case 'phy': {
-        if (!this.javascriptPhy) {
-          this.angularPhy = (!this.angularPhy);
-          this.javascriptPhy = (!this.javascriptPhy);
-        }
-        break;
-      }
-      case 'one': {
-        if (!this.javascriptOne) {
-          this.angularOne = (!this.angularOne);
-          this.javascriptOne = (!this.javascriptOne);
-        }
-        break;
-      }
-      case 'ic': {
-        if (!this.javascriptIc) {
-          this.angularIc = (!this.angularIc);
-          this.javascriptIc = (!this.javascriptIc);
-        }
-        break;
-      }
-    }
-
-
-  }
-
-  showtaban(id) {
-    switch (id) {
-      case 'msa': {
-        if (!this.angularMsa) {
-          this.angularMsa = (!this.angularMsa);
-          this.javascriptMsa = (!this.javascriptMsa);
-        }
-        break;
-      }
-      case 'sin': {
-        if (!this.angularSin) {
-          this.angularSin = (!this.angularSin);
-          this.javascriptSin = (!this.javascriptSin);
-        }
-        break;
-      }
-      case 'reg': {
-        if (!this.angularReg) {
-          this.angularReg = (!this.angularReg);
-          this.javascriptReg = (!this.javascriptReg);
-        }
-        break;
-      }
-      case 'pat': {
-        if (!this.angularPat) {
-          this.angularPat = (!this.angularPat);
-          this.javascriptPat = (!this.javascriptPat);
-        }
-        break;
-      }
-      case 'col': {
-        if (!this.angularCol) {
-          this.angularCol = (!this.angularCol);
-          this.javascriptCol = (!this.javascriptCol);
-        }
-        break;
-      }
-      case 'blo': {
-        if (!this.angularBlo) {
-          this.angularBlo = (!this.angularBlo);
-          this.javascriptBlo = (!this.javascriptBlo);
-        }
-        break;
-      }
-      case 'lat': {
-        if (!this.angularLat) {
-          this.angularLat = (!this.angularLat);
-          this.javascriptLat = (!this.javascriptLat);
-        }
-        break;
-      }
-      case 'con': {
-        if (!this.angularCon) {
-          this.angularCon = (!this.angularCon);
-          this.javascriptCon = (!this.javascriptCon);
-        }
-        break;
-      }
-      case 'phy': {
-        if (!this.angularPhy) {
-          this.angularPhy = (!this.angularPhy);
-          this.javascriptPhy = (!this.javascriptPhy);
-        }
-        break;
-      }
-      case 'one': {
-        if (!this.angularOne) {
-          this.angularOne = (!this.angularOne);
-          this.javascriptOne = (!this.javascriptOne);
-        }
-        break;
-      }
-      case 'ic': {
-        if (!this.angularIc) {
-          this.angularIc = (!this.angularIc);
-          this.javascriptIc = (!this.javascriptIc);
-        }
-        break;
-      }
-    }
-
-  }
 }

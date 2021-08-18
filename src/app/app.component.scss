@@ -45,6 +45,7 @@ p {
   font-weight: bold;
   margin-top: 2rem;
   color: #064579;
+  font-size: 1.5rem;
 }
 
 @media only screen and (max-width: 600px) {
@@ -159,7 +160,7 @@ pre  {
 
 .code {
   margin-top: 50px;
-  height: 400px;
+  height: 100px;
   overflow-x: auto;
   margin-bottom: 50px;
 }
