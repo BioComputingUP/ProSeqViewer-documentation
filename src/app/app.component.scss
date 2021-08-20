@@ -80,6 +80,16 @@ h4 {
   overflow-x: auto;
 }
 
+.codebkg {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  //border: 1px solid #dddddd;
+  padding: 20px;
+  //box-shadow: 2.5px 5px #dddddd;
+  overflow-x: auto;
+}
+
 .sqvDemoGeneral {
   overflow-x: auto;
   overflow-y: auto;
@@ -163,6 +173,7 @@ pre  {
   height: 100px;
   overflow-x: auto;
   margin-bottom: 50px;
+  list-style-type: none;
 }
 
 .code-no-height {
@@ -175,7 +186,6 @@ pre  {
   background: none;
   margin-bottom: 5px;
   line-height: normal;
-  list-style-type: decimal;
   font-size: 14px;
   white-space: pre;
 }
@@ -185,7 +195,7 @@ pre  {
   background: none;
   margin-bottom: 5px;
   line-height: normal;
-  list-style-type: decimal;
+  list-style-type: none;
   font-size: 14px;
   white-space: pre;
 }
@@ -224,111 +234,102 @@ td, th {
 
 
 /*clustal*/
-.a {
-  height: 25px;
-  width: 25px;
-  background-color: #80a0f0;
-  border-radius: 50%;
-  display: flex; /* or inline-flex */
+
+.circlez {
+  display: inline-flex;         /* use this so theat items are on same line */
+  justify-content: center;      /* by using above, you can vertical and horizontal align without the need for a stupid line-height hack*/
   align-items: center;
-  justify-content: center;
+  text-align: center;
+  margin-right: 10px;
+  height: 30px;
+  font-size: 12px;
   color: white;
 }
+
+
+.q {
+  width: 120px;
+  background-color: #15c015;
+}
+
+.a {
+  width: 120px;
+  background-color: #80a0f0;
+}
 .k {
-  height: 25px;
-  width: 25px;
+  width: 50px;
   background-color: #f01505;
-  border-radius: 50%;
-  display: flex; /* or inline-flex */
-  align-items: center;
-  justify-content: center;
-  color: white;
 }
 
 .e {
-  height: 25px;
-  width: 25px;
+  width: 50px;
   background-color: #c048c0;
-  border-radius: 50%;
-  display: flex; /* or inline-flex */
-  align-items: center;
-  justify-content: center;
-  color: white;
 }
 .c {
-  height: 25px;
-  width: 25px;
   background-color: #f08080;
-  border-radius: 50%;
-  display: flex; /* or inline-flex */
-  align-items: center;
-  justify-content: center;
-  color: white;
+  width: 30px;
 }
 
-.q {
-  height: 25px;
-  width: 25px;
-  background-color: #15c015;
-  border-radius: 50%;
-  display: flex; /* or inline-flex */
+
+
+/*identity consensus*/
+
+.consensusrect {
+  display: inline-flex;         /* use this so theat items are on same line */
+  justify-content: center;      /* by using above, you can vertical and horizontal align without the need for a stupid line-height hack*/
   align-items: center;
-  justify-content: center;
+  text-align: center;
+  margin-right: 10px;
+  height: 30px;
+  font-size: 12px;
   color: white;
+  width: 50px;
+
+}
+
+.aa {
+  background-color: #000000;
+}
+.bb {
+  background-color: #333333;
+}
+.cc {
+  background-color: #707070;
+}
+.dd {
+  background-color: #A3A3A3;
 }
 
 /*physical consensus*/
 
-.n {
-  height: 25px;
-  width: 25px;
-  background-color: #f09048;
-  border-radius: 50%;
-  display: flex; /* or inline-flex */
+.consensusphy {
+  display: inline-flex;         /* use this so theat items are on same line */
+  justify-content: center;      /* by using above, you can vertical and horizontal align without the need for a stupid line-height hack*/
   align-items: center;
-  justify-content: center;
+  text-align: center;
+  margin-right: 10px;
+  height: 30px;
+  font-size: 12px;
   color: white;
+  width: 100px;
+
+}
+
+.n {
+  background-color: #f09048;
 }
 .h {
-  height: 25px;
-  width: 25px;
   background-color: #558B6E;
-  border-radius: 50%;
-  display: flex; /* or inline-flex */
-  align-items: center;
-  justify-content: center;
-  color: white;
 }
 
 .p {
-  height: 25px;
-  width: 25px;
   background-color: #D4358D;
-  border-radius: 50%;
-  display: flex; /* or inline-flex */
-  align-items: center;
-  justify-content: center;
-  color: white;
 }
 .neg {
-  height: 25px;
-  width: 25px;
   background-color: #A10702;
-  border-radius: 50%;
-  display: flex; /* or inline-flex */
-  align-items: center;
-  justify-content: center;
-  color: white;
 }
 .pos {
-  height: 25px;
-  width: 25px;
   background-color: #3626A7;
-  border-radius: 50%;
-  display: flex; /* or inline-flex */
-  align-items: center;
-  justify-content: center;
-  color: white;
 }
 
 
@@ -398,14 +399,6 @@ td, th {
 #api {
   margin-top: 20px;
 }
-
-
-
-
-
-
-
-
 
 
 

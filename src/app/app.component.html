@@ -21,7 +21,7 @@
   <a href="#patterns" target="_self"><h6>Patterns</h6></a>
 
   <a href="#simple" target="_self"><h6><b>Multiple sequence alignment (MSA)</b></h6></a>
-  <a href="#multi" target="_self"> <h6>Multi sequence sequence alignment</h6></a>
+  <a href="#multi" target="_self"> <h6>Multiple sequence sequence alignment</h6></a>
   <a href="#sequenceColor" target="_self"><h6>Sequence color</h6></a>
   <a href="#sequenceColorMatrix" target="_self"><h6>Sequence color matrix</h6></a>
   <a href="#consensus" target="_self"><h6>Consensus</h6></a>
@@ -40,46 +40,33 @@
     <!-------------------------------------  indexesLocation  ---------------------------------------->
 
     <h6 id="indexesLocation" class="snippet-title">Indexes Location<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h6>
-    <p style="color:#000;"><b>Lateral example</b></p>
-    <div>Set a lateral starting index for the sequence/s. Here the start index is set at 2.</div>
-    <p> The ProSeqViewer width is set to 450px to show the indexes behaviour when the sequence is split in several lines.</p>
+    <p>Choose indexes location. Sequence indexing is either placed at the beginning of each line or right aligned on top of each block of amino acids. On the lateral index option is also possible to set a value for the startIndex (set to 50 in this example).</p>
 
-    <div class="sqvDemo"><div id="sqv5" style="width: 450px"></div></div>
+    <p style="color:#000;"><b>Lateral indexes</b></p>
+    <div id="sqv5" class="sqvDemo"></div>
+    <pre class="codebkg">{{latindexoptions | json}}</pre>
 
-    <tabset>
-        <tab heading="Input">
-            <ol class="code">
-                <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
-                <li><span class="tab-sp-db">      &#123;sequence: 'MSNNIRIEEDLLGTREVPADAYYGVHTLRAIENFYISNNKISDIPEFVRGMVMVKKAAAMANKELQTIPKSVANAIIA' +</span></li>
-                <li><span class="tab-sp-db">'ACDEVLNNGKCMDQFPVDVYQGGAGTSVNMNTNEVLANIGLELMGHQKGEYQYLNPNDHVNKCQSTNDAYPTGFRIAVYSSLIKLVD' +</span></li>
-                <li><span class="tab-sp-db">'AINQLREGFERKAVEFQDILKMGRTQLQDAVPMT', id: 1, startIndex: 2}</span></li>
-                <li><span class="tab-sp">      ];</span></li>
-                <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
-                <li><span class="tab-sp-db">      indexesLocation: 'lateral'</span></li>
-                <li><span class="tab-sp">      };</span></li>
-            </ol>
-        </tab>
-    </tabset>
-
-    <p style="color:#000;"><b>Top example</b></p>
-    <div>Set top indexes.</div>
+    <p style="color:#000;"><b>Indexes on top</b></p>
     <div class="sqvDemo"><div id="sqv10"></div></div>
+    <pre class="codebkg">{{topindexoptions | json}}</pre>
 
-    <tabset>
-        <tab heading="Input">
-            <ol class="code">
-                <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
-                <li><span class="tab-sp-db">      indexesLocation: 'lateral'</span></li>
-                <li><span class="tab-sp">      };</span></li>
-            </ol>
-        </tab>
-    </tabset>
 
 
     <!-------------------------------------  wrapline  EXAMPLE ---------------------------------------->
 
     <h6 id="wrapLine" class="snippet-title">Wrap Line<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h6>
-    <p>Set a non-responsive version of the ProSeqViewer. The width is fixed and a scrollbar helps the visualization of the sequence.</p>
+    <p>Each letter is encapsulated in a column element (just one cell for single sequences) which is part of a block of columns. Blocks are graphically separated to improve readability and can have different length (setting chunkSize option). By default, blocks are automatically moved to a new line when they exceed the container width (responsive behavior). However, block wrapping can be disabled if the user wants to slide MSAs horizontally (non-responsive behavior).
+    </p>
+
+    <p style="color:#000;"><b>Responsive (default)</b></p>
+
+    <div class="sqvDemo">
+        <div class="row">
+            <div id="sqv13"></div>
+        </div>
+    </div>
+
+    <p style="color:#000;"><b>Non-responsive</b></p>
     <div class="sqvDemo">
         <div class="row">
             <div id="sqv8"></div>
@@ -87,27 +74,26 @@
     </div>
 
     <tabset>
-        <tab heading="Template">
-            <ol class="code">
+            <ul class="code">
                 <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
-                <li><span class="tab-sp-db">      wrapLine: true, viewerWidth: '350px'</span></li>
+                <li><span class="tab-sp-db">      chunkSize: 20, wrapLine: true, viewerWidth: '350px'</span></li>
                 <li><span class="tab-sp">      };</span></li>
-            </ol>
-        </tab>
+            </ul>
     </tabset>
 
+
+
     <!---------------------------------------------- Icons -------------------------------------------------->
-    <h6 class="snippet-title" id="single">Icons</h6>
-    <p>Add icons on the top of the sequences to indicate the secondary structure.</p>
-    <p> You can use the icons already available (helix, turn, lollipop, strand, arrowLeft, arrowRight, noSecondary) or you can input custom svg icons (check the API Documentation.) </p>
-    <p>This example shows the secondary structure of the ASL protein mapped onto the <b>secondary structure</b>  of the human ASL protein (P04424, <i>Homo sapiens</i>) sequence.</p>
-    <p><b>Helices</b> are shown in pink and <b>beta strands</b> are shown as yellow arrows. </p>
+    <h6 class="snippet-title" id="icons">Icons</h6>
+    <div>Add icons on the top of the sequences to indicate the secondary structure.You can use the icons already
+        available (helix, turn, lollipop, strand, arrowLeft, arrowRight, noSecondary) or you can input custom svg icons (check the Documentation.) </div>
+    <div>This example shows the secondary structure of the ASL protein mapped onto the <b>secondary structure</b>  of the human ASL protein (P04424, <i>Homo sapiens</i>) sequence.
+        <b>Helices</b> are shown in pink and <b>beta strands</b> are shown as yellow arrows. </div>
 
     <div class="sqvDemo" id="sqvSingle"></div>
 
     <tabset>
-        <tab heading="Template">
-            <ol class="code">
+            <ul class="code">
                 <li><span class="tab-sp"><span class="hljs-js">const</span> icons =  &#123;</span></li>
                 <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 1, end: 12, icon: 'noSecondary'},</span></li>
                 <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 13, end: 18, icon: 'noSecondary'},</span></li>
@@ -117,22 +103,20 @@
                 <li><span class="tab-sp-db">      ... </span></li>
                 <li><span class="tab-sp-db">      };</span></li>
                 <li><span class="tab-sp"><span class="hljs-js">const</span> options = &#123;chunkSize: 0}; </span></li>
-            </ol>
-        </tab>
+            </ul>
     </tabset>
 
 
     <!--------------------------------------------  REGIONS  EXAMPLE ---------------------------------------->
 
     <h6 id="regions" class="snippet-title">Regions<a fragment="simple-slider"><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h6>
-    <p>Highlight part of the sequences with customizable colors.</p>
+    <div>Highlight part of the sequences with customizable colors.</div>
     <p>Tandem repeat regions are shown on the PDB sequence of 6ub9A - Tryptophan synthase alpha chain (<i>Mycobacterium tuberculosis</i>), in alternating blue and red. Insertions are in yellow.</p>
     <div class="sqvDemo"  id="sqv2"></div>
 
 
     <tabset>
-        <tab heading="Template">
-            <ol class="code">
+            <ul class="code">
                 <li><span class="tab-sp"><span class="hljs-js">const</span> regions = [ </span></li>
                 <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 25, end: 53, backgroundColor: '#2f6690', color: '#FFFFFF'},</span></li>
                 <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 54, end: 63, backgroundColor: '#FF6978', color: '#FFFFFF'},</span></li>
@@ -141,8 +125,7 @@
                 <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 101, end: 127, backgroundColor: '#2f6690', color: '#FFFFFF'},</span></li>
                 <li><span class="tab-sp-db">      ... ,</span></li>
                 <li><span class="tab-sp">      ];</span></li>
-            </ol>
-        </tab>
+            </ul>
     </tabset>
 
 
@@ -154,30 +137,27 @@
     <div class="sqvDemo" id="sqv4"></div>
 
     <tabset>
-        <tab heading="Template">
-            <ol class="code">
+            <ul class="code">
                 <li><span class="tab-sp"><span class="hljs-js">const</span> patterns = [ </span></li>
                 <li><span class="tab-sp-db">      &#123;sequenceId: 1, pattern: /AA/g, backgroundColor: '#D72638'},</span></li>
                 <li><span class="tab-sp-db">      &#123;sequenceId: 1, pattern: /PD/g, backgroundColor: '#FF570A'},</span></li>
                 <li><span class="tab-sp-db">      &#123;sequenceId: 1, pattern: /GV/g, backgroundColor: '#FFBC42'}</span></li>
                 <li><span class="tab-sp">      ];</span></li>
-            </ol>
-        </tab>
+            </ul>
     </tabset>
 
 
 
     <!--------------------------------------------  MSA  section ---------------------------------------->
-      <h2 id="simple" class="txt"> Multisequence alignments (MSA)</h2>
+      <h2 id="simple" class="txt"> Multiple sequence alignments (MSA)</h2>
 
 
-    <!---------------------------------------------- Multisequence alignment ------------------------------------------>
-    <h6 class="snippet-title" id="multi">Multisequence alignment</h6>
+    <!---------------------------------------------- Multiple sequence alignment ------------------------------------------>
+    <h6 class="snippet-title" id="multi">Multiple sequence alignment</h6>
     <p>Multiple sequence alignment of Aspartate ammonia-lyase protein (Uniprot P0AC38) with ten homologs. Residue numbering displayed on top of the sequences.</p>
     <div class="sqvDemo" id="sqv0"></div>
 
     <tabset>
-        <tab heading="Template">
             <ul class="code">
                 <li><span><span class="hljs-js">const</span> sequences = [ </span></li>
                 <li><span class="tab-sp"><span>      &#123;sequence: 'GTREVPADAYYGVHTLRAIENFYISNNKISDIPEFVRGMVMVKKAAAMANKELQTIPKSV' +</span></span></li>
@@ -192,7 +172,6 @@
                 <li><span class="tab-sp"><span>       indexesLocation: 'top'</span></span></li>
                 <li><span>      };</span></li>
             </ul>
-        </tab>
     </tabset>
 
 
@@ -204,53 +183,30 @@
       <p> It is also possible to set a custom sequence color, check the Documentation (Input -option, sequenceColor-) for details.</p>
     <p style="color:#000;"><b>Clustal example</b></p>
 
-      <div class="container">
-        <div class="row first">
-          <div class="col-sm">Aminoacid</div>
-          <div class="col-sm">Color</div>
-       </div>
-        <div class="row field0">
-         <div class="col-sm"> A, I, L, M, F, W, V</div>
-         <div class="col-sm"><span class="a"></span></div>
-       </div>
-        <div class="row field0">
-         <div class="col-sm">K, R</div>
-         <div class="col-sm"><span class="k"></span></div>
-       </div>
-        <div class="row field0">
-         <div class="col-sm">E, D</div>
-         <div class="col-sm"><span class="e"></span></div>
-       </div>
-        <div class="row field0">
-         <div class="col-sm">C, G</div>
-         <div class="col-sm"><span class="c"></span></div>
-       </div>
-        <div class="row field0">
-         <div class="col-sm">N, Q, S, T, P, H, Y</div>
-         <div class="col-sm"><span class="q"></span></div>
-       </div>
-      </div>
+        <div class="circlez q">N, Q, S, P, T, H, Y</div>
+        <div class="circlez a">A, I, L, M, F, W, V </div>
+        <div class="circlez k">K, R</div><div class="circlez e">E, D</div>
+        <div class="circlez c">C</div>
 
       <div class="sqvDemo" id="sqv6"></div>
 
 
       <tabset>
-        <tab heading="Template">
-             <ol class="code">
+             <ul class="code">
                <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
                <li><span class="tab-sp-db">      sequenceColor: 'clustal'</span></li>
                <li><span class="tab-sp">      };</span></li>
-            </ol>
-        </tab>
+            </ul>
       </tabset>
 
 
       <!-------------------------------------  sequenceColorMatrix blosum  EXAMPLE ---------------------------------------->
     <h6 id="sequenceColorMatrix" class="snippet-title">Sequence Color Matrix<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h6>
-    <div>Set a global sequence color matrix. Available global sequence color matrix is blosum62 </div>
-    <p> It is also possible to set a custom sequence color matrix, check the Documentation (Input -option, sequenceColorMatrix-) for details.</p>
+    <div>Set a global sequence color matrix. Available global sequence color matrix is blosum62.
+        Here amino acid pairs are compared, in particular each residue is compared with the residue at the same position in the first sequence. The aminoacid pair is colored based on a input matrix.</div>
+    <p> Blosum62 is a default matrix, but it is also possible to set a custom matrix.</p>
 
-      <p style="color:#000;margin-top: 20px"><b>Blosum62</b></p>
+      <p style="color:#000;margin-top: 20px"><b>Blosum62 (default matrix)</b></p>
 
       <img src="assets/heatmap.svg">
 
@@ -258,206 +214,69 @@
 
 
       <tabset>
-        <tab heading="Template">
-           <ol class="code">
+           <ul class="code">
              <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
              <li><span class="tab-sp-db">      sequenceColorMatrix: 'blosum62'</span></li>
              <li><span class="tab-sp">      };</span></li>
-          </ol>
-        </tab>
+          </ul>
       </tabset>
 
-      <!-------------------------------------  CONSENSUS  EXAMPLE ---------------------------------------->
+    <p style="color:#000;margin-top: 20px"><b>Custom sequence color matrix</b></p>
+
+
+    <!-------------------------------------  CONSENSUS  EXAMPLE ---------------------------------------->
 
       <h6 id="consensus" class="snippet-title">Consensus<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h6>
-      <div>Set consensus and consensus threshold. Available consensus types are: identity, physical.</div>
-        <p> It is also possible to set a custom consensus, check the API for details.</p>
+      <div>A consensus sequence will be the generated on top of the alignment, representing the most frequent aminoacid (consensus identity) or property (consensus physical) found at each position in a sequence alignment.</div>
+      <div>As a default, the consensusDotThreshold is set at 90%, meaning that position with a frequency less of 90% will display a dot.</div>
+      <div>In the consensus identity the aminoacid found at each position is colored based on its frequency in the alignment. Each level has a color: (100%, 80%, 70%..)</div>
+      <div>In the consensus physical the aminoacid found at each position is colored based on the aminoacid property frequency in the alignment. The property symbol is displayed.</div>
+      <div>Consensus 'identity' and 'physical' can't be set at the same time. In case of overlapping settings, consensus 'identity' will be displayed.</div>
+        <p> It is also possible to set a custom consensus with personalized colors, levels and symbols and modify the consensusDotThreshold, check the Documentation for details.</p>
 
       <!--  identity -->
       <div class="palette">
-        <p style="color:#000;"><b>1. Identity consensus</b></p>
-        <p>A color is set for each percentage of consensus.</p>
-        <p> Legend:</p>
+        <p style="color:#000;"><b>Identity consensus</b></p>
 
-        <div style="width:120px;background-color: #0A0A0A; color: white;">&nbsp;100%</div>
-        <div style="width:100px; background-color: #333333; color: white;">&nbsp;70%</div>
-        <div style="width:80px; background-color: #707070; color: white;">&nbsp;40%</div>
-        <div style="width:60px; background-color: #A3A3A3; color: white;">&nbsp;10%</div>
-        <div style="width:40px; background-color: #FFFFFF; color: white;">&nbsp;0%</div>
+        <div class="consensusrect aa">&nbsp;100%</div>
+        <div class="consensusrect bb">&nbsp;70%</div>
+        <div class="consensusrect cc">&nbsp;40%</div>
+        <div class="consensusrect dd">&nbsp;10%</div>
       </div>
 
       <div class="sqvDemo"><div id="sqv7"></div></div>
 
 
-      <tabset *ngIf="javascriptCon">
-        <tab heading="Template">
-              <ol class="code">
-                <li><span class="hljs-js">&lt;head></span></li>
-                <li><span class="hljs-js tab-sp">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">></span></li>
-                <li><span class="hljs-js">&lt;/head></span></li>
-                <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvConsensusIdentity"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
-                <li><span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">&lt;/script&gt;</span></li>
-                <li><span class="hljs-js">&lt;script></span></li>
-                <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new </span>ProSeqViewer(<span class="hljs-id">'sqvConsensusIdentity'</span>); </span></li>
-                <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
-                <li><span class="tab-sp-db">      &#123;sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPASTSLSPFYLRPPSFLRAPSW', id: 1, label: 'CRAB_HUMAN'},</span></li>
-                <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'CRAB_ANAPL'},</span></li>
-                <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'CRAB_CHICK'}</span></li>
-                <li><span class="tab-sp">      ];</span></li>
+      <tabset>
+              <ul class="code">
                 <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
                 <li><span class="tab-sp-db">      consensusColorIdentity: 'identity', consensusDotThreshold: 80</span></li>
                 <li><span class="tab-sp">      };</span></li>
-                <li><span>proseqviewer.<span class="hljs-js">draw</span>(&#123;sequences, options});</span></li>
-                <li><span class="hljs-js">&lt;/script></span></li>
-          </ol>
-        </tab>
+          </ul>
       </tabset>
 
 
       <!--  physical-->
-      <p style="color: #000; margin-top: 20px;"><b>2. Consensus based on physico-chemical properties</b></p>
-      <p>Legend:</p>
-      <p>If there there is 100% identity in a column, consensus identity is displayed.</p>
-      <div style="width:120px;background-color: #0A0A0A; color: white;margin-bottom: 10px;">&nbsp;100%</div>
-      <p> In all other cases, physical consensus is calculated, and symbols are set accordingly to the table below.</p>
+      <p style="color: #000; margin-top: 20px;"><b>Consensus based on physico-chemical properties</b></p>
+      <div class="consensusphy aa">&nbsp;100% </div>
+    <div class="consensusphy h">h </div> small hydrophobic - C,V,I,L,P,F,Y,M,W
 
+       <div class="consensusphy n">n</div> small nonpolar - A,G,S,T
+        <div class="consensusphy p">p</div> non polar - N,Q,H
 
-      <div class="container">
-        <div class="row first">
-          <div class="col-sm">Aminoacid</div>
-          <div class="col-sm">Symbol</div>
-          <div class="col-sm">Property</div>
-        </div>
-        <div class="row field0">
-          <div class="col-sm">A</div>
-          <div class="col-sm"><span class="n">n</span></div>
-          <div class="col-sm">small nonpolar</div>
-        </div>
-        <div class="row field0">
-          <div class="col-sm">G</div>
-          <div class="col-sm"><span class="n">n</span></div>
-          <div class="col-sm">small nonpolar</div>
-        </div>
-        <div class="row field0">
-          <div class="col-sm">S</div>
-          <div class="col-sm"><span class="n">n</span></div>
-          <div class="col-sm">small nonpolar</div>
-        </div>
-        <div class="row field0">
-          <div class="col-sm">T</div>
-          <div class="col-sm"><span class="n">n</span></div>
-          <div class="col-sm">small nonpolar</div>
-        </div>
-        <div class="row field0">
-          <div class="col-sm">C</div>
-          <div class="col-sm"><span class="h">h</span></div>
-          <div class="col-sm">hydrophobic</div>
-        </div>
-        <div class="row field0">
-          <div class="col-sm">V</div>
-          <div class="col-sm"><span class="h">h</span></div>
-          <div class="col-sm">hydrophobic</div>
-        </div>
-        <div class="row field0">
-          <div class="col-sm">I</div>
-          <div class="col-sm"><span class="h">h</span></div>
-          <div class="col-sm">hydrophobic</div>
-        </div>
-        <div class="row field0">
-          <div class="col-sm">L</div>
-          <div class="col-sm"><span class="h">h</span></div>
-          <div class="col-sm">hydrophobic</div>
-        </div>
-        <div class="row field0">
-          <div class="col-sm">P</div>
-          <div class="col-sm"><span class="h">h</span></div>
-          <div class="col-sm">hydrophobic</div>
-        </div>
-        <div class="row field0">
-          <div class="col-sm">F</div>
-          <div class="col-sm"><span class="h">h</span></div>
-          <div class="col-sm">hydrophobic</div>
-        </div>
-        <div class="row field0">
-          <div class="col-sm">Y</div>
-          <div class="col-sm"><span class="h">h</span></div>
-          <div class="col-sm">hydrophobic</div>
-        </div>
-        <div class="row field0">
-          <div class="col-sm">M</div>
-          <div class="col-sm"><span class="h">h</span></div>
-          <div class="col-sm">hydrophobic</div>
-        </div>
-        <div class="row field0">
-          <div class="col-sm">W</div>
-          <div class="col-sm"><span class="h">h</span></div>
-          <div class="col-sm">hydrophobic</div>
-        </div>
-        <div class="row field0">
-          <div class="col-sm">N</div>
-          <div class="col-sm"><span class="p">p</span></div>
-          <div class="col-sm">polar</div>
-        </div>
-        <div class="row field0">
-          <div class="col-sm">Q</div>
-          <div class="col-sm"><span class="p">p</span></div>
-          <div class="col-sm">polar</div>
-        </div>
-        <div class="row field0">
-          <div class="col-sm">H</div>
-          <div class="col-sm"><span class="p">p</span></div>
-          <div class="col-sm">polar</div>
-        </div>
-        <div class="row field0">
-          <div class="col-sm">D</div>
-          <div class="col-sm"><span class="neg">~</span></div>
-          <div class="col-sm">negatively charged</div>
-        </div>
-        <div class="row field0">
-          <div class="col-sm">E</div>
-          <div class="col-sm"><span class="neg">~</span></div>
-          <div class="col-sm">negatively charged</div>
-        </div>
-        <div class="row field0">
-          <div class="col-sm">K</div>
-          <div class="col-sm"><span class="pos">+</span></div>
-          <div class="col-sm">positively charged</div>
-        </div>
-        <div class="row field0">
-          <div class="col-sm">R</div>
-          <div class="col-sm"><span class="pos">+</span></div>
-          <div class="col-sm">positively charged</div>
-        </div>
+        <div class="consensusphy neg">~</div> negatively charged - D,E
 
-      </div>
-
+        <div class="consensusphy pos">+</div> positively charged - K,R
 
 
       <div class="sqvDemo" id="sqvPhysical"></div>
 
-
-      <tabset *ngIf="javascriptPhy">
-        <tab heading="Template">
-             <ol class="code">
-                <li><span class="hljs-js">&lt;head></span></li>
-               <li><span class="hljs-js tab-sp">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">></span></li>
-               <li><span class="hljs-js">&lt;/head></span></li>
-               <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvConsensusPhysical"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
-               <li><span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">&lt;/script&gt;</span></li>
-               <li><span class="hljs-js">&lt;script></span></li>
-               <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new </span>ProSeqViewer(<span class="hljs-id">'sqvConsensusPhysical'</span>);</span></li>
-               <li><span class="tab-sp"><span class="hljs-js">const</span> sequences = [ </span></li>
-               <li><span class="tab-sp-db">      &#123;sequence: 'MDIAIHHPWIRRPFFPFHSPSRLFDQFFGEHLLESDLFPASTSLSPFYLRPPSFLRAPSW', id: 1, label: 'CRAB_HUMAN'},</span></li>
-               <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'CRAB_ANAPL'},</span></li>
-               <li><span class="tab-sp-db">      &#123;sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'CRAB_CHICK'}</span></li>
-               <li><span class="tab-sp">      ];</span></li>
+      <tabset>
+             <ul class="code">
                <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
                <li><span class="tab-sp-db">      consensusColorMapping: 'physical'</span></li>
                <li><span class="tab-sp">      };</span></li>
-               <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(&#123;sequences, options});</span></li>
-               <li><span class="hljs-js">&lt;/script></span></li>
-          </ol>
-        </tab>
+          </ul>
       </tabset>
 
 
@@ -472,16 +291,14 @@
         <div>
           <h6 class="snippet-title" id="javascript">JavaScript installation</h6>
 
-          <p><strong>1. Download the ProSeqViewer stylesheet</strong></p>
-          <p>You can find the <i>sqv.css</i> file in the src/assets folder on the <a href="https://github.com/BioComputingUP/ProSeqViewer">Github repo.</a></p>
+            <p><strong>1. Download the library code</strong></p>
+            <p>You can find the <i>sqv-bundle.js</i> file in the dist folder on the <a href="https://github.com/BioComputingUP/ProSeqViewer">Github repo.</a></p>
+            <p><strong>2. Download the CSS stylesheet</strong></p>
+            <p>You can find the <i>sqv.css</i> file in the src/assets folder on the <a href="https://github.com/BioComputingUP/ProSeqViewer">Github repo.</a></p>
+            <p><strong>3. Edit your index.html:</strong></p>
 
-          <p><strong>2. Download the library code</strong></p>
-          <p>You can find the <i>sqv-bundle.js</i> file in the dist folder on the <a href="https://github.com/BioComputingUP/ProSeqViewer">Github repo.</a></p>
-
-          <p><strong>3. In your index.html:</strong></p>
-
-          <!-- Tab content -->
-          <ol class="code-no-height">
+            <!-- Tab content -->
+            <ul class="code-no-height">
             <li><span class="hljs-js">&lt;head></span></li>
             <li><span class="hljs-js tab-sp">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">></span></li>
             <li><span class="hljs-js">&lt;/head></span></li>
@@ -496,7 +313,7 @@
             <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(&#123; sequence});</span></li>
             <li><span class="hljs-js">&lt;/script></span></li>
             <li><span class="hljs-js">&lt;/body></span></li>
-          </ol>
+          </ul>
 
 
           <h6 class="snippet-title">Angular installation</h6>
@@ -505,264 +322,267 @@
           <p><strong>1. Install the library using npm</strong></p>
           <pre><code>npm i proseqviewer</code></pre>
 
-          <p><strong>2. Load the ProSeqViewer stylesheet in your angular.json "styles" </strong></p>
-          <pre><code><span class="hljs-ang">styles:</span> ["./node_modules/proseqviewer/dist/assets/sqv.scss"]</code></pre>
+          <p><strong>2. Edit the "styles" field in your angular.json </strong></p>
+          <pre><code><span class="hljs-ang">styles:</span> ["./node_modules/proseqviewer/dist/assets/sqv.css"]</code></pre>
 
-          <p><strong>3. Import the ProSeqViewer in your angular component </strong></p>
-          <ol class="code-no-height"><li><span class="hljs-js">import</span> &#123; ProSeqViewer &#125; <span class="hljs-keyword">from</span> <span class="hljs-id">'proseqviewer/dist'</span>;</li></ol>
-
-          <p><strong> 4. Place the ProSeqViewer in your template </strong></p>
-          <ol class="code-no-height"><li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqv"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li></ol>
-
-
-          <p><strong> 5. Create an instance of the ProSeqViewer in your component, add inputs and execute</strong></p>
-          <ol class="code-no-height">
-            <li><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new </span> ProSeqViewer(<span class="hljs-id">'sqv'</span>);</li>
+          <p><strong>3. Edit your angular component: </strong></p>
+          <ul class="code-no-height">
+              <li><span class="hljs-js">import</span> &#123; ProSeqViewer &#125; <span class="hljs-keyword">from</span> <span class="hljs-id">'proseqviewer/dist'</span>;</li>
+              <li><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new </span> ProSeqViewer(<span class="hljs-id">'sqv'</span>);</li>
             <li><span class="hljs-js">const</span> sequence = [&#123;sequence: 'DFRLE--F-DFRLEDFRLE----&#125;]</li>
             <li>proseqviewer.<span class="hljs-js">draw</span>(&#123; sequence});</li>
-          </ol>
+          </ul>
 
-          <h6 class="snippet-title" id="input">Input</h6>
+            <p><strong> 4. Edit your template: </strong></p>
+            <ul class="code-no-height"><li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqv"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li></ul>
+
+
+            <h6 class="snippet-title" id="input">Input</h6>
             <p>The proseqviewer provides a method <i>draw()</i> that take a JSON object in input.</p>
-            <p>The object has 5 keys (keys order is indifferent): &#123;sequences:
-                Array&lt;Sequences&gt;, regions?: Array&lt;Regions&gt;, patterns?: Array&lt;Patterns&gt;, icons?: Array&lt;Icons&gt;, options?: Options
-                    &#125;.</p>
+            <p>The object has 5 keys (keys order is indifferent).</p>
+
+            <ul class="code-no-height">
+                <li><span class="hljs-js"> &#123;sequences: Array&lt;Sequences&gt;,</span>;</li>
+                <li><span class="hljs-js">regions?: Array&lt;Regions&gt;,</span></li>
+                <li><span class="hljs-js">patterns?: Array&lt;Patterns&gt;,</span></li>
+                <li><span class="hljs-js">options?: Options&#125;</span></li>
+            </ul>
 
             <p>Each key value is itself a JSON object. E.g.: &#123;sequence: .., id: ..}. Below a detailed description of each value.</p>
 
             <div class="container">
-            <div class="row first">
+                <div class="row first">
               <div class="col-sm">Field 0</div>
               <div class="col-sm">Field 1</div>
               <div class="col-sm">Type</div>
               <div class="col-sm">Example</div>
               <div class="col-sm">Description</div>
             </div>
-            <div class="row field0">
-              <div class="col-sm">Sequences</div>
+                <div class="row field0">
+              <div class="col-sm">sequences</div>
               <div class="col-sm"></div>
               <div class="col-sm"></div>
               <div class="col-sm"></div>
               <div class="col-sm"></div>
             </div>
-           <div class="row field1">
+                <div class="row field1">
             <div class="col-sm"></div>
              <div class="col-sm">sequence</div>
              <div class="col-sm">string</div>
              <div class="col-sm">LYRLELERECAMT</div>
              <div class="col-sm">Sequence of characters</div>
            </div>
-           <div class="row field1">
+                <div class="row field1">
              <div class="col-sm"></div>
              <div class="col-sm">id</div>
              <div class="col-sm">integer</div>
              <div class="col-sm">1</div>
              <div class="col-sm">Identifier of the sequence</div>
            </div>
-           <div class="row field1">
+                <div class="row field1">
              <div class="col-sm"></div>
              <div class="col-sm">label</div>
              <div class="col-sm">string</div>
              <div class="col-sm">1xvz_1_30.pdb</div>
              <div class="col-sm">Lateral label</div>
            </div>
-           <div class="row field1">
+                <div class="row field1">
              <div class="col-sm"></div>
              <div class="col-sm">labelTooltip</div>
              <div class="col-sm">string</div>
              <div class="col-sm">&lt;span class="tooltipText" style="background-color: blue;"&gt;Tooltip text&lt;/span&gt;</div>
              <div class="col-sm">Stylable tooltip</div>
            </div>
-           <div class="row field1">
+                <div class="row field1">
              <div class="col-sm"></div>
              <div class="col-sm">startIndex</div>
              <div class="col-sm">integer</div>
              <div class="col-sm">30</div>
              <div class="col-sm">Start index of the input sequence.</div>
            </div>
-            <div class="row field0">
-              <div class="col-sm">Regions</div>
+                <div class="row field0">
+              <div class="col-sm">regions</div>
               <div class="col-sm"></div>
               <div class="col-sm"></div>
               <div class="col-sm"></div>
               <div class="col-sm"></div>
            </div>
-           <div class="row field1">
+                <div class="row field1">
              <div class="col-sm"></div>
              <div class="col-sm">sequenceId</div>
              <div class="col-sm">integer</div>
              <div class="col-sm">1</div>
              <div class="col-sm">Identifier of the sequence.</div>
            </div>
-           <div class="row field1">
+                <div class="row field1">
              <div class="col-sm"></div>
              <div class="col-sm">start</div>
              <div class="col-sm">integer</div>
              <div class="col-sm">10</div>
              <div class="col-sm">Start position of the region to color.</div>
            </div>
-           <div class="row field1">
+                <div class="row field1">
              <div class="col-sm"></div>
              <div class="col-sm">end</div>
              <div class="col-sm">integer</div>
              <div class="col-sm">20</div>
              <div class="col-sm">End position of the region to color.</div>
            </div>
-           <div class="row field1">
+                <div class="row field1">
              <div class="col-sm"></div>
              <div class="col-sm">backgroundColor</div>
              <div class="col-sm">string</div>
              <div class="col-sm">hex, rgb</div>
              <div class="col-sm">Color the character background.</div>
            </div>
-           <div class="row field1">
+                <div class="row field1">
              <div class="col-sm"></div>
              <div class="col-sm">color</div>
              <div class="col-sm">string</div>
              <div class="col-sm">hex, rgb</div>
              <div class="col-sm">Color the character.</div>
            </div>
-           <div class="row field1">
+                <div class="row field1">
              <div class="col-sm"></div>
              <div class="col-sm">backgroundImage</div>
              <div class="col-sm">integer</div>
              <div class="col-sm">linear-gradient(red, yellow)</div>
              <div class="col-sm">Color the character background with a two color gradient.</div>
            </div>
-            <div class="row field0">
-              <div class="col-sm">Patterns</div>
+                <div class="row field0">
+              <div class="col-sm">patterns</div>
               <div class="col-sm"></div>
               <div class="col-sm"></div>
               <div class="col-sm"></div>
               <div class="col-sm"></div>
            </div>
-           <div class="row field1">
+                <div class="row field1">
              <div class="col-sm"></div>
              <div class="col-sm">sequenceId</div>
              <div class="col-sm">integer</div>
              <div class="col-sm">1</div>
              <div class="col-sm">Identifier of the sequence.</div>
            </div>
-           <div class="row field1">
+                <div class="row field1">
              <div class="col-sm"></div>
              <div class="col-sm">start</div>
              <div class="col-sm">integer</div>
              <div class="col-sm">10</div>
              <div class="col-sm">Start position of the region where to perform the regex.</div>
            </div>
-           <div class="row field1">
+                <div class="row field1">
              <div class="col-sm"></div>
              <div class="col-sm">end</div>
              <div class="col-sm">integer</div>
              <div class="col-sm">20</div>
              <div class="col-sm">End position of the region where to perform the regex.</div>
            </div>
-           <div class="row field1">
+                <div class="row field1">
              <div class="col-sm"></div>
              <div class="col-sm">backgroundColor</div>
              <div class="col-sm">string</div>
              <div class="col-sm">hex, rgb</div>
              <div class="col-sm">Color the regex match background.</div>
            </div>
-           <div class="row field1">
+                <div class="row field1">
              <div class="col-sm"></div>
              <div class="col-sm">color</div>
              <div class="col-sm">string</div>
              <div class="col-sm">hex, rgb</div>
              <div class="col-sm">Color the regex match the character.</div>
            </div>
-           <div class="row field1">
+                <div class="row field1">
              <div class="col-sm"></div>
              <div class="col-sm">backgroundImage</div>
              <div class="col-sm">integer</div>
              <div class="col-sm">linear-gradient(red, yellow)</div>
              <div class="col-sm">Color the regex match character background with a two color gradient.</div>
            </div>
-            <div class="row field0">
-              <div class="col-sm">Icons</div>
+                <div class="row field0">
+              <div class="col-sm">icons</div>
               <div class="col-sm"></div>
               <div class="col-sm"></div>
               <div class="col-sm"></div>
               <div class="col-sm"></div>
            </div>
-           <div class="row field1">
+                <div class="row field1">
              <div class="col-sm"></div>
              <div class="col-sm">sequenceId</div>
              <div class="col-sm">integer</div>
              <div class="col-sm">1</div>
              <div class="col-sm">Identifier of the sequence.</div>
            </div>
-           <div class="row field1">
+                <div class="row field1">
              <div class="col-sm"></div>
              <div class="col-sm">start</div>
              <div class="col-sm">integer</div>
              <div class="col-sm">10</div>
              <div class="col-sm">Start position of the icon region.</div>
            </div>
-           <div class="row field1">
+                <div class="row field1">
              <div class="col-sm"></div>
              <div class="col-sm">end</div>
              <div class="col-sm">integer</div>
              <div class="col-sm">20</div>
              <div class="col-sm">End position of the icon region.</div>
            </div>
-           <div class="row field1">
+                <div class="row field1">
              <div class="col-sm"></div>
              <div class="col-sm">icon</div>
              <div class="col-sm">string</div>
              <div class="col-sm">lollipop, helix, strand, strand-arrow-left, turn</div>
              <div class="col-sm">Default svg image to apply on top of the indicated sequence.</div>
            </div>
-           <div class="row field1">
+                <div class="row field1">
                 <div class="col-sm"></div>
                 <div class="col-sm">icon</div>
                 <div class="col-sm">string</div>
                 <div class="col-sm">&lt;svg&gt;&lt;/svg&gt;</div>
                 <div class="col-sm">Custom svg image to apply on top of the indicated sequence.</div>
            </div>
-           <div class="row field1">
+                <div class="row field1">
              <div class="col-sm"></div>
              <div class="col-sm">display</div>
              <div class="col-sm">string</div>
              <div class="col-sm">center</div>
              <div class="col-sm">Center the icon in the middle of the start-end region.</div>
            </div>
-            <div class="row field0">
-              <div class="col-sm">Options</div>
+                <div class="row field0">
+              <div class="col-sm">options</div>
               <div class="col-sm"></div>
               <div class="col-sm"></div>
               <div class="col-sm"></div>
               <div class="col-sm"></div>
            </div>
-           <div class="row field1">
+                <div class="row field1">
              <div class="col-sm"></div>
              <div class="col-sm">fontSize</div>
              <div class="col-sm">string</div>
              <div class="col-sm">14px</div>
              <div class="col-sm">Font dimension.</div>
            </div>
-           <div class="row field1">
+                <div class="row field1">
              <div class="col-sm"></div>
              <div class="col-sm">chunkSize</div>
              <div class="col-sm">integer</div>
              <div class="col-sm">10</div>
              <div class="col-sm">Group the sequence into chunks of subsequential characters.</div>
            </div>
-           <div class="row field1">
+                <div class="row field1">
              <div class="col-sm"></div>
              <div class="col-sm">chunkSeparation</div>
              <div class="col-sm">integer</div>
              <div class="col-sm">2</div>
              <div class="col-sm">Space among chunks.</div>
            </div>
-           <div class="row field1">
+                <div class="row field1">
                     <div class="col-sm"></div>
                     <div class="col-sm">lineSeparation</div>
                     <div class="col-sm">integer</div>
                     <div class="col-sm">15</div>
                     <div class="col-sm">Space under the horizontal row of characters (px).</div>
                 </div>
-           <div class="row field1">
+                <div class="row field1">
              <div class="col-sm"></div>
              <div class="col-sm">indexesLocation</div>
              <div class="col-sm">string</div>
@@ -776,80 +596,119 @@
                     <div class="col-sm">top</div>
                     <div class="col-sm">Place an index on top of the end of each chunk (first row only).</div>
                 </div>
-            <div class="row field1">
+                <div class="row field1">
              <div class="col-sm"></div>
              <div class="col-sm">wrapLine</div>
              <div class="col-sm">boolean</div>
              <div class="col-sm">true</div>
              <div class="col-sm">Display the viewer with fixed width (not responsive) and scrollbar on the sequences.</div>
            </div>
-            <div class="row field1">
+                <div class="row field1">
              <div class="col-sm"></div>
              <div class="col-sm">viewerWidth</div>
              <div class="col-sm">integer</div>
              <div class="col-sm">2</div>
              <div class="col-sm">Width of ProSeqViewer - sidebar.</div>
            </div>
-            <div class="row field1">
+                <div class="row field1">
              <div class="col-sm"></div>
              <div class="col-sm">sequenceColor</div>
              <div class="col-sm">string</div>
              <div class="col-sm">clustal, zappo, taylor ...</div>
              <div class="col-sm">Colorscheme to apply to all sequences. Any Jalview colorscheme is available, see the complete list on Multiple sequence alignment (MSA) - Sequence color).</div>
            </div>
-            <div class="row field1">
+                <div class="row field1">
                     <div class="col-sm"></div>
                     <div class="col-sm"></div>
                     <div class="col-sm">obj</div>
-                    <div class="col-sm">&#123; &lt;aminoacid&gt;:[ &lt;char_to_color&gt;:&lt;background_color&gt;, .. }; </div>
+                    <div class="col-sm">&#123; &lt;aminoacid&gt;:&lt;background_color&gt;, .. } </div>
                     <div class="col-sm">Custom colorscheme to apply to all sequences.</div>
-                </div>
-            <div class="row field1">
+            </div>
+                <div class="row field1">
               <div class="col-sm"></div>
               <div class="col-sm">sequenceColorMatrix</div>
-              <div class="col-sm">string or obj</div>
+              <div class="col-sm">string</div>
               <div class="col-sm">blosum62</div>
               <div class="col-sm">Add blosum62 matrix colorscheme.</div>
             </div>
-            <div class="row field1">
+                <div class="row field1">
                     <div class="col-sm"></div>
                     <div class="col-sm"></div>
                     <div class="col-sm">obj</div>
-                    <div class="col-sm"> &#123;KE: &#123;backgroundColor: '#CFDBF2'}} </div>
+                    <div class="col-sm"> &#123;&lt;aminoacid_pair&gt;:[&lt;background_color&gt;,&lt;color&gt;], .. } </div>
                     <div class="col-sm">Add custom matrix colorscheme.</div>
-            </div>
-            <div class="row field1">
+                </div>
+                <div class="row field1">
                     <div class="col-sm"></div>
                     <div class="col-sm">consensusDotThreshold</div>
                     <div class="col-sm">integer</div>
                     <div class="col-sm">90</div>
                     <div class="col-sm">Threeshold for consensus information.</div>
                 </div>
-            <div class="row field1">
-             <div class="col-sm"></div>
-             <div class="col-sm">consensusColorIdentity</div>
-             <div class="col-sm">string or obj</div>
-             <div class="col-sm">'identity' or &#123;50: ["#CFDBF2", "#FFCCF2"],...}</div>
-             <div class="col-sm">Add a line with consensus information.</div>
-           </div>
-           <div class="row field1">
-              <div class="col-sm"></div>
-              <div class="col-sm">consensusColorMapping</div>
-              <div class="col-sm">string or obj</div>
-              <div class="col-sm">'physical' or &#123;G: ["+", "#CFDBF2", "#FFCCF2"], ...}</div>
-              <div class="col-sm">Add a line with consensus information.</div>
-            </div>
+                <div class="row field1">
+                    <div class="col-sm"></div>
+                    <div class="col-sm">consensusColorIdentity</div>
+                    <div class="col-sm">string</div>
+                    <div class="col-sm">identity</div>
+                    <div class="col-sm">Add a line with consensus identity information.</div>
+                </div>
+                <div class="row field1">
+                    <div class="col-sm"></div>
+                    <div class="col-sm">consensusColorIdentity</div>
+                    <div class="col-sm">obj</div>
+                    <div class="col-sm">&#123;&lt;level&gt;:[&lt;background_color&gt;,&lt;color&gt;], .. }</div>
+                    <div class="col-sm">Add a line with custom consensus identity information.</div>
+                </div>
+                <div class="row field1">
+                    <div class="col-sm"></div>
+                    <div class="col-sm">consensusColorMapping</div>
+                    <div class="col-sm">string</div>
+                    <div class="col-sm">physical</div>
+                    <div class="col-sm">Add a line with consensus physical information.</div>
+                </div>
+                <div class="row field1">
+                    <div class="col-sm"></div>
+                    <div class="col-sm">consensusColorMapping</div>
+                    <div class="col-sm">obj</div>
+                    <div class="col-sm">&#123;&lt;aminoacid&gt;:[&lt;symbol&gt;,&lt;background_color&gt;,&lt;color&gt;], .. }&#123;</div>
+                    <div class="col-sm">Add a line with custom consensus physical information.</div>
+                </div>
         </div>
       </div>
     </div>
     </div>
     <!-------------------------------------  EVENTS  EXAMPLE ---------------------------------------->
-
     <h6 id="events" class="snippet-title">Events<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h6>
+    <p>Three different types of events are available: area selection and column selection (active after the user's Ctrl+C action) and the double click event (active after user's double click).</p>
+
     <p><b>Area selection</b></p>
     <p>Click and drag the mouse to select a region, the region will be highlighted in yellow. Use the
         shortcut Ctrl+C to copy and Ctrl+V to paste. The selected region will disappear after using a
         shortcut or clicking on another area.</p>
+
+
+    <pre class="prettyprint prettyprinted"><code>
+    <span> window.<span class="hljs-js">addEventListener</span>('onAreaSelected', (e) =>   &#123;
+             console.<span class="hljs-js">log</span>('event type', e['detail'].type);
+             console.<span class="hljs-js">log</span>('text area', e['detail'].text);
+           });
+    </span>
+  </code></pre>
+
+    <p><b>Columns selection</b></p>
+
+    <p><b>Double click</b></p>
+    <p>The double click event will return information about the clicked character, like the x, y positions and the character itself.</p>
+    <pre class="prettyprint prettyprinted"><code>
+    <span> window.<span class="hljs-js">addEventListener</span>('onRegionSelected', (e) =>   &#123;
+             console.<span class="hljs-js">log</span>('character selected', e['detail'].char);
+             console.<span class="hljs-js">log</span>('position x', e['detail'].x);
+             console.<span class="hljs-js">log</span>('position y', e['detail'].y);
+           });
+    </span>
+  </code></pre>
+
+    <p><b>Try it out!</b></p>
     <div class="sqvDemo">
         <div class="row">
             <div id="sqv9"></div>
@@ -859,7 +718,7 @@
         <form>
             <div class="row">
                 <div class="col-25">
-                    <label for="subject">Try it out!</label>
+                    <label for="subject">Paste area or columns selection</label>
                 </div>
                 <div class="col-75">
                     <textarea id="subject" name="subject" placeholder="Copy-paste something.." style="height:200px"></textarea>
@@ -868,17 +727,20 @@
 
         </form>
     </div>
+    <div class="box">
+        <form>
+            <div class="row">
+                <div class="col-25">
+                    <label for="subject">See double click event</label>
+                </div>
+                <div class="col-75">
+                    <div>Selected char: {{selectedChar}}</div>
+                    <div>Position X: {{positionX}}</div>
+                    <div>Position Y: {{positionY}}</div>
+                </div>
+            </div>
 
-    <p><b>1. On character selected event </b></p>
-    <p>The double click event will return information about the clicked character, like the x, y positions and the character itself.</p>
-    <pre class="prettyprint prettyprinted"><code>
-    <span> window.<span class="hljs-js">addEventListener</span>('onRegionSelected', (e) =>   &#123;
-             console.<span class="hljs-js">log</span>('character selected', e);
-           });
-    </span>
-  </code></pre>
-
-
-
+        </form>
+    </div>
 
 </div>

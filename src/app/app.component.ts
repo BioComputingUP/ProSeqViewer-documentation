@@ -8,39 +8,11 @@ import {ProSeqViewer} from 'proseqviewer/dist';
 })
 export class AppComponent implements OnInit {
   title = 'ProSeqViewer-documentation';
-  // multisequence
-  angularMsa = false;
-  javascriptMsa = true;
-  // singlesequence
-  angularSin = false;
-  javascriptSin = true;
-  // regions
-  angularReg = false;
-  javascriptReg = true;
-  // icons
-  angularIc = false;
-  javascriptIc = true;
-  // patterns
-  angularPat = false;
-  javascriptPat = true;
-  // colorscheme clustal
-  angularCol = false;
-  javascriptCol = true;
-  // blosum
-  angularBlo = false;
-  javascriptBlo = true;
-  // lateral
-  angularLat = false;
-  javascriptLat = true;
-  // consensus identity
-  angularCon = false;
-  javascriptCon = true;
-  // consensus physical
-  angularPhy = false;
-  javascriptPhy = true;
-  // one line
-  angularOne = false;
-  javascriptOne = true;
+  selectedChar;
+  positionX;
+  positionY;
+  latindexoptions;
+  topindexoptions;
 
   ngOnInit(): void {
 
@@ -250,14 +222,14 @@ export class AppComponent implements OnInit {
     const seqs5 = [
       {sequence: 'MSNNIRIEEDLLGTREVPADAYYGVHTLRAIENFYISNNKISDIPEFVRGMVMVKKAAAMANKELQTIPKSVANAIIA' +
               'ACDEVLNNGKCMDQFPVDVYQGGAGTSVNMNTNEVLANIGLELMGHQKGEYQYLNPNDHVNKCQSTNDAYPTGFRIAVYSSLIKLVD' +
-              'AINQLREGFERKAVEFQDILKMGRTQLQDAVPMT', id: 1, startIndex: 2}
+              'AINQLREGFERKAVEFQDILKMGRTQLQDAVPMT', id: 1, startIndex: 50}
     ];
-    const opt5 = { indexesLocation: 'lateral'};
-    s5.draw({ sequences: seqs5, options: opt5});
+    this.latindexoptions = { indexesLocation: 'lateral'};
+    s5.draw({ sequences: seqs5, options: this.latindexoptions});
     // top
     const s10 = new ProSeqViewer('sqv10');
-    const opt10 = { indexesLocation: 'top'};
-    s10.draw({ sequences: seqs5, options: opt10});
+    this.topindexoptions = { indexesLocation: 'top'};
+    s10.draw({ sequences: seqs5, options: this.topindexoptions});
 
     // consensus EXAMPLE
     const s7 = new ProSeqViewer('sqv7');
@@ -278,10 +250,14 @@ export class AppComponent implements OnInit {
     const optPhysical = { consensusColorMapping: 'physical'};
     sPhysical.draw({sequences: seqsPhysical, options: optPhysical});
 
-    // wrapline EXAMPLE
+    // wrapline EXAMPLE, non-responsive
     const s8 = new ProSeqViewer('sqv8');
-    const opt8 = { wrapLine: true, viewerWidth: '350px'};
+    const opt8 = { wrapLine: true, chunkSize: 20};
     s8.draw({sequences: seqs5, options: opt8});
+
+    // wrapline EXAMPLE, responsive
+    const s13 = new ProSeqViewer('sqv13');
+    s13.draw({sequences: seqs5});
 
     // selections EXAMPLE
     const s9 = new ProSeqViewer('sqv9');
@@ -291,6 +267,16 @@ export class AppComponent implements OnInit {
       {sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'CRAB_CHICK'}
     ];
     s9.draw({sequences: seqs9});
+
+
+    window.addEventListener('onRegionSelected', (e) =>   {
+          console.log('character selected', e['detail'].char);
+          this.selectedChar = e['detail'].char;
+          this.positionX = e['detail'].x;
+          this.positionY = e['detail'].y;
+      });
   }
+
+
 
 }
