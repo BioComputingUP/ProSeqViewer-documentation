@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
   msa;
   clustaloptions;
   blosumdefaultoptions;
-  // blosumcustomoptions;
+  blosumcustomoptions;
   consensusidentity;
   consensusphysical;
   input;
@@ -84,7 +84,7 @@ export class AppComponent implements OnInit {
                   'AVSEFIHFACTSEDINNLSHALML',
               id: 10, label: 'PUR8_ECOLI/14-137'
           }];
-      this.msa = [
+      this.msa = { sequences: [
           {
               sequence: 'GTREVPADAYYGVHTLRAIENFYISNNKISDIPEFVRGMVMVKKAAAMANKELQTIPKSV' +
                   'ANAIIAACDEVLNNGKCMDQFPVDVYQGGAGTSVNMNTNEVLANIGLELMGHQKGEYQYLNPNDHVNKCQSTNDAYPTGFRIAV',
@@ -99,7 +99,7 @@ export class AppComponent implements OnInit {
               sequence: 'MKYTDTAPKLFMNTGTKFPRRIIWS.............MGVLKKSCAKVNADLGLLDKKIADSIIKASDDLID.GKLDDKIVLDVFQTGSGTGLNMNVNEV' +
                   'IAEVASSYSN......LKVHPNDHVNFGQSSNDTVPTAIRIAA',
               id: 3, label: 'FUMC_SACS2/1-126'
-          }];
+          }]};
 
       const opt = {indexesLocation: 'top'};
       s0.draw({sequences: msa, options: opt});
@@ -108,7 +108,7 @@ export class AppComponent implements OnInit {
       const seqSingle = new ProSeqViewer('sqvSingle');
       const seq = [
           {
-              sequence: 'MASESGKLWGGRFVGAVDPIMEKFNASIAYDRHLWEVDVQGSKAYSRGLEKAGLLTKAEMDQILHGLDKVAEEWAQGTFKLNSNDEDIHTANERRLKELIGATAGKLHTGRSRNDQVVTDLRLWMRQTCSTLSGLLWELIRTMVDRAEAERDVLFPGYTHLQRAQPIRWSHWILSHAVALTRDSERLLEVRKRINVLPLGSGAIAGNPLGVDRELLRAELNFGAITLNSMDATSERDFVAEFLFWASLCMTHLSRMAEDLILYCTKEFSFVQLSDAYSTGSSLMPQKKNPDSLELIRSKAGRVFGRCAGLLMTLKGLPSTYNKDLQEDKEAVFEVSDTMSAVLQVATGVISTLQIHQENMGQALSPDMLATDLAYYLVRKGMPFRQAHEASGKAVFMAETKGVALNQLSLQELQTISPLFSGDVICVWDYGHSVEQYGALGGTARSSVDWQIRQVRALLQAQQA',
+              sequence: 'MASESGKLWGGRFVGAVDPIMEKFNASIAYDRHLWEVDVQGSKAYSRGLEKAGLLTKAEMDQILHGLDKVAEEWAQGTFKLNSNDEDIHTANERRLKELIGATAGKLHTGRSRNDQVVTDLRLWMRQTCSTLSGLLWELIRTMVDRAEAERDVLFPGYTHLQRAQPIRWSHWILSHAVALTRDSERLLEVRKRINVLPLGSGAIAGNPLGVDRELLRAELNFGAITLNSMDATSERDFVAEFLFWASLCMTHLSRMAEDLILYCTKEFSFVQLSDAYSTGSSLMPQKKNPDSLELIRSKAGRVFGRCAGLLMTLKGLPSTYNKDLQEDKEAVFEVSDTMSAVLQVATGVISTLQIHQENMGQALSPDMLATDLAYYLVRKGMPFRQAHEASGKAVFMAETKGVALNQLSLQELQTISPLFSGDVICVWDYGHSVEQYGALG',
               id: 1
           }
       ];
@@ -161,14 +161,12 @@ export class AppComponent implements OnInit {
           {sequenceId: 1, start: 423, end: 428, icon: 'helix'},
           {sequenceId: 1, start: 429, end: 429, icon: 'noSecondary'},
           {sequenceId: 1, start: 430, end: 434, icon: 'helix'},
-          {sequenceId: 1, start: 435, end: 441, icon: 'noSecondary'},
-          {sequenceId: 1, start: 442, end: 443, icon: 'strand'},
-          {sequenceId: 1, start: 444, end: 445, icon: 'arrowRight'}
+          {sequenceId: 1, start: 435, end: 441, icon: 'noSecondary'}
       ];
 
-      this.icons = [
+      this.icons = { icons: [
           {sequenceId: 1, start: 19, end: 25, icon: 'helix'},
-      ];
+      ]};
 
       const singleOpt = {chunkSize: 0};
 
@@ -200,9 +198,9 @@ export class AppComponent implements OnInit {
           {sequenceId: 1, start: 239, end: 249, backgroundColor: '#FAC05E', color: '#FFFFFF'},
           {sequenceId: 1, start: 250, end: 267, backgroundColor: '#FF6978', color: '#FFFFFF'},
       ];
-      this.regions = [
+      this.regions = {regions: [
           {sequenceId: 1, start: 25, end: 53, backgroundColor: '#2f6690', color: '#FFFFFF'}
-      ];
+      ]};
       s2.draw({sequences: seqs, regions: reg1});
 
       // icons EXAMPLE
@@ -228,22 +226,22 @@ export class AppComponent implements OnInit {
           {sequenceId: 1, pattern: /GV/g, backgroundColor: '#FFBC42'},
       ];
 
-      this.patterns = [
+      this.patterns = {patterns: [
           {sequenceId: 1, pattern: /AA/g, backgroundColor: '#D72638'}
-      ];
+      ]};
 
       s4.draw({patterns: pat4, sequences: seqs});
 
       // sequenceColor EXAMPLE
       const s6 = new ProSeqViewer('sqv6');
       const opt6 = {sequenceColor: 'clustal'};
-      this.clustaloptions = {sequenceColor: 'clustal'};
+      this.clustaloptions = {options: {sequenceColor: 'clustal'}};
       s6.draw({sequences: msa, options: opt6});
 
-      // blosum62
+      // blosum62 default
       const sBlos = new ProSeqViewer('sqvBlosum');
       const optBlos = {sequenceColorMatrix: 'blosum62'};
-      this.blosumdefaultoptions = {sequenceColorMatrix: 'blosum62'};
+      this.blosumdefaultoptions = {options: {sequenceColorMatrix: 'blosum62'}};
       const seqsBlos = [
           {
               sequence: 'GTREVPADAYYGVHTLRAIENFYISNNKISDIPEFVRGMVMVKKAAAMANKELQTIPKSV' +
@@ -302,6 +300,36 @@ export class AppComponent implements OnInit {
       ];
       sBlos.draw({sequences: seqsBlos, options: optBlos});
 
+      // blosum62 default
+      const sBlos2 = new ProSeqViewer('sqvBlosumCustom');
+
+      const substitutionMatrixBlosum = { WF: [ '#FFB3AD', '#000000'], QQ: [ '#FFB3AD', '#000000'],
+          HH: [ '#FF928B', '#000000'], YY: [ '#FF7A70', '#000000'], ZZ: [ '#FF7A70', '#000000'],
+          CC: [ '#FF7A70', '#000000'], PP: [ '#FF7A70', '#000000'], VI: [ '#FFB3AD', '#000000'],
+          VM: [ '#FFB3AD', '#000000'], KK: [ '#FFB3AD', '#000000'], ZK: [ '#CFDBF2', '#000000'],
+          DN: [ '#FFB3AD', '#000000'], SS: [ '#FF928B', '#000000'], QR: [ '#FF928B', '#000000'],
+          NN: [ '#FF7A70', '#000000'], YF: [ '#FFB3AD', '#000000'], VL: [ '#FFB3AD', '#000000'],
+          KR: [ '#FFB3AD', '#000000'], ED: [ '#FFB3AD', '#000000'], VV: [ '#FFB3AD', '#000000'],
+          MI: [ '#FFB3AD', '#000000'], MM: [ '#FFB3AD', '#000000'], ZD: [ '#FFB3AD', '#000000'],
+          FF: [ '#FF928B', '#000000'], BD: [ '#FFB3AD', '#000000'], HN: [ '#FFB3AD', '#000000'],
+          TT: [ '#FF928B', '#000000'], SN: [ '#FFD9D6', '#000000'], LL: [ '#FFB3AD', '#000000'],
+          EQ: [ '#FFB3AD', '#000000'], YW: [ '#FFD9D6', '#000000'], EE: [ '#FFB3AD', '#000000'],
+          KQ: [ '#FFB3AD', '#000000'], WW: [ '#FF7A70', '#000000'], ML: [ '#FF7A70', '#000000'],
+          KE: [ '#FFB3AD', '#000000'], ZE: [ '#FFD9D6', '#000000'], ZQ: [ '#FF928B', '#000000'],
+          BE: [ '#FFB3AD', '#000000'], DD: [ '#FFB3AD', '#000000'], SA: [ '#FF928B', '#000000'],
+          YH: [ '#FFB3AD', '#000000'], GG: [ '#FFB3AD', '#000000'], AA: [ '#FF928B', '#000000'],
+          II: [ '#FF928B', '#000000'], TS: [ '#FFD9D6', '#000000'], RR: [ '#FFB3AD', '#000000'],
+          LI: [ '#FFB3AD', '#000000'], ZB: [ '#FFD9D6', '#000000'], BN: [ '#FFB3AD', '#000000'],
+          BB: [ '#FF928B', '#000000']
+      };
+      const substitutionMatrix = {
+          WF: {backgroundColor: '#FFB3AD'}, QQ: {backgroundColor: '#FFB3AD'},
+      };
+      this.blosumcustomoptions = {options: {sequenceColorMatrix: substitutionMatrix}};
+
+      sBlos2.draw({sequences: seqsBlos, options: {sequenceColorMatrix: substitutionMatrixBlosum}});
+
+
       // indexes EXAMPLE
       // lateral
       const s5 = new ProSeqViewer('sqv5');
@@ -312,12 +340,14 @@ export class AppComponent implements OnInit {
                   'AINQLREGFERKAVEFQDILKMGRTQLQDAVPMT', id: 1, startIndex: 50
           }
       ];
-      this.latindexoptions = {indexesLocation: 'lateral'};
-      s5.draw({sequences: seqs5, options: this.latindexoptions});
+      this.latindexoptions = {options: {indexesLocation: 'lateral'}};
+      const latindexoptions = {indexesLocation: 'lateral'};
+      s5.draw({sequences: seqs5, options: latindexoptions});
       // top
       const s10 = new ProSeqViewer('sqv10');
-      this.topindexoptions = {indexesLocation: 'top'};
-      s10.draw({sequences: seqs5, options: this.topindexoptions});
+      this.topindexoptions =  {options: {indexesLocation: 'top'}};
+      const topindexoptions = {indexesLocation: 'top'};
+      s10.draw({sequences: seqs5, options: topindexoptions});
 
       // consensus EXAMPLE
       const s7 = new ProSeqViewer('sqv7');
@@ -327,7 +357,7 @@ export class AppComponent implements OnInit {
           {sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'CRAB_CHICK'}
       ];
       const opt7 = {consensusColorIdentity: 'identity', consensusDotThreshold: 80};
-      this.consensusidentity = {consensusColorIdentity: 'identity', consensusDotThreshold: 80};
+      this.consensusidentity = {options: {consensusColorIdentity: 'identity', consensusDotThreshold: 80}};
       s7.draw({sequences: seqs7, options: opt7});
 
       const sPhysical = new ProSeqViewer('sqvPhysical');
@@ -337,7 +367,7 @@ export class AppComponent implements OnInit {
           {sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'CRAB_CHICK'}
       ];
       const optPhysical = {consensusColorMapping: 'physical'};
-      this.consensusphysical = {consensusColorMapping: 'physical'};
+      this.consensusphysical = {options: {consensusColorMapping: 'physical'}};
       sPhysical.draw({sequences: seqsPhysical, options: optPhysical});
 
 
@@ -347,8 +377,9 @@ export class AppComponent implements OnInit {
 
       // wrapline EXAMPLE, non-responsive
       const s8 = new ProSeqViewer('sqv8');
-      this.wrapoptionsnr = {wrapLine: false, chunkSize: 20};
-      s8.draw({sequences: seqs5, options: this.wrapoptionsnr});
+      this.wrapoptionsnr = { options: {wrapLine: false, chunkSize: 20}};
+      const wrapoptionsnr = {wrapLine: false, chunkSize: 20};
+      s8.draw({sequences: seqs5, options: wrapoptionsnr});
 
       // selections EXAMPLE
       const s9 = new ProSeqViewer('sqv9');
