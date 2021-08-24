@@ -73,13 +73,7 @@
         </div>
     </div>
 
-    <tabset>
-            <ul class="code">
-                <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
-                <li><span class="tab-sp-db">      chunkSize: 20, wrapLine: true, viewerWidth: '350px'</span></li>
-                <li><span class="tab-sp">      };</span></li>
-            </ul>
-    </tabset>
+    <pre class="codebkg">{{wrapoptionsnr | json}}</pre>
 
 
 
@@ -92,19 +86,8 @@
 
     <div class="sqvDemo" id="sqvSingle"></div>
 
-    <tabset>
-            <ul class="code">
-                <li><span class="tab-sp"><span class="hljs-js">const</span> icons =  &#123;</span></li>
-                <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 1, end: 12, icon: 'noSecondary'},</span></li>
-                <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 13, end: 18, icon: 'noSecondary'},</span></li>
-                <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 19, end: 25, icon: 'helix'},</span></li>
-                <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 26, end: 27, icon: 'noSecondary'},</span></li>
-                <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 28, end: 30, icon: 'helix'},</span></li>
-                <li><span class="tab-sp-db">      ... </span></li>
-                <li><span class="tab-sp-db">      };</span></li>
-                <li><span class="tab-sp"><span class="hljs-js">const</span> options = &#123;chunkSize: 0}; </span></li>
-            </ul>
-    </tabset>
+    <pre class="codebkg">{{icons | json}}</pre>
+
 
 
     <!--------------------------------------------  REGIONS  EXAMPLE ---------------------------------------->
@@ -115,18 +98,8 @@
     <div class="sqvDemo"  id="sqv2"></div>
 
 
-    <tabset>
-            <ul class="code">
-                <li><span class="tab-sp"><span class="hljs-js">const</span> regions = [ </span></li>
-                <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 25, end: 53, backgroundColor: '#2f6690', color: '#FFFFFF'},</span></li>
-                <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 54, end: 63, backgroundColor: '#FF6978', color: '#FFFFFF'},</span></li>
-                <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 64, end: 84, backgroundColor: '#FAC05E', color: '#FFFFFF'},</span></li>
-                <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 85, end: 100, backgroundColor: '#FF6978', color: '#FFFFFF'},</span></li>
-                <li><span class="tab-sp-db">      &#123;sequenceId: 1, start: 101, end: 127, backgroundColor: '#2f6690', color: '#FFFFFF'},</span></li>
-                <li><span class="tab-sp-db">      ... ,</span></li>
-                <li><span class="tab-sp">      ];</span></li>
-            </ul>
-    </tabset>
+    <pre class="codebkg">{{regions | json}}</pre>
+
 
 
 
@@ -136,15 +109,7 @@
     <p>Match the sequences against a regular expression to show possible patterns. </p>
     <div class="sqvDemo" id="sqv4"></div>
 
-    <tabset>
-            <ul class="code">
-                <li><span class="tab-sp"><span class="hljs-js">const</span> patterns = [ </span></li>
-                <li><span class="tab-sp-db">      &#123;sequenceId: 1, pattern: /AA/g, backgroundColor: '#D72638'},</span></li>
-                <li><span class="tab-sp-db">      &#123;sequenceId: 1, pattern: /PD/g, backgroundColor: '#FF570A'},</span></li>
-                <li><span class="tab-sp-db">      &#123;sequenceId: 1, pattern: /GV/g, backgroundColor: '#FFBC42'}</span></li>
-                <li><span class="tab-sp">      ];</span></li>
-            </ul>
-    </tabset>
+    <pre class="codebkg">{{patterns | json}}</pre>
 
 
 
@@ -157,22 +122,7 @@
     <p>Multiple sequence alignment of Aspartate ammonia-lyase protein (Uniprot P0AC38) with ten homologs. Residue numbering displayed on top of the sequences.</p>
     <div class="sqvDemo" id="sqv0"></div>
 
-    <tabset>
-            <ul class="code">
-                <li><span><span class="hljs-js">const</span> sequences = [ </span></li>
-                <li><span class="tab-sp"><span>      &#123;sequence: 'GTREVPADAYYGVHTLRAIENFYISNNKISDIPEFVRGMVMVKKAAAMANKELQTIPKSV' +</span></span></li>
-                <li><span class="tab-sp"><span> 'ANAIIAACDEVLNNGKCMDQFPVDVYQGGAGTSVNMNTNEVLANIGLELMGHQKGEYQYLNPNDHVNKCQSTNDAYPTGFRIAV',</span></span></li>
-                <li><span class="tab-sp"><span>   id: 1, label: 'ASPA_ECOLI/13-157'},</span></span></li>
-                <li><span class="tab-sp"><span>      &#123;sequence: 'GEKQIEADVYYGIQTLRASENFPITGYKIHEE..MINALAIVKKAAALANMDVKRLYEGIGQAIVQAADEILE.GKWHDQFIVDPIQGGA' +</span></span></li>
-                <li><span class="tab-sp"><span>  'GTSMNMNANEVIGNRALEIMGHKKGDYIHLSPNTHVNMSQSTNDVFPTAIHIST',</span></span></li>
-                <li><span class="tab-sp"><span>  id: 2, label: 'ASPA_BACSU/16-157'},</span></span></li>
-                <li><span class="tab-sp-db">      ... ,</span></li>
-                <li><span class="tab-sp"><span>      ];</span></span></li>
-                <li><span><span class="hljs-js">const</span> options =  &#123;</span></li>
-                <li><span class="tab-sp"><span>       indexesLocation: 'top'</span></span></li>
-                <li><span>      };</span></li>
-            </ul>
-    </tabset>
+    <pre class="codebkg">{{msa | json}}</pre>
 
 
 
@@ -191,13 +141,7 @@
       <div class="sqvDemo" id="sqv6"></div>
 
 
-      <tabset>
-             <ul class="code">
-               <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
-               <li><span class="tab-sp-db">      sequenceColor: 'clustal'</span></li>
-               <li><span class="tab-sp">      };</span></li>
-            </ul>
-      </tabset>
+    <pre class="codebkg">{{clustaloptions | json}}</pre>
 
 
       <!-------------------------------------  sequenceColorMatrix blosum  EXAMPLE ---------------------------------------->
@@ -213,15 +157,14 @@
       <div class="sqvDemo" id="sqvBlosum"></div>
 
 
-      <tabset>
-           <ul class="code">
-             <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
-             <li><span class="tab-sp-db">      sequenceColorMatrix: 'blosum62'</span></li>
-             <li><span class="tab-sp">      };</span></li>
-          </ul>
-      </tabset>
+    <pre class="codebkg">{{blosumdefaultoptions | json}}</pre>
 
     <p style="color:#000;margin-top: 20px"><b>Custom sequence color matrix</b></p>
+
+<!--    <p style="color:#000;margin-top: 20px"><b>Blosum62 (custom matrix)</b></p>-->
+
+<!--    <div class="sqvDemo" id="sqvBlosumCustom"></div>-->
+<!--    <pre class="codebkg">{{blosumcustomoptions | json}}</pre>-->
 
 
     <!-------------------------------------  CONSENSUS  EXAMPLE ---------------------------------------->
@@ -247,38 +190,36 @@
       <div class="sqvDemo"><div id="sqv7"></div></div>
 
 
-      <tabset>
-              <ul class="code">
-                <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
-                <li><span class="tab-sp-db">      consensusColorIdentity: 'identity', consensusDotThreshold: 80</span></li>
-                <li><span class="tab-sp">      };</span></li>
-          </ul>
-      </tabset>
+    <pre class="codebkg">{{consensusidentity | json}}</pre>
 
 
       <!--  physical-->
       <p style="color: #000; margin-top: 20px;"><b>Consensus based on physico-chemical properties</b></p>
-      <div class="consensusphy aa">&nbsp;100% </div>
-    <div class="consensusphy h">h </div> small hydrophobic - C,V,I,L,P,F,Y,M,W
+      <div class="consensusrect aa">&nbsp;100% </div>
 
-       <div class="consensusphy n">n</div> small nonpolar - A,G,S,T
-        <div class="consensusphy p">p</div> non polar - N,Q,H
 
-        <div class="consensusphy neg">~</div> negatively charged - D,E
-
-        <div class="consensusphy pos">+</div> positively charged - K,R
-
+    <dl class="rowtest">
+        <dt class="col-sm-2 text-md-right"> small nonpolar
+        <div class="badge-feature ml-3" style="background-color: #f09048;">n</div>
+        </dt>
+        <dd class="col-sm-10"> A,G,S,T </dd>
+        <dt class="col-sm-2 text-md-right"> small hydrophobic
+            <div class="badge-feature ml-3" style="background-color: #558B6E;">h</div>
+        </dt>
+        <dd class="col-sm-10">C,V,I,L,P,F,Y,M,W </dd>
+        <dt class="col-sm-2 text-md-right"> negatively charged
+            <div class="badge-feature ml-3" style="background-color: #A10702;">~</div>
+        </dt>
+        <dd class="col-sm-10"> D,E </dd>
+        <dt class="col-sm-2 text-md-right"> positively charged
+            <div class="badge-feature ml-3" style="background-color: #3626A7;">+</div>
+        </dt>
+        <dd class="col-sm-10"> K,R </dd>
+    </dl>
 
       <div class="sqvDemo" id="sqvPhysical"></div>
 
-      <tabset>
-             <ul class="code">
-               <li><span class="tab-sp"><span class="hljs-js">const</span> options =  &#123;</span></li>
-               <li><span class="tab-sp-db">      consensusColorMapping: 'physical'</span></li>
-               <li><span class="tab-sp">      };</span></li>
-          </ul>
-      </tabset>
-
+    <pre class="codebkg">{{consensusphysical | json}}</pre>
 
 
 
@@ -325,7 +266,7 @@
           <p><strong>2. Edit the "styles" field in your angular.json </strong></p>
           <pre><code><span class="hljs-ang">styles:</span> ["./node_modules/proseqviewer/dist/assets/sqv.css"]</code></pre>
 
-          <p><strong>3. Edit your angular component: </strong></p>
+          <p class="comment">// component:</p>
           <ul class="code-no-height">
               <li><span class="hljs-js">import</span> &#123; ProSeqViewer &#125; <span class="hljs-keyword">from</span> <span class="hljs-id">'proseqviewer/dist'</span>;</li>
               <li><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new </span> ProSeqViewer(<span class="hljs-id">'sqv'</span>);</li>
@@ -333,7 +274,7 @@
             <li>proseqviewer.<span class="hljs-js">draw</span>(&#123; sequence});</li>
           </ul>
 
-            <p><strong> 4. Edit your template: </strong></p>
+            <p class="comment">// template</p>
             <ul class="code-no-height"><li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqv"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li></ul>
 
 
@@ -342,10 +283,10 @@
             <p>The object has 5 keys (keys order is indifferent).</p>
 
             <ul class="code-no-height">
-                <li><span class="hljs-js"> &#123;sequences: Array&lt;Sequences&gt;,</span>;</li>
-                <li><span class="hljs-js">regions?: Array&lt;Regions&gt;,</span></li>
-                <li><span class="hljs-js">patterns?: Array&lt;Patterns&gt;,</span></li>
-                <li><span class="hljs-js">options?: Options&#125;</span></li>
+                <li><span>&#123;sequences: Array&lt;Sequences&gt;,</span>;</li>
+                <li><span>regions?: Array&lt;Regions&gt;,</span></li>
+                <li><span>patterns?: Array&lt;Patterns&gt;,</span></li>
+                <li><span>options?: Options&#125;</span></li>
             </ul>
 
             <p>Each key value is itself a JSON object. E.g.: &#123;sequence: .., id: ..}. Below a detailed description of each value.</p>
@@ -439,8 +380,8 @@
              <div class="col-sm"></div>
              <div class="col-sm">color</div>
              <div class="col-sm">string</div>
-             <div class="col-sm">hex, rgb</div>
-             <div class="col-sm">Color the character.</div>
+             <div class="col-sm">hex</div>
+             <div class="col-sm">Color the character. All options available: 'hex' or 'rgb'.</div>
            </div>
                 <div class="row field1">
              <div class="col-sm"></div>
@@ -481,15 +422,15 @@
              <div class="col-sm"></div>
              <div class="col-sm">backgroundColor</div>
              <div class="col-sm">string</div>
-             <div class="col-sm">hex, rgb</div>
-             <div class="col-sm">Color the regex match background.</div>
+             <div class="col-sm">hex</div>
+             <div class="col-sm">Color the regex match background. All options available: 'hex' or 'rgb'.</div>
            </div>
                 <div class="row field1">
              <div class="col-sm"></div>
              <div class="col-sm">color</div>
              <div class="col-sm">string</div>
-             <div class="col-sm">hex, rgb</div>
-             <div class="col-sm">Color the regex match the character.</div>
+             <div class="col-sm">hex</div>
+             <div class="col-sm">Color the regex match the character.  All options available: 'hex' or 'rgb'.</div>
            </div>
                 <div class="row field1">
              <div class="col-sm"></div>
@@ -530,8 +471,8 @@
              <div class="col-sm"></div>
              <div class="col-sm">icon</div>
              <div class="col-sm">string</div>
-             <div class="col-sm">lollipop, helix, strand, strand-arrow-left, turn</div>
-             <div class="col-sm">Default svg image to apply on top of the indicated sequence.</div>
+             <div class="col-sm">helix</div>
+             <div class="col-sm">Default svg image to apply on top of the indicated sequence. All options available: 'lollipop', 'helix', 'strand', 'strand-arrow-left', 'turn'.</div>
            </div>
                 <div class="row field1">
                 <div class="col-sm"></div>
@@ -614,15 +555,15 @@
              <div class="col-sm"></div>
              <div class="col-sm">sequenceColor</div>
              <div class="col-sm">string</div>
-             <div class="col-sm">clustal, zappo, taylor ...</div>
+             <div class="col-sm">clustal</div>
              <div class="col-sm">Colorscheme to apply to all sequences. Any Jalview colorscheme is available, see the complete list on Multiple sequence alignment (MSA) - Sequence color).</div>
            </div>
                 <div class="row field1">
                     <div class="col-sm"></div>
                     <div class="col-sm"></div>
                     <div class="col-sm">obj</div>
-                    <div class="col-sm">&#123; &lt;aminoacid&gt;:&lt;background_color&gt;, .. } </div>
-                    <div class="col-sm">Custom colorscheme to apply to all sequences.</div>
+                    <div class="col-sm">&#123; A: '#80a0f0', .. } </div>
+                    <div class="col-sm">Custom colorscheme to apply to all sequences. Scheme: &#123; &lt;aminoacid&gt;:&lt;background_color&gt;, .. }</div>
             </div>
                 <div class="row field1">
               <div class="col-sm"></div>
@@ -635,8 +576,8 @@
                     <div class="col-sm"></div>
                     <div class="col-sm"></div>
                     <div class="col-sm">obj</div>
-                    <div class="col-sm"> &#123;&lt;aminoacid_pair&gt;:[&lt;background_color&gt;,&lt;color&gt;], .. } </div>
-                    <div class="col-sm">Add custom matrix colorscheme.</div>
+                    <div class="col-sm"> &#123;KR: [ '#C0CFED', '#000000'], .. } </div>
+                    <div class="col-sm">Add custom matrix colorscheme. Scheme: &#123;&lt;aminoacid_pair&gt;:[&lt;background_color&gt;,&lt;color&gt;], .. }</div>
                 </div>
                 <div class="row field1">
                     <div class="col-sm"></div>
@@ -656,8 +597,8 @@
                     <div class="col-sm"></div>
                     <div class="col-sm">consensusColorIdentity</div>
                     <div class="col-sm">obj</div>
-                    <div class="col-sm">&#123;&lt;level&gt;:[&lt;background_color&gt;,&lt;color&gt;], .. }</div>
-                    <div class="col-sm">Add a line with custom consensus identity information.</div>
+                    <div class="col-sm">&#123;90: ['#0A0A0A', '#FFFFFF'], .. }</div>
+                    <div class="col-sm">Add a line with custom consensus identity information. Scheme: &#123;&lt;level&gt;:[&lt;background_color&gt;,&lt;color&gt;], .. }</div>
                 </div>
                 <div class="row field1">
                     <div class="col-sm"></div>
@@ -670,8 +611,8 @@
                     <div class="col-sm"></div>
                     <div class="col-sm">consensusColorMapping</div>
                     <div class="col-sm">obj</div>
-                    <div class="col-sm">&#123;&lt;aminoacid&gt;:[&lt;symbol&gt;,&lt;background_color&gt;,&lt;color&gt;], .. }&#123;</div>
-                    <div class="col-sm">Add a line with custom consensus physical information.</div>
+                    <div class="col-sm">&#123;A:['+', '#3626A7', '#FFFFFF'], .. }&#123;</div>
+                    <div class="col-sm">Add a line with custom consensus physical information. Scheme: &#123;&lt;aminoacid&gt;:[&lt;symbol&gt;,&lt;background_color&gt;,&lt;color&gt;], .. }</div>
                 </div>
         </div>
       </div>
