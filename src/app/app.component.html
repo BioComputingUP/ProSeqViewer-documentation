@@ -30,6 +30,7 @@
   <a href="#installation" target="_self"><h6>Installation guide</h6></a>
   <a href="#input" target="_self"><h6>Input</h6></a>
   <a href="#events" target="_self"><h6>Events</h6></a>
+  <a href="#loading" target="_self"><h6>Loading time</h6></a>
 </div>
 <!------------------------------------- DEMO ---------------------------------------->
 
@@ -618,23 +619,25 @@
     </div>
     <!-------------------------------------  EVENTS  EXAMPLE ---------------------------------------->
     <h6 id="events" class="snippet-title">Events<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h6>
-    <p>Three different types of events are available: area selection and column selection (active after the user's Ctrl+C action) and the double click event (active after user's double click).</p>
+    <p>Three different types of events are available: area selection and column selection (active after the user's Ctrl+C action) and the double click event (active after user's double click). The events are available integrating the eventListeners and will be fired on ctrl+C and double click user action, respectively.</p>
 
     <p><b>Area selection</b></p>
-    <p>Click and drag the mouse to select a region, the region will be highlighted in yellow. Use the
-        shortcut Ctrl+C to copy and Ctrl+V to paste. The selected region will disappear after using a
-        shortcut or clicking on another area.</p>
+    <p>Click and drag the mouse to select an area of text (amino acids), the region will be highlighted in yellow. Use the
+        shortcut Ctrl+C to copy and Ctrl+V to paste. The selected region will disappear after clicking on another area.</p>
+
+    <p><b>Columns selection</b></p>
+    <p>Click and drag the mouse to select columns (selecting an amino acid will highlight all the amino acids in the column), the region will be highlighted in yellow. Use the
+        shortcut Ctrl+C to copy and Ctrl+V to paste. The selected region will disappear after clicking on another area.</p>
 
 
     <pre class="prettyprint prettyprinted"><code>
-    <span> window.<span class="hljs-js">addEventListener</span>('onAreaSelected', (e) =>   &#123;
-             console.<span class="hljs-js">log</span>('event type', e['detail'].type);
+    <span> window.<span class="hljs-js">addEventListener</span>('onHighlightSelection', (e) =>   &#123;
+             console.<span class="hljs-js">log</span>('event type', e['detail'].eventType);
              console.<span class="hljs-js">log</span>('text area', e['detail'].text);
            });
     </span>
   </code></pre>
 
-    <p><b>Columns selection</b></p>
 
     <p><b>Double click</b></p>
     <p>The double click event will return information about the clicked character, like the x, y positions and the character itself.</p>
@@ -657,10 +660,28 @@
         <form>
             <div class="row">
                 <div class="col-25">
-                    <label for="subject">Paste area or columns selection</label>
+                    <label for="subject">Paste area selection</label>
                 </div>
                 <div class="col-75">
                     <textarea id="subject" name="subject" placeholder="Copy-paste something.." style="height:200px"></textarea>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <div class="sqvDemo">
+        <div class="row">
+            <div id="sqvcolumn"></div>
+        </div>
+    </div>
+    <div class="box">
+        <form>
+            <div class="row">
+                <div class="col-25">
+                    <label for="subject">Paste columns selection</label>
+                </div>
+                <div class="col-75">
+                    <textarea id="subject2" name="subject" placeholder="Copy-paste something.." style="height:200px"></textarea>
                 </div>
             </div>
 
@@ -681,5 +702,12 @@
 
         </form>
     </div>
+
+
+    <h6 id="loading" class="snippet-title">Loading<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h6>
+    <p>Loading time is due to DOM rendering reasons and with long sequences (>10.000-15.000 chars), it can take a few seconds to load.
+        You can however place a loading icon meanwhile, and remove it after the tool is loaded. How to know when the rendering ends?
+        You can check the Proseqviewer html element with the javascript function document.getElementById(proseqviewer_id), the element is empty in the beginning, full when fully loaded.</p>
+
 
 </div>
