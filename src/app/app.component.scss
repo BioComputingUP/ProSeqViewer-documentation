@@ -1,3 +1,22 @@
+.flex-container {
+  display: flex;
+  background-color: #f2f2f2;
+}
+
+.flex-container > div {
+  background-color: white;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  width: 200px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+}
 
 .tit {
   color: #E36397;

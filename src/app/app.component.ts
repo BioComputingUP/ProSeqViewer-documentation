@@ -13,7 +13,8 @@ export class AppComponent implements OnInit {
   positionY;
   latindexoptions;
   topindexoptions;
-  wrapoptionsnr;
+  wrapoptionsnr1;
+  wrapoptionsnr2;
   icons;
   regions;
   patterns;
@@ -24,8 +25,11 @@ export class AppComponent implements OnInit {
   consensusidentity;
   consensusphysical;
   input;
+  interactive;
 
   ngOnInit(): void {
+      // INTERACTIVE EXAMPLE: multiple sequence
+
 
       // GENERAL EXAMPLE: multiple sequence
       const s0 = new ProSeqViewer('sqv0');
@@ -203,30 +207,16 @@ export class AppComponent implements OnInit {
       ]};
       s2.draw({sequences: seqs, regions: reg1});
 
-      // icons EXAMPLE
-
-      const s3 = new ProSeqViewer('sqv3');
-      const seq3 = [
-          {
-              sequence: 'MASESGKLWGGRFVGAVDPIMEKFNASIAYDRHLWEVDVQGSKAYSRGLEKAGLLTKAEMDQILHGLDKVAEEWAQGTFKLNSNDEDIHTANERRLKELIGATAGKLHTGRSRNDQVVTDLRLWMRQTCSTLSGLLWELIRTMVDRAEAERDVLFPGYTHLQRAQPIRWSHWILSHAVALTRDSERLLEVRKRINVLPLGSGAIAGNPLGVDRELLRAELNFGAITLNSMDATSERDFVAEFLFWASLCMTHLSRMAEDL ILYCTKEFSFVQLSDAYSTGSSLMPQKKNPDSLELIRSKAGRVFGRCAGLLMTLKGLPSTYNKDLQEDKEAVFEVSDTMSAVLQVATGVISTLQIHQENMGQALSPDMLATDLAYYLVRKGMPFRQAHEASGKAVFMAETKGVALNQLSLQELQTISPLFSGDVICVWDYGHSVEQYGALGGTARSSVDWQIRQVRALLQAQQA',
-              id: 1,
-              label: 'P04424 | Homo sapiens'
-          }
-      ];
-
-      const opt3 = {chunkSize: 0};
-
-      s3.draw({sequences: seq3, icons: singleIco, options: opt3});
 
       // patterns EXAMPLE
       const s4 = new ProSeqViewer('sqv4');
       const pat4 = [
-          {sequenceId: 1, pattern: /AA/g, backgroundColor: '#D72638'},
-          {sequenceId: 1, pattern: /PD/g, backgroundColor: '#FF570A'},
-          {sequenceId: 1, pattern: /GV/g, backgroundColor: '#FFBC42'},
+          {sequenceId: 1, pattern: 'AA', backgroundColor: '#D72638'}, // todo:change to string when publish new package
+          {sequenceId: 1, pattern: 'PD', backgroundColor: '#FF570A'},
+          {sequenceId: 1, pattern: 'GV', backgroundColor: '#FFBC42'},
       ];
 
-      const txt = /AA/g ;
+      const txt = 'AA' ;
       this.patterns = {patterns: [
           {sequenceId: 1, pattern: txt, backgroundColor: '#D72638'}
       ]};
@@ -330,7 +320,7 @@ export class AppComponent implements OnInit {
 
       sBlos2.draw({sequences: seqsBlos, options: {sequenceColorMatrix: substitutionMatrixBlosum}});
 
-
+      //
       // indexes EXAMPLE
       // lateral
       const s5 = new ProSeqViewer('sqv5');
@@ -371,16 +361,19 @@ export class AppComponent implements OnInit {
       this.consensusphysical = {options: {consensusColorMapping: 'physical'}};
       sPhysical.draw({sequences: seqsPhysical, options: optPhysical});
 
-
+      //
       // wrapline EXAMPLE, responsive
       const s13 = new ProSeqViewer('sqv13');
-      s13.draw({sequences: seqs5});
+      const wrapoptionsnr1 = {wrapLine: false, chunkSize: 20, viewerWidth: '350px'};
+      this.wrapoptionsnr1 = { options: {wrapLine: false, viewerWidth: '350px', chunkSize: 20}};
+
+      s13.draw({sequences: seqs5, options: wrapoptionsnr1});
 
       // wrapline EXAMPLE, non-responsive
       const s8 = new ProSeqViewer('sqv8');
-      this.wrapoptionsnr = { options: {wrapLine: false, chunkSize: 20}};
-      const wrapoptionsnr = {wrapLine: false, chunkSize: 20};
-      s8.draw({sequences: seqs5, options: wrapoptionsnr});
+      this.wrapoptionsnr2 = { options: {wrapLine: true, chunkSize: 20}};
+      const wrapoptionsnr2 = {wrapLine: true, chunkSize: 20};
+      s8.draw({sequences: seqs5, options: wrapoptionsnr2});
 
       // selections EXAMPLE
       const s9 = new ProSeqViewer('sqv9');
@@ -440,19 +433,113 @@ export class AppComponent implements OnInit {
               id: 10, label: 'PUR8_ECOLI/14-137'
           }
       ];
-      s9.draw({sequences: seqs9, options: {selection: 'areaselection'}});
+      s9.draw({sequences: seqs9});
 
-      // selections EXAMPLE
-      const scolumns = new ProSeqViewer('sqvcolumn');
-      scolumns.draw({sequences: seqs9, options: {selection: 'columnselection'}});
+      const detail = 'detail';
 
       window.addEventListener('onRegionSelected', (e) => {
-          console.log('character selected', e['detail'].char);
-          this.selectedChar = e['detail'].char;
-          this.positionX = e['detail'].x;
-          this.positionY = e['detail'].y;
+          console.log('character selected', e[detail].char);
+          this.selectedChar = e[detail].char;
+          this.positionX = e[detail].x;
+          this.positionY = e[detail].y;
       });
   }
 
+  getUserData() {
+
+        const textarea = (document.getElementById('msa') as HTMLInputElement).value;
+        console.log(textarea);
+        const reg1 = (document.getElementById('reg1') as HTMLInputElement).checked;
+        const reg2 = (document.getElementById('reg2') as HTMLInputElement).checked;
+        const ico1 = (document.getElementById('ico1') as HTMLInputElement).checked;
+        const ico2 = (document.getElementById('ico2') as HTMLInputElement).checked;
+        const cl1 = (document.getElementById('cl1') as HTMLInputElement).checked;
+        const cl2 = (document.getElementById('cl2') as HTMLInputElement).checked;
+        const top = (document.getElementById('top') as HTMLInputElement).checked;
+        const lateral = (document.getElementById('lateral') as HTMLInputElement).checked;
+        const identity = (document.getElementById('identity') as HTMLInputElement).checked;
+        const physical = (document.getElementById('physical') as HTMLInputElement).checked;
+
+        const proseqviewer = new ProSeqViewer('interactiveProSeq');
+
+        const sequences = textarea.split('>').slice(1);
+
+        const proSeqSequences = [];
+        const seqInteractive = [];
+        let count = 0;
+        for (const sequence of sequences) {
+              const sequenceLabel = sequence.split('\n\n')[0];
+              const sequenceChars = sequence.split('\n\n')[1];
+              count += 1;
+              const proSeqSequence = {sequence: sequenceChars, id: count, label: sequenceLabel};
+              proSeqSequences.push(proSeqSequence);
+              seqInteractive.push(proSeqSequence);
+        }
+        console.log(proSeqSequences);
+
+
+        const optionsUser = {};
+        const optionsInteractive = {};
+        let regionsUser;
+        let regionsInteractive;
+        let iconUser;
+        let iconInteractive;
+        const indexesLocation = 'indexesLocation';
+        const consensusColorIdentity = 'consensusColorIdentity';
+        const consensusColorMapping = 'consensusColorMapping';
+
+        let color = '#2f6690';
+        if (cl2) {
+              color = '#E36397';
+        }
+        if (reg1) {
+            regionsUser = [{sequenceId: 1, start: 11, end: 20, backgroundColor: color}];
+            regionsInteractive = [{sequenceId: 1, start: 10, end: 20, backgroundColor: color}];
+        } else if (reg2) {
+            regionsUser = [{sequenceId: 1, start: 21, end: 30, backgroundColor: color}];
+            regionsInteractive = [{sequenceId: 1, start: 20, end: 30, backgroundColor: color}];
+        }
+        if (ico1 && reg1) {
+          iconUser = [{sequenceId: 1, start: 11, end: 20, icon: 'helix'}];
+          iconInteractive = [{sequenceId: 1, start: 10, end: 20, icon: 'helix'}];
+        } else if (ico2 && reg1) {
+          iconUser = [{sequenceId: 1, start: 11, end: 20, icon: 'turn'}];
+          iconInteractive = [{sequenceId: 1, start: 20, end: 30, icon: 'turn'}];
+        }
+        if (ico1 && reg2) {
+          iconUser = [{sequenceId: 1, start: 21, end: 30, icon: 'helix'}];
+          iconInteractive = [{sequenceId: 1, start: 10, end: 20, icon: 'helix'}];
+      } else if (ico2 && reg2) {
+          iconUser = [{sequenceId: 1, start: 21, end: 30, icon: 'turn'}];
+          iconInteractive = [{sequenceId: 1, start: 20, end: 30, icon: 'turn'}];
+      }
+        if (top) {
+            optionsUser[indexesLocation] = 'top';
+            optionsInteractive[indexesLocation] = 'top';
+
+        }
+        if (lateral) {
+            optionsUser[indexesLocation] = 'lateral';
+            optionsInteractive[indexesLocation] = 'lateral';
+
+        }
+        if (identity) {
+            optionsUser[consensusColorIdentity] = 'identity';
+            optionsInteractive[consensusColorIdentity] = 'identity';
+        }
+        if (physical) {
+            optionsUser[consensusColorMapping] = 'physical';
+            optionsInteractive[consensusColorMapping] = 'physical';
+        }
+        console.log(optionsUser);
+
+        this.interactive = {sequences: seqInteractive, options: optionsInteractive, regions: regionsInteractive, icons: iconInteractive};
+        const proSeqData = {sequences: proSeqSequences, options: optionsUser, regions: regionsUser, icons: iconUser};
+
+        proseqviewer.draw(proSeqData);
+        const proSeq = (document.getElementById('interactiveProSeq') as HTMLInputElement);
+        proSeq.classList.add('sqvDemo');
+
+  }
 
 }

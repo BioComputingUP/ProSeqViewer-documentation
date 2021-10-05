@@ -13,6 +13,7 @@
 
 
 <div class="sidenav">
+  <a href="#interactive" target="_self"><h6>Interactive example</h6></a>
   <a  id="reg" href="#singleseq" target="_self"><h6><b>Single sequence</b></h6></a>
   <a href="#indexesLocation" target="_self"><h6>Indexes location</h6></a>
   <a href="#wrapLine" target="_self"><h6>Wrap line</h6></a>
@@ -36,18 +37,97 @@
 
 <div class="row1">
 
-      <h2 id="singleseq" class="txt">Single sequence</h2>
+    <!-------------------------------------  interactive Example  ---------------------------------------->
+    <h6 id="interactive" class="snippet-title">Interactive Example<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h6>
+    <p style="color:#000;"><b>User Input</b></p>
+
+
+        <div class="box">
+            <form>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="subject">Paste sequences (FASTA)</label>
+                    </div>
+                    <div class="col-75">
+                        <textarea id="msa" name="subject" placeholder=""
+                                  style="height:200px">>ASPA_ECOLI/13-157&#10;&#13;GTREVPADAYYGVHTLRAIENFYISNNKISDIPEFVRGMVMVKKAAAMANKELQTIPKSV&#10;&#13;>ASPA_BACSU/16-157&#10;&#13;GEKQIEADVYYGIQTLRASENFPITGYKIHEE..MINALAIVKKAAALANMDVKRLYEGI</textarea>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <div class="flex-container">
+            <div>
+                <p>Select a region:</p>
+                <input type="radio" id="reg1" name="regions" value="reg1" checked>
+                <label for="reg1">11-20</label><br>
+                <input type="radio" id="reg2" name="regions" value="reg2">
+                <label for="reg2">21-30</label>
+            </div>
+            <div>
+                <p>Select an icon:</p>
+                <input type="radio" id="ico1" name="icons" value="ico1" checked>
+                <label for="reg1">helix</label><br>
+                <input type="radio" id="ico2" name="icons" value="ico2">
+                <label for="reg2">turn</label>
+            </div>
+            <div>
+                <p>Select a color:</p>
+                <input type="radio" id="cl1" name="color" value="reg1" checked>
+                <label for="cl1">blue</label><br>
+                <input type="radio" id="cl2" name="color" value="reg2">
+                <label for="cl2">pink</label>
+            </div>
+            <div>
+                <p>Select indexes:</p>
+                <input type="radio" id="top" name="indexes" value="top" checked>
+                <label for="top">top</label><br>
+                <input type="radio" id="lateral" name="indexes" value="lateral">
+                <label for="lateral">lateral</label>
+            </div>
+            <div>
+                <p>Select consensus</p>
+                <input type="radio" id="identity" name="consensus" value="identity" checked>
+                <label for="identity">identity</label><br>
+                <input type="radio" id="physical" name="consensus" value="physical">
+                <label for="physical">physical</label>
+            </div>
+        </div>
+    <div class="center">
+        <button (click)="getUserData()" class="btn btn-primary">Submit</button>
+    </div>
+
+
+    <p style="color:#000;"><b>Result</b></p>
+    <div *ngIf="!interactive"> Your result will appear here!</div>
+
+    <div id="interactiveProSeq"></div>
+
+    <p style="color:#000;" *ngIf="interactive"><b>Code</b></p>
+    <pre *ngIf="interactive" class="codebkg">{{interactive | json}}</pre>
+
+
+
+
+    <!-------------------------------------  single sequence  ---------------------------------------->
+
+
+    <h2 id="singleseq" class="txt">Single sequence</h2>
+
+
 
     <!-------------------------------------  indexesLocation  ---------------------------------------->
 
     <h6 id="indexesLocation" class="snippet-title">Indexes Location<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h6>
-    <p>Indexes are disabled by default, you can activate them and choose indexes location. Sequence indexing is either placed at the beginning of each line or right aligned on top of each block of amino acids. On the lateral index option is also possible to set a value for the startIndex (set to 50 in this example).</p>
+    <p>Indexes are disabled by default, you can activate them and choose indexes location.</p>
 
     <p style="color:#000;"><b>Lateral indexes</b></p>
+    <p>Sequence indexing is placed at the beginning of each line. It is also possible to set a value for the startIndex (set to 50 in this example). </p>
     <div id="sqv5" class="sqvDemo"></div>
     <pre class="codebkg">{{latindexoptions | json}}</pre>
 
     <p style="color:#000;"><b>Indexes on top</b></p>
+    <p>Sequence indexing is right aligned on top of each block of amino acids.</p>
     <div class="sqvDemo"><div id="sqv10"></div></div>
     <pre class="codebkg">{{topindexoptions | json}}</pre>
 
@@ -56,10 +136,22 @@
     <!-------------------------------------  wrapline  EXAMPLE ---------------------------------------->
 
     <h6 id="wrapLine" class="snippet-title">Wrap Line<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h6>
-    <p>Each letter is encapsulated in a column element (just one cell for single sequences) which is part of a block of columns. Blocks are graphically separated to improve readability and can have different length (setting chunkSize option). By default, blocks are automatically moved to a new line when they exceed the container width (responsive behavior). However, block wrapping can be disabled if the user wants to slide MSAs horizontally (non-responsive behavior).
+    <p>Each letter is encapsulated in a column element (just one cell for single sequences) which is part of a block of columns. Blocks are graphically separated to improve readability and can have different length (setting chunkSize option).
     </p>
 
     <p style="color:#000;"><b>Responsive (default)</b></p>
+    <p>By default, blocks are automatically moved to a new line when they exceed the container width (responsive behavior). </p>
+    <div class="sqvDemo">
+        <div class="row">
+            <div id="sqv8"></div>
+        </div>
+    </div>
+
+    <pre class="codebkg">{{wrapoptionsnr2 | json}}</pre>
+
+    <p style="color:#000;"><b>Non-responsive</b></p>
+    <p>Block wrapping can be disabled if the user wants to slide MSAs horizontally (non-responsive behavior).</p>
+
 
     <div class="sqvDemo">
         <div class="row">
@@ -67,15 +159,7 @@
         </div>
     </div>
 
-    <p style="color:#000;"><b>Non-responsive</b></p>
-    <div class="sqvDemo">
-        <div class="row">
-            <div id="sqv8"></div>
-        </div>
-    </div>
-
-    <pre class="codebkg">{{wrapoptionsnr | json}}</pre>
-
+    <pre class="codebkg">{{wrapoptionsnr1 | json}}</pre>
 
 
     <!---------------------------------------------- Icons -------------------------------------------------->
@@ -149,9 +233,10 @@
     <h6 id="sequenceColorMatrix" class="snippet-title">Sequence Color Matrix<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h6>
     <div>Set a global sequence color matrix. Available global sequence color matrix is blosum62.
         Here amino acid pairs are compared, in particular each residue is compared with the residue at the same position in the first sequence. The aminoacid pair is colored based on a input matrix.</div>
-    <p> Blosum62 is a default matrix, but it is also possible to set a custom matrix.</p>
 
-      <p style="color:#000;margin-top: 20px"><b>Blosum62 (default matrix)</b></p>
+
+      <p style="color:#000;margin-top: 20px"><b>Default matrix</b></p>
+    <p> Blosum62 is a default matrix, but it is also possible to set a custom matrix (see Custom matrix).</p>
 
       <img src="assets/heatmap.svg">
 
@@ -160,7 +245,8 @@
 
     <pre class="codebkg">{{blosumdefaultoptions | json}}</pre>
 
-    <p style="color:#000;margin-top: 20px"><b>Blosum62 (custom matrix)</b></p>
+    <p style="color:#000;margin-top: 20px"><b>Custom matrix</b></p>
+    <p> It is possible to set a custom sequence color matrix, check the Documentation (Input -option, sequenceColorMatrix-) for details.</p>
 
     <div class="sqvDemo" id="sqvBlosumCustom"></div>
     <pre class="codebkg">{{blosumcustomoptions | json}}</pre>
@@ -171,14 +257,14 @@
       <h6 id="consensus" class="snippet-title">Consensus<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h6>
       <div>A consensus sequence will be the generated on top of the alignment, representing the most frequent aminoacid (consensus identity) or property (consensus physical) found at each position in a sequence alignment.</div>
       <div>As a default, the consensusDotThreshold is set at 90%, meaning that position with a frequency less of 90% will display a dot.</div>
-      <div>In the consensus identity the aminoacid found at each position is colored based on its frequency in the alignment. Each level has a color: (100%, 80%, 70%..)</div>
-      <div>In the consensus physical the aminoacid found at each position is colored based on the aminoacid property frequency in the alignment. The property symbol is displayed.</div>
       <div>Consensus 'identity' and 'physical' can't be set at the same time. In case of overlapping settings, consensus 'identity' will be displayed.</div>
         <p> It is also possible to set a custom consensus with personalized colors, levels and symbols and modify the consensusDotThreshold, check the Documentation for details.</p>
 
       <!--  identity -->
       <div class="palette">
         <p style="color:#000;"><b>Identity consensus</b></p>
+          <p>In the consensus identity the aminoacid found at each position is colored based on its frequency in the alignment. Each level has a color: (100%, 80%, 70%..)</p>
+
 
         <div class="consensusrect aa">&nbsp;100%</div>
         <div class="consensusrect bb">&nbsp;70%</div>
@@ -194,6 +280,7 @@
 
       <!--  physical-->
       <p style="color: #000; margin-top: 20px;"><b>Consensus based on physico-chemical properties</b></p>
+    <p>In the consensus physical the aminoacid found at each position is colored based on the aminoacid property frequency in the alignment. The property symbol is displayed.</p>
       <div class="consensusrect aa">&nbsp;100% </div>
 
 
@@ -281,11 +368,11 @@
             <p>The proseqviewer provides a method <i>draw()</i> that take a JSON object in input.</p>
             <p>The object has 5 keys (keys order is indifferent).</p>
 
-            <ul class="code-no-height">
-                <li><span>&#123;sequences: Array&lt;Sequences&gt;,</span>;</li>
+            <ul>
+                <li><span>sequences: Array&lt;Sequences&gt;,</span></li>
                 <li><span>regions?: Array&lt;Regions&gt;,</span></li>
                 <li><span>patterns?: Array&lt;Patterns&gt;,</span></li>
-                <li><span>options?: Options&#125;</span></li>
+                <li><span>options?: Options</span></li>
             </ul>
 
             <p>Each key value is itself a JSON object. E.g.: &#123;sequence: .., id: ..}. Below a detailed description of each value.</p>
@@ -410,6 +497,13 @@
              <div class="col-sm">10</div>
              <div class="col-sm">Start position of the region where to perform the regex.</div>
            </div>
+                <div class="row field1">
+                    <div class="col-sm"></div>
+                    <div class="col-sm">pattern</div>
+                    <div class="col-sm">string</div>
+                    <div class="col-sm">AAA</div>
+                    <div class="col-sm">Regex pattern to find in the sequence.</div>
+                </div>
                 <div class="row field1">
              <div class="col-sm"></div>
              <div class="col-sm">end</div>
@@ -619,14 +713,10 @@
     </div>
     <!-------------------------------------  EVENTS  EXAMPLE ---------------------------------------->
     <h6 id="events" class="snippet-title">Events<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h6>
-    <p>Three different types of events are available: area selection and column selection (active after the user's Ctrl+C action) and the double click event (active after user's double click). The events are available integrating the eventListeners and will be fired on ctrl+C and double click user action, respectively.</p>
+    <p>Two different types of events are available: area selection (active after the user's Ctrl+C action) and the double click event (active after user's double click). The events are available integrating the eventListeners and will be fired on ctrl+C and double click user action, respectively.</p>
 
     <p><b>Area selection</b></p>
     <p>Click and drag the mouse to select an area of text (amino acids), the region will be highlighted in yellow. Use the
-        shortcut Ctrl+C to copy and Ctrl+V to paste. The selected region will disappear after clicking on another area.</p>
-
-    <p><b>Columns selection</b></p>
-    <p>Click and drag the mouse to select columns (selecting an amino acid will highlight all the amino acids in the column), the region will be highlighted in yellow. Use the
         shortcut Ctrl+C to copy and Ctrl+V to paste. The selected region will disappear after clicking on another area.</p>
 
 
@@ -669,24 +759,7 @@
 
         </form>
     </div>
-    <div class="sqvDemo">
-        <div class="row">
-            <div id="sqvcolumn"></div>
-        </div>
-    </div>
-    <div class="box">
-        <form>
-            <div class="row">
-                <div class="col-25">
-                    <label for="subject">Paste columns selection</label>
-                </div>
-                <div class="col-75">
-                    <textarea id="subject2" name="subject" placeholder="Copy-paste something.." style="height:200px"></textarea>
-                </div>
-            </div>
 
-        </form>
-    </div>
     <div class="box">
         <form>
             <div class="row">
@@ -707,7 +780,8 @@
     <h6 id="loading" class="snippet-title">Loading<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"><use xlink:href="assets/bootstrap-icons.svg#link"></use></svg></a></h6>
     <p>Loading time is due to DOM rendering reasons and with long sequences (>10.000-15.000 chars), it can take a few seconds to load.
         You can however place a loading icon meanwhile, and remove it after the tool is loaded. How to know when the rendering ends?
-        You can check the Proseqviewer html element with the javascript function document.getElementById(proseqviewer_id), the element is empty in the beginning, full when fully loaded.</p>
+        You can check the Proseqviewer html element with the javascript function document.getElementById(proseqviewer_id), the element is empty in the beginning, full when fully loaded.
+    </p>
 
 
 </div>
