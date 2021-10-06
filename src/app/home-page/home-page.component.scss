@@ -1,0 +1,81 @@
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+}
+
+.tit {
+  color: #E36397;
+  font-size: 4rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+#npm {
+  color: #FFFFFF;
+  text-decoration: none;
+  margin-right: 5px;
+  background-color: #D8829D;
+  border: none;
+}
+
+.btn-primary {
+  text-decoration: none;
+  color: #e9ecef;
+  background-color: #8CB2E3;
+  border: none;
+
+}
+
+.txt {
+  color: #E36397;
+  margin-top: 2rem;
+  font-weight: bold;
+}
+
+.brand-img {
+  height: 3rem;
+}
+
+.brand-img-small {
+  height: 2rem;
+}
+
+.bg-col {
+  background-color: palegoldenrod;
+}
+
+
+.main {
+  font-size: 28px;
+  padding: 50px 100px 50px 100px;
+}
+
+.banner{
+  text-align: center;
+}
+
+.advantages .txt-holder {
+  flex: 0 0 calc(100% - 80px);
+  max-width: calc(100% - 80px);
+}
+
+.advantages .txt-holder p {
+  margin: 15px 0 0;
+  color: #666;
+  font-size: 16px;
+}
+
+.advantages .holder .col-12 {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.advantages .img-holder {
+  flex: 0 0 80px;
+  max-width: 80px;
+  height: 60px;
+  margin-bottom: 15px;
+  padding-right: 10px;
+}

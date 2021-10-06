@@ -1,0 +1,501 @@
+<nav class="navbar"><div class="mr-3">
+  <div><h1 class="tit">ProSeqViewer</h1>
+    <h6 class="lead">ProSeqViewer library for the visualization of (not only) biological sequence features. Used in
+      <a href="https://mobidb.bio.unipd.it/">MobiDB</a>,
+      <a href="https://www.disprot.org/">DisProt</a> and
+      <a href="https://repeatsdb.bio.unipd.it/">RepeatsDB</a>.</h6>
+    <h6 class="lead">Based on Typescript and compatible with Angular 2+ framework. A JavaScript version of the package is also available.</h6>
+    <a role="button" class="btn btn-primary" id="npm" href="https://www.npmjs.com/package/proseqviewer">npm package 1.0.74</a>
+    <a role="button" class="btn btn-primary" id="git" href="https://github.com/BioComputingUP/ProSeqViewer">github 1.0.74</a>
+  </div>
+</div>
+</nav>
+
+
+<div class="sidenav">
+  <a id="api"><h6><b>Documentation</b></h6></a>
+  <a href="doc#installation"><h6>Installation guide</h6></a>
+  <a href="doc#input" target="_self"><h6>Input</h6></a>
+  <a href="doc#events" target="_self"><h6>Events</h6></a>
+  <a href="doc#loading" target="_self"><h6>Loading time</h6></a>
+</div>
+<!------------------------------------- DEMO ---------------------------------------->
+
+<div class="row1">
+
+    <!----------------------------------- DOCUMENTATION -------------------------------------->
+
+    <div class="tabcontent">
+      <h2 class="txt">Documentation</h2>
+        <p>ProSeqViewer is a TypeScript library implemented to be compatible with modern applications (both Angular and pure JavaScript supported). It is lightweight, fast, interactive, dynamic, responsive and it adapts to any screen size. It generates pure HTML which is compatible with any browser and operating system. The source code is available on <a href="https://github.com/BioComputingUP/ProSeqViewer">Github</a>.</p>
+        <div class="snippet-card" id="installation">
+        <div>
+          <h6 class="snippet-title" id="javascript">JavaScript installation</h6>
+
+            <p><strong>1. Download the library code</strong></p>
+            <p>You can find the <i>sqv-bundle.js</i> file in the dist folder on the <a href="https://github.com/BioComputingUP/ProSeqViewer">Github repo.</a></p>
+            <p><strong>2. Download the CSS stylesheet</strong></p>
+            <p>You can find the <i>sqv.css</i> file in the src/assets folder on the <a href="https://github.com/BioComputingUP/ProSeqViewer">Github repo.</a></p>
+            <p><strong>3. Edit your index.html:</strong></p>
+
+            <!-- Tab content -->
+            <ul class="code-no-height">
+            <li><span class="hljs-js">&lt;head></span></li>
+            <li><span class="hljs-js tab-sp">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">></span></li>
+            <li><span class="hljs-js">&lt;/head></span></li>
+            <li><span class="hljs-js">&lt;body></span></li>
+            <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvSimple"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
+            <li><span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">>&lt;/script&gt;</span></li>
+            <li><span class="hljs-js">&lt;script></span></li>
+            <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new </span>ProSeqViewer(<span class="hljs-id">'sqvSimple'</span>);</span></li>
+            <li><span class="tab-sp"><span class="hljs-js">const</span> sequence = [ </span></li>
+            <li><span class="tab-sp-db">      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAG--ALERMFL--YFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN'}</span></li>
+            <li><span class="tab-sp">      ];</span></li>
+            <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(&#123; sequence});</span></li>
+            <li><span class="hljs-js">&lt;/script></span></li>
+            <li><span class="hljs-js">&lt;/body></span></li>
+          </ul>
+
+
+          <h6 class="snippet-title">Angular installation</h6>
+
+          <p>The proseqviewer package is written in pure typescript and does not have any dependencies. This guide focus on how to install the package in an Angular app.</p>
+          <p><strong>1. Install the library using npm</strong></p>
+          <pre><code>npm i proseqviewer</code></pre>
+
+          <p><strong>2. Edit the "styles" field in your angular.json </strong></p>
+          <pre><code><span class="hljs-ang">styles:</span> ["./node_modules/proseqviewer/dist/assets/sqv.css"]</code></pre>
+
+          <p class="comment">// component:</p>
+          <ul class="code-no-height">
+              <li><span class="hljs-js">import</span> &#123; ProSeqViewer &#125; <span class="hljs-keyword">from</span> <span class="hljs-id">'proseqviewer/dist'</span>;</li>
+              <li><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new </span> ProSeqViewer(<span class="hljs-id">'sqv'</span>);</li>
+            <li><span class="hljs-js">const</span> sequence = [&#123;sequence: 'DFRLE--F-DFRLEDFRLE----&#125;]</li>
+            <li>proseqviewer.<span class="hljs-js">draw</span>(&#123; sequence});</li>
+          </ul>
+
+            <p class="comment">// template</p>
+            <ul class="code-no-height"><li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqv"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li></ul>
+
+
+            <h6 class="snippet-title" id="input">Input</h6>
+            <p>The proseqviewer provides a method <i>draw()</i> that take a JSON object in input.</p>
+            <p>The object has 5 keys (keys order is indifferent).</p>
+
+            <ul>
+                <li><span>sequences: Array&lt;Sequences&gt;,</span></li>
+                <li><span>regions?: Array&lt;Regions&gt;,</span></li>
+                <li><span>patterns?: Array&lt;Patterns&gt;,</span></li>
+                <li><span>options?: Options</span></li>
+            </ul>
+
+            <p>Each key value is itself a JSON object. E.g.: &#123;sequence: .., id: ..}. Below a detailed description of each value.</p>
+
+            <div class="container">
+                <div class="row first">
+              <div class="col-sm">Field 0</div>
+              <div class="col-sm">Field 1</div>
+              <div class="col-sm">Type</div>
+              <div class="col-sm">Example</div>
+              <div class="col-sm">Description</div>
+            </div>
+                <div class="row field0">
+              <div class="col-sm">sequences</div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+            </div>
+                <div class="row field1">
+            <div class="col-sm"></div>
+             <div class="col-sm">sequence</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">LYRLELERECAMT</div>
+             <div class="col-sm">Sequence of characters</div>
+           </div>
+                <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">id</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">1</div>
+             <div class="col-sm">Identifier of the sequence</div>
+           </div>
+                <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">label</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">1xvz_1_30.pdb</div>
+             <div class="col-sm">Lateral label</div>
+           </div>
+                <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">labelTooltip</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">&lt;span class="tooltipText" style="background-color: blue;"&gt;Tooltip text&lt;/span&gt;</div>
+             <div class="col-sm">Stylable tooltip</div>
+           </div>
+                <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">startIndex</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">30</div>
+             <div class="col-sm">Start index of the input sequence.</div>
+           </div>
+                <div class="row field0">
+              <div class="col-sm">regions</div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+           </div>
+                <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">sequenceId</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">1</div>
+             <div class="col-sm">Identifier of the sequence.</div>
+           </div>
+                <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">start</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">10</div>
+             <div class="col-sm">Start position of the region to color.</div>
+           </div>
+                <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">end</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">20</div>
+             <div class="col-sm">End position of the region to color.</div>
+           </div>
+                <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">backgroundColor</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">hex, rgb</div>
+             <div class="col-sm">Color the character background.</div>
+           </div>
+                <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">color</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">hex</div>
+             <div class="col-sm">Color the character. All options available: 'hex' or 'rgb'.</div>
+           </div>
+                <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">backgroundImage</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">linear-gradient(red, yellow)</div>
+             <div class="col-sm">Color the character background with a two color gradient.</div>
+           </div>
+                <div class="row field0">
+              <div class="col-sm">patterns</div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+           </div>
+                <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">sequenceId</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">1</div>
+             <div class="col-sm">Identifier of the sequence.</div>
+           </div>
+                <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">start</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">10</div>
+             <div class="col-sm">Start position of the region where to perform the regex.</div>
+           </div>
+                <div class="row field1">
+                    <div class="col-sm"></div>
+                    <div class="col-sm">pattern</div>
+                    <div class="col-sm">string</div>
+                    <div class="col-sm">AAA</div>
+                    <div class="col-sm">Regex pattern to find in the sequence.</div>
+                </div>
+                <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">end</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">20</div>
+             <div class="col-sm">End position of the region where to perform the regex.</div>
+           </div>
+                <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">backgroundColor</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">hex</div>
+             <div class="col-sm">Color the regex match background. All options available: 'hex' or 'rgb'.</div>
+           </div>
+                <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">color</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">hex</div>
+             <div class="col-sm">Color the regex match the character.  All options available: 'hex' or 'rgb'.</div>
+           </div>
+                <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">backgroundImage</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">linear-gradient(red, yellow)</div>
+             <div class="col-sm">Color the regex match character background with a two color gradient.</div>
+           </div>
+                <div class="row field0">
+              <div class="col-sm">icons</div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+           </div>
+                <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">sequenceId</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">1</div>
+             <div class="col-sm">Identifier of the sequence.</div>
+           </div>
+                <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">start</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">10</div>
+             <div class="col-sm">Start position of the icon region.</div>
+           </div>
+                <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">end</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">20</div>
+             <div class="col-sm">End position of the icon region.</div>
+           </div>
+                <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">icon</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">helix</div>
+             <div class="col-sm">Default svg image to apply on top of the indicated sequence. All options available: 'lollipop', 'helix', 'strand', 'strand-arrow-left', 'turn'.</div>
+           </div>
+                <div class="row field1">
+                <div class="col-sm"></div>
+                <div class="col-sm">icon</div>
+                <div class="col-sm">string</div>
+                <div class="col-sm">&lt;svg&gt;&lt;/svg&gt;</div>
+                <div class="col-sm">Custom svg image to apply on top of the indicated sequence.</div>
+           </div>
+                <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">display</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">center</div>
+             <div class="col-sm">Center the icon in the middle of the start-end region.</div>
+           </div>
+                <div class="row field0">
+              <div class="col-sm">options</div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+              <div class="col-sm"></div>
+           </div>
+                <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">fontSize</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">14px</div>
+             <div class="col-sm">Font dimension.</div>
+           </div>
+                <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">chunkSize</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">10</div>
+             <div class="col-sm">Group the sequence into chunks of subsequential characters.</div>
+           </div>
+                <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">chunkSeparation</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">2</div>
+             <div class="col-sm">Space among chunks.</div>
+           </div>
+                <div class="row field1">
+                    <div class="col-sm"></div>
+                    <div class="col-sm">lineSeparation</div>
+                    <div class="col-sm">integer</div>
+                    <div class="col-sm">15</div>
+                    <div class="col-sm">Space under the horizontal row of characters (px).</div>
+                </div>
+                <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">indexesLocation</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">lateral</div>
+             <div class="col-sm">Set an index on the left side of each sequence.</div>
+           </div>
+                <div class="row field1">
+                    <div class="col-sm"></div>
+                    <div class="col-sm"></div>
+                    <div class="col-sm">string</div>
+                    <div class="col-sm">top</div>
+                    <div class="col-sm">Place an index on top of the end of each chunk (first row only).</div>
+                </div>
+                <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">wrapLine</div>
+             <div class="col-sm">boolean</div>
+             <div class="col-sm">true</div>
+             <div class="col-sm">Display the viewer with fixed width (not responsive) and scrollbar on the sequences.</div>
+           </div>
+                <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">viewerWidth</div>
+             <div class="col-sm">integer</div>
+             <div class="col-sm">2</div>
+             <div class="col-sm">Width of ProSeqViewer - sidebar.</div>
+           </div>
+                <div class="row field1">
+             <div class="col-sm"></div>
+             <div class="col-sm">sequenceColor</div>
+             <div class="col-sm">string</div>
+             <div class="col-sm">clustal</div>
+             <div class="col-sm">Colorscheme to apply to all sequences. Any Jalview colorscheme is available, see the complete list on Multiple sequence alignment (MSA) - Sequence color).</div>
+           </div>
+                <div class="row field1">
+                    <div class="col-sm"></div>
+                    <div class="col-sm"></div>
+                    <div class="col-sm">obj</div>
+                    <div class="col-sm">&#123; A: '#80a0f0', .. } </div>
+                    <div class="col-sm">Custom colorscheme to apply to all sequences. Scheme: &#123; &lt;aminoacid&gt;:&lt;background_color&gt;, .. }</div>
+            </div>
+                <div class="row field1">
+              <div class="col-sm"></div>
+              <div class="col-sm">sequenceColorMatrix</div>
+              <div class="col-sm">string</div>
+              <div class="col-sm">blosum62</div>
+              <div class="col-sm">Add blosum62 matrix colorscheme.</div>
+            </div>
+                <div class="row field1">
+                    <div class="col-sm"></div>
+                    <div class="col-sm"></div>
+                    <div class="col-sm">obj</div>
+                    <div class="col-sm"> &#123;KR: [ '#C0CFED', '#000000'], .. } </div>
+                    <div class="col-sm">Add custom matrix colorscheme. Scheme: &#123;&lt;aminoacid_pair&gt;:[&lt;background_color&gt;,&lt;color&gt;], .. }</div>
+                </div>
+                <div class="row field1">
+                    <div class="col-sm"></div>
+                    <div class="col-sm">consensusDotThreshold</div>
+                    <div class="col-sm">integer</div>
+                    <div class="col-sm">90</div>
+                    <div class="col-sm">Threeshold for consensus information.</div>
+                </div>
+                <div class="row field1">
+                    <div class="col-sm"></div>
+                    <div class="col-sm">consensusColorIdentity</div>
+                    <div class="col-sm">string</div>
+                    <div class="col-sm">identity</div>
+                    <div class="col-sm">Add a line with consensus identity information.</div>
+                </div>
+                <div class="row field1">
+                    <div class="col-sm"></div>
+                    <div class="col-sm">consensusColorIdentity</div>
+                    <div class="col-sm">obj</div>
+                    <div class="col-sm">&#123;90: ['#0A0A0A', '#FFFFFF'], .. }</div>
+                    <div class="col-sm">Add a line with custom consensus identity information. Scheme: &#123;&lt;level&gt;:[&lt;background_color&gt;,&lt;color&gt;], .. }</div>
+                </div>
+                <div class="row field1">
+                    <div class="col-sm"></div>
+                    <div class="col-sm">consensusColorMapping</div>
+                    <div class="col-sm">string</div>
+                    <div class="col-sm">physical</div>
+                    <div class="col-sm">Add a line with consensus physical information.</div>
+                </div>
+                <div class="row field1">
+                    <div class="col-sm"></div>
+                    <div class="col-sm">consensusColorMapping</div>
+                    <div class="col-sm">obj</div>
+                    <div class="col-sm">&#123;A:['+', '#3626A7', '#FFFFFF'], .. }&#123;</div>
+                    <div class="col-sm">Add a line with custom consensus physical information. Scheme: &#123;&lt;aminoacid&gt;:[&lt;symbol&gt;,&lt;background_color&gt;,&lt;color&gt;], .. }</div>
+                </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!-------------------------------------  EVENTS  EXAMPLE ---------------------------------------->
+    <h6 id="events" class="snippet-title">Events<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"></svg></a></h6>
+    <p>Two different types of events are available: area selection (active after the user's Ctrl+C action) and the double click event (active after user's double click). The events are available integrating the eventListeners and will be fired on ctrl+C and double click user action, respectively.</p>
+
+    <p><b>Area selection</b></p>
+    <p>Click and drag the mouse to select an area of text (amino acids), the region will be highlighted in yellow. Use the
+        shortcut Ctrl+C to copy and Ctrl+V to paste. The selected region will disappear after clicking on another area.</p>
+
+
+    <pre class="prettyprint prettyprinted"><code>
+    <span> window.<span class="hljs-js">addEventListener</span>('onHighlightSelection', (e) =>   &#123;
+             console.<span class="hljs-js">log</span>('event type', e['detail'].eventType);
+             console.<span class="hljs-js">log</span>('text area', e['detail'].text);
+           });
+    </span>
+  </code></pre>
+
+
+    <p><b>Double click</b></p>
+    <p>The double click event will return information about the clicked character, like the x, y positions and the character itself.</p>
+    <pre class="prettyprint prettyprinted"><code>
+    <span> window.<span class="hljs-js">addEventListener</span>('onRegionSelected', (e) =>   &#123;
+             console.<span class="hljs-js">log</span>('character selected', e['detail'].char);
+             console.<span class="hljs-js">log</span>('position x', e['detail'].x);
+             console.<span class="hljs-js">log</span>('position y', e['detail'].y);
+           });
+    </span>
+  </code></pre>
+
+    <p><b>Try it out!</b></p>
+    <div class="sqvDemo">
+        <div class="row">
+            <div id="sqv9"></div>
+        </div>
+    </div>
+    <div class="box">
+        <form>
+            <div class="row">
+                <div class="col-25">
+                    <label for="subject">Paste area selection</label>
+                </div>
+                <div class="col-75">
+                    <textarea id="subject" name="subject" placeholder="Copy-paste something.." style="height:200px"></textarea>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+    <div class="box">
+        <form>
+            <div class="row">
+                <div class="col-25">
+                    <label for="subject">See double click event</label>
+                </div>
+                <div class="col-75">
+                    <div>Selected char: {{selectedChar}}</div>
+                    <div>Position X: {{positionX}}</div>
+                    <div>Position Y: {{positionY}}</div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+
+    <h6 id="loading" class="snippet-title">Loading<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"></svg></a></h6>
+    <p>Loading time is due to DOM rendering reasons and with long sequences (>10.000-15.000 chars), it can take a few seconds to load.
+        You can however place a loading icon meanwhile, and remove it after the tool is loaded. How to know when the rendering ends?
+        You can check the Proseqviewer html element with the javascript function document.getElementById(proseqviewer_id), the element is empty in the beginning, full when fully loaded.
+    </p>
+
+
+</div>

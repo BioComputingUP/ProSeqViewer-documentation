@@ -1,0 +1,100 @@
+<nav class="navbar">
+    <div><h1 class="tit">ProSeqViewer</h1>
+        <h6 class="lead">ProSeqViewer library for the visualization of (not only) biological sequence features. Used in
+            <a href="https://mobidb.bio.unipd.it/">MobiDB</a>,
+            <a href="https://www.disprot.org/">DisProt</a> and
+            <a href="https://repeatsdb.bio.unipd.it/">RepeatsDB</a>.</h6>
+        <h6 class="lead">Based on Typescript and compatible with Angular 2+ framework. A JavaScript version of the package is also available (see the <a href="doc">Documentation</a>).</h6>
+        <a role="button" class="btn btn-primary" id="npm" href="https://www.npmjs.com/package/proseqviewer">npm package 1.0.74</a>
+        <a role="button" class="btn btn-primary" id="git" href="https://github.com/BioComputingUP/ProSeqViewer">github 1.0.74</a>
+    </div>
+</nav>
+
+
+<div class="sidenav">
+    <a  id="reg"><h6><b>Interactive example</b></h6></a>
+    <a href="demo#input" target="_self"><h6>User input</h6></a>
+    <a href="demo#result" target="_self"><h6>Result</h6></a>
+</div>
+<!------------------------------------- DEMO ---------------------------------------->
+
+<div class="row1">
+
+    <!-------------------------------------  interactive Example  ---------------------------------------->
+    <h6 id="interactive" class="snippet-title">Interactive Example<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"></svg></a></h6>
+    <p id="input" style="color:#000;"><b>User Input</b></p>
+
+
+    <div class="box">
+        <form>
+            <div class="row">
+                <div class="col-25">
+                    <label>Paste sequences (FASTA)</label>
+                </div>
+                <div class="col-75">
+                        <textarea id="msa" name="subject" placeholder=""
+                                  style="height:200px">>ASPA_ECOLI/13-157&#10;&#13;GTREVPADAYYGVHTLRAIENFYISNNKISDIPEFVRGMVMVKKAAAMANKELQTIPKSV&#10;&#13;>ASPA_BACSU/16-157&#10;&#13;GEKQIEADVYYGIQTLRASENFPITGYKIHEE..MINALAIVKKAAALANMDVKRLYEGI</textarea>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+
+
+    <form #myForm="ngForm" (submit)="submitForm(myForm)" novalidate>
+
+        <div class="flex-container">
+
+                <div>
+                    <h5>Select a region</h5>
+                    <input id="11-20" type="radio" value="11-20" name="region" ngModel required>
+                    <label class="custom-control-label" for="11-20">11-20</label><br>
+                    <input id="21-30" type="radio" value="21-30" name="region" ngModel required>
+                    <label class="custom-control-label" for="21-30">21-30</label>
+                </div>
+            <div>
+                <h5>Select an icon:</h5>
+                <input type="radio" id="ico1" name="icons" value="ico1" ngModel required>
+                <label for="ico1">helix</label><br>
+                <input type="radio" id="ico2" name="icons" value="ico2">
+                <label for="ico2">turn</label>
+            </div>
+            <div>
+                <h5>Select a color:</h5>
+                <input type="radio" id="cl1" name="color" value="#2f6690" ngModel required>
+                <label for="cl1">blue</label><br>
+                <input type="radio" id="cl2" name="color" value="#E36397" ngModel required>
+                <label for="cl2">pink</label>
+            </div>
+            <div>
+                <h5>Select indexes:</h5>
+                <input type="radio" id="top" name="indexes" value="top" ngModel required>
+                <label for="top">top</label><br>
+                <input type="radio" id="lateral" name="indexes" value="lateral" ngModel required>
+                <label for="lateral">lateral</label>
+            </div>
+            <div>
+                <h5>Select consensus</h5>
+                <input type="radio" id="identity" name="consensus" value="identity" ngModel required>
+                <label for="identity">identity</label><br>
+                <input type="radio" id="physical" name="consensus" value="physical" ngModel required>
+                <label for="physical">physical</label>
+            </div>
+        </div>
+        <!-- Submit Button -->
+        <div class="center">
+             <button type="submit"  class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+
+
+    <p id="result" style="color:#000;"><b>Result</b></p>
+    <div *ngIf="!interactive"> Your result will appear here!</div>
+
+    <div id="interactiveProSeq"></div>
+
+    <p style="color:#000;" *ngIf="interactive"><b>Code</b></p>
+    <pre *ngIf="interactive" class="codebkg">{{interactive | json}}</pre>
+
+</div>
