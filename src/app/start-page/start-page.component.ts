@@ -6,7 +6,7 @@ import {ProSeqViewer} from 'proseqviewer/dist';
     styleUrls: ['./start-page.component.scss']
 })
 export class StartPageComponent implements OnInit {
-    title = 'ProSeqViewer-start';
+    title = 'ProSeqViewer';
     latindexoptions;
     topindexoptions;
     wrapoptionsnr1;

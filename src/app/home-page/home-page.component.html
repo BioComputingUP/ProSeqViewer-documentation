@@ -1,49 +1,66 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand">ProSeqViewer</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto"></ul>
-        <form class="form-inline my-2 my-lg-0">
-            <a routerLinkActive="active">
-                    <a role="button" class="btn btn-primary" id="npm" href="https://www.npmjs.com/package/proseqviewer">npm package</a>
-                    <a role="button" class="btn btn-primary" id="git" href="https://github.com/BioComputingUP/ProSeqViewer">github</a>
-            </a>
-        </form>
-    </div>
-</nav>
+<div class="container-xl">
+  <div class="row">
+    <div class="col text-center">
+      <h1 class="pb-3"> <strong>ProSeqViewer</strong></h1>
+      <p>
+        A TypeScript library to visualize annotation on single sequences and multiple sequence alignments
+        <br>
+        ProSeqViewer can be integrated in both modern and dynamic frameworks like Angular as well as in static HTML websites.
+        It is used by <a href="https://mobidb.org/" target="_blank">MobiDB</a>,
+        <a href="https://disprot.org/" target="_blank">DisProt</a> and
+          <a href="https://repeatsdb.org/" target="_blank">RepeatsDB</a>
+      </p>
+
+      <figure class="figure w-50 p-3">
+        <img src="/assets/figure.png" class="figure-img img-fluid rounded">
+      </figure>
+
+      <div class="mb-4">
+        <a class="btn btn-primary mx-1" routerLink="/start" role="button">Get started</a>
+        <a class="btn btn-primary mx-1" routerLink="/doc" role="button">Documentation</a>
+        <a class="btn btn-outline-secondary mx-1" href="https://jsfiddle.net/1qk3w9uL/" target="_blank" role="button">jsFiddle</a>
+      </div>
 
 
-<!------------------------------------- DEMO ---------------------------------------->
 
-<div class="main" routerLinkActive="active">
-    <div class="banner">
-        <h1 class="title">ProSeqViewer</h1>
-        <h3 class="slogan">Library for the visualization of (not only) biological sequence features.</h3>
-        <h4>
-            Used in
-            <a href="https://mobidb.bio.unipd.it/">MobiDB</a>,
-            <a href="https://www.disprot.org/">DisProt</a> and
-            <a href="https://repeatsdb.bio.unipd.it/">RepeatsDB</a>.
-        </h4>
-        <h5 class="descr">Based on Typescript and compatible with Angular 2+ framework. </h5>
-        <h5>A JavaScript version of the package is also available (see the <a routerLink="doc">Documentation</a>).</h5>
+      <h4>Features</h4>
 
-        <img src="https://uploads-ssl.webflow.com/5c7fcabb4e3feec5add934f2/5c814861b78f13c6bfaa8487_ic-star.svg" alt="" class="sponsor-icon">
-
-        <div class="btn-block">
-            <a routerLink="start" class="btn btn-primary text-white">Get started</a>
-            <a routerLink="doc" class="btn btn-outline-secondary">Documentation</a>
-            <a href="https://jsfiddle.net/uch9qbxm/3/" class="btn btn-outline-secondary">Demo</a>
-        </div>
-        <h5 class="version">1.0.90</h5>
+          Generates pure HTML, compatible with any browser and operating system
+          <br>Easy to install
+          <br>Lightweight
+      <br>Zero dependencies
+      <br>Fast, able to render large alignments
+      <br>Interactive, capture mouse selections and clicks
+      <br>Responsive, dynamically adapt to window changes
 
     </div>
-
+  </div>
 </div>
 
+<!--<div class="main" routerLinkActive="active">-->
+<!--    <div class="banner">-->
+<!--        <h1 class="title">ProSeqViewer</h1>-->
+<!--        <h3 class="slogan">Library for the visualization of (not only) biological sequence features.</h3>-->
+<!--        <h4>-->
+<!--            Used in-->
+<!--            <a href="https://mobidb.bio.unipd.it/">MobiDB</a>,-->
+<!--            <a href="https://www.disprot.org/">DisProt</a> and-->
+<!--            <a href="https://repeatsdb.bio.unipd.it/">RepeatsDB</a>.-->
+<!--        </h4>-->
+<!--        <h5 class="descr">Based on Typescript and compatible with Angular 2+ framework. </h5>-->
+<!--        <h5>A JavaScript version of the package is also available (see the <a routerLink="doc">Documentation</a>).</h5>-->
 
+<!--        <img src="https://uploads-ssl.webflow.com/5c7fcabb4e3feec5add934f2/5c814861b78f13c6bfaa8487_ic-star.svg" alt="" class="sponsor-icon">-->
+
+<!--        <div class="btn-block">-->
+<!--            <a routerLink="start" class="btn btn-primary text-white">Get started</a>-->
+<!--            <a routerLink="doc" class="btn btn-outline-secondary">Documentation</a>-->
+<!--            <a href="https://jsfiddle.net/uch9qbxm/3/" class="btn btn-outline-secondary">Demo</a>-->
+<!--        </div>-->
+<!--        <h5 class="version">1.0.90</h5>-->
+
+<!--    </div>-->
+
+<!--</div>-->
 
