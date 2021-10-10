@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Dropdown, Collapse } from 'bootstrap';
+import { Collapse } from 'bootstrap';
+
+import { version } from '../../../node_modules/proseqviewer/package.json';
 
 @Component({
   selector: 'app-navbar',
@@ -7,6 +9,7 @@ import { Dropdown, Collapse } from 'bootstrap';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+  public version: string = version;
 
   constructor() { }
 

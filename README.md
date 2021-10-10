@@ -1,8 +1,9 @@
 # ProSeqViewer-documentation
 
-This is the source code of the website of the ProSeqViewer library
+Source code of the website of the ProSeqViewer library
 
 ## Links
-* [ProSeqViewer library GitHub repository](https://github.com/BioComputingUP/ProSeqViewer)
-* [Documentation website](https://biocomputingup.github.io/ProSeqViewer-documentation/) 
-* [NPM package](https://www.npmjs.com/package/proseqviewer)
+* [ProSeqViewer source code](https://github.com/BioComputingUP/ProSeqViewer) (GitHub repository)
+* [ProSeqViewer NPM package](https://www.npmjs.com/package/proseqviewer)
+* [Website](https://biocomputingup.github.io/ProSeqViewer-documentation/) (This project) 
+

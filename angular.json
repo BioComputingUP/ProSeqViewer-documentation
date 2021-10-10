@@ -26,7 +26,8 @@
             "styles": [
               "./node_modules/bootstrap/scss/bootstrap.scss",
               "./node_modules/proseqviewer/dist/assets/proseqviewer.css",
-              "src/styles/styles.scss"
+              "src/styles/styles.scss",
+              "./node_modules/highlight.js/styles/github.css"
             ],
             "stylePreprocessorOptions": {
               "includePaths": [

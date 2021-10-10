@@ -1,234 +1,251 @@
-<nav class="navbar"><div class="mr-3">
-    <div><h1 class="tit">ProSeqViewer</h1>
-        <h6 class="lead">ProSeqViewer library for the visualization of (not only) biological sequence features. Used in
-            <a href="https://mobidb.bio.unipd.it/">MobiDB</a>,
-            <a href="https://www.disprot.org/">DisProt</a> and
-            <a href="https://repeatsdb.bio.unipd.it/">RepeatsDB</a>.</h6>
-        <h6 class="lead">Based on Typescript and compatible with Angular 2+ framework. A JavaScript version of the package is also available (see the <a href="#APIDocumentation">API documentation</a>).</h6>
-        <a role="button" class="btn btn-primary" id="npm" href="https://www.npmjs.com/package/proseqviewer">npm package 1.0.74</a>
-        <a role="button" class="btn btn-primary" id="git" href="https://github.com/BioComputingUP/ProSeqViewer">github 1.0.74</a>
-    </div>
-</div>
-</nav>
+
+<div class="container-xl">
+  <div class="sidenav">
+      <a (click)="scroll(singleseq)"><h5><b>Sequence</b></h5></a>
+      <a (click)="scroll(indexesloc)"><h6>Index location</h6></a>
+      <a (click)="scroll(wrapline)"><h6>Wrap line</h6></a>
+      <a (click)="scroll(iconsblock)"><h6>Icons</h6></a>
+      <a (click)="scroll(regionsblock)"><h6> Regions</h6></a>
+      <a (click)="scroll(patternsblock)"><h6>Patterns</h6></a>
+
+      <a (click)="scroll(msablock)"><h5><b>MSA</b></h5></a>
+      <a (click)="scroll(color)"><h6>Color</h6></a>
+      <a (click)="scroll(colormatrix)"><h6>Color matrix</h6></a>
+      <a (click)="scroll(consensus)"><h6>Consensus</h6></a>
+  </div>
+
+  <div class="row">
+<!--    <div class="col-2">-->
+
+<!--    </div>-->
+
+    <div class="col">
+
+      <h1 class="txt">Getting Started</h1>
+      <p class="mb-5">
+        ProSeqViewer provides both single sequence and multiple sequence alignment (MSA) visualization.
+        Check our Getting started guide to get familiar with the library. To test custom values immediately without
+        installing the tool try our <a href="https://jsfiddle.net/1qk3w9uL/" target="_blank"><b>jsFiddle</b></a>
+      </p>
 
 
-<div class="sidenav">
-    <a  id="reg" href="#singleseq" target="_self"><h6><b>Single sequence</b></h6></a>
-    <a href="#indexesLocation" target="_self"><h6>Indexes location</h6></a>
-    <a href="#wrapLine" target="_self"><h6>Wrap line</h6></a>
-    <a href="#icons" target="_self"><h6>Icons</h6></a>
-    <a href="#regions" target="_self"><h6> Regions</h6></a>
-    <a href="#patterns" target="_self"><h6>Patterns</h6></a>
+      <h2 #singleseq class="txt">Single sequence</h2>
 
-    <a href="#simple" target="_self"><h6><b>Multiple sequence alignment (MSA)</b></h6></a>
-    <a href="#multi" target="_self"> <h6>Multiple sequence sequence alignment</h6></a>
-    <a href="#sequenceColor" target="_self"><h6>Sequence color</h6></a>
-    <a href="#sequenceColorMatrix" target="_self"><h6>Sequence color matrix</h6></a>
-    <a href="#consensus" target="_self"><h6>Consensus</h6></a>
+      <h6 #indexesloc class="snippet-title">Index location</h6>
+      <p>
+        Indexes refer to sequence positions and can be provided by the user or automatically calculated by the library.
+        Indexes are disabled by default, you can activate them and choose indexes location, lateral or on top.
+      </p>
 
-</div>
-<!------------------------------------- DEMO ---------------------------------------->
+      <p style="color:#000;"><b>Lateral index</b></p>
+      <div id="sqv5" class="sqvDemo"></div>
+      <pre class="codebkg">{{latindexoptions | json}}</pre>
 
-<div class="row1">
-
-    <!-------------------------------------  single sequence  ---------------------------------------->
-
-
-    <h2 id="singleseq" class="txt">Single sequence</h2>
-
-
-
-    <!-------------------------------------  indexesLocation  ---------------------------------------->
-
-    <h6 id="indexesLocation" class="snippet-title">Indexes Location</h6>
-    <p>Indexes are disabled by default, you can activate them and choose indexes location.</p>
-
-    <p style="color:#000;"><b>Lateral indexes</b></p>
-    <p>Sequence indexing is placed at the beginning of each line. It is also possible to set a value for the startIndex (set to 50 in this example). </p>
-    <div id="sqv5" class="sqvDemo"></div>
-    <pre class="codebkg">{{latindexoptions | json}}</pre>
-
-    <p style="color:#000;"><b>Indexes on top</b></p>
-    <p>Sequence indexing is right aligned on top of each block of amino acids.</p>
-    <div class="sqvDemo"><div id="sqv10"></div></div>
-    <pre class="codebkg">{{topindexoptions | json}}</pre>
+      <p style="color:#000;"><b>Top index</b></p>
+      <div class="sqvDemo"><div id="sqv10"></div></div>
+      <pre class="codebkg">{{topindexoptions | json}}</pre>
 
 
 
-    <!-------------------------------------  wrapline  EXAMPLE ---------------------------------------->
+      <!-------------------------------------  wrapline  EXAMPLE ---------------------------------------->
 
-    <h6 id="wrapLine" class="snippet-title">Wrap Line</h6>
-    <p>Each letter is encapsulated in a column element (just one cell for single sequences) which is part of a block of columns. Blocks are graphically separated to improve readability and can have different length (setting chunkSize option).
-    </p>
+      <h6 #wrapline class="snippet-title">Wrap Line</h6>
+      <p>
+        The sequence can be broken into chunks of fixed length to improve readability.
+        Chunk length is controlled by the <strong>chunkSize</strong> option.
+        By default, the viewer is responsive and blocks are automatically moved to a new line when they
+        exceed the container width. Sometimes, e.g. for long sequences, it is preferable to see
+        the sequence without new line breaks. Sequence wrapping is controlled by <b>wrapLine</b>
+      </p>
 
-    <p style="color:#000;"><b>Responsive (default)</b></p>
-    <p>By default, blocks are automatically moved to a new line when they exceed the container width (responsive behavior). </p>
-    <div class="sqvDemo">
+      <p style="color:#000;"><b>Responsive (default)</b></p>
+
+      <div class="sqvDemo">
         <div class="row">
-            <div id="sqv8"></div>
+          <div id="sqv8"></div>
         </div>
-    </div>
+      </div>
 
-    <pre class="codebkg">{{wrapoptionsnr2 | json}}</pre>
+      <pre class="codebkg">{{wrapoptionsnr2 | json}}</pre>
 
-    <p style="color:#000;"><b>Non-responsive</b></p>
-    <p>Block wrapping can be disabled if the user wants to slide MSAs horizontally (non-responsive behavior).</p>
+      <p style="color:#000;"><b>Non-responsive</b></p>
 
-
-    <div class="sqvDemo">
+      <div class="sqvDemo">
         <div class="row">
-            <div id="sqv13"></div>
+          <div id="sqv13"></div>
         </div>
-    </div>
+      </div>
 
-    <pre class="codebkg">{{wrapoptionsnr1 | json}}</pre>
-
-
-    <!---------------------------------------------- Icons -------------------------------------------------->
-    <h6 class="snippet-title" id="icons">Icons</h6>
-    <div>Add icons on the top of the sequences to indicate the secondary structure.You can use the icons already
-        available (helix, turn, lollipop, strand, arrowLeft, arrowRight, noSecondary) or you can input custom svg icons (check the Documentation.) </div>
-    <div>This example shows the secondary structure of the ASL protein mapped onto the <b>secondary structure</b>  of the human ASL protein (P04424, <i>Homo sapiens</i>) sequence.
-        <b>Helices</b> are shown in pink and <b>beta strands</b> are shown as yellow arrows. </div>
-
-    <div class="sqvDemo" id="sqvSingle"></div>
-
-    <pre class="codebkg">{{icons | json}}</pre>
+      <pre class="codebkg">{{wrapoptionsnr1 | json}}</pre>
 
 
+      <!---------------------------------------------- Icons -------------------------------------------------->
+      <h6 #iconsblock class="snippet-title">Icons</h6>
+      <p>
+        Icons can be added on top of the sequence. The library provides some predefined icons:
+        <strong>helix, turn, lollipop, strand, arrowLeft, arrowRight, noSecondary</strong>. Alternatively custom svg icons can be provided, see <a routerLink="/doc"> Documentation</a>
+      </p>
 
-    <!--------------------------------------------  REGIONS  EXAMPLE ---------------------------------------->
 
-    <h6 id="regions" class="snippet-title">Regions</h6>
-    <div>Highlight part of the sequences with customizable colors.</div>
-    <p>Tandem repeat regions are shown on the PDB sequence of 6ub9A - Tryptophan synthase alpha chain (<i>Mycobacterium tuberculosis</i>), in alternating blue and red. Insertions are in yellow.</p>
-    <div class="sqvDemo"  id="sqv2"></div>
-
-
-    <pre class="codebkg">{{regions | json}}</pre>
+      <div class="sqvDemo" id="sqvSingle"></div>
+      <p>
+        Secondary structure of the human ASL protein (UniProt P04424, <i>Homo sapiens</i>)
+      </p>
+      <pre class="codebkg">{{icons | json}}</pre>
 
 
 
+      <!--------------------------------------------  REGIONS  EXAMPLE ---------------------------------------->
 
-    <!-------------------------------------  PATTERNS  EXAMPLE ---------------------------------------->
+      <h6 #regionsblock class="snippet-title">Regions</h6>
+      <div>Highlight part of the sequence with customizable colors</div>
 
-    <h6 id="patterns" class="snippet-title">Patterns</h6>
-    <p>Match the sequences against a regular expression to show possible patterns. </p>
-    <div class="sqvDemo" id="sqv4"></div>
+      <div class="sqvDemo"  id="sqv2"></div>
+      <p>Structurally repeated units (blu, red) of the Tryptophan synthase alpha chain
+        (PDB 6UB9 chain A, <i>Mycobacterium tuberculosis</i>). Insertions are in yellow</p>
 
-    <pre class="codebkg">{{patterns | json}}</pre>
-
-
-
-    <!--------------------------------------------  MSA  section ---------------------------------------->
-    <h2 id="simple" class="txt"> Multiple sequence alignments (MSA)</h2>
-
-
-    <!---------------------------------------------- Multiple sequence alignment ------------------------------------------>
-    <h6 class="snippet-title" id="multi">Multiple sequence alignment</h6>
-    <p>Multiple sequence alignment of Aspartate ammonia-lyase protein (Uniprot P0AC38) with ten homologs. Residue numbering displayed on top of the sequences.</p>
-    <div class="sqvDemo" id="sqv0"></div>
-
-    <pre class="codebkg">{{msa | json}}</pre>
+      <pre class="codebkg">{{regions | json}}</pre>
 
 
 
-    <!-------------------------------------  sequenceColor clustal  EXAMPLE ---------------------------------------->
 
-    <h6 id="sequenceColor" class="snippet-title">Sequence Color</h6>
-    <div>Set a global sequence color. Some of the global sequence colors available are: clustal, zappo, taylor, hydrophobicity etc. Check all sequence colors <a href="https://www.jalview.org/help/html/colourSchemes/index.html">here</a>.</div>
-    <p> It is also possible to set a custom sequence color, check the Documentation (Input -option, sequenceColor-) for details.</p>
-    <p style="color:#000;"><b>Clustal example</b></p>
+      <!-------------------------------------  PATTERNS  EXAMPLE ---------------------------------------->
 
-    <div class="circlez q">N, Q, S, P, T, H, Y</div>
-    <div class="circlez a">A, I, L, M, F, W, V </div>
-    <div class="circlez k">K, R</div><div class="circlez e">E, D</div>
-    <div class="circlez c">C</div>
+      <h6 #patternsblock class="snippet-title">Patterns</h6>
+      <p>Match the sequences against a regular expression to show possible patterns. </p>
+      <div class="sqvDemo" id="sqv4"></div>
 
-    <div class="sqvDemo" id="sqv6"></div>
+      <pre class="codebkg">{{patterns | json}}</pre>
 
 
-    <pre class="codebkg">{{clustaloptions | json}}</pre>
+
+      <!--------------------------------------------  MSA  section ---------------------------------------->
+      <h2 #msablock class="txt"> Multiple sequence alignment (MSA)</h2>
 
 
-    <!-------------------------------------  sequenceColorMatrix blosum  EXAMPLE ---------------------------------------->
-    <h6 id="sequenceColorMatrix" class="snippet-title">Sequence Color Matrix</h6>
-    <div>Set a global sequence color matrix. Available global sequence color matrix is blosum62.
-        Here amino acid pairs are compared, in particular each residue is compared with the residue at the same position in the first sequence. The aminoacid pair is colored based on a input matrix.</div>
+
+      <div class="sqvDemo" id="sqv0"></div>
+      <p>
+        Multiple sequence alignment of the Aspartate ammonia-lyase protein (UniProt P0AC38) with ten homologs. Residue numbering displayed on top of the sequences
+      </p>
+      <pre class="codebkg">{{msa | json}}</pre>
 
 
-    <p style="color:#000;margin-top: 20px"><b>Default matrix</b></p>
-    <p> Blosum62 is a default matrix, but it is also possible to set a custom matrix (see Custom matrix).</p>
 
-    <img src="../../assets/heatmap.svg">
+      <!-------------------------------------  sequenceColor clustal  EXAMPLE ---------------------------------------->
 
-    <div class="sqvDemo" id="sqvBlosum"></div>
+      <h6 #color class="snippet-title">Color</h6>
+      <p>
+        Amino acids can be colored based on predefined or custom color schemes. Predefined color sets:
+        <strong>clustal, zappo, taylor, hydrophobicity</strong>, are defined as in JalView, see
+        <a href="https://www.jalview.org/help/html/colourSchemes/index.html">here</a>.
+        Check the <a routerLink="/doc">documentation</a> of the <strong>sequenceColor</strong> option parameter for custom coloring
+      </p>
+
+      <p>
+        <b>Clustal coloring</b>
+      </p>
+
+      <div class="circlez q">N, Q, S, P, T, H, Y</div>
+      <div class="circlez a">A, I, L, M, F, W, V </div>
+      <div class="circlez k">K, R</div><div class="circlez e">E, D</div>
+      <div class="circlez c">C</div>
+
+      <div class="sqvDemo" id="sqv6"></div>
+
+      <pre class="codebkg">{{clustaloptions | json}}</pre>
 
 
-    <pre class="codebkg">{{blosumdefaultoptions | json}}</pre>
+      <!-------------------------------------  sequenceColorMatrix blosum  EXAMPLE ---------------------------------------->
+      <h6 #colormatrix class="snippet-title">Color matrix</h6>
+      <p>
+        Amino acids can be colored based on a comparison with the first sequence (the MSA seed).
+        It is possible to provide a custom matrix representing all possible amino acids combinations and a color.
+        ProSeqViewer provides a predefined BLOSUM62 matrix that includes predefined colors
+        proportional to the corresponding substitution values (colors for negative values are not assigned)
+      </p>
 
-    <p style="color:#000;margin-top: 20px"><b>Custom matrix</b></p>
-    <p> It is possible to set a custom sequence color matrix, check the Documentation (Input -option, sequenceColorMatrix-) for details.</p>
+      <p>
+        <b>Blosum matrix</b>
+      </p>
+      <div class="sqvDemo" id="sqvBlosum"></div>
+      <pre class="codebkg">{{blosumdefaultoptions | json}}</pre>
 
-    <div class="sqvDemo" id="sqvBlosumCustom"></div>
-    <pre class="codebkg">{{blosumcustomoptions | json}}</pre>
+      <img src="../../assets/heatmap.svg" class="figure figure-img ounded mx-auto d-block">
+
+      <p class="text-center">
+        Predefined colors in the BLOSUM62 matrix, negative values are set to zero (white). The diagonal represent the frequency of that amino acid in representative organisms
+      </p>
 
 
-    <!-------------------------------------  CONSENSUS  EXAMPLE ---------------------------------------->
+      <p><b>Custom matrix</b></p>
+      <p>
+        Custom color matrix can be provided with the <b>sequenceColorMatrix</b> field</p>
 
-    <h6 id="consensus" class="snippet-title">Consensus</h6>
-    <div>A consensus sequence will be the generated on top of the alignment, representing the most frequent aminoacid (consensus identity) or property (consensus physical) found at each position in a sequence alignment.</div>
-    <div>As a default, the consensusDotThreshold is set at 90%, meaning that position with a frequency less of 90% will display a dot.</div>
-    <div>Consensus 'identity' and 'physical' can't be set at the same time. In case of overlapping settings, consensus 'identity' will be displayed.</div>
-    <p> It is also possible to set a custom consensus with personalized colors, levels and symbols and modify the consensusDotThreshold, check the Documentation for details.</p>
+      <div class="sqvDemo" id="sqvBlosumCustom"></div>
+      <pre class="codebkg">{{blosumcustomoptions | json}}</pre>
 
-    <!--  identity -->
-    <div class="palette">
-        <p style="color:#000;"><b>Identity consensus</b></p>
-        <p>In the consensus identity the aminoacid found at each position is colored based on its frequency in the alignment. Each level has a color: (100%, 80%, 70%..)</p>
 
+
+
+      <!-------------------------------------  CONSENSUS  EXAMPLE ---------------------------------------->
+
+      <h6 #consensus class="snippet-title">Consensus</h6>
+      <p>
+        ProSeqViewer provides two types of consensus, <strong>identity</strong> and <strong>physical</strong>. The consensus is
+        calculated based on amino acid conservation (identity or physical property) over MSA columns and it is added as a new sequence on top.
+        <br>
+        The most frequent amino acid (or property) is reported.
+        When the conservation is below a given threshold (<strong>consensusDotThreshold</strong> option, default 90%) the consensus displays a <strong>dot (.) symbol</strong>.
+        <br>
+        It is possible to set a custom consensus with personalized colors, thresholds and symbols
+      </p>
+
+      <!--  identity -->
+      <div class="palette">
+        <p>
+          <b>Identity</b>
+        </p>
+
+        <p>
+          Different conservation ranges are colored based on predefined colors
+        </p>
 
         <div class="consensusrect aa">&nbsp;100%</div>
         <div class="consensusrect bb">&nbsp;70%</div>
         <div class="consensusrect cc">&nbsp;40%</div>
         <div class="consensusrect dd">&nbsp;10%</div>
+      </div>
+
+      <div class="sqvDemo"><div id="sqv7"></div></div>
+
+
+      <pre class="codebkg">{{consensusidentity | json}}</pre>
+
+
+      <!--  physical-->
+      <p>
+        <b>Physical</b>
+      </p>
+      <p>
+        The most conserved physico-chemical property is reported and colored according to a predefined scheme. If the conservation
+        is 100% the amino acid is reported
+      </p>
+
+      <div class="badge-feature me-1" style="background-color: black;">X</div>Conserved (100% identity) <span class="me-3"></span>
+      <div class="badge-feature me-1" style="background-color: #f09048;">n</div> small nonpolar (A,G,S,T) <span class="me-3"></span>
+      <div class="badge-feature me-1" style="background-color: #558B6E;">h</div> small hydrophobic (C,V,I,L,P,F,Y,M,W ) <span class="me-3"></span>
+      <div class="badge-feature me-1" style="background-color: #A10702;">~</div> negatively charged (D,E) <span class="me-3"></span>
+      <div class="badge-feature me-1" style="background-color: #3626A7;">+</div> positively charged (K,R)
+
+
+      <div class="sqvDemo" id="sqvPhysical"></div>
+
+      <pre class="codebkg">{{consensusphysical | json}}</pre>
+
+
     </div>
 
-    <div class="sqvDemo"><div id="sqv7"></div></div>
-
-
-    <pre class="codebkg">{{consensusidentity | json}}</pre>
-
-
-    <!--  physical-->
-    <p style="color: #000; margin-top: 20px;"><b>Consensus based on physico-chemical properties</b></p>
-    <p>In the consensus physical the aminoacid found at each position is colored based on the aminoacid property frequency in the alignment. The property symbol is displayed.</p>
-    <div class="consensusrect aa">&nbsp;100% </div>
-
-
-    <dl class="rowtest">
-        <dt class="col-sm-2 text-md-right"> small nonpolar
-            <div class="badge-feature ml-3" style="background-color: #f09048;">n</div>
-        </dt>
-        <dd class="col-sm-10"> A,G,S,T </dd>
-        <dt class="col-sm-2 text-md-right"> small hydrophobic
-            <div class="badge-feature ml-3" style="background-color: #558B6E;">h</div>
-        </dt>
-        <dd class="col-sm-10">C,V,I,L,P,F,Y,M,W </dd>
-        <dt class="col-sm-2 text-md-right"> negatively charged
-            <div class="badge-feature ml-3" style="background-color: #A10702;">~</div>
-        </dt>
-        <dd class="col-sm-10"> D,E </dd>
-        <dt class="col-sm-2 text-md-right"> positively charged
-            <div class="badge-feature ml-3" style="background-color: #3626A7;">+</div>
-        </dt>
-        <dd class="col-sm-10"> K,R </dd>
-    </dl>
-
-    <div class="sqvDemo" id="sqvPhysical"></div>
-
-    <pre class="codebkg">{{consensusphysical | json}}</pre>
-
-
+  </div>
 
 </div>

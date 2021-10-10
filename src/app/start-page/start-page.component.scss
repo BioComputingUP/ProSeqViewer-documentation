@@ -1,22 +1,4 @@
-.flex-container {
-  display: flex;
-  background-color: #f2f2f2;
-}
-
-.flex-container > div {
-  background-color: white;
-  margin: 10px;
-  padding: 5px;
-  border-radius: 5px;
-  width: 200px;
-}
-
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 70px;
-}
+@import 'variables';
 
 .tit {
   color: #E36397;
@@ -25,38 +7,8 @@
   line-height: 1.2;
 }
 
-.lead {
-  font-size: 1rem;
-  font-weight: 300;
-}
-p {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
-.d-flex {
-  text-align: center;
-}
-
-#npm {
-  color: #FFFFFF;
-  text-decoration: none;
-  margin-right: 5px;
-  background-color: #D8829D;
-  border: none;
-}
-
-.btn-primary {
-  text-decoration: none;
-  color: #e9ecef;
-  background-color: #8CB2E3;
-  border: none;
-
-}
-
 .txt {
-  color: #E36397;
-  margin-top: 2rem;
+  color: $primary;
   font-weight: bold;
 }
 
@@ -65,28 +17,6 @@ p {
   margin-top: 2rem;
   color: #064579;
   font-size: 1.5rem;
-}
-
-@media only screen and (max-width: 600px) {
-  .tabcontent {
-    padding: 30px  30px 30px 30px;
-  }
-  #preview {
-    padding: 30px 30px 0px 30px;
-  }
-}
-
-h4 {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-.h2 {
-  margin-top: 0;
-  margin-bottom: .5rem;
-  font-family: inherit;
-  font-weight: 500;
-  line-height: 1.2;
-  color: inherit;
 }
 
 .sqvDemo {
@@ -126,51 +56,6 @@ h4 {
 .physical {
   color: white;float: left
 }
-/* Style inputs, select elements and textareas */
-input[type=text], select, textarea{
-  width: 90%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  resize: vertical;
-}
-
-/* Style the label to display next to the inputs */
-label {
-  padding: 12px 12px 12px 0;
-  display: inline-block;
-}
-
-/* Style the container */
-.box {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-/* Floating column for labels: 25% width */
-.col-25 {
-  float: left;
-  width: 25%;
-  margin-top: 6px;
-}
-
-/* Floating column for inputs: 75% width */
-.col-75 {
-  float: left;
-  width: 75%;
-  margin-top: 6px;
-}
-
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .col-25, .col-75, input[type=submit] {
-    width: 100%;
-    margin-top: 0;
-  }
-}
 
 
 pre  {
@@ -187,39 +72,6 @@ pre  {
 
 }
 
-.code {
-  margin-top: 50px;
-  height: 100px;
-  overflow-x: auto;
-  margin-bottom: 50px;
-  list-style-type: none;
-}
-
-.code-no-height {
-  margin-top: 25px;
-  overflow-x: auto;
-  margin-bottom: 50px;
-}
-.code li {
-  color: #64747D;
-  background: none;
-  margin-bottom: 5px;
-  line-height: normal;
-  font-size: 14px;
-  white-space: pre;
-}
-
-.code-no-height li {
-  color: #64747D;
-  background: none;
-  margin-bottom: 5px;
-  line-height: normal;
-  list-style-type: none;
-  font-size: 14px;
-  white-space: pre;
-}
-
-
 
 .hljs-html {
   color: #FFAD0A;
@@ -232,23 +84,6 @@ pre  {
 }
 .hljs-ang {
   color: purple;
-}
-
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-.first {
-  border: 1px solid #dddddd;
-}
-
-td, th {
-  text-align: left;
-  padding: 8px;
-}
-
-.field0 {
-  background-color: rgba(0,0,0,.04);
 }
 
 
@@ -321,10 +156,10 @@ td, th {
 
 
 .sidenav {
-  top: 0;
-  padding: 0 15px;
+  top: 100px;
+  //padding: 0 15px;
   display: block !important;
-  width: 300px;
+  //width: 300px;
 }
 
 .navbar {
@@ -345,18 +180,12 @@ td, th {
 }
 
 .sidenav b {
-  color: #E36397;
+  color: $primary;
 }
 
 .sidenav a:hover {
   color: #064579;
 }
-
-.row1 {
-  margin-right: 0px;
-  margin-left: 50px;
-}
-
 
 
 .main {
@@ -375,16 +204,6 @@ td, th {
     float: left;
     position: sticky;
   }
-  .row1 {
-    margin-right: 90px;
-    margin-left: 300px;
-  }
-
-}
-
-
-#api {
-  margin-top: 20px;
 }
 
 
@@ -398,17 +217,3 @@ td, th {
   padding-left: 5px;
   padding-right: 5px;
 }
-
-.rowtest {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -30px
-}
-
-.comment {
-  color: #64747D;
-}
-
-
-

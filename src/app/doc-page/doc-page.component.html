@@ -1,86 +1,74 @@
-<nav class="navbar"><div class="mr-3">
-  <div><h1 class="tit">ProSeqViewer</h1>
-    <h6 class="lead">ProSeqViewer library for the visualization of (not only) biological sequence features. Used in
-      <a href="https://mobidb.bio.unipd.it/">MobiDB</a>,
-      <a href="https://www.disprot.org/">DisProt</a> and
-      <a href="https://repeatsdb.bio.unipd.it/">RepeatsDB</a>.</h6>
-    <h6 class="lead">Based on Typescript and compatible with Angular 2+ framework. A JavaScript version of the package is also available.</h6>
-    <a role="button" class="btn btn-primary" id="npm" href="https://www.npmjs.com/package/proseqviewer">npm package 1.0.74</a>
-    <a role="button" class="btn btn-primary" id="git" href="https://github.com/BioComputingUP/ProSeqViewer">github 1.0.74</a>
+
+<div class="container-xl">
+  <div class="sidenav">
+    <a (click)="scroll(installation)"><h5><b>Installation</b></h5></a>
+    <a (click)="scroll(input)"><h6>Input</h6></a>
+    <a (click)="scroll(events)"><h6>Events</h6></a>
   </div>
-</div>
-</nav>
 
 
-<div class="sidenav">
-  <a id="api"><h6><b>Documentation</b></h6></a>
-  <a href="doc#installation"><h6>Installation guide</h6></a>
-  <a href="doc#input" target="_self"><h6>Input</h6></a>
-  <a href="doc#events" target="_self"><h6>Events</h6></a>
-  <a href="doc#loading" target="_self"><h6>Loading time</h6></a>
-</div>
-<!------------------------------------- DEMO ---------------------------------------->
+    <div class="row">
+      <div class="col">
 
-<div class="row1">
-
-    <!----------------------------------- DOCUMENTATION -------------------------------------->
-
-    <div class="tabcontent">
       <h2 class="txt">Documentation</h2>
         <p>ProSeqViewer is a TypeScript library implemented to be compatible with modern applications (both Angular and pure JavaScript supported). It is lightweight, fast, interactive, dynamic, responsive and it adapts to any screen size. It generates pure HTML which is compatible with any browser and operating system. The source code is available on <a href="https://github.com/BioComputingUP/ProSeqViewer">Github</a>.</p>
-        <div class="snippet-card" id="installation">
+
+
+        <div class="snippet-card" #installation>
+
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
         <div>
           <h6 class="snippet-title" id="javascript">JavaScript installation</h6>
 
-            <p><strong>1. Download the library code</strong></p>
-            <p>You can find the <i>sqv-bundle.js</i> file in the dist folder on the <a href="https://github.com/BioComputingUP/ProSeqViewer">Github repo.</a></p>
-            <p><strong>2. Download the CSS stylesheet</strong></p>
-            <p>You can find the <i>sqv.css</i> file in the src/assets folder on the <a href="https://github.com/BioComputingUP/ProSeqViewer">Github repo.</a></p>
-            <p><strong>3. Edit your index.html:</strong></p>
+          <p>
+            Import the JavaScript bundle and CSS from local files
+          </p>
 
-            <!-- Tab content -->
-            <ul class="code-no-height">
-            <li><span class="hljs-js">&lt;head></span></li>
-            <li><span class="hljs-js tab-sp">&lt;link</span> rel=<span class="hljs-id">"stylesheet"</span> type=<span class="hljs-id">"text/css"</span> href=<span class="hljs-id">"sqv.css"</span><span class="hljs-js">></span></li>
-            <li><span class="hljs-js">&lt;/head></span></li>
-            <li><span class="hljs-js">&lt;body></span></li>
-            <li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqvSimple"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li>
-            <li><span class="hljs-js">&lt;script</span> src=<span class="hljs-id">"sqv-bundle.js"</span><span class="hljs-js">>&lt;/script&gt;</span></li>
-            <li><span class="hljs-js">&lt;script></span></li>
-            <li><span class="tab-sp"><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new </span>ProSeqViewer(<span class="hljs-id">'sqvSimple'</span>);</span></li>
-            <li><span class="tab-sp"><span class="hljs-js">const</span> sequence = [ </span></li>
-            <li><span class="tab-sp-db">      &#123;sequence: 'MVLSPADKTNVKAAWGKVGAHAG--ALERMFL--YFPHFDLSHGSAQVKGHG', id: 1, label: 'sp|P69905|HBA_HUMAN'}</span></li>
-            <li><span class="tab-sp">      ];</span></li>
-            <li><span class="tab-sp">proseqviewer.<span class="hljs-js">draw</span>(&#123; sequence});</span></li>
-            <li><span class="hljs-js">&lt;/script></span></li>
-            <li><span class="hljs-js">&lt;/body></span></li>
-          </ul>
+          <pre><code [highlight]="code0" [languages]="['typescript']"></code></pre>
+
+          <p>
+            Alternatively, import from GitHub
+          </p>
+          <pre><code [highlight]="code1" [languages]="['typescript']"></code></pre>
+
+          <p>
+            Add component
+          </p>
+          <pre><code [highlight]="code2" [languages]="['typescript']"></code></pre>
+
+          <p>
+            Create an instance
+          </p>
+          <pre><code [highlight]="code3" [languages]="['typescript']"></code></pre>
 
 
           <h6 class="snippet-title">Angular installation</h6>
 
-          <p>The proseqviewer package is written in pure typescript and does not have any dependencies. This guide focus on how to install the package in an Angular app.</p>
-          <p><strong>1. Install the library using npm</strong></p>
-          <pre><code>npm i proseqviewer</code></pre>
+          <p>
+            Install ProSeqViewer from NPM
+          </p>
+          <pre><code [highlight]="code4" [languages]="['typescript']"></code></pre>
 
-          <p><strong>2. Edit the "styles" field in your angular.json </strong></p>
-          <pre><code><span class="hljs-ang">styles:</span> ["./node_modules/proseqviewer/dist/assets/sqv.css"]</code></pre>
+          <p>Add ProSeqViewer CSS to your angular.json file</p>
+          <pre><code [highlight]="code5" [languages]="['typescript']"></code></pre>
 
-          <p class="comment">// component:</p>
-          <ul class="code-no-height">
-              <li><span class="hljs-js">import</span> &#123; ProSeqViewer &#125; <span class="hljs-keyword">from</span> <span class="hljs-id">'proseqviewer/dist'</span>;</li>
-              <li><span class="hljs-js">const</span> proseqviewer = <span class="hljs-js">new </span> ProSeqViewer(<span class="hljs-id">'sqv'</span>);</li>
-            <li><span class="hljs-js">const</span> sequence = [&#123;sequence: 'DFRLE--F-DFRLEDFRLE----&#125;]</li>
-            <li>proseqviewer.<span class="hljs-js">draw</span>(&#123; sequence});</li>
-          </ul>
+          <p>Import in your component</p>
+          <pre><code [highlight]="code6" [languages]="['typescript']"></code></pre>
 
-            <p class="comment">// template</p>
-            <ul class="code-no-height"><li><span class="hljs-html">&lt;div</span> id <span class="hljs-id">="sqv"</span><span class="hljs-html">&gt;&lt;/div&gt;</span></li></ul>
+          <p>Add component to your page</p>
+          <pre><code [highlight]="code7" [languages]="['typescript']"></code></pre>
 
 
-            <h6 class="snippet-title" id="input">Input</h6>
-            <p>The proseqviewer provides a method <i>draw()</i> that take a JSON object in input.</p>
-            <p>The object has 5 keys (keys order is indifferent).</p>
+          <p>Create an instance in your component</p>
+          <pre><code [highlight]="code8" [languages]="['typescript']"></code></pre>
+
+
+          <h6 class="snippet-title" #input>Input fields</h6>
+          <p>ProSeqViewer provides a method <i><b>draw</b></i> that takes a JSON object with five keys</p>
 
             <ul>
                 <li><span>sequences: Array&lt;Sequences&gt;,</span></li>
@@ -88,8 +76,66 @@
                 <li><span>patterns?: Array&lt;Patterns&gt;,</span></li>
                 <li><span>options?: Options</span></li>
             </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <table class="table">
+            <thead>
+            <tr>
+              <th scope="col">Field</th>
+              <th scope="col">Field</th>
+              <th scope="col">Type</th>
+              <th scope="col">Example</th>
+              <th scope="col">Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th rowspan="5" scope="row">sequences</th>
+              <td>sequence</td>
+              <td>string</td>
+              <td>LYRLELERECAMT</td>
+              <td>Sequence of characters</td>
+            </tr>
 
-            <p>Each key value is itself a JSON object. E.g.: &#123;sequence: .., id: ..}. Below a detailed description of each value.</p>
+            <tr>
+              <td>id</td>
+              <td>integer</td>
+              <td>1</td>
+              <td> Identifier of the sequence</td>
+            </tr>
+            <tr>
+              <td>label</td>
+              <td>string</td>
+              <td>1xvz_1_30.pdb</td>
+              <td>Lateral label</td>
+            </tr>
+            <tr>
+              <td>labelTooltip</td>
+              <td>string</td>
+              <td>
+                <pre>
+                  <code [highlight]="code9">
+
+                  </code>
+
+                </pre>
+              </td>
+              <td>Stylable tooltip</td>
+            </tr>
+            <tr>
+              <td>startIndex</td>
+              <td>integer</td>
+              <td>30</td>
+              <td>Start index of the input sequence</td>
+            </tr>
+
+            </tbody>
+
+          </table>
+
+
 
             <div class="container">
                 <div class="row first">
@@ -423,10 +469,14 @@
                 </div>
         </div>
       </div>
+      </div>
     </div>
-    </div>
+
+
+
+
     <!-------------------------------------  EVENTS  EXAMPLE ---------------------------------------->
-    <h6 id="events" class="snippet-title">Events<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"></svg></a></h6>
+    <h6 #events class="snippet-title">Events<a><svg class="bi section-link" fill="currentColor" height="1em" width="1em"></svg></a></h6>
     <p>Two different types of events are available: area selection (active after the user's Ctrl+C action) and the double click event (active after user's double click). The events are available integrating the eventListeners and will be fired on ctrl+C and double click user action, respectively.</p>
 
     <p><b>Area selection</b></p>
@@ -460,6 +510,8 @@
             <div id="sqv9"></div>
         </div>
     </div>
+
+
     <div class="box">
         <form>
             <div class="row">
@@ -498,4 +550,5 @@
     </p>
 
 
+</div>
 </div>

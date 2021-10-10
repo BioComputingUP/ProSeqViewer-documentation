@@ -1,19 +1,111 @@
 import {Component, OnInit} from '@angular/core';
 import {ProSeqViewer} from 'proseqviewer/dist';
 
+
 @Component({
     selector: 'app-doc',
     templateUrl: './doc-page.component.html',
-    styleUrls: ['./doc-page.component.scss']
+    styleUrls: ['./doc-page.component.scss', '../start-page/start-page.component.scss']
 })
 export class DocPageComponent implements OnInit {
     title = 'ProSeqViewer-doc';
     selectedChar;
     positionX;
     positionY;
-    ngOnInit(): void {
+
+
+    code0 = `<head>
+    <link rel="stylesheet" type="text/css" href="sqv.css">
+    <script src="sqv-bundle.js"></script>
+</head>`;
+
+    code1 = `<head>
+    <link rel="stylesheet" type="text/css" href="https://rawgithub.com/BioComputingUP/ProSeqViewer/master/dist/assets/proseqviewer.css">
+    <script src="https://rawgithub.com/BioComputingUP/ProSeqViewer/master/dist/sqv-bundle.js"></script>
+</head>`;
+
+    code2 = `<body>
+    <div id="psv"></div>
+</body>`;
+
+  code3 = `<head>
+    <!--Put this block at the end of your head section-->
+    <script>
+        const sequences = [
+            {sequence: 'TLRAIENFYISNNKISDIPEFVR', id: 1, label: 'ASPA_ECOLI/13-156'},
+            {sequence: 'TLRASENFPITGYKIHEE..MIN', id: 2, label: 'ASPA_BACSU/16-156'},
+            {sequence: 'GTKFPRRIIWS............', id: 3, label: 'FUMC_SACS2/1-124'}
+        ]
+
+        // Input icons
+        const icons = [
+            {sequenceId: 1, start: 2, end: 2, icon: 'lollipop'},
+            {sequenceId: 1, start: 13, end: 13, icon: 'lollipop'}
+        ]
+
+        // Options and configuration
+        const options = {
+            chunkSize: 0,
+            sequenceColor: 'clustal',
+            lateralIndexes: false
+        };
+
+        // Initialize the viewer
+        const psv = new ProSeqViewer('psv');
+
+        // Generate the HTML
+        psv.draw({sequences, options, icons});
+    </script>
+</head>`;
+
+  code4 = `npm install proseqviewer`;
+
+  code5 = `{
+  styles: ["./node_modules/proseqviewer/dist/assets/proseqviewer.css"]
+}`;
+
+  code6 = `import {ProSeqViewer} from 'proseqviewer/dist';`;
+
+  code7 = ` <div id="psv"></div>`;
+
+  code8 = `// Input sequences
+const sequences = [
+    {sequence: 'TLRAIENFYISNNKISDIPEFVR', id: 1, label: 'ASPA_ECOLI/13-156'},
+    {sequence: 'TLRASENFPITGYKIHEE..MIN', id: 2, label: 'ASPA_BACSU/16-156'},
+    {sequence: 'GTKFPRRIIWS............', id: 3, label: 'FUMC_SACS2/1-124'}
+]
+
+// Input icons
+const icons = [
+    {sequenceId: 1, start: 2, end: 2, icon: 'lollipop'},
+    {sequenceId: 1, start: 13, end: 13, icon: 'lollipop'}
+]
+
+// Options and configuration
+const options = {
+    chunkSize: 0,
+    sequenceColor: 'clustal',
+    lateralIndexes: false
+};
+
+// Initialize the viewer
+const psv = new ProSeqViewer('psv');
+
+// Generate the HTML
+psv.draw({sequences, options, icons});`;
+
+  code9 = `<span class="tooltipText" style="background-color: blue;">Tooltip text</span>`;
+
+
+    scroll(el: HTMLElement) {
+      el.scrollIntoView({block: 'center'});
+    }
+
+  ngOnInit(): void {
 
         const detail = 'detail';
+
+
 
         // selections EXAMPLE
         const s9 = new ProSeqViewer('sqv9');
