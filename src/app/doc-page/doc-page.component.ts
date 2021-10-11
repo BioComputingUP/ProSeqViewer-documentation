@@ -96,6 +96,16 @@ psv.draw({sequences, options, icons});`;
 
   code9 = `<span class="tooltipText" style="background-color: blue;">Tooltip text</span>`;
 
+  code10 = `window.addEventListener('onHighlightSelection', (e) =>   {
+  console.log('event type', e['detail'].eventType);
+  console.log('text area', e['detail'].text);
+});`;
+
+  code11 = `window.addEventListener('onRegionSelected', (e) =>   {
+  console.log('character selected', e['detail'].char);
+  console.log('position x', e['detail'].x);
+  console.log('position y', e['detail'].y);
+});`;
 
     scroll(el: HTMLElement) {
       el.scrollIntoView({block: 'center'});
