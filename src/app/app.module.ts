@@ -33,7 +33,7 @@ import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
       languages: {
         xml: () => import('highlight.js/lib/languages/xml'),
         typescript: () => import('highlight.js/lib/languages/typescript'),
-        scss: () => import('highlight.js/lib/languages/scss'),
+        json: () => import('highlight.js/lib/languages/json'),
       }
     }
   } ],
