@@ -27,7 +27,7 @@
     "firebase": ">= 5.5.7 <8",
     "ngx-highlightjs": "^4.1.1",
     "plotly.js": "1.47.4",
-    "proseqviewer": "1.0.90",
+    "proseqviewer": "^1.0.93",
     "rxjs": "~6.6.3",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
