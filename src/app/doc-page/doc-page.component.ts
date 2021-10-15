@@ -111,9 +111,10 @@ psv.draw({sequences, options, icons});`;
 regions?: Array<Regions>;
 patterns?: Array<Patterns>;
 icons?: Array<Icons>;
+consensus?: Consensus;
 options?: Options;
 ...
-psv.draw({sequences, regions, patterns, options, icons});`;
+psv.draw({sequences, regions, patterns, icons, consensus, options});`;
 
     scroll(el: HTMLElement) {
       el.scrollIntoView({block: 'center'});
