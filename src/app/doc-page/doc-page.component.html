@@ -81,12 +81,8 @@
           <h6 class="snippet-title" #input>Input fields</h6>
           <p>ProSeqViewer provides a method <i><b>draw</b></i> that takes a JSON object with five keys</p>
 
-            <ul>
-                <li><span>sequences: Array&lt;Sequences&gt;,</span></li>
-                <li><span>regions?: Array&lt;Regions&gt;,</span></li>
-                <li><span>patterns?: Array&lt;Patterns&gt;,</span></li>
-                <li><span>options?: Options</span></li>
-            </ul>
+          <pre><code [highlight]="codeType" [languages]="['typescript']"></code></pre>
+
         </div>
       </div>
       <div class="row">
@@ -94,7 +90,7 @@
           <table class="table">
             <thead>
               <tr>
-                <th scope="col">Field</th>
+                <th scope="col">Object</th>
                 <th scope="col">Field</th>
                 <th scope="col">Type</th>
                 <th scope="col">Example</th>
@@ -105,163 +101,180 @@
 
               <!-- block -->
               <tr>
-                <th rowspan="5" scope="row">sequences</th>
-                <td>sequence</td>
+                <th rowspan="5" scope="row" class="first-col">sequences</th>
+                <td class="second-col">sequence</td>
                 <td>string</td>
                 <td>LYRLELERECAMT</td>
                 <td>Sequence of characters</td>
               </tr>
 
               <tr>
-                <td>id</td>
+                <td class="second-col">id</td>
                 <td>integer</td>
                 <td>1</td>
                 <td> Identifier of the sequence</td>
               </tr>
               <tr>
-                <td>label</td>
+                <td class="second-col">label</td>
                 <td>string</td>
-                <td>1xvz_1_30.pdb</td>
+                <td>1XVZ</td>
                 <td>Lateral label</td>
               </tr>
               <tr>
-                <td>labelTooltip</td>
-                <td>string</td>
+                <td class="second-col">labelTooltip</td>
+                <td>html</td>
                 <td>
-                  &#x3C;span class="tooltipText" style="background-color: blue;"&#x3E;Tooltip text&#x3C;/span&#x3E;
-
+                  &#x3C;span &#x3E; ... &#x3C;/span&#x3E;
                 </td>
-                <td>Stylable tooltip</td>
+                <td>Styled HTML of the tooltip</td>
               </tr>
               <tr>
-                <td>startIndex</td>
+                <td class="second-col">startIndex</td>
                 <td>integer</td>
                 <td>30</td>
-                <td>Start index of the input sequence</td>
+                <td>Start index of the input sequence. Shown when lateralIndexes: true</td>
               </tr>
 
               <!-- block -->
               <tr>
-                <th rowspan="6" scope="row">regions</th>
-                <td>sequenceId</td>
+                <th rowspan="8" scope="row" class="first-col">regions</th>
+                <td class="second-col">sequenceId</td>
                 <td>integer</td>
                 <td>1</td>
                 <td>Identifier of the sequence</td>
               </tr>
 
               <tr>
-                <td>start</td>
+                <td class="second-col">start</td>
                 <td>integer</td>
                 <td>10</td>
                 <td>Start position of the region to color</td>
               </tr>
               <tr>
-                <td>end</td>
+                <td class="second-col">end</td>
                 <td>integer</td>
                 <td>20</td>
                 <td>End position of the region to color</td>
               </tr>
               <tr>
-                <td>backgroundColor</td>
+                <th rowspan="2" scope="row" class="second-col">color</th>
                 <td>string</td>
-                <td>hex, rgb</td>
-                <td>Color the character background</td>
+                <td>#9C7DA6</td>
+                <td>Color the character (Hex)</td>
               </tr>
               <tr>
-                <td>color</td>
                 <td>string</td>
-                <td>hex</td>
-                <td>Color the character. Available options: 'hex', 'rgb'</td>
+                <td>rgb(156, 125, 166)</td>
+                <td>Color the character (RGB)</td>
               </tr>
               <tr>
-                <td>backgroundImage</td>
-                <td>integer</td>
+                <th rowspan="2" scope="row" class="second-col">backgroundColor</th>
+                <td>string</td>
+                <td>#9C7DA6</td>
+                <td>Color the character background (Hex)</td>
+              </tr>
+              <tr>
+                <td>string</td>
+                <td>rgb(156, 125, 166)</td>
+                <td>Color the character background (RGB)</td>
+              </tr>
+              <tr>
+                <td class="second-col">backgroundImage</td>
+                <td>string</td>
                 <td>linear-gradient(red, yellow)</td>
                 <td>Color the character background with a two color gradient</td>
               </tr>
 
               <!-- block -->
               <tr>
-                <th rowspan="7" scope="row">patterns</th>
-                <td>sequenceId</td>
+                <th rowspan="9" scope="row" class="first-col">patterns</th>
+                <td class="second-col">sequenceId</td>
                 <td>integer</td>
                 <td>1</td>
                 <td>Identifier of the sequence</td>
               </tr>
 
               <tr>
-                <td>start</td>
+                <td class="second-col">start</td>
                 <td>integer</td>
                 <td>10</td>
                 <td>Start position of the region where to perform the regex</td>
               </tr>
               <tr>
-                <td>pattern</td>
+                <td class="second-col">pattern</td>
                 <td>string</td>
                 <td>AAA</td>
                 <td>Regex pattern to find in the sequence</td>
               </tr>
               <tr>
-                <td>end</td>
+                <td class="second-col">end</td>
                 <td>integer</td>
                 <td>20</td>
                 <td>End position of the region where to perform the regex</td>
-
               </tr>
               <tr>
-                <td>backgroundColor</td>
+                <th rowspan="2" scope="row" class="second-col">color</th>
                 <td>string</td>
-                <td>hex</td>
-                <td>Color the regex match background. Available options: 'hex', 'rgb'</td>
+                <td>#9C7DA6</td>
+                <td>Color the character (Hex)</td>
               </tr>
               <tr>
-                <td>color</td>
                 <td>string</td>
-                <td>hex</td>
-                <td>Color the regex match background. Available options: 'hex', 'rgb'</td>
+                <td>rgb(156, 125, 166)</td>
+                <td>Color the character (RGB)</td>
               </tr>
               <tr>
-                <td>backgroundImage</td>
-                <td>integer</td>
+                <th rowspan="2" scope="row" class="second-col">backgroundColor</th>
+                <td>string</td>
+                <td>#9C7DA6</td>
+                <td>Color the character background (Hex)</td>
+              </tr>
+              <tr>
+                <td>string</td>
+                <td>rgb(156, 125, 166)</td>
+                <td>Color the character background (RGB)</td>
+              </tr>
+              <tr>
+                <td class="second-col">backgroundImage</td>
+                <td>string</td>
                 <td>linear-gradient(red, yellow)</td>
                 <td>Color the regex match character background with a two color gradient</td>
               </tr>
 
               <!-- block -->
               <tr>
-                <th rowspan="6" scope="row">icons</th>
-                <td>sequenceId</td>
+                <th rowspan="6" scope="row" class="first-col">icons</th>
+                <td class="second-col">sequenceId</td>
                 <td>integer</td>
                 <td>1</td>
                 <td>Identifier of the sequence</td>
               </tr>
 
               <tr>
-                <td>start</td>
+                <td class="second-col">start</td>
                 <td>integer</td>
                 <td>10</td>
                 <td>Start position of the icon region</td>
               </tr>
               <tr>
-                <td>end</td>
+                <td class="second-col">end</td>
                 <td>integer</td>
                 <td>20</td>
                 <td>End position of the icon region</td>
               </tr>
               <tr>
-                <td>icon</td>
+                <th rowspan="2" scope="row" class="second-col">icon</th>
                 <td>string</td>
                 <td>helix</td>
-                <td>Predefined icons: 'lollipop', 'helix', 'strand', 'strand-arrow-left', 'turn'</td>
+                <td>Predefined icons: <kbd>lollipop</kbd>, <kbd>helix</kbd>, <kbd>strand</kbd>, <kbd>strand</kbd>, <kbd>arrow-left</kbd>, <kbd>turn</kbd></td>
               </tr>
               <tr>
-                <td>icon</td>
-                <td>string</td>
+                <td>html</td>
                 <td>&#x3C;svg&#x3E; ... &#x3C;/svg&#x3E;</td>
                 <td>Custom svg image to apply on top of the indicated sequence</td>
               </tr>
               <tr>
-                <td>display</td>
+                <td class="second-col">display</td>
                 <td>string</td>
                 <td>center</td>
                 <td>Center the icon in the middle of the region</td>
@@ -269,114 +282,118 @@
 
               <!-- block -->
               <tr>
-                <th rowspan="17" scope="row">options</th>
-                <td>fontSize</td>
-                <td>string</td>
-                <td>14px</td>
-                <td>Font dimension</td>
-              </tr>
-
-              <tr>
-                <td>chunkSize</td>
-                <td>integer</td>
-                <td>10</td>
-                <td>Size of sequence chunks (px)</td>
-              </tr>
-              <tr>
-                <td>chunkSeparation</td>
-                <td>integer</td>
-                <td>2</td>
-                <td>Space among chunks (px)</td>
-              </tr>
-              <tr>
-                <td>lineSeparation</td>
-                <td>integer</td>
-                <td>15</td>
-                <td>Space below a row of characters (px)</td>
-              </tr>
-              <tr>
-                <td>indexesLocation</td>
-                <td>string</td>
-                <td>lateral</td>
-                <td>Set an index on the left side of each sequence</td>
-              </tr>
-              <tr>
-                <td>indexesLocation</td>
-                <td>string</td>
-                <td>top</td>
-                <td>Place an index on top of the end of each chunk (first row only)</td>
-              </tr>
-              <tr>
-                <td>wrapLine</td>
-                <td>boolean</td>
-                <td>true</td>
-                <td>Display the viewer with fixed width (not responsive) and scrollbar on the sequences</td>
-              </tr>
-              <tr>
-                <td>viewerWidth</td>
-                <td>integer</td>
-                <td>2</td>
-                <td>Width of the left sidebar</td>
-              </tr>
-              <tr>
-                <td>sequenceColor</td>
-                <td>string</td>
-                <td>clustal</td>
-                <td>Amino acid coloring. All Jalview colorscheme are available</td>
-              </tr>
-              <tr>
-                <td>sequenceColor</td>
-                <td>obj</td>
-                <td>{{"{ A: '#80a0f0', .. }"}}</td>
-                <td>Custom colorscheme to apply to all sequences. Scheme:
-                  &#123;&#x3C;amino_acid&#x3E;:&#x3C;background_color&#x3E;, ... &#125;</td>
-              </tr>
-              <tr>
-                <td>sequenceColorMatrix</td>
-                <td>string</td>
-                <td>blosum62</td>
-                <td>Add color gradient based on BLOSUM62 positive values</td>
-              </tr>
-              <tr>
-                <td>sequenceColorMatrix</td>
-                <td>obj</td>
-                <td>{{"{KR: [ '#C0CFED', '#000000'], .. }"}}</td>
-                <td>Add custom matrix colorscheme. Scheme:
-                  &#123;&#x3C;amino_acid_pair&#x3E;:[&#x3C;background_color&#x3E;, &#x3C;color&#x3E;], ... &#125;</td>
-              </tr>
-              <tr>
-                <td>consensusDotThreshold</td>
+                <th rowspan="4" scope="row" class="first-col">consensus</th>
+                <td class="second-col">dotThreshold</td>
                 <td>integer</td>
                 <td>90</td>
-                <td>Below the threshold the consensus displays a dot symbol (.)</td>
+                <td>Below this threshold displays a dot <kbd>.</kbd> symbol instead of the conserved AA</td>
               </tr>
               <tr>
-                <td>consensusColorIdentity</td>
+                <th rowspan="3" scope="row" class="second-col">color</th>
                 <td>string</td>
                 <td>identity</td>
-                <td>Add the consensus line on the top</td>
+                <td>
+                  Color the consensus based on conserved properties in MSA columns. <kbd>identity</kbd> sequence identity.
+                  <kbd>physical</kbd> conserved physico-chemical properties, it also replace consensus AAs with symbols
+                </td>
               </tr>
               <tr>
-                <td>consensusColorIdentity</td>
                 <td>obj</td>
                 <td>{{"{90: ['#0A0A0A', '#FFFFFF'], ... }"}}</td>
-                <td>Add a line with custom consensus identity information. Scheme:
-                  &#123;&#x3C;level&#x3E;:[&#x3C;background_color&#x3E;, &#x3C;color&#x3E;], ... &#125;</td>
+                <td>
+                  Custom colors based on identity thresholds
+                  <div class="example">&#123;&#x3C;level&#x3E;:[&#x3C;background_color&#x3E;, &#x3C;color&#x3E;], ... &#125;</div>
+                </td>
               </tr>
               <tr>
-                <td>consensusColorMapping</td>
-                <td>string</td>
-                <td>physical</td>
-                <td>Add a line with consensus physical information</td>
-              </tr>
-              <tr>
-                <td>consensusColorMapping</td>
+
                 <td>obj</td>
-                <td>{{"{A: ['+', '#3626A7', '#FFFFFF'], ... }"}}</td>
-                <td>Add a line with custom consensus physical information. Scheme:
-                  &#123;&#x3C;amino_acid&#x3E;:[&#x3C;symbol&#x3E;, &#x3C;background_color&#x3E;, &#x3C;color&#x3E;], ... &#125;}</td>
+                <td>{{"{'A': ['+', '#3626A7', '#FFFFFF'], ... }"}}</td>
+                <td>
+                  Custom colors based on type of conserved AA
+                  <div class="example">&#123;&#x3C;amino_acid&#x3E;: [&#x3C;symbol&#x3E;, &#x3C;background_color&#x3E;, &#x3C;color&#x3E;], ... &#125;</div>
+                </td>
               </tr>
 
+              <!-- block -->
+              <tr>
+                <th rowspan="11" scope="row" class="first-col">options</th>
+                <td class="second-col">fontSize</td>
+                <td>string</td>
+                <td>14px</td>
+                <td>Font size (px, em, vw)</td>
+              </tr>
+
+              <tr>
+                <td class="second-col">chunkSize</td>
+                <td>integer</td>
+                <td>10</td>
+                <td>Size of the chunks (number of AA)</td>
+              </tr>
+              <tr>
+                <td class="second-col">chunkSeparation</td>
+                <td>integer</td>
+                <td>2</td>
+                <td>Space between two chunks (px)</td>
+              </tr>
+              <tr>
+                <td class="second-col">lineSeparation</td>
+                <td>integer</td>
+                <td>15</td>
+                <td>Space below each sequence (px)</td>
+              </tr>
+<!--              <tr>-->
+<!--                <td class="second-col">lateralIndexes</td>-->
+<!--                <td>bool</td>-->
+<!--                <td>true</td>-->
+<!--                <td>Place the index on the left, between the label and the sequence</td>-->
+<!--              </tr>-->
+              <tr>
+                <td class="second-col">indexesLocation</td>
+                <td>string</td>
+                <td>top</td>
+                <td>
+                  <kbd>top</kbd> place the index on top of each chunk (first row only).
+                  <kbd>lateral</kbd> place  the index on the left, between the label and the sequence.
+                  <kbd>both</kbd> add both indexes
+                </td>
+              </tr>
+              <tr>
+                <td class="second-col">wrapLine</td>
+                <td>bool</td>
+                <td>true</td>
+                <td>Dynamically wrap sequences when the size of the window changes</td>
+              </tr>
+              <tr>
+                <td class="second-col">viewerWidth</td>
+                <td>integer</td>
+                <td>300</td>
+                <td>Width of the viewer (px). If not provided the viewer expands up to the width of the parent element</td>
+              </tr>
+              <tr>
+                <th rowspan="3" scope="row" class="second-col">sequenceColor</th>
+                <td>string</td>
+                <td>blosum62</td>
+                <td>
+                  Amino acid coloring. <kbd>blosum62</kbd> substitution score (only positive) with respect to the first sequence in the MSA.
+                  <a href="https://www.jalview.org/help/html/colourSchemes/index.html">Jalview color schemes</a>:
+                  <kbd>clustal</kbd>, <kbd>zappo</kbd>, <kbd>taylor</kbd>, <kbd>hydrophobicity</kbd>, ...
+                </td>
+              </tr>
+              <tr>
+                <td>obj</td>
+                <td>{{"{'A': '#80a0f0', .. }"}}</td>
+                <td>Custom colorscheme
+                  <div class="example">&#123;&#x3C;amino_acid&#x3E;: &#x3C;background_color&#x3E;, ... &#125;</div>
+                </td>
+              </tr>
+              <tr>
+                <td>obj</td>
+                <td>{{"{'KR': [ '#C0CFED', '#000000'], .. }"}}</td>
+                <td>Custom color matrix
+                  <div class="example">&#123;&#x3C;amino_acid_pair&#x3E;: [&#x3C;background_color&#x3E;, &#x3C;color&#x3E;], ... &#125;</div>
+                </td>
+              </tr>
 
             </tbody>
 

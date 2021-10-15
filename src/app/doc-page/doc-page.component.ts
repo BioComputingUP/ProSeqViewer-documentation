@@ -107,6 +107,14 @@ psv.draw({sequences, options, icons});`;
   console.log('position y', e['detail'].y);
 });`;
 
+  codeType = `sequences: Array<Sequences>;
+regions?: Array<Regions>;
+patterns?: Array<Patterns>;
+icons?: Array<Icons>;
+options?: Options;
+...
+psv.draw({sequences, regions, patterns, options, icons});`;
+
     scroll(el: HTMLElement) {
       el.scrollIntoView({block: 'center'});
     }
