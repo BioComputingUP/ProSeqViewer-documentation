@@ -231,7 +231,7 @@ export class StartPageComponent implements OnInit {
 
 
     // blosum62 default
-    this.blosumdefaultoptions = {options: {sequenceColorMatrix: 'blosum62'}};
+    this.blosumdefaultoptions = {options: {sequenceColor: 'blosum62'}};
     const seqsBlos = [
       {
         sequence: 'GTREVPADAYYGVHTLRAIENFYISNNKISDIPEFVRGMVMVKKAAAMANKELQTIPKSV' +
@@ -289,7 +289,7 @@ export class StartPageComponent implements OnInit {
       }
     ];
     const sBlos = new ProSeqViewer('sqvBlosum');
-    sBlos.draw({sequences: seqsBlos, options: this.blosumdefaultoptions.options});
+    sBlos.draw({sequences: seqsBlos, options: {sequenceColor: 'blosum62'}});
 
 
     // blosum62 default
@@ -315,13 +315,13 @@ export class StartPageComponent implements OnInit {
     };
     this.blosumcustomoptions = {
       options: {
-        sequenceColorMatrix: {
+        sequenceColor: {
           WF: {backgroundColor: '#FFB3AD'}, QQ: {backgroundColor: '#FFB3AD'},
         }
       }
     };
     const sBlos2 = new ProSeqViewer('sqvBlosumCustom');
-    sBlos2.draw({sequences: seqsBlos, options: {sequenceColorMatrix: substitutionMatrixBlosum}});
+    sBlos2.draw({sequences: seqsBlos, options: {sequenceColor: substitutionMatrixBlosum}});
 
     //
     // indexes EXAMPLE
@@ -352,9 +352,9 @@ export class StartPageComponent implements OnInit {
       {sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'CRAB_ANAPL'},
       {sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'CRAB_CHICK'}
     ];
-    this.consensusidentity = {options: {consensusColorIdentity: 'identity', consensusDotThreshold: 80}};
+    this.consensusidentity = {consensus: {color: 'identity', dotThreshold: 80}};
     const s7 = new ProSeqViewer('sqv7');
-    s7.draw({sequences: seqs7, options: this.consensusidentity.options});
+    s7.draw({sequences: seqs7, consensus: {color: 'identity', dotThreshold: 80}});
 
 
     const seqsPhysical = [
@@ -362,9 +362,9 @@ export class StartPageComponent implements OnInit {
       {sequence: 'MDITIHNPLIRRPLFSWLAPSRIFDQIFGEHLQESELLPASPSLSPFLMRSPI-FRMPSW', id: 2, label: 'CRAB_ANAPL'},
       {sequence: 'MDITIHNPLVRRPLFSWLTPSRIFDQIFGEHLQESELLPTSPSLSPFLMRSPF-FRMPSW', id: 3, label: 'CRAB_CHICK'}
     ];
-    this.consensusphysical = {options: {consensusColorMapping: 'physical'}};
+    this.consensusphysical = {consensus: {color: 'physical'}};
     const sPhysical = new ProSeqViewer('sqvPhysical');
-    sPhysical.draw({sequences: seqsPhysical, options: this.consensusphysical.options});
+    sPhysical.draw({sequences: seqsPhysical, consensus: {color: 'physical'}});
 
     //
     // wrapline EXAMPLE, responsive
