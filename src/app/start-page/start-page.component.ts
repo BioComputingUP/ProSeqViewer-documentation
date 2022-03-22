@@ -175,7 +175,7 @@ export class StartPageComponent implements OnInit {
     //   ]
     // };
     const seqSingle = new ProSeqViewer('sqvSingle');
-    seqSingle.draw({sequences: seq, icons: singleIco, options: {chunkSize: 0}});
+    seqSingle.draw({sequences: seq, icons: singleIco, options: {chunkSize: 0, indexesLocation: 'lateral'}});
 
     // REGIONS EXAMPLE
 
